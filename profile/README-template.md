@@ -1,12 +1,12 @@
-# 你的 GitHub 用户名（待替换）
+# 于跃 / LlewynLune
 
-> 这是 GitHub 账号同名仓库的 README 模板。已有 AI 辅助搭建的 FlowBench 本地原型；替换用户名、真实公开链接并亲自复核后再发布。
+> AI 工作流可靠性与可复核工程实验。当前作品为 AI 辅助搭建的合成负载研究原型；不将其包装成过去独立研发或生产项目。
 
 ## 关于我
 
 我正在建设一个围绕真实用户问题、可验证实验和稳定交付的 AI 作品集。
 
-当前状态：已有本地可运行研究原型，尚未公开；AI 辅助实现与个人贡献分开记录。
+当前状态：代码与静态展示已公开；AI 辅助实现与个人贡献分开记录。
 
 ## 我关注的问题
 
@@ -16,7 +16,7 @@
 
 ## 作品集入口
 
-待补：GitHub 普通作品集仓库链接。
+[完整代码与文档](https://github.com/LlewynLune/ai-portfolio) · [作品集网站](https://llewynlune.github.io/ai-portfolio/) · [在线交互展示](https://llewynlune.github.io/ai-portfolio/projects/reliability-lab/demo.html)
 
 ## 项目
 
@@ -26,11 +26,11 @@
 
 AI 辅助搭建；合成 I/O 而非模型推理，无生产降本结论。个人理解、修改和实验贡献待记录。
 
-公开仓库与演示地址：待账号创建后填写。
+包含真实本机计时的原始合成实验、31 项测试、故障轨迹和复现说明；在线页面只展示实测，重新运行须启动本机 Python 服务。
 
 ## 公开链接
 
-待补：个人主页、GitHub、邮箱或其他你愿意公开的联系方式。
+[GitHub](https://github.com/LlewynLune)；未公开邮箱、工作经历、教育或内部资料。
 
 ## 原则
 

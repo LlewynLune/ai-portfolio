@@ -1,6 +1,6 @@
 # 于跃｜AI 作品集
 
-> 现已包含 FlowBench 可靠性实验台：本地可运行、可测试、有真实计时的合成实验与交互展示。代码由 AI 辅助搭建，用户个人实现与复核贡献尚待记录；三类旧目录仍是待填模板。未连接远程仓库，未公开发布。
+> 现已包含 FlowBench 可靠性实验台：本地可运行、可测试、有真实计时的合成实验与交互展示。代码由 AI 辅助搭建，用户个人实现与复核贡献尚待记录；三类旧目录仍是待填模板。已公开至 [GitHub 仓库](https://github.com/LlewynLune/ai-portfolio)，[作品集网站](https://llewynlune.github.io/ai-portfolio/) 已上线。
 
 我的作品集将围绕一条主线组织：从真实用户问题出发，用可检验的方法设计 AI 方案，再用工程机制把结果稳定交付。
 
@@ -46,7 +46,7 @@
 
 ## 建号与建仓
 
-你目前还没有 GitHub 账号。请先按 [GitHub 建号、建仓与上传指南](docs/github-setup-guide.md) 本人完成注册、二次验证和远程仓库创建；账号创建后，我可以继续协助连接、检查和上传。
+账号已完成登录与安全验证；作品集已上传至 [LlewynLune/ai-portfolio](https://github.com/LlewynLune/ai-portfolio)，GitHub Pages 已配置为 main 根目录。后续维护见 [建仓与上传指南](docs/github-setup-guide.md)。提交使用账户 noreply 身份，仅更改本仓库 Git 配置。
 
 ## 案例矩阵
 
@@ -54,7 +54,7 @@
 
 ## 上传前
 
-请先阅读 [公开发布检查](PUBLISHING.md)。现在还不适合当作完成版投递或公开发布。
+请阅读 [公开发布检查](PUBLISHING.md)。已公开的是合成研究原型，不是生产上线经历；个人复核与真实贡献仍需继续补齐。
 
 ## 形式参考（公开来源，不代表与本人有关）
 

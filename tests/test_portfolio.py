@@ -19,7 +19,8 @@ class PortfolioTest(unittest.TestCase):
     def test_site_declares_limitations(self):
         text = (ROOT / 'index.html').read_text(encoding='utf-8')
         self.assertIn('没有可运行模型 Demo', text)
-        self.assertIn('尚未连接 GitHub', text)
+        self.assertIn('https://github.com/LlewynLune/ai-portfolio', text)
+        self.assertIn('Python 实验仅本机运行', text)
     def test_evidence_trace_runs(self):
         result = subprocess.run(
             [sys.executable, 'examples/evidence-trace/evidence_trace.py',

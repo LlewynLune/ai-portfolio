@@ -1,6 +1,6 @@
 # 公开发布检查
 
-当前仓库只初始化为本地 Git 仓库，没有 remote、没有上传或部署。本次没有更改任何全局 Git 配置。
+当前仓库已公开上传并配置 GitHub Pages；提交采用账号提供的 noreply 身份，只更改本仓库配置，没有更改全局 Git 配置。仅公开合成实验与公开资料，不含内部材料。
 
 ## 先完成内容核验
 
@@ -19,7 +19,7 @@
 - 账号同名仓库的 README：个人 GitHub Profile 展示入口；模板见 profile/README-template.md。
 - 静态网站仓库：可经 GitHub Pages 展示网站；需要另行配置，不是建立仓库后自动上线。
 
-建议先用一个普通作品集仓库作为目录，完成旗舰项目后再拆出项目仓库。index.html 可作为静态主页入口，但当前尚未配置 GitHub Pages。
+建议先用一个普通作品集仓库作为目录，完成旗舰项目后再拆出项目仓库。index.html 已作为 GitHub Pages 静态主页入口；Python 后端仅本机运行，网站不支持云端重新实测。
 
 完整建号、认证、建仓、提交和 Pages 步骤见 [GitHub 建号、建仓与上传指南](docs/github-setup-guide.md)。
 

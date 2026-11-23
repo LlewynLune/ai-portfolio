@@ -48,7 +48,7 @@ python3 -m unittest discover -s tests -v
 python3 scripts/check_portfolio.py
 ```
 
-测试覆盖参数边界、固定故障清单、并发上限、重试、永久错误、输出拒绝、超时取消、预算、幂等冲突、持久化和跨进程重启。CI 已配置，未在远程 GitHub 执行；不得使用通过状态徽章冒充远程验证。
+测试覆盖参数边界、固定故障清单、并发上限、重试、永久错误、输出拒绝、超时取消、预算、幂等冲突、持久化和跨进程重启。CI 已配置并完成首次远程运行，结果可在 [GitHub Actions](https://github.com/LlewynLune/ai-portfolio/actions) 复核。
 
 ## 实验配置
 
