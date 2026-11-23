@@ -5,7 +5,8 @@ import hashlib
 import json
 import time
 from typing import Protocol
-from .config import Config, POLICIES, STAGES, VERSION, fault_for, manifest, unit
+from pathlib import Path
+from .config import Config, POLICIES, STAGES, VERSION, SLOW_DELAY_MS, fault_for, manifest, unit
 from .store import Store
 
 class RetryableError(Exception):
@@ -22,6 +23,8 @@ class Worker(Protocol):
 
 class SyntheticWorker:
     """Deterministic local fault injection + real async wait, NOT model inference."""
+    workload_id = "synthetic_async_io_no_llm"
+
     def __init__(self, config: Config, store: Store, scope: str, idempotent: bool):
         self.config, self.store, self.scope, self.idempotent = config,store,scope,idempotent
 
@@ -30,7 +33,7 @@ class SyntheticWorker:
         fault = fault_for(cfg,task,stage)
         duration = cfg.base_ms * (.7 + unit(cfg.seed,task,stage,"duration") * .6) / 1000
         if fault == "slow" and attempt == 1:
-            duration = cfg.timeout_ms * 2 / 1000
+            duration = SLOW_DELAY_MS / 1000
         await asyncio.sleep(duration)
         if fault == "transient" and attempt == 1:
             raise RetryableError("synthetic transient failure")
@@ -62,13 +65,18 @@ async def run_experiment(config: Config, policy="resilient", *, store=None, scop
         raise ValueError("unknown pause stage")
     owned = store is None
     store = store or Store()
+    worker = worker or SyntheticWorker(config,store,scope,policy == "resilient")
+    workload_id = getattr(worker,"workload_id",worker.__class__.__module__+":"+worker.__class__.__qualname__)
+    core = Path(__file__).resolve().parent
+    code_signature = hashlib.sha256(b"".join((core/name).read_bytes() for name in
+                                            ("config.py","engine.py","store.py"))).hexdigest()
+    identity = f"{config.signature()}:{policy}:{workload_id}:{code_signature}"
     try:
-        store.bind(scope,config.signature()+":"+policy)
+        store.bind(scope,identity)
     except Exception:
         if owned:
             store.close()
         raise
-    worker = worker or SyntheticWorker(config,store,scope,policy == "resilient")
     start = time.perf_counter()
     events, rows = [], []
     semaphore = asyncio.Semaphore(config.concurrency)
@@ -154,7 +162,8 @@ async def run_experiment(config: Config, policy="resilient", *, store=None, scop
             queue_ms = (time.perf_counter()-submitted)*1000
         emit(task,"workflow",status,detail=error)
         rows.append({"task":task,"status":status,"latency_ms":round((time.perf_counter()-submitted)*1000,3),
-                     "queue_ms":round(queue_ms,3),"attempts":attempts,"checkpoint_hits":hits,"error":error})
+                     "queue_ms":round(queue_ms,3),"attempts":attempts,"checkpoint_hits":hits,"error":error,
+                     "output":output if status == "succeeded" else None})
 
     try:
         await asyncio.gather(*(workflow(task) for task in range(config.count)))
@@ -175,7 +184,7 @@ async def run_experiment(config: Config, policy="resilient", *, store=None, scop
                    "peak_active":peak_active,"status_counts":dict(failures),**store.stats(scope)}
         faults = manifest(config)
         fault_hash = hashlib.sha256(json.dumps(faults,sort_keys=True).encode()).hexdigest()
-        return {"schema_version":1,"version":VERSION,"workload":"synthetic_async_io_no_llm",
+        return {"schema_version":1,"version":VERSION,"workload":workload_id,"runtime_hash":code_signature,
                 "config":config.dict(),"policy":policy,"manifest_hash":fault_hash,
                 "manifest":faults,"summary":summary,"tasks":rows,"events":events,
                 "measurement_note":"real local wall clock; synthetic workloads; ledger counts cumulative within scope"}

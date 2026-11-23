@@ -1,12 +1,14 @@
 # FlowBench｜AI 工作流可靠性实验台
 
-> 状态：本地可运行研究原型（0.1.0），AI 辅助搭建；合成 I/O 负载，不含真实 LLM。不是字节官方项目，也不代表 Top Seed 身份或对应研究水平。
+> 状态：本地可运行研究原型（0.2.0），AI 辅助搭建；支持合成 I/O 和实际本地 BM25 检索，不含真实 LLM。不是字节官方项目，也不代表 Top Seed 身份或对应研究水平。
 
 面向正在搭建 Agent/AI 工作流的人，回答一个小而可验证的问题：**模型之外的执行框架，如何让暂时失败可恢复、永久错误可解释、提交副作用不重复？**
 
 ## 30 秒看成果
 
 - [交互展示](demo.html)：离线查看参考实测、按策略/任务追踪事件、导出/导入 JSON。本机服务启动后可重新运行。
+- [研究故事](RESEARCH_STORY.md)：成功率、重复副作用、参数公平性与检索泛化的四个问题。
+- [v0.2 深化报告](results/advanced/REPORT.md)：本地检索、困难改写组、实际子进程崩溃恢复、并发与单次超时参数矩阵。
 - [评测报告](results/reference/REPORT.md)：6 类负载、4 种策略、每种 5 次重复；原始事件完整保留。
 - [汇总结果](results/reference/benchmark.json) 与 [完整性清单](results/reference/checksums.json)。
 - [架构与决策](ARCHITECTURE.md) · [产品假设](PRODUCT.md) · [实验方法](EVALUATION.md) · [讲解与自验证](WALKTHROUGH.md) · [贡献与限制](CONTRIBUTIONS.md) · [对标依据](../../docs/reliability-benchmark-design.md)。
@@ -17,6 +19,8 @@ Python 3.11+，仅标准库，无需 pip、GPU、模型密钥或数据库服务�
 
 ```bash
 python3 -m reliability_lab run --profile mixed --count 24 --policy resilient
+python3 -m reliability_lab run --worker retrieval --profile clean --count 20
+python3 -m reliability_lab deepen --output results/advanced-reproduced
 python3 -m reliability_lab serve
 ```
 

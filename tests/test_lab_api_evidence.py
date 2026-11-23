@@ -40,6 +40,12 @@ class ApiTests(unittest.TestCase):
     def test_bad_config_rejected(self):
         headers={'Content-Type':'application/json','Origin':f'http://127.0.0.1:{self.server.server_port}'}
         self.assertEqual(self.request('/api/compare','POST','{"count":999}',headers)[0],400)
+    def test_local_retrieval_api(self):
+        headers={'Content-Type':'application/json','Origin':f'http://127.0.0.1:{self.server.server_port}'}
+        status,body=self.request('/api/compare','POST','{"count":2,"profile":"clean","base_ms":1,"worker":"retrieval"}',headers)
+        self.assertEqual(status,200)
+        data=json.loads(body)
+        self.assertTrue(all(r['tasks'][0]['output']['citations'] for r in data['results']))
     def test_real_comparison(self):
         headers={'Content-Type':'application/json','Origin':f'http://127.0.0.1:{self.server.server_port}'}
         status,body=self.request('/api/compare','POST','{"count":2,"profile":"clean","base_ms":1}',headers)
@@ -74,7 +80,9 @@ class EvidenceTests(unittest.TestCase):
     def test_embedded_measured_data(self):
         html=(LAB/'demo.html').read_text()
         match=re.search(r'<script id="reference-data" type="application/json">(.*?)</script>',html,re.S)
-        data=json.loads(match[1]); self.assertEqual(len(data['results']),24)
-        self.assertTrue(all(r['workload']=='synthetic_async_io_no_llm' for r in data['results']))
+        data=json.loads(match[1]); self.assertEqual(len(data['results']),27)
+        self.assertEqual(sum(r['workload']=='synthetic_async_io_no_llm' for r in data['results']),24)
+        self.assertEqual(sum(r['workload'].startswith('authored_local_bm25') for r in data['results']),3)
+        self.assertEqual(len(data['advanced']['crash']),3)
 
 if __name__ == '__main__': unittest.main()

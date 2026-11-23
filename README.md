@@ -1,12 +1,12 @@
 # 于跃｜AI 作品集
 
-> 现已包含 FlowBench 可靠性实验台：本地可运行、可测试、有真实计时的合成实验与交互展示。代码由 AI 辅助搭建，用户个人实现与复核贡献尚待记录；三类旧目录仍是待填模板。已公开至 [GitHub 仓库](https://github.com/LlewynLune/ai-portfolio)，[作品集网站](https://llewynlune.github.io/ai-portfolio/) 已上线。
+> 现已包含 FlowBench 0.2 可靠性实验台：合成 I/O、实际本地检索、进程崩溃恢复和参数扫描；可运行、可测试、实测可复核。代码由 AI 辅助搭建，用户个人实现与复核贡献尚待记录；三类旧目录仍是待填模板。已公开至 [GitHub 仓库](https://github.com/LlewynLune/ai-portfolio)，[作品集网站](https://llewynlune.github.io/ai-portfolio/) 已上线。
 
 我的作品集将围绕一条主线组织：从真实用户问题出发，用可检验的方法设计 AI 方案，再用工程机制把结果稳定交付。
 
 ## 先从这里看
 
-打开 index.html 查看个人主页。先从旗舰项目 [FlowBench 可靠性实验台](projects/reliability-lab/README.md) 开始，查看 [交互展示](projects/reliability-lab/demo.html)、[实测报告](projects/reliability-lab/results/reference/REPORT.md)、[架构](projects/reliability-lab/ARCHITECTURE.md) 和 [贡献边界](projects/reliability-lab/CONTRIBUTIONS.md)。
+打开 index.html 查看个人主页。先从旗舰项目 [FlowBench 可靠性实验台](projects/reliability-lab/README.md) 开始，查看 [交互展示](projects/reliability-lab/demo.html)、[实测报告](projects/reliability-lab/results/reference/REPORT.md)、[v0.2 深化实验](projects/reliability-lab/results/advanced/REPORT.md)、[架构](projects/reliability-lab/ARCHITECTURE.md) 和 [贡献边界](projects/reliability-lab/CONTRIBUTIONS.md)。
 
 本地启动：macOS 可运行根目录的启动可靠性实验台.command；或进入 projects/reliability-lab 后执行 python3 -m reliability_lab serve。服务仅监听本机，终端给出打开地址，Ctrl+C 停止。网页离线可看结果；GitHub Pages 不会运行 Python 后端。
 

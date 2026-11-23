@@ -118,14 +118,20 @@ def main():
     run.add_argument("--database",type=Path)
     run.add_argument("--scope",default="manual-run")
     run.add_argument("--pause-after",choices=("ingest","retrieve","analyze","validate"))
+    run.add_argument("--worker",choices=('synthetic','retrieval'),default='synthetic')
     run.add_argument("--output",type=Path)
     batch=sub.add_parser("suite")
     batch.add_argument("--output",type=Path,default=Path("results/reproduced"))
     batch.add_argument("--repeats",type=int,choices=range(1,11),default=5)
     serve=sub.add_parser("serve")
     serve.add_argument("--port",type=int,default=8765)
+    deep=sub.add_parser("deepen")
+    deep.add_argument("--output",type=Path,default=Path("results/advanced-reproduced"))
     args=parser.parse_args()
-    if args.command == "serve":
+    if args.command == "deepen":
+        from .advanced import main as deepen
+        deepen(args.output)
+    elif args.command == "serve":
         from .server import serve as start_server
         start_server(args.port)
     elif args.command == "suite":
@@ -133,9 +139,14 @@ def main():
         print(json.dumps({"profiles":len(report["groups"]),"repeats":report["repeats"]},indent=2))
     else:
         cfg=Config(count=args.count,concurrency=args.concurrency,seed=args.seed,profile=args.profile)
-        store=Store(args.database) if args.database else None
+        store=Store(args.database) if args.database else Store()
         try:
-            result=asyncio.run(run_experiment(cfg,args.policy,store=store,scope=args.scope,pause_after=args.pause_after))
+            worker=None
+            if args.worker=='retrieval':
+                from .retrieval import RetrievalWorker
+                worker=RetrievalWorker(cfg,store,args.scope,args.policy=='resilient')
+            result=asyncio.run(run_experiment(cfg,args.policy,store=store,scope=args.scope,
+                                             pause_after=args.pause_after,worker=worker))
         finally:
             if store:
                 store.close()

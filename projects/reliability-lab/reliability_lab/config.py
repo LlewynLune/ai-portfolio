@@ -7,7 +7,8 @@ import math
 STAGES = ("ingest", "retrieve", "analyze", "validate", "commit")
 POLICIES = ("baseline", "retry", "resilient", "no_timeout")
 PROFILES = ("clean", "transient", "mixed", "ack_loss", "permanent", "slow")
-VERSION = "0.1.0"
+VERSION = "0.2.0"
+SLOW_DELAY_MS = 140.0
 
 @dataclass(frozen=True)
 class Config:

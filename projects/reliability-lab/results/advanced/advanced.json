@@ -1,0 +1,815 @@
+{
+  "version": "0.2.0",
+  "environment": {
+    "python": "3.14.7",
+    "os": "Darwin",
+    "os_release": "25.5.0",
+    "machine": "arm64",
+    "timestamp_utc": "2026-11-23T10:48:13.525856+00:00"
+  },
+  "code_sha256": {
+    "__init__.py": "038b04b402316e3ea0c7fccfe584709b29ab6c6bfe79e584816eafab5055701b",
+    "__main__.py": "cf7390a2508a0fcad4777a4a629fc5212ab655cb45845975995f835676a834e3",
+    "advanced.py": "01753e1dfe8b24cb931521595cc8da73890d9b5c857b50ade4046be473664f93",
+    "cli.py": "c2b9dc728babafc81db598c67d89b779ba326644e02415e39528726c509a6b2f",
+    "config.py": "f442e08fa8a101626c83468736b4ac3ab0db998e0dcd61b1a423b92eaa89be6b",
+    "crash_child.py": "ee6dccd970c477a2f8024fcf8cc55ba9c9a1e998952bf8afe82f5b081ff8de5c",
+    "engine.py": "4ad804ec192362b7c66611df00ce4bf476546f0482a74f5f5737dc2101a1c0ad",
+    "retrieval.py": "75ca7c66074f278ef13b1ae653261829a5f36fb7f89406acc8fd05b141f84c4d",
+    "server.py": "3b79c0e25965f1ea261c2de2eab64770be9fb81ced3e9d0738af833244ed01bb",
+    "store.py": "de9aa26bc33ec9c3ca3ec553219d4482fa99b0562cb73a58f5a5a0e8ab510eaa"
+  },
+  "retrieval_workflows": 180,
+  "sweep_workflows": 648,
+  "crash_probes": 3,
+  "sweep": [
+    {
+      "concurrency": 1,
+      "timeout_ms": 35,
+      "repeats": 3,
+      "success_rate_mean": 0.3611111111111111,
+      "success_rate_range": [
+        0.3333333333333333,
+        0.4166666666666667
+      ],
+      "p95_ms_mean": 1000.85785,
+      "attempts_mean": 55.333333333333336,
+      "budget_exhausted_total": 46
+    },
+    {
+      "concurrency": 1,
+      "timeout_ms": 70,
+      "repeats": 3,
+      "success_rate_mean": 0.2638888888888889,
+      "success_rate_range": [
+        0.20833333333333334,
+        0.3333333333333333
+      ],
+      "p95_ms_mean": 1001.2815499999999,
+      "attempts_mean": 40.333333333333336,
+      "budget_exhausted_total": 53
+    },
+    {
+      "concurrency": 1,
+      "timeout_ms": 200,
+      "repeats": 3,
+      "success_rate_mean": 0.19444444444444445,
+      "success_rate_range": [
+        0.125,
+        0.2916666666666667
+      ],
+      "p95_ms_mean": 1001.0224499999999,
+      "attempts_mean": 26,
+      "budget_exhausted_total": 58
+    },
+    {
+      "concurrency": 4,
+      "timeout_ms": 35,
+      "repeats": 3,
+      "success_rate_mean": 1.0,
+      "success_rate_range": [
+        1.0,
+        1.0
+      ],
+      "p95_ms_mean": 594.7936,
+      "attempts_mean": 140.33333333333334,
+      "budget_exhausted_total": 0
+    },
+    {
+      "concurrency": 4,
+      "timeout_ms": 70,
+      "repeats": 3,
+      "success_rate_mean": 0.9861111111111112,
+      "success_rate_range": [
+        0.9583333333333334,
+        1.0
+      ],
+      "p95_ms_mean": 759.8356333333332,
+      "attempts_mean": 140,
+      "budget_exhausted_total": 1
+    },
+    {
+      "concurrency": 4,
+      "timeout_ms": 200,
+      "repeats": 3,
+      "success_rate_mean": 0.8888888888888888,
+      "success_rate_range": [
+        0.7916666666666666,
+        0.9583333333333334
+      ],
+      "p95_ms_mean": 979.2913333333333,
+      "attempts_mean": 113,
+      "budget_exhausted_total": 8
+    },
+    {
+      "concurrency": 8,
+      "timeout_ms": 35,
+      "repeats": 3,
+      "success_rate_mean": 1.0,
+      "success_rate_range": [
+        1.0,
+        1.0
+      ],
+      "p95_ms_mean": 330.8980333333333,
+      "attempts_mean": 140.33333333333334,
+      "budget_exhausted_total": 0
+    },
+    {
+      "concurrency": 8,
+      "timeout_ms": 70,
+      "repeats": 3,
+      "success_rate_mean": 1.0,
+      "success_rate_range": [
+        1.0,
+        1.0
+      ],
+      "p95_ms_mean": 428.3236833333333,
+      "attempts_mean": 140.33333333333334,
+      "budget_exhausted_total": 0
+    },
+    {
+      "concurrency": 8,
+      "timeout_ms": 200,
+      "repeats": 3,
+      "success_rate_mean": 1.0,
+      "success_rate_range": [
+        1.0,
+        1.0
+      ],
+      "p95_ms_mean": 572.2058999999999,
+      "attempts_mean": 120,
+      "budget_exhausted_total": 0
+    }
+  ],
+  "quality": [
+    {
+      "split": "development",
+      "method": "overlap",
+      "count": 6,
+      "recall3": 1.0,
+      "mrr": 1.0,
+      "cases": [
+        {
+          "query": "attempt timeout slow operation",
+          "relevant": [
+            "timeout"
+          ],
+          "split": "development",
+          "top3": [
+            "timeout",
+            "fault",
+            "trace"
+          ],
+          "recall3": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "query": "retry transient bounded attempts",
+          "relevant": [
+            "retry"
+          ],
+          "split": "development",
+          "top3": [
+            "retry"
+          ],
+          "recall3": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "query": "idempotency duplicate acknowledgement",
+          "relevant": [
+            "idempotency"
+          ],
+          "split": "development",
+          "top3": [
+            "idempotency",
+            "crash"
+          ],
+          "recall3": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "query": "checkpoints configuration version reuse",
+          "relevant": [
+            "checkpoint"
+          ],
+          "split": "development",
+          "top3": [
+            "checkpoint"
+          ],
+          "recall3": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "query": "queue budget worker expire",
+          "relevant": [
+            "budget"
+          ],
+          "split": "development",
+          "top3": [
+            "budget",
+            "timeout"
+          ],
+          "recall3": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "query": "async cooperative cancellation cleanup",
+          "relevant": [
+            "cancel"
+          ],
+          "split": "development",
+          "top3": [
+            "cancel"
+          ],
+          "recall3": 1.0,
+          "reciprocal_rank": 1.0
+        }
+      ]
+    },
+    {
+      "split": "development",
+      "method": "bm25",
+      "count": 6,
+      "recall3": 1.0,
+      "mrr": 1.0,
+      "cases": [
+        {
+          "query": "attempt timeout slow operation",
+          "relevant": [
+            "timeout"
+          ],
+          "split": "development",
+          "top3": [
+            "timeout",
+            "fault",
+            "trace"
+          ],
+          "recall3": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "query": "retry transient bounded attempts",
+          "relevant": [
+            "retry"
+          ],
+          "split": "development",
+          "top3": [
+            "retry"
+          ],
+          "recall3": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "query": "idempotency duplicate acknowledgement",
+          "relevant": [
+            "idempotency"
+          ],
+          "split": "development",
+          "top3": [
+            "idempotency",
+            "crash"
+          ],
+          "recall3": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "query": "checkpoints configuration version reuse",
+          "relevant": [
+            "checkpoint"
+          ],
+          "split": "development",
+          "top3": [
+            "checkpoint"
+          ],
+          "recall3": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "query": "queue budget worker expire",
+          "relevant": [
+            "budget"
+          ],
+          "split": "development",
+          "top3": [
+            "budget",
+            "timeout"
+          ],
+          "recall3": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "query": "async cooperative cancellation cleanup",
+          "relevant": [
+            "cancel"
+          ],
+          "split": "development",
+          "top3": [
+            "cancel"
+          ],
+          "recall3": 1.0,
+          "reciprocal_rank": 1.0
+        }
+      ]
+    },
+    {
+      "split": "evaluation",
+      "method": "overlap",
+      "count": 10,
+      "recall3": 1.0,
+      "mrr": 1.0,
+      "cases": [
+        {
+          "query": "request latency failed quality",
+          "relevant": [
+            "metrics"
+          ],
+          "split": "evaluation",
+          "top3": [
+            "metrics",
+            "quality"
+          ],
+          "recall3": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "query": "trace monotonic timestamp raw events",
+          "relevant": [
+            "trace"
+          ],
+          "split": "evaluation",
+          "top3": [
+            "trace"
+          ],
+          "recall3": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "query": "fixed fault policy duration",
+          "relevant": [
+            "fault"
+          ],
+          "split": "evaluation",
+          "top3": [
+            "fault"
+          ],
+          "recall3": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "query": "answer correctness relevance labels",
+          "relevant": [
+            "quality"
+          ],
+          "split": "evaluation",
+          "top3": [
+            "quality"
+          ],
+          "recall3": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "query": "process crash durable checkpoint replay",
+          "relevant": [
+            "crash"
+          ],
+          "split": "evaluation",
+          "top3": [
+            "crash",
+            "cancel"
+          ],
+          "recall3": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "query": "GPU production real token cost",
+          "relevant": [
+            "local"
+          ],
+          "split": "evaluation",
+          "top3": [
+            "local"
+          ],
+          "recall3": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "query": "after commit before checkpoint crash",
+          "relevant": [
+            "crash"
+          ],
+          "split": "evaluation",
+          "top3": [
+            "crash",
+            "budget",
+            "checkpoint"
+          ],
+          "recall3": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "query": "stop blocking plugin cleanup",
+          "relevant": [
+            "cancel"
+          ],
+          "split": "evaluation",
+          "top3": [
+            "cancel"
+          ],
+          "recall3": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "query": "slow attempt queue workflow deadline",
+          "relevant": [
+            "timeout",
+            "budget"
+          ],
+          "split": "evaluation",
+          "top3": [
+            "timeout",
+            "budget",
+            "fault"
+          ],
+          "recall3": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "query": "local side effects duplicate keys",
+          "relevant": [
+            "idempotency",
+            "crash"
+          ],
+          "split": "evaluation",
+          "top3": [
+            "idempotency",
+            "crash",
+            "local"
+          ],
+          "recall3": 1.0,
+          "reciprocal_rank": 1.0
+        }
+      ]
+    },
+    {
+      "split": "evaluation",
+      "method": "bm25",
+      "count": 10,
+      "recall3": 1.0,
+      "mrr": 1.0,
+      "cases": [
+        {
+          "query": "request latency failed quality",
+          "relevant": [
+            "metrics"
+          ],
+          "split": "evaluation",
+          "top3": [
+            "metrics",
+            "quality"
+          ],
+          "recall3": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "query": "trace monotonic timestamp raw events",
+          "relevant": [
+            "trace"
+          ],
+          "split": "evaluation",
+          "top3": [
+            "trace"
+          ],
+          "recall3": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "query": "fixed fault policy duration",
+          "relevant": [
+            "fault"
+          ],
+          "split": "evaluation",
+          "top3": [
+            "fault"
+          ],
+          "recall3": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "query": "answer correctness relevance labels",
+          "relevant": [
+            "quality"
+          ],
+          "split": "evaluation",
+          "top3": [
+            "quality"
+          ],
+          "recall3": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "query": "process crash durable checkpoint replay",
+          "relevant": [
+            "crash"
+          ],
+          "split": "evaluation",
+          "top3": [
+            "crash",
+            "cancel"
+          ],
+          "recall3": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "query": "GPU production real token cost",
+          "relevant": [
+            "local"
+          ],
+          "split": "evaluation",
+          "top3": [
+            "local"
+          ],
+          "recall3": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "query": "after commit before checkpoint crash",
+          "relevant": [
+            "crash"
+          ],
+          "split": "evaluation",
+          "top3": [
+            "crash",
+            "idempotency",
+            "budget"
+          ],
+          "recall3": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "query": "stop blocking plugin cleanup",
+          "relevant": [
+            "cancel"
+          ],
+          "split": "evaluation",
+          "top3": [
+            "cancel"
+          ],
+          "recall3": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "query": "slow attempt queue workflow deadline",
+          "relevant": [
+            "timeout",
+            "budget"
+          ],
+          "split": "evaluation",
+          "top3": [
+            "timeout",
+            "budget",
+            "trace"
+          ],
+          "recall3": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "query": "local side effects duplicate keys",
+          "relevant": [
+            "idempotency",
+            "crash"
+          ],
+          "split": "evaluation",
+          "top3": [
+            "idempotency",
+            "crash",
+            "local"
+          ],
+          "recall3": 1.0,
+          "reciprocal_rank": 1.0
+        }
+      ]
+    },
+    {
+      "split": "challenge",
+      "method": "overlap",
+      "count": 4,
+      "recall3": 0.5,
+      "mrr": 0.75,
+      "cases": [
+        {
+          "query": "deduplicate durable transaction when confirmation disappears",
+          "relevant": [
+            "idempotency",
+            "crash"
+          ],
+          "split": "challenge",
+          "top3": [
+            "crash"
+          ],
+          "recall3": 0.5,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "query": "relaunch previously finished computation safely",
+          "relevant": [
+            "checkpoint"
+          ],
+          "split": "challenge",
+          "top3": [],
+          "recall3": 0.0,
+          "reciprocal_rank": 0
+        },
+        {
+          "query": "endless waiting consumes entire allowance",
+          "relevant": [
+            "timeout",
+            "budget"
+          ],
+          "split": "challenge",
+          "top3": [
+            "budget"
+          ],
+          "recall3": 0.5,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "query": "semantic evidence insufficient refuse fabricated answer",
+          "relevant": [
+            "quality"
+          ],
+          "split": "challenge",
+          "top3": [
+            "quality"
+          ],
+          "recall3": 1.0,
+          "reciprocal_rank": 1.0
+        }
+      ]
+    },
+    {
+      "split": "challenge",
+      "method": "bm25",
+      "count": 4,
+      "recall3": 0.5,
+      "mrr": 0.75,
+      "cases": [
+        {
+          "query": "deduplicate durable transaction when confirmation disappears",
+          "relevant": [
+            "idempotency",
+            "crash"
+          ],
+          "split": "challenge",
+          "top3": [
+            "crash"
+          ],
+          "recall3": 0.5,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "query": "relaunch previously finished computation safely",
+          "relevant": [
+            "checkpoint"
+          ],
+          "split": "challenge",
+          "top3": [],
+          "recall3": 0.0,
+          "reciprocal_rank": 0
+        },
+        {
+          "query": "endless waiting consumes entire allowance",
+          "relevant": [
+            "timeout",
+            "budget"
+          ],
+          "split": "challenge",
+          "top3": [
+            "budget"
+          ],
+          "recall3": 0.5,
+          "reciprocal_rank": 1.0
+        },
+        {
+          "query": "semantic evidence insufficient refuse fabricated answer",
+          "relevant": [
+            "quality"
+          ],
+          "split": "challenge",
+          "top3": [
+            "quality"
+          ],
+          "recall3": 1.0,
+          "reciprocal_rank": 1.0
+        }
+      ]
+    }
+  ],
+  "crash": [
+    {
+      "point": "after_checkpoint",
+      "policy": "resilient",
+      "child_exit_code": 73,
+      "integrity_check": "ok",
+      "before_recovery": {
+        "side_effects": 0,
+        "committed_tasks": 0,
+        "duplicate_effects": 0
+      },
+      "note": "abrupt os._exit of dedicated child after durable boundary; not power loss or network partition",
+      "summary": {
+        "count": 4,
+        "succeeded": 4,
+        "success_rate": 1.0,
+        "elapsed_ms": 23.941,
+        "p50_ms": 13.078499999999998,
+        "p95_ms": 22.491049999999998,
+        "p99_ms": 23.35421,
+        "success_p95_ms": 22.491049999999998,
+        "completion_per_second": 167.077691134444,
+        "success_per_second": 167.077691134444,
+        "attempts": 17,
+        "checkpoint_hits": 3,
+        "retries": 0,
+        "attempt_timeouts": 0,
+        "peak_active": 1,
+        "status_counts": {
+          "succeeded": 4
+        },
+        "side_effects": 4,
+        "committed_tasks": 4,
+        "duplicate_effects": 0
+      }
+    },
+    {
+      "point": "after_commit",
+      "policy": "retry",
+      "child_exit_code": 73,
+      "integrity_check": "ok",
+      "before_recovery": {
+        "side_effects": 1,
+        "committed_tasks": 1,
+        "duplicate_effects": 0
+      },
+      "note": "abrupt os._exit of dedicated child after durable boundary; not power loss or network partition",
+      "summary": {
+        "count": 4,
+        "succeeded": 4,
+        "success_rate": 1.0,
+        "elapsed_ms": 25.307,
+        "p50_ms": 15.437000000000001,
+        "p95_ms": 24.171299999999995,
+        "p99_ms": 24.972659999999998,
+        "success_p95_ms": 24.171299999999995,
+        "completion_per_second": 158.05981647257116,
+        "success_per_second": 158.05981647257116,
+        "attempts": 20,
+        "checkpoint_hits": 0,
+        "retries": 0,
+        "attempt_timeouts": 0,
+        "peak_active": 1,
+        "status_counts": {
+          "succeeded": 4
+        },
+        "side_effects": 5,
+        "committed_tasks": 4,
+        "duplicate_effects": 1
+      }
+    },
+    {
+      "point": "after_commit",
+      "policy": "resilient",
+      "child_exit_code": 73,
+      "integrity_check": "ok",
+      "before_recovery": {
+        "side_effects": 1,
+        "committed_tasks": 1,
+        "duplicate_effects": 0
+      },
+      "note": "abrupt os._exit of dedicated child after durable boundary; not power loss or network partition",
+      "summary": {
+        "count": 4,
+        "succeeded": 4,
+        "success_rate": 1.0,
+        "elapsed_ms": 23.628,
+        "p50_ms": 11.619499999999999,
+        "p95_ms": 22.199199999999998,
+        "p99_ms": 23.208639999999995,
+        "success_p95_ms": 22.199199999999998,
+        "completion_per_second": 169.2924591873963,
+        "success_per_second": 169.2924591873963,
+        "attempts": 16,
+        "checkpoint_hits": 4,
+        "retries": 0,
+        "attempt_timeouts": 0,
+        "peak_active": 1,
+        "status_counts": {
+          "succeeded": 4
+        },
+        "side_effects": 4,
+        "committed_tasks": 4,
+        "duplicate_effects": 0
+      }
+    }
+  ]
+}

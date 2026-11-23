@@ -20,7 +20,9 @@ REQUIRED = ['README.md', 'PUBLISHING.md', 'index.html', '.gitignore',
             'projects/reliability-lab/ARCHITECTURE.md',
             'projects/reliability-lab/CONTRIBUTIONS.md',
             'projects/reliability-lab/results/reference/benchmark.json',
-            'projects/reliability-lab/results/reference/REPORT.md']
+            'projects/reliability-lab/results/reference/REPORT.md',
+            'projects/reliability-lab/results/advanced/REPORT.md',
+            'projects/reliability-lab/results/advanced/advanced.json']
 
 class PageParser(HTMLParser):
     def __init__(self):

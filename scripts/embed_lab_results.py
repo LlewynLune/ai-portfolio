@@ -13,7 +13,10 @@ def main():
              for profile in ('clean','transient','mixed','ack_loss','permanent','slow')
              for policy in ('baseline','retry','resilient','no_timeout')]
     recovery=json.loads((DATA/'recovery.json').read_text(encoding='utf-8'))
-    payload={'results':results,'recovery':{k:recovery[k]['summary'] for k in ('pause','resumed','warm')}}
+    retrieval=json.loads((LAB/'results/advanced/retrieval.json').read_text(encoding='utf-8'))
+    results.extend(r for r in retrieval['runs'] if r['config']['seed']==42)
+    advanced=json.loads((LAB/'results/advanced/advanced.json').read_text(encoding='utf-8'))
+    payload={'results':results,'advanced':advanced,'recovery':{k:recovery[k]['summary'] for k in ('pause','resumed','warm')}}
     encoded=json.dumps(payload,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     path=LAB/'demo.html'
     content=path.read_text(encoding='utf-8')

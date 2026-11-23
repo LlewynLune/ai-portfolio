@@ -61,13 +61,31 @@ class Handler(BaseHTTPRequestHandler):
                 raise ValueError("config must be an object")
             if payload.get("count",24)>48:
                 raise ValueError("interactive count <= 48")
+            worker_kind=payload.pop('worker','synthetic')
+            if worker_kind not in ('synthetic','retrieval'):
+                raise ValueError('unknown worker')
             cfg=Config(**payload)
         except (ValueError,TypeError,json.JSONDecodeError) as exc:
             return self.json(400,{"error":str(exc)})
         if not BUSY.acquire(blocking=False):
             return self.json(429,{"error":"one comparison at a time"})
         try:
-            result=asyncio.run(compare(cfg))
+            if worker_kind=='retrieval':
+                from .engine import run_experiment
+                from .retrieval import RetrievalWorker
+                from .store import Store
+                async def local_compare():
+                    rows=[]
+                    for policy in ('baseline','retry','resilient'):
+                        store=Store()
+                        try:
+                            worker=RetrievalWorker(cfg,store,'api',policy=='resilient')
+                            rows.append(await run_experiment(cfg,policy,store=store,scope='api',worker=worker))
+                        finally: store.close()
+                    return {'results':rows,'kind':'paired_local_retrieval'}
+                result=asyncio.run(local_compare())
+            else:
+                result=asyncio.run(compare(cfg))
             self.json(200,result)
         except (BrokenPipeError,ConnectionResetError):
             pass
