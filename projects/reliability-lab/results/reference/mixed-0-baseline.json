@@ -1,0 +1,2602 @@
+{
+  "schema_version": 1,
+  "version": "0.1.0",
+  "workload": "synthetic_async_io_no_llm",
+  "config": {
+    "count": 24,
+    "concurrency": 4,
+    "seed": 42,
+    "profile": "mixed",
+    "timeout_ms": 70.0,
+    "budget_ms": 1000.0,
+    "attempts": 3,
+    "base_ms": 12.0,
+    "backoff_ms": 8.0
+  },
+  "policy": "baseline",
+  "manifest_hash": "c26db639abce9f35e76a0a0f32e8a6ff86a3546f7be366790aa4313c7b2e9bc8",
+  "manifest": [
+    {
+      "task": 0,
+      "stages": {
+        "ingest": "none",
+        "retrieve": "slow",
+        "analyze": "none",
+        "validate": "none",
+        "commit": "none"
+      }
+    },
+    {
+      "task": 1,
+      "stages": {
+        "ingest": "none",
+        "retrieve": "none",
+        "analyze": "none",
+        "validate": "none",
+        "commit": "none"
+      }
+    },
+    {
+      "task": 2,
+      "stages": {
+        "ingest": "none",
+        "retrieve": "none",
+        "analyze": "none",
+        "validate": "none",
+        "commit": "none"
+      }
+    },
+    {
+      "task": 3,
+      "stages": {
+        "ingest": "none",
+        "retrieve": "none",
+        "analyze": "none",
+        "validate": "none",
+        "commit": "none"
+      }
+    },
+    {
+      "task": 4,
+      "stages": {
+        "ingest": "none",
+        "retrieve": "none",
+        "analyze": "transient",
+        "validate": "none",
+        "commit": "ack_lost"
+      }
+    },
+    {
+      "task": 5,
+      "stages": {
+        "ingest": "none",
+        "retrieve": "none",
+        "analyze": "none",
+        "validate": "none",
+        "commit": "none"
+      }
+    },
+    {
+      "task": 6,
+      "stages": {
+        "ingest": "none",
+        "retrieve": "none",
+        "analyze": "slow",
+        "validate": "none",
+        "commit": "none"
+      }
+    },
+    {
+      "task": 7,
+      "stages": {
+        "ingest": "none",
+        "retrieve": "none",
+        "analyze": "slow",
+        "validate": "none",
+        "commit": "none"
+      }
+    },
+    {
+      "task": 8,
+      "stages": {
+        "ingest": "none",
+        "retrieve": "transient",
+        "analyze": "none",
+        "validate": "none",
+        "commit": "none"
+      }
+    },
+    {
+      "task": 9,
+      "stages": {
+        "ingest": "none",
+        "retrieve": "none",
+        "analyze": "none",
+        "validate": "none",
+        "commit": "ack_lost"
+      }
+    },
+    {
+      "task": 10,
+      "stages": {
+        "ingest": "none",
+        "retrieve": "none",
+        "analyze": "transient",
+        "validate": "none",
+        "commit": "ack_lost"
+      }
+    },
+    {
+      "task": 11,
+      "stages": {
+        "ingest": "none",
+        "retrieve": "transient",
+        "analyze": "none",
+        "validate": "none",
+        "commit": "none"
+      }
+    },
+    {
+      "task": 12,
+      "stages": {
+        "ingest": "none",
+        "retrieve": "none",
+        "analyze": "none",
+        "validate": "none",
+        "commit": "none"
+      }
+    },
+    {
+      "task": 13,
+      "stages": {
+        "ingest": "none",
+        "retrieve": "transient",
+        "analyze": "none",
+        "validate": "none",
+        "commit": "none"
+      }
+    },
+    {
+      "task": 14,
+      "stages": {
+        "ingest": "none",
+        "retrieve": "none",
+        "analyze": "none",
+        "validate": "none",
+        "commit": "ack_lost"
+      }
+    },
+    {
+      "task": 15,
+      "stages": {
+        "ingest": "none",
+        "retrieve": "none",
+        "analyze": "none",
+        "validate": "none",
+        "commit": "none"
+      }
+    },
+    {
+      "task": 16,
+      "stages": {
+        "ingest": "none",
+        "retrieve": "slow",
+        "analyze": "none",
+        "validate": "none",
+        "commit": "none"
+      }
+    },
+    {
+      "task": 17,
+      "stages": {
+        "ingest": "none",
+        "retrieve": "none",
+        "analyze": "transient",
+        "validate": "none",
+        "commit": "none"
+      }
+    },
+    {
+      "task": 18,
+      "stages": {
+        "ingest": "none",
+        "retrieve": "none",
+        "analyze": "slow",
+        "validate": "none",
+        "commit": "ack_lost"
+      }
+    },
+    {
+      "task": 19,
+      "stages": {
+        "ingest": "none",
+        "retrieve": "transient",
+        "analyze": "transient",
+        "validate": "none",
+        "commit": "none"
+      }
+    },
+    {
+      "task": 20,
+      "stages": {
+        "ingest": "none",
+        "retrieve": "none",
+        "analyze": "permanent",
+        "validate": "none",
+        "commit": "none"
+      }
+    },
+    {
+      "task": 21,
+      "stages": {
+        "ingest": "none",
+        "retrieve": "none",
+        "analyze": "slow",
+        "validate": "none",
+        "commit": "none"
+      }
+    },
+    {
+      "task": 22,
+      "stages": {
+        "ingest": "none",
+        "retrieve": "slow",
+        "analyze": "none",
+        "validate": "none",
+        "commit": "none"
+      }
+    },
+    {
+      "task": 23,
+      "stages": {
+        "ingest": "none",
+        "retrieve": "permanent",
+        "analyze": "permanent",
+        "validate": "none",
+        "commit": "none"
+      }
+    }
+  ],
+  "summary": {
+    "count": 24,
+    "succeeded": 6,
+    "success_rate": 0.25,
+    "elapsed_ms": 386.1,
+    "p50_ms": 200.9255,
+    "p95_ms": 375.93754999999993,
+    "p99_ms": 384.26641,
+    "success_p95_ms": 252.98975,
+    "completion_per_second": 62.15998168039489,
+    "success_per_second": 15.539995420098723,
+    "attempts": 80,
+    "checkpoint_hits": 0,
+    "retries": 0,
+    "attempt_timeouts": 7,
+    "peak_active": 4,
+    "status_counts": {
+      "retry_exhausted": 16,
+      "succeeded": 6,
+      "permanent_failed": 2
+    },
+    "side_effects": 8,
+    "committed_tasks": 8,
+    "duplicate_effects": 0
+  },
+  "tasks": [
+    {
+      "task": 0,
+      "status": "retry_exhausted",
+      "latency_ms": 84.815,
+      "queue_ms": 0.024,
+      "attempts": 2,
+      "checkpoint_hits": 0,
+      "error": "attempt timeout after retry limit"
+    },
+    {
+      "task": 1,
+      "status": "succeeded",
+      "latency_ms": 60.231,
+      "queue_ms": 0.006,
+      "attempts": 5,
+      "checkpoint_hits": 0,
+      "error": ""
+    },
+    {
+      "task": 2,
+      "status": "succeeded",
+      "latency_ms": 63.833,
+      "queue_ms": 0.004,
+      "attempts": 5,
+      "checkpoint_hits": 0,
+      "error": ""
+    },
+    {
+      "task": 3,
+      "status": "succeeded",
+      "latency_ms": 69.226,
+      "queue_ms": 0.003,
+      "attempts": 5,
+      "checkpoint_hits": 0,
+      "error": ""
+    },
+    {
+      "task": 4,
+      "status": "retry_exhausted",
+      "latency_ms": 97.125,
+      "queue_ms": 60.233,
+      "attempts": 3,
+      "checkpoint_hits": 0,
+      "error": "synthetic transient failure"
+    },
+    {
+      "task": 5,
+      "status": "succeeded",
+      "latency_ms": 128.497,
+      "queue_ms": 63.83,
+      "attempts": 5,
+      "checkpoint_hits": 0,
+      "error": ""
+    },
+    {
+      "task": 6,
+      "status": "retry_exhausted",
+      "latency_ms": 165.581,
+      "queue_ms": 69.231,
+      "attempts": 3,
+      "checkpoint_hits": 0,
+      "error": "attempt timeout after retry limit"
+    },
+    {
+      "task": 7,
+      "status": "retry_exhausted",
+      "latency_ms": 185.316,
+      "queue_ms": 84.748,
+      "attempts": 3,
+      "checkpoint_hits": 0,
+      "error": "attempt timeout after retry limit"
+    },
+    {
+      "task": 8,
+      "status": "retry_exhausted",
+      "latency_ms": 126.228,
+      "queue_ms": 97.134,
+      "attempts": 2,
+      "checkpoint_hits": 0,
+      "error": "synthetic transient failure"
+    },
+    {
+      "task": 9,
+      "status": "retry_exhausted",
+      "latency_ms": 195.036,
+      "queue_ms": 126.262,
+      "attempts": 5,
+      "checkpoint_hits": 0,
+      "error": "side effect committed; synthetic acknowledgement lost"
+    },
+    {
+      "task": 10,
+      "status": "retry_exhausted",
+      "latency_ms": 168.62,
+      "queue_ms": 128.503,
+      "attempts": 3,
+      "checkpoint_hits": 0,
+      "error": "synthetic transient failure"
+    },
+    {
+      "task": 11,
+      "status": "retry_exhausted",
+      "latency_ms": 192.891,
+      "queue_ms": 165.608,
+      "attempts": 2,
+      "checkpoint_hits": 0,
+      "error": "synthetic transient failure"
+    },
+    {
+      "task": 12,
+      "status": "succeeded",
+      "latency_ms": 238.124,
+      "queue_ms": 168.659,
+      "attempts": 5,
+      "checkpoint_hits": 0,
+      "error": ""
+    },
+    {
+      "task": 13,
+      "status": "retry_exhausted",
+      "latency_ms": 206.815,
+      "queue_ms": 185.331,
+      "attempts": 2,
+      "checkpoint_hits": 0,
+      "error": "synthetic transient failure"
+    },
+    {
+      "task": 14,
+      "status": "retry_exhausted",
+      "latency_ms": 257.221,
+      "queue_ms": 192.938,
+      "attempts": 5,
+      "checkpoint_hits": 0,
+      "error": "side effect committed; synthetic acknowledgement lost"
+    },
+    {
+      "task": 15,
+      "status": "succeeded",
+      "latency_ms": 257.945,
+      "queue_ms": 195.042,
+      "attempts": 5,
+      "checkpoint_hits": 0,
+      "error": ""
+    },
+    {
+      "task": 16,
+      "status": "retry_exhausted",
+      "latency_ms": 292.988,
+      "queue_ms": 206.888,
+      "attempts": 2,
+      "checkpoint_hits": 0,
+      "error": "attempt timeout after retry limit"
+    },
+    {
+      "task": 17,
+      "status": "retry_exhausted",
+      "latency_ms": 272.72,
+      "queue_ms": 238.131,
+      "attempts": 3,
+      "checkpoint_hits": 0,
+      "error": "synthetic transient failure"
+    },
+    {
+      "task": 18,
+      "status": "retry_exhausted",
+      "latency_ms": 355.501,
+      "queue_ms": 257.24,
+      "attempts": 3,
+      "checkpoint_hits": 0,
+      "error": "attempt timeout after retry limit"
+    },
+    {
+      "task": 19,
+      "status": "retry_exhausted",
+      "latency_ms": 283.978,
+      "queue_ms": 257.957,
+      "attempts": 2,
+      "checkpoint_hits": 0,
+      "error": "synthetic transient failure"
+    },
+    {
+      "task": 20,
+      "status": "permanent_failed",
+      "latency_ms": 311.42,
+      "queue_ms": 272.751,
+      "attempts": 3,
+      "checkpoint_hits": 0,
+      "error": "synthetic permanent error"
+    },
+    {
+      "task": 21,
+      "status": "retry_exhausted",
+      "latency_ms": 385.677,
+      "queue_ms": 284.004,
+      "attempts": 3,
+      "checkpoint_hits": 0,
+      "error": "attempt timeout after retry limit"
+    },
+    {
+      "task": 22,
+      "status": "retry_exhausted",
+      "latency_ms": 379.544,
+      "queue_ms": 293.005,
+      "attempts": 2,
+      "checkpoint_hits": 0,
+      "error": "attempt timeout after retry limit"
+    },
+    {
+      "task": 23,
+      "status": "permanent_failed",
+      "latency_ms": 342.085,
+      "queue_ms": 311.44,
+      "attempts": 2,
+      "checkpoint_hits": 0,
+      "error": "synthetic permanent error"
+    }
+  ],
+  "events": [
+    {
+      "seq": 1,
+      "time_ms": 0.2,
+      "task": 0,
+      "stage": "workflow",
+      "status": "queued",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 2,
+      "time_ms": 0.223,
+      "task": 0,
+      "stage": "workflow",
+      "status": "running",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 3,
+      "time_ms": 0.225,
+      "task": 0,
+      "stage": "ingest",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 4,
+      "time_ms": 0.254,
+      "task": 1,
+      "stage": "workflow",
+      "status": "queued",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 5,
+      "time_ms": 0.259,
+      "task": 1,
+      "stage": "workflow",
+      "status": "running",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 6,
+      "time_ms": 0.26,
+      "task": 1,
+      "stage": "ingest",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 7,
+      "time_ms": 0.269,
+      "task": 2,
+      "stage": "workflow",
+      "status": "queued",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 8,
+      "time_ms": 0.273,
+      "task": 2,
+      "stage": "workflow",
+      "status": "running",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 9,
+      "time_ms": 0.273,
+      "task": 2,
+      "stage": "ingest",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 10,
+      "time_ms": 0.28,
+      "task": 3,
+      "stage": "workflow",
+      "status": "queued",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 11,
+      "time_ms": 0.284,
+      "task": 3,
+      "stage": "workflow",
+      "status": "running",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 12,
+      "time_ms": 0.284,
+      "task": 3,
+      "stage": "ingest",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 13,
+      "time_ms": 0.291,
+      "task": 4,
+      "stage": "workflow",
+      "status": "queued",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 14,
+      "time_ms": 0.301,
+      "task": 5,
+      "stage": "workflow",
+      "status": "queued",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 15,
+      "time_ms": 0.306,
+      "task": 6,
+      "stage": "workflow",
+      "status": "queued",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 16,
+      "time_ms": 0.309,
+      "task": 7,
+      "stage": "workflow",
+      "status": "queued",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 17,
+      "time_ms": 0.313,
+      "task": 8,
+      "stage": "workflow",
+      "status": "queued",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 18,
+      "time_ms": 0.316,
+      "task": 9,
+      "stage": "workflow",
+      "status": "queued",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 19,
+      "time_ms": 0.324,
+      "task": 10,
+      "stage": "workflow",
+      "status": "queued",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 20,
+      "time_ms": 0.327,
+      "task": 11,
+      "stage": "workflow",
+      "status": "queued",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 21,
+      "time_ms": 0.331,
+      "task": 12,
+      "stage": "workflow",
+      "status": "queued",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 22,
+      "time_ms": 0.334,
+      "task": 13,
+      "stage": "workflow",
+      "status": "queued",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 23,
+      "time_ms": 0.338,
+      "task": 14,
+      "stage": "workflow",
+      "status": "queued",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 24,
+      "time_ms": 0.341,
+      "task": 15,
+      "stage": "workflow",
+      "status": "queued",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 25,
+      "time_ms": 0.346,
+      "task": 16,
+      "stage": "workflow",
+      "status": "queued",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 26,
+      "time_ms": 0.35,
+      "task": 17,
+      "stage": "workflow",
+      "status": "queued",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 27,
+      "time_ms": 0.354,
+      "task": 18,
+      "stage": "workflow",
+      "status": "queued",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 28,
+      "time_ms": 0.357,
+      "task": 19,
+      "stage": "workflow",
+      "status": "queued",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 29,
+      "time_ms": 0.361,
+      "task": 20,
+      "stage": "workflow",
+      "status": "queued",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 30,
+      "time_ms": 0.364,
+      "task": 21,
+      "stage": "workflow",
+      "status": "queued",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 31,
+      "time_ms": 0.367,
+      "task": 22,
+      "stage": "workflow",
+      "status": "queued",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 32,
+      "time_ms": 0.371,
+      "task": 23,
+      "stage": "workflow",
+      "status": "queued",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 33,
+      "time_ms": 12.857,
+      "task": 1,
+      "stage": "ingest",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 34,
+      "time_ms": 12.866,
+      "task": 1,
+      "stage": "retrieve",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 35,
+      "time_ms": 13.118,
+      "task": 3,
+      "stage": "ingest",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 36,
+      "time_ms": 13.121,
+      "task": 3,
+      "stage": "retrieve",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 37,
+      "time_ms": 14.09,
+      "task": 0,
+      "stage": "ingest",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 38,
+      "time_ms": 14.095,
+      "task": 0,
+      "stage": "retrieve",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 39,
+      "time_ms": 14.707,
+      "task": 2,
+      "stage": "ingest",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 40,
+      "time_ms": 14.71,
+      "task": 2,
+      "stage": "retrieve",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 41,
+      "time_ms": 25.242,
+      "task": 3,
+      "stage": "retrieve",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 42,
+      "time_ms": 25.251,
+      "task": 3,
+      "stage": "analyze",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 43,
+      "time_ms": 25.354,
+      "task": 1,
+      "stage": "retrieve",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 44,
+      "time_ms": 25.356,
+      "task": 1,
+      "stage": "analyze",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 45,
+      "time_ms": 26.069,
+      "task": 2,
+      "stage": "retrieve",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 46,
+      "time_ms": 26.071,
+      "task": 2,
+      "stage": "analyze",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 47,
+      "time_ms": 37.308,
+      "task": 2,
+      "stage": "analyze",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 48,
+      "time_ms": 37.314,
+      "task": 2,
+      "stage": "validate",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 49,
+      "time_ms": 37.407,
+      "task": 1,
+      "stage": "analyze",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 50,
+      "time_ms": 37.41,
+      "task": 1,
+      "stage": "validate",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 51,
+      "time_ms": 41.244,
+      "task": 3,
+      "stage": "analyze",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 52,
+      "time_ms": 41.248,
+      "task": 3,
+      "stage": "validate",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 53,
+      "time_ms": 46.87,
+      "task": 1,
+      "stage": "validate",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 54,
+      "time_ms": 46.879,
+      "task": 1,
+      "stage": "commit",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 55,
+      "time_ms": 53.081,
+      "task": 2,
+      "stage": "validate",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 56,
+      "time_ms": 53.091,
+      "task": 2,
+      "stage": "commit",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 57,
+      "time_ms": 57.074,
+      "task": 3,
+      "stage": "validate",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 58,
+      "time_ms": 57.092,
+      "task": 3,
+      "stage": "commit",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 59,
+      "time_ms": 60.458,
+      "task": 1,
+      "stage": "commit",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 60,
+      "time_ms": 60.481,
+      "task": 1,
+      "stage": "workflow",
+      "status": "succeeded",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 61,
+      "time_ms": 60.526,
+      "task": 4,
+      "stage": "workflow",
+      "status": "running",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 62,
+      "time_ms": 60.53,
+      "task": 4,
+      "stage": "ingest",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 63,
+      "time_ms": 64.084,
+      "task": 2,
+      "stage": "commit",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 64,
+      "time_ms": 64.1,
+      "task": 2,
+      "stage": "workflow",
+      "status": "succeeded",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 65,
+      "time_ms": 64.133,
+      "task": 5,
+      "stage": "workflow",
+      "status": "running",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 66,
+      "time_ms": 64.137,
+      "task": 5,
+      "stage": "ingest",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 67,
+      "time_ms": 69.492,
+      "task": 3,
+      "stage": "commit",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 68,
+      "time_ms": 69.505,
+      "task": 3,
+      "stage": "workflow",
+      "status": "succeeded",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 69,
+      "time_ms": 69.537,
+      "task": 6,
+      "stage": "workflow",
+      "status": "running",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 70,
+      "time_ms": 69.54,
+      "task": 6,
+      "stage": "ingest",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 71,
+      "time_ms": 76.54,
+      "task": 4,
+      "stage": "ingest",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 72,
+      "time_ms": 76.549,
+      "task": 4,
+      "stage": "retrieve",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 73,
+      "time_ms": 77.25,
+      "task": 5,
+      "stage": "ingest",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 74,
+      "time_ms": 77.257,
+      "task": 5,
+      "stage": "retrieve",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 75,
+      "time_ms": 84.882,
+      "task": 6,
+      "stage": "ingest",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 76,
+      "time_ms": 84.891,
+      "task": 6,
+      "stage": "retrieve",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 77,
+      "time_ms": 84.975,
+      "task": 0,
+      "stage": "retrieve",
+      "status": "attempt_timeout",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 78,
+      "time_ms": 85.01,
+      "task": 0,
+      "stage": "workflow",
+      "status": "retry_exhausted",
+      "attempt": 0,
+      "detail": "attempt timeout after retry limit"
+    },
+    {
+      "seq": 79,
+      "time_ms": 85.059,
+      "task": 7,
+      "stage": "workflow",
+      "status": "running",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 80,
+      "time_ms": 85.062,
+      "task": 7,
+      "stage": "ingest",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 81,
+      "time_ms": 87.129,
+      "task": 4,
+      "stage": "retrieve",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 82,
+      "time_ms": 87.137,
+      "task": 4,
+      "stage": "analyze",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 83,
+      "time_ms": 89.685,
+      "task": 5,
+      "stage": "retrieve",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 84,
+      "time_ms": 89.69,
+      "task": 5,
+      "stage": "analyze",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 85,
+      "time_ms": 94.807,
+      "task": 6,
+      "stage": "retrieve",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 86,
+      "time_ms": 94.813,
+      "task": 6,
+      "stage": "analyze",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 87,
+      "time_ms": 97.393,
+      "task": 4,
+      "stage": "analyze",
+      "status": "retryable_error",
+      "attempt": 1,
+      "detail": "synthetic transient failure"
+    },
+    {
+      "seq": 88,
+      "time_ms": 97.414,
+      "task": 4,
+      "stage": "workflow",
+      "status": "retry_exhausted",
+      "attempt": 0,
+      "detail": "synthetic transient failure"
+    },
+    {
+      "seq": 89,
+      "time_ms": 97.448,
+      "task": 8,
+      "stage": "workflow",
+      "status": "running",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 90,
+      "time_ms": 97.452,
+      "task": 8,
+      "stage": "ingest",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 91,
+      "time_ms": 100.723,
+      "task": 7,
+      "stage": "ingest",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 92,
+      "time_ms": 100.727,
+      "task": 7,
+      "stage": "retrieve",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 93,
+      "time_ms": 102.859,
+      "task": 5,
+      "stage": "analyze",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 94,
+      "time_ms": 102.867,
+      "task": 5,
+      "stage": "validate",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 95,
+      "time_ms": 111.485,
+      "task": 8,
+      "stage": "ingest",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 96,
+      "time_ms": 111.491,
+      "task": 8,
+      "stage": "retrieve",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 97,
+      "time_ms": 113.91,
+      "task": 5,
+      "stage": "validate",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 98,
+      "time_ms": 113.914,
+      "task": 5,
+      "stage": "commit",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 99,
+      "time_ms": 115.115,
+      "task": 7,
+      "stage": "retrieve",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 100,
+      "time_ms": 115.119,
+      "task": 7,
+      "stage": "analyze",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 101,
+      "time_ms": 126.505,
+      "task": 8,
+      "stage": "retrieve",
+      "status": "retryable_error",
+      "attempt": 1,
+      "detail": "synthetic transient failure"
+    },
+    {
+      "seq": 102,
+      "time_ms": 126.538,
+      "task": 8,
+      "stage": "workflow",
+      "status": "retry_exhausted",
+      "attempt": 0,
+      "detail": "synthetic transient failure"
+    },
+    {
+      "seq": 103,
+      "time_ms": 126.58,
+      "task": 9,
+      "stage": "workflow",
+      "status": "running",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 104,
+      "time_ms": 126.584,
+      "task": 9,
+      "stage": "ingest",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 105,
+      "time_ms": 128.78,
+      "task": 5,
+      "stage": "commit",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 106,
+      "time_ms": 128.796,
+      "task": 5,
+      "stage": "workflow",
+      "status": "succeeded",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 107,
+      "time_ms": 128.828,
+      "task": 10,
+      "stage": "workflow",
+      "status": "running",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 108,
+      "time_ms": 128.83,
+      "task": 10,
+      "stage": "ingest",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 109,
+      "time_ms": 142.651,
+      "task": 9,
+      "stage": "ingest",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 110,
+      "time_ms": 142.661,
+      "task": 9,
+      "stage": "retrieve",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 111,
+      "time_ms": 142.722,
+      "task": 10,
+      "stage": "ingest",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 112,
+      "time_ms": 142.725,
+      "task": 10,
+      "stage": "retrieve",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 113,
+      "time_ms": 155.966,
+      "task": 10,
+      "stage": "retrieve",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 114,
+      "time_ms": 155.977,
+      "task": 10,
+      "stage": "analyze",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 115,
+      "time_ms": 157.974,
+      "task": 9,
+      "stage": "retrieve",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 116,
+      "time_ms": 157.985,
+      "task": 9,
+      "stage": "analyze",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 117,
+      "time_ms": 165.837,
+      "task": 6,
+      "stage": "analyze",
+      "status": "attempt_timeout",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 118,
+      "time_ms": 165.884,
+      "task": 6,
+      "stage": "workflow",
+      "status": "retry_exhausted",
+      "attempt": 0,
+      "detail": "attempt timeout after retry limit"
+    },
+    {
+      "seq": 119,
+      "time_ms": 165.937,
+      "task": 11,
+      "stage": "workflow",
+      "status": "running",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 120,
+      "time_ms": 165.94,
+      "task": 11,
+      "stage": "ingest",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 121,
+      "time_ms": 167.956,
+      "task": 9,
+      "stage": "analyze",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 122,
+      "time_ms": 167.964,
+      "task": 9,
+      "stage": "validate",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 123,
+      "time_ms": 168.915,
+      "task": 10,
+      "stage": "analyze",
+      "status": "retryable_error",
+      "attempt": 1,
+      "detail": "synthetic transient failure"
+    },
+    {
+      "seq": 124,
+      "time_ms": 168.941,
+      "task": 10,
+      "stage": "workflow",
+      "status": "retry_exhausted",
+      "attempt": 0,
+      "detail": "synthetic transient failure"
+    },
+    {
+      "seq": 125,
+      "time_ms": 168.991,
+      "task": 12,
+      "stage": "workflow",
+      "status": "running",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 126,
+      "time_ms": 168.996,
+      "task": 12,
+      "stage": "ingest",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 127,
+      "time_ms": 179.64,
+      "task": 9,
+      "stage": "validate",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 128,
+      "time_ms": 179.649,
+      "task": 9,
+      "stage": "commit",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 129,
+      "time_ms": 179.742,
+      "task": 11,
+      "stage": "ingest",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 130,
+      "time_ms": 179.75,
+      "task": 11,
+      "stage": "retrieve",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 131,
+      "time_ms": 180.544,
+      "task": 12,
+      "stage": "ingest",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 132,
+      "time_ms": 180.552,
+      "task": 12,
+      "stage": "retrieve",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 133,
+      "time_ms": 185.584,
+      "task": 7,
+      "stage": "analyze",
+      "status": "attempt_timeout",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 134,
+      "time_ms": 185.622,
+      "task": 7,
+      "stage": "workflow",
+      "status": "retry_exhausted",
+      "attempt": 0,
+      "detail": "attempt timeout after retry limit"
+    },
+    {
+      "seq": 135,
+      "time_ms": 185.667,
+      "task": 13,
+      "stage": "workflow",
+      "status": "running",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 136,
+      "time_ms": 185.671,
+      "task": 13,
+      "stage": "ingest",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 137,
+      "time_ms": 193.176,
+      "task": 11,
+      "stage": "retrieve",
+      "status": "retryable_error",
+      "attempt": 1,
+      "detail": "synthetic transient failure"
+    },
+    {
+      "seq": 138,
+      "time_ms": 193.212,
+      "task": 11,
+      "stage": "workflow",
+      "status": "retry_exhausted",
+      "attempt": 0,
+      "detail": "synthetic transient failure"
+    },
+    {
+      "seq": 139,
+      "time_ms": 193.278,
+      "task": 14,
+      "stage": "workflow",
+      "status": "running",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 140,
+      "time_ms": 193.284,
+      "task": 14,
+      "stage": "ingest",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 141,
+      "time_ms": 195.325,
+      "task": 9,
+      "stage": "commit",
+      "status": "retryable_error",
+      "attempt": 1,
+      "detail": "side effect committed; synthetic acknowledgement lost"
+    },
+    {
+      "seq": 142,
+      "time_ms": 195.346,
+      "task": 9,
+      "stage": "workflow",
+      "status": "retry_exhausted",
+      "attempt": 0,
+      "detail": "side effect committed; synthetic acknowledgement lost"
+    },
+    {
+      "seq": 143,
+      "time_ms": 195.385,
+      "task": 15,
+      "stage": "workflow",
+      "status": "running",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 144,
+      "time_ms": 195.388,
+      "task": 15,
+      "stage": "ingest",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 145,
+      "time_ms": 196.021,
+      "task": 12,
+      "stage": "retrieve",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 146,
+      "time_ms": 196.025,
+      "task": 12,
+      "stage": "analyze",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 147,
+      "time_ms": 198.059,
+      "task": 13,
+      "stage": "ingest",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 148,
+      "time_ms": 198.062,
+      "task": 13,
+      "stage": "retrieve",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 149,
+      "time_ms": 207.042,
+      "task": 14,
+      "stage": "ingest",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 150,
+      "time_ms": 207.056,
+      "task": 14,
+      "stage": "retrieve",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 151,
+      "time_ms": 207.121,
+      "task": 13,
+      "stage": "retrieve",
+      "status": "retryable_error",
+      "attempt": 1,
+      "detail": "synthetic transient failure"
+    },
+    {
+      "seq": 152,
+      "time_ms": 207.146,
+      "task": 13,
+      "stage": "workflow",
+      "status": "retry_exhausted",
+      "attempt": 0,
+      "detail": "synthetic transient failure"
+    },
+    {
+      "seq": 153,
+      "time_ms": 207.182,
+      "task": 15,
+      "stage": "ingest",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 154,
+      "time_ms": 207.185,
+      "task": 15,
+      "stage": "retrieve",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 155,
+      "time_ms": 207.236,
+      "task": 16,
+      "stage": "workflow",
+      "status": "running",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 156,
+      "time_ms": 207.239,
+      "task": 16,
+      "stage": "ingest",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 157,
+      "time_ms": 208.421,
+      "task": 12,
+      "stage": "analyze",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 158,
+      "time_ms": 208.424,
+      "task": 12,
+      "stage": "validate",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 159,
+      "time_ms": 215.99,
+      "task": 14,
+      "stage": "retrieve",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 160,
+      "time_ms": 216.003,
+      "task": 14,
+      "stage": "analyze",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 161,
+      "time_ms": 222.588,
+      "task": 16,
+      "stage": "ingest",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 162,
+      "time_ms": 222.601,
+      "task": 16,
+      "stage": "retrieve",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 163,
+      "time_ms": 224.319,
+      "task": 15,
+      "stage": "retrieve",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 164,
+      "time_ms": 224.328,
+      "task": 15,
+      "stage": "analyze",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 165,
+      "time_ms": 224.439,
+      "task": 12,
+      "stage": "validate",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 166,
+      "time_ms": 224.444,
+      "task": 12,
+      "stage": "commit",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 167,
+      "time_ms": 226.986,
+      "task": 14,
+      "stage": "analyze",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 168,
+      "time_ms": 226.995,
+      "task": 14,
+      "stage": "validate",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 169,
+      "time_ms": 238.325,
+      "task": 15,
+      "stage": "analyze",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 170,
+      "time_ms": 238.331,
+      "task": 15,
+      "stage": "validate",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 171,
+      "time_ms": 238.445,
+      "task": 12,
+      "stage": "commit",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 172,
+      "time_ms": 238.454,
+      "task": 12,
+      "stage": "workflow",
+      "status": "succeeded",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 173,
+      "time_ms": 238.482,
+      "task": 17,
+      "stage": "workflow",
+      "status": "running",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 174,
+      "time_ms": 238.486,
+      "task": 17,
+      "stage": "ingest",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 175,
+      "time_ms": 243.098,
+      "task": 14,
+      "stage": "validate",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 176,
+      "time_ms": 243.107,
+      "task": 14,
+      "stage": "commit",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 177,
+      "time_ms": 249.029,
+      "task": 15,
+      "stage": "validate",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 178,
+      "time_ms": 249.04,
+      "task": 15,
+      "stage": "commit",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 179,
+      "time_ms": 253.765,
+      "task": 17,
+      "stage": "ingest",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 180,
+      "time_ms": 253.776,
+      "task": 17,
+      "stage": "retrieve",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 181,
+      "time_ms": 257.526,
+      "task": 14,
+      "stage": "commit",
+      "status": "retryable_error",
+      "attempt": 1,
+      "detail": "side effect committed; synthetic acknowledgement lost"
+    },
+    {
+      "seq": 182,
+      "time_ms": 257.555,
+      "task": 14,
+      "stage": "workflow",
+      "status": "retry_exhausted",
+      "attempt": 0,
+      "detail": "side effect committed; synthetic acknowledgement lost"
+    },
+    {
+      "seq": 183,
+      "time_ms": 257.596,
+      "task": 18,
+      "stage": "workflow",
+      "status": "running",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 184,
+      "time_ms": 257.599,
+      "task": 18,
+      "stage": "ingest",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 185,
+      "time_ms": 258.271,
+      "task": 15,
+      "stage": "commit",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 186,
+      "time_ms": 258.285,
+      "task": 15,
+      "stage": "workflow",
+      "status": "succeeded",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 187,
+      "time_ms": 258.315,
+      "task": 19,
+      "stage": "workflow",
+      "status": "running",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 188,
+      "time_ms": 258.317,
+      "task": 19,
+      "stage": "ingest",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 189,
+      "time_ms": 263.132,
+      "task": 17,
+      "stage": "retrieve",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 190,
+      "time_ms": 263.137,
+      "task": 17,
+      "stage": "analyze",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 191,
+      "time_ms": 269.018,
+      "task": 19,
+      "stage": "ingest",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 192,
+      "time_ms": 269.024,
+      "task": 19,
+      "stage": "retrieve",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 193,
+      "time_ms": 270.783,
+      "task": 18,
+      "stage": "ingest",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 194,
+      "time_ms": 270.786,
+      "task": 18,
+      "stage": "retrieve",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 195,
+      "time_ms": 273.043,
+      "task": 17,
+      "stage": "analyze",
+      "status": "retryable_error",
+      "attempt": 1,
+      "detail": "synthetic transient failure"
+    },
+    {
+      "seq": 196,
+      "time_ms": 273.068,
+      "task": 17,
+      "stage": "workflow",
+      "status": "retry_exhausted",
+      "attempt": 0,
+      "detail": "synthetic transient failure"
+    },
+    {
+      "seq": 197,
+      "time_ms": 273.113,
+      "task": 20,
+      "stage": "workflow",
+      "status": "running",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 198,
+      "time_ms": 273.118,
+      "task": 20,
+      "stage": "ingest",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 199,
+      "time_ms": 284.113,
+      "task": 20,
+      "stage": "ingest",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 200,
+      "time_ms": 284.125,
+      "task": 20,
+      "stage": "retrieve",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 201,
+      "time_ms": 284.304,
+      "task": 19,
+      "stage": "retrieve",
+      "status": "retryable_error",
+      "attempt": 1,
+      "detail": "synthetic transient failure"
+    },
+    {
+      "seq": 202,
+      "time_ms": 284.333,
+      "task": 19,
+      "stage": "workflow",
+      "status": "retry_exhausted",
+      "attempt": 0,
+      "detail": "synthetic transient failure"
+    },
+    {
+      "seq": 203,
+      "time_ms": 284.37,
+      "task": 21,
+      "stage": "workflow",
+      "status": "running",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 204,
+      "time_ms": 284.373,
+      "task": 21,
+      "stage": "ingest",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 205,
+      "time_ms": 284.765,
+      "task": 18,
+      "stage": "retrieve",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 206,
+      "time_ms": 284.769,
+      "task": 18,
+      "stage": "analyze",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 207,
+      "time_ms": 293.299,
+      "task": 16,
+      "stage": "retrieve",
+      "status": "attempt_timeout",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 208,
+      "time_ms": 293.332,
+      "task": 16,
+      "stage": "workflow",
+      "status": "retry_exhausted",
+      "attempt": 0,
+      "detail": "attempt timeout after retry limit"
+    },
+    {
+      "seq": 209,
+      "time_ms": 293.373,
+      "task": 22,
+      "stage": "workflow",
+      "status": "running",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 210,
+      "time_ms": 293.376,
+      "task": 22,
+      "stage": "ingest",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 211,
+      "time_ms": 298.791,
+      "task": 20,
+      "stage": "retrieve",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 212,
+      "time_ms": 298.796,
+      "task": 20,
+      "stage": "analyze",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 213,
+      "time_ms": 299.47,
+      "task": 21,
+      "stage": "ingest",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 214,
+      "time_ms": 299.472,
+      "task": 21,
+      "stage": "retrieve",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 215,
+      "time_ms": 308.796,
+      "task": 22,
+      "stage": "ingest",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 216,
+      "time_ms": 308.8,
+      "task": 22,
+      "stage": "retrieve",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 217,
+      "time_ms": 311.766,
+      "task": 20,
+      "stage": "analyze",
+      "status": "permanent_error",
+      "attempt": 1,
+      "detail": "synthetic permanent error"
+    },
+    {
+      "seq": 218,
+      "time_ms": 311.779,
+      "task": 20,
+      "stage": "workflow",
+      "status": "permanent_failed",
+      "attempt": 0,
+      "detail": "synthetic permanent error"
+    },
+    {
+      "seq": 219,
+      "time_ms": 311.812,
+      "task": 23,
+      "stage": "workflow",
+      "status": "running",
+      "attempt": 0,
+      "detail": ""
+    },
+    {
+      "seq": 220,
+      "time_ms": 311.813,
+      "task": 23,
+      "stage": "ingest",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 221,
+      "time_ms": 315.314,
+      "task": 21,
+      "stage": "retrieve",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 222,
+      "time_ms": 315.315,
+      "task": 21,
+      "stage": "analyze",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 223,
+      "time_ms": 327.057,
+      "task": 23,
+      "stage": "ingest",
+      "status": "stage_succeeded",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 224,
+      "time_ms": 327.058,
+      "task": 23,
+      "stage": "retrieve",
+      "status": "attempt_started",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 225,
+      "time_ms": 342.442,
+      "task": 23,
+      "stage": "retrieve",
+      "status": "permanent_error",
+      "attempt": 1,
+      "detail": "synthetic permanent error"
+    },
+    {
+      "seq": 226,
+      "time_ms": 342.454,
+      "task": 23,
+      "stage": "workflow",
+      "status": "permanent_failed",
+      "attempt": 0,
+      "detail": "synthetic permanent error"
+    },
+    {
+      "seq": 227,
+      "time_ms": 355.847,
+      "task": 18,
+      "stage": "analyze",
+      "status": "attempt_timeout",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 228,
+      "time_ms": 355.854,
+      "task": 18,
+      "stage": "workflow",
+      "status": "retry_exhausted",
+      "attempt": 0,
+      "detail": "attempt timeout after retry limit"
+    },
+    {
+      "seq": 229,
+      "time_ms": 379.901,
+      "task": 22,
+      "stage": "retrieve",
+      "status": "attempt_timeout",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 230,
+      "time_ms": 379.911,
+      "task": 22,
+      "stage": "workflow",
+      "status": "retry_exhausted",
+      "attempt": 0,
+      "detail": "attempt timeout after retry limit"
+    },
+    {
+      "seq": 231,
+      "time_ms": 386.035,
+      "task": 21,
+      "stage": "analyze",
+      "status": "attempt_timeout",
+      "attempt": 1,
+      "detail": ""
+    },
+    {
+      "seq": 232,
+      "time_ms": 386.04,
+      "task": 21,
+      "stage": "workflow",
+      "status": "retry_exhausted",
+      "attempt": 0,
+      "detail": "attempt timeout after retry limit"
+    }
+  ],
+  "measurement_note": "real local wall clock; synthetic workloads; ledger counts cumulative within scope",
+  "repeat": 0,
+  "environment": {
+    "python": "3.14.7",
+    "os": "Darwin",
+    "os_release": "25.5.0",
+    "machine": "arm64",
+    "timestamp_utc": "2026-11-23T10:05:15.904856+00:00"
+  }
+}

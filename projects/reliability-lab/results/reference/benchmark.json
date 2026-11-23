@@ -1,0 +1,3980 @@
+{
+  "schema_version": 1,
+  "kind": "benchmark_suite",
+  "environment": {
+    "python": "3.14.7",
+    "os": "Darwin",
+    "os_release": "25.5.0",
+    "machine": "arm64",
+    "timestamp_utc": "2026-11-23T10:05:57.032368+00:00"
+  },
+  "code_sha256": {
+    "__init__.py": "af08963c549d4f215e5fcbe82b1c092be15b73c9fcd3e64c1f8bbd7e5da7436d",
+    "__main__.py": "cf7390a2508a0fcad4777a4a629fc5212ab655cb45845975995f835676a834e3",
+    "cli.py": "0fee0ef3116a130783f9227a75b43e4a8e4cd38dd6284d24d97ab5d51b173467",
+    "config.py": "e2b90fbb1f05b6024d717474a7e9c5200db9c5e3b28ea5949908a1c9b6472ce6",
+    "engine.py": "eb4cbb192e741cacb6c436c51b5b3991c72c8ec2e262d39ca09baa280ae1db50",
+    "server.py": "0ec03b5ac523c38df42c70a03b27a2c2f0c51c19f360a583e89857d42d173370",
+    "store.py": "de9aa26bc33ec9c3ca3ec553219d4482fa99b0562cb73a58f5a5a0e8ab510eaa"
+  },
+  "repeats": 5,
+  "count_per_run": 24,
+  "groups": [
+    {
+      "profile": "clean",
+      "aggregated": [
+        {
+          "policy": "baseline",
+          "runs": 5,
+          "success_rate_mean": 1.0,
+          "success_rate_min": 1.0,
+          "success_rate_max": 1.0,
+          "p95_ms_mean": 380.40853,
+          "elapsed_ms_mean": 389.93,
+          "duplicate_effects_total": 0,
+          "attempts_total": 600,
+          "attempt_timeouts_total": 0
+        },
+        {
+          "policy": "retry",
+          "runs": 5,
+          "success_rate_mean": 1.0,
+          "success_rate_min": 1.0,
+          "success_rate_max": 1.0,
+          "p95_ms_mean": 380.12926,
+          "elapsed_ms_mean": 390.7214,
+          "duplicate_effects_total": 0,
+          "attempts_total": 600,
+          "attempt_timeouts_total": 0
+        },
+        {
+          "policy": "resilient",
+          "runs": 5,
+          "success_rate_mean": 1.0,
+          "success_rate_min": 1.0,
+          "success_rate_max": 1.0,
+          "p95_ms_mean": 381.4949,
+          "elapsed_ms_mean": 390.88280000000003,
+          "duplicate_effects_total": 0,
+          "attempts_total": 600,
+          "attempt_timeouts_total": 0
+        },
+        {
+          "policy": "no_timeout",
+          "runs": 5,
+          "success_rate_mean": 1.0,
+          "success_rate_min": 1.0,
+          "success_rate_max": 1.0,
+          "p95_ms_mean": 379.53923,
+          "elapsed_ms_mean": 389.15000000000003,
+          "duplicate_effects_total": 0,
+          "attempts_total": 600,
+          "attempt_timeouts_total": 0
+        }
+      ],
+      "runs": [
+        {
+          "file": "clean-0-baseline.json",
+          "policy": "baseline",
+          "repeat": 0,
+          "manifest_hash": "58cca7c2cb633cb120fd522b525bb3aa9f2ef3fae6436997645a669f7f386c4d",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 391.472,
+            "p50_ms": 226.3955,
+            "p95_ms": 390.03299999999996,
+            "p99_ms": 391.21495,
+            "success_p95_ms": 390.03299999999996,
+            "completion_per_second": 61.30700151319774,
+            "success_per_second": 61.30700151319774,
+            "attempts": 120,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "clean-0-retry.json",
+          "policy": "retry",
+          "repeat": 0,
+          "manifest_hash": "58cca7c2cb633cb120fd522b525bb3aa9f2ef3fae6436997645a669f7f386c4d",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 396.052,
+            "p50_ms": 225.7745,
+            "p95_ms": 388.9251,
+            "p99_ms": 394.40814,
+            "success_p95_ms": 388.9251,
+            "completion_per_second": 60.59814772132593,
+            "success_per_second": 60.59814772132593,
+            "attempts": 120,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "clean-0-resilient.json",
+          "policy": "resilient",
+          "repeat": 0,
+          "manifest_hash": "58cca7c2cb633cb120fd522b525bb3aa9f2ef3fae6436997645a669f7f386c4d",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 395.694,
+            "p50_ms": 227.72,
+            "p95_ms": 390.17455,
+            "p99_ms": 394.42683999999997,
+            "success_p95_ms": 390.17455,
+            "completion_per_second": 60.65294152719122,
+            "success_per_second": 60.65294152719122,
+            "attempts": 120,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "clean-0-no_timeout.json",
+          "policy": "no_timeout",
+          "repeat": 0,
+          "manifest_hash": "58cca7c2cb633cb120fd522b525bb3aa9f2ef3fae6436997645a669f7f386c4d",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 396.053,
+            "p50_ms": 225.796,
+            "p95_ms": 388.27875,
+            "p99_ms": 394.23413999999997,
+            "success_p95_ms": 388.27875,
+            "completion_per_second": 60.597963187479955,
+            "success_per_second": 60.597963187479955,
+            "attempts": 120,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "clean-1-retry.json",
+          "policy": "retry",
+          "repeat": 1,
+          "manifest_hash": "58cca7c2cb633cb120fd522b525bb3aa9f2ef3fae6436997645a669f7f386c4d",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 391.604,
+            "p50_ms": 226.108,
+            "p95_ms": 384.06195,
+            "p99_ms": 389.73095,
+            "success_p95_ms": 384.06195,
+            "completion_per_second": 61.28640160474278,
+            "success_per_second": 61.28640160474278,
+            "attempts": 120,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "clean-1-resilient.json",
+          "policy": "resilient",
+          "repeat": 1,
+          "manifest_hash": "58cca7c2cb633cb120fd522b525bb3aa9f2ef3fae6436997645a669f7f386c4d",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 392.582,
+            "p50_ms": 226.33100000000002,
+            "p95_ms": 384.4751,
+            "p99_ms": 390.02491000000003,
+            "success_p95_ms": 384.4751,
+            "completion_per_second": 61.133738089997905,
+            "success_per_second": 61.133738089997905,
+            "attempts": 120,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "clean-1-no_timeout.json",
+          "policy": "no_timeout",
+          "repeat": 1,
+          "manifest_hash": "58cca7c2cb633cb120fd522b525bb3aa9f2ef3fae6436997645a669f7f386c4d",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 390.452,
+            "p50_ms": 225.29199999999997,
+            "p95_ms": 382.72825,
+            "p99_ms": 388.40110999999996,
+            "success_p95_ms": 382.72825,
+            "completion_per_second": 61.467203054666086,
+            "success_per_second": 61.467203054666086,
+            "attempts": 120,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "clean-1-baseline.json",
+          "policy": "baseline",
+          "repeat": 1,
+          "manifest_hash": "58cca7c2cb633cb120fd522b525bb3aa9f2ef3fae6436997645a669f7f386c4d",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 397.184,
+            "p50_ms": 225.257,
+            "p95_ms": 384.64545000000004,
+            "p99_ms": 393.86702,
+            "success_p95_ms": 384.64545000000004,
+            "completion_per_second": 60.425356612324904,
+            "success_per_second": 60.425356612324904,
+            "attempts": 120,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "clean-2-resilient.json",
+          "policy": "resilient",
+          "repeat": 2,
+          "manifest_hash": "58cca7c2cb633cb120fd522b525bb3aa9f2ef3fae6436997645a669f7f386c4d",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 374.478,
+            "p50_ms": 208.35199999999998,
+            "p95_ms": 365.9068,
+            "p99_ms": 372.51914,
+            "success_p95_ms": 365.9068,
+            "completion_per_second": 64.08925486268116,
+            "success_per_second": 64.08925486268116,
+            "attempts": 120,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "clean-2-no_timeout.json",
+          "policy": "no_timeout",
+          "repeat": 2,
+          "manifest_hash": "58cca7c2cb633cb120fd522b525bb3aa9f2ef3fae6436997645a669f7f386c4d",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 374.1,
+            "p50_ms": 207.4995,
+            "p95_ms": 365.42985,
+            "p99_ms": 372.02191,
+            "success_p95_ms": 365.42985,
+            "completion_per_second": 64.15391224775847,
+            "success_per_second": 64.15391224775847,
+            "attempts": 120,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "clean-2-baseline.json",
+          "policy": "baseline",
+          "repeat": 2,
+          "manifest_hash": "58cca7c2cb633cb120fd522b525bb3aa9f2ef3fae6436997645a669f7f386c4d",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 374.136,
+            "p50_ms": 208.852,
+            "p95_ms": 365.57255,
+            "p99_ms": 371.85872,
+            "success_p95_ms": 365.57255,
+            "completion_per_second": 64.14781090468367,
+            "success_per_second": 64.14781090468367,
+            "attempts": 120,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "clean-2-retry.json",
+          "policy": "retry",
+          "repeat": 2,
+          "manifest_hash": "58cca7c2cb633cb120fd522b525bb3aa9f2ef3fae6436997645a669f7f386c4d",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 375.516,
+            "p50_ms": 208.98149999999998,
+            "p95_ms": 366.2985,
+            "p99_ms": 373.38433999999995,
+            "success_p95_ms": 366.2985,
+            "completion_per_second": 63.912064266294614,
+            "success_per_second": 63.912064266294614,
+            "attempts": 120,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "clean-3-no_timeout.json",
+          "policy": "no_timeout",
+          "repeat": 3,
+          "manifest_hash": "58cca7c2cb633cb120fd522b525bb3aa9f2ef3fae6436997645a669f7f386c4d",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 389.653,
+            "p50_ms": 225.24,
+            "p95_ms": 381.97385,
+            "p99_ms": 387.68248,
+            "success_p95_ms": 381.97385,
+            "completion_per_second": 61.59321766365629,
+            "success_per_second": 61.59321766365629,
+            "attempts": 120,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "clean-3-baseline.json",
+          "policy": "baseline",
+          "repeat": 3,
+          "manifest_hash": "58cca7c2cb633cb120fd522b525bb3aa9f2ef3fae6436997645a669f7f386c4d",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 390.203,
+            "p50_ms": 224.29649999999998,
+            "p95_ms": 381.06635,
+            "p99_ms": 387.67629,
+            "success_p95_ms": 381.06635,
+            "completion_per_second": 61.506420506502714,
+            "success_per_second": 61.506420506502714,
+            "attempts": 120,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "clean-3-retry.json",
+          "policy": "retry",
+          "repeat": 3,
+          "manifest_hash": "58cca7c2cb633cb120fd522b525bb3aa9f2ef3fae6436997645a669f7f386c4d",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 391.707,
+            "p50_ms": 224.264,
+            "p95_ms": 380.42545,
+            "p99_ms": 388.73650999999995,
+            "success_p95_ms": 380.42545,
+            "completion_per_second": 61.270253672574576,
+            "success_per_second": 61.270253672574576,
+            "attempts": 120,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "clean-3-resilient.json",
+          "policy": "resilient",
+          "repeat": 3,
+          "manifest_hash": "58cca7c2cb633cb120fd522b525bb3aa9f2ef3fae6436997645a669f7f386c4d",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 392.18,
+            "p50_ms": 226.63400000000001,
+            "p95_ms": 383.86055,
+            "p99_ms": 389.96454,
+            "success_p95_ms": 383.86055,
+            "completion_per_second": 61.196389490965366,
+            "success_per_second": 61.196389490965366,
+            "attempts": 120,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "clean-4-baseline.json",
+          "policy": "baseline",
+          "repeat": 4,
+          "manifest_hash": "58cca7c2cb633cb120fd522b525bb3aa9f2ef3fae6436997645a669f7f386c4d",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 396.655,
+            "p50_ms": 217.9645,
+            "p95_ms": 380.7253,
+            "p99_ms": 392.82727,
+            "success_p95_ms": 380.7253,
+            "completion_per_second": 60.505994082393585,
+            "success_per_second": 60.505994082393585,
+            "attempts": 120,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "clean-4-retry.json",
+          "policy": "retry",
+          "repeat": 4,
+          "manifest_hash": "58cca7c2cb633cb120fd522b525bb3aa9f2ef3fae6436997645a669f7f386c4d",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 398.728,
+            "p50_ms": 218.154,
+            "p95_ms": 380.9353,
+            "p99_ms": 394.48938,
+            "success_p95_ms": 380.9353,
+            "completion_per_second": 60.19133950882961,
+            "success_per_second": 60.19133950882961,
+            "attempts": 120,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "clean-4-resilient.json",
+          "policy": "resilient",
+          "repeat": 4,
+          "manifest_hash": "58cca7c2cb633cb120fd522b525bb3aa9f2ef3fae6436997645a669f7f386c4d",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 399.48,
+            "p50_ms": 218.6765,
+            "p95_ms": 383.0575,
+            "p99_ms": 395.35339,
+            "success_p95_ms": 383.0575,
+            "completion_per_second": 60.078101511195136,
+            "success_per_second": 60.078101511195136,
+            "attempts": 120,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "clean-4-no_timeout.json",
+          "policy": "no_timeout",
+          "repeat": 4,
+          "manifest_hash": "58cca7c2cb633cb120fd522b525bb3aa9f2ef3fae6436997645a669f7f386c4d",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 395.492,
+            "p50_ms": 216.207,
+            "p95_ms": 379.28544999999997,
+            "p99_ms": 391.44883999999996,
+            "success_p95_ms": 379.28544999999997,
+            "completion_per_second": 60.68384368477327,
+            "success_per_second": 60.68384368477327,
+            "attempts": 120,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        }
+      ]
+    },
+    {
+      "profile": "transient",
+      "aggregated": [
+        {
+          "policy": "baseline",
+          "runs": 5,
+          "success_rate_mean": 0.2916666666666667,
+          "success_rate_min": 0.16666666666666666,
+          "success_rate_max": 0.375,
+          "p95_ms_mean": 281.35272,
+          "elapsed_ms_mean": 294.0,
+          "duplicate_effects_total": 0,
+          "attempts_total": 437,
+          "attempt_timeouts_total": 0
+        },
+        {
+          "policy": "retry",
+          "runs": 5,
+          "success_rate_mean": 1.0,
+          "success_rate_min": 1.0,
+          "success_rate_max": 1.0,
+          "p95_ms_mean": 518.48754,
+          "elapsed_ms_mean": 554.9508,
+          "duplicate_effects_total": 0,
+          "attempts_total": 726,
+          "attempt_timeouts_total": 0
+        },
+        {
+          "policy": "resilient",
+          "runs": 5,
+          "success_rate_mean": 1.0,
+          "success_rate_min": 1.0,
+          "success_rate_max": 1.0,
+          "p95_ms_mean": 519.6398599999999,
+          "elapsed_ms_mean": 556.7846,
+          "duplicate_effects_total": 0,
+          "attempts_total": 726,
+          "attempt_timeouts_total": 0
+        },
+        {
+          "policy": "no_timeout",
+          "runs": 5,
+          "success_rate_mean": 1.0,
+          "success_rate_min": 1.0,
+          "success_rate_max": 1.0,
+          "p95_ms_mean": 516.7157399999999,
+          "elapsed_ms_mean": 555.384,
+          "duplicate_effects_total": 0,
+          "attempts_total": 726,
+          "attempt_timeouts_total": 0
+        }
+      ],
+      "runs": [
+        {
+          "file": "transient-0-baseline.json",
+          "policy": "baseline",
+          "repeat": 0,
+          "manifest_hash": "7c5ad05693e275dea19b11ac69db591e48c4e054b50e189fe77984d615158330",
+          "summary": {
+            "count": 24,
+            "succeeded": 8,
+            "success_rate": 0.3333333333333333,
+            "elapsed_ms": 297.67,
+            "p50_ms": 159.9105,
+            "p95_ms": 278.98494999999997,
+            "p99_ms": 293.38668,
+            "success_p95_ms": 291.3846,
+            "completion_per_second": 80.62623078661821,
+            "success_per_second": 26.87541026220607,
+            "attempts": 85,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "retry_exhausted": 16,
+              "succeeded": 8
+            },
+            "side_effects": 8,
+            "committed_tasks": 8,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "transient-0-retry.json",
+          "policy": "retry",
+          "repeat": 0,
+          "manifest_hash": "7c5ad05693e275dea19b11ac69db591e48c4e054b50e189fe77984d615158330",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 536.073,
+            "p50_ms": 279.0425,
+            "p95_ms": 532.10695,
+            "p99_ms": 535.04923,
+            "success_p95_ms": 532.10695,
+            "completion_per_second": 44.77004282388836,
+            "success_per_second": 44.77004282388836,
+            "attempts": 144,
+            "checkpoint_hits": 0,
+            "retries": 24,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "transient-0-resilient.json",
+          "policy": "resilient",
+          "repeat": 0,
+          "manifest_hash": "7c5ad05693e275dea19b11ac69db591e48c4e054b50e189fe77984d615158330",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 539.125,
+            "p50_ms": 282.4905,
+            "p95_ms": 535.83375,
+            "p99_ms": 538.2164700000001,
+            "success_p95_ms": 535.83375,
+            "completion_per_second": 44.516615612986655,
+            "success_per_second": 44.516615612986655,
+            "attempts": 144,
+            "checkpoint_hits": 0,
+            "retries": 24,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "transient-0-no_timeout.json",
+          "policy": "no_timeout",
+          "repeat": 0,
+          "manifest_hash": "7c5ad05693e275dea19b11ac69db591e48c4e054b50e189fe77984d615158330",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 539.523,
+            "p50_ms": 279.812,
+            "p95_ms": 527.7475999999999,
+            "p99_ms": 536.5310499999999,
+            "success_p95_ms": 527.7475999999999,
+            "completion_per_second": 44.483748711368314,
+            "success_per_second": 44.483748711368314,
+            "attempts": 144,
+            "checkpoint_hits": 0,
+            "retries": 24,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "transient-1-retry.json",
+          "policy": "retry",
+          "repeat": 1,
+          "manifest_hash": "b98844c4456facb94d26d4fdc4fde4de68684fdf73a4dfcb0217869640173e0f",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 562.265,
+            "p50_ms": 298.0235,
+            "p95_ms": 527.6365999999999,
+            "p99_ms": 555.3275299999999,
+            "success_p95_ms": 527.6365999999999,
+            "completion_per_second": 42.68450564184057,
+            "success_per_second": 42.68450564184057,
+            "attempts": 144,
+            "checkpoint_hits": 0,
+            "retries": 24,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "transient-1-resilient.json",
+          "policy": "resilient",
+          "repeat": 1,
+          "manifest_hash": "b98844c4456facb94d26d4fdc4fde4de68684fdf73a4dfcb0217869640173e0f",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 564.6,
+            "p50_ms": 295.35,
+            "p95_ms": 528.3103999999998,
+            "p99_ms": 557.49836,
+            "success_p95_ms": 528.3103999999998,
+            "completion_per_second": 42.507932649305054,
+            "success_per_second": 42.507932649305054,
+            "attempts": 144,
+            "checkpoint_hits": 0,
+            "retries": 24,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "transient-1-no_timeout.json",
+          "policy": "no_timeout",
+          "repeat": 1,
+          "manifest_hash": "b98844c4456facb94d26d4fdc4fde4de68684fdf73a4dfcb0217869640173e0f",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 564.717,
+            "p50_ms": 295.8645,
+            "p95_ms": 527.7534999999999,
+            "p99_ms": 557.31391,
+            "success_p95_ms": 527.7534999999999,
+            "completion_per_second": 42.49915387943641,
+            "success_per_second": 42.49915387943641,
+            "attempts": 144,
+            "checkpoint_hits": 0,
+            "retries": 24,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "transient-1-baseline.json",
+          "policy": "baseline",
+          "repeat": 1,
+          "manifest_hash": "b98844c4456facb94d26d4fdc4fde4de68684fdf73a4dfcb0217869640173e0f",
+          "summary": {
+            "count": 24,
+            "succeeded": 7,
+            "success_rate": 0.2916666666666667,
+            "elapsed_ms": 284.871,
+            "p50_ms": 154.316,
+            "p95_ms": 281.81519999999995,
+            "p99_ms": 283.63223999999997,
+            "success_p95_ms": 265.4825,
+            "completion_per_second": 84.24878335346705,
+            "success_per_second": 24.57256181142789,
+            "attempts": 87,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "retry_exhausted": 17,
+              "succeeded": 7
+            },
+            "side_effects": 7,
+            "committed_tasks": 7,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "transient-2-resilient.json",
+          "policy": "resilient",
+          "repeat": 2,
+          "manifest_hash": "ce9ab7baf996157f7959ca648326da19b50cd55f105633fa2a39436e1bf3d7d1",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 529.11,
+            "p50_ms": 315.9085,
+            "p95_ms": 512.06765,
+            "p99_ms": 525.5422500000001,
+            "success_p95_ms": 512.06765,
+            "completion_per_second": 45.35917373902596,
+            "success_per_second": 45.35917373902596,
+            "attempts": 146,
+            "checkpoint_hits": 0,
+            "retries": 26,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "transient-2-no_timeout.json",
+          "policy": "no_timeout",
+          "repeat": 2,
+          "manifest_hash": "ce9ab7baf996157f7959ca648326da19b50cd55f105633fa2a39436e1bf3d7d1",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 526.712,
+            "p50_ms": 312.039,
+            "p95_ms": 508.18619999999993,
+            "p99_ms": 522.81224,
+            "success_p95_ms": 508.18619999999993,
+            "completion_per_second": 45.56569811042756,
+            "success_per_second": 45.56569811042756,
+            "attempts": 146,
+            "checkpoint_hits": 0,
+            "retries": 26,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "transient-2-baseline.json",
+          "policy": "baseline",
+          "repeat": 2,
+          "manifest_hash": "ce9ab7baf996157f7959ca648326da19b50cd55f105633fa2a39436e1bf3d7d1",
+          "summary": {
+            "count": 24,
+            "succeeded": 9,
+            "success_rate": 0.375,
+            "elapsed_ms": 287.492,
+            "p50_ms": 156.15449999999998,
+            "p95_ms": 278.56395000000003,
+            "p99_ms": 284.9881,
+            "success_p95_ms": 283.572,
+            "completion_per_second": 83.48062017146214,
+            "success_per_second": 31.305232564298304,
+            "attempts": 92,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "retry_exhausted": 15,
+              "succeeded": 9
+            },
+            "side_effects": 9,
+            "committed_tasks": 9,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "transient-2-retry.json",
+          "policy": "retry",
+          "repeat": 2,
+          "manifest_hash": "ce9ab7baf996157f7959ca648326da19b50cd55f105633fa2a39436e1bf3d7d1",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 527.016,
+            "p50_ms": 313.2255,
+            "p95_ms": 511.33014999999995,
+            "p99_ms": 523.82687,
+            "success_p95_ms": 511.33014999999995,
+            "completion_per_second": 45.53940004792435,
+            "success_per_second": 45.53940004792435,
+            "attempts": 146,
+            "checkpoint_hits": 0,
+            "retries": 26,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "transient-3-no_timeout.json",
+          "policy": "no_timeout",
+          "repeat": 3,
+          "manifest_hash": "717d0206526930e7898f03f4fee1ba1ebaae6f93d8cd34a71d58362863af30e3",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 563.111,
+            "p50_ms": 298.9275,
+            "p95_ms": 503.22939999999994,
+            "p99_ms": 549.48513,
+            "success_p95_ms": 503.22939999999994,
+            "completion_per_second": 42.620396725184534,
+            "success_per_second": 42.620396725184534,
+            "attempts": 146,
+            "checkpoint_hits": 0,
+            "retries": 26,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "transient-3-baseline.json",
+          "policy": "baseline",
+          "repeat": 3,
+          "manifest_hash": "717d0206526930e7898f03f4fee1ba1ebaae6f93d8cd34a71d58362863af30e3",
+          "summary": {
+            "count": 24,
+            "succeeded": 4,
+            "success_rate": 0.16666666666666666,
+            "elapsed_ms": 310.353,
+            "p50_ms": 163.59449999999998,
+            "p95_ms": 292.88084999999995,
+            "p99_ms": 306.92631,
+            "success_p95_ms": 243.3055,
+            "completion_per_second": 77.33128633829166,
+            "success_per_second": 12.88854772304861,
+            "attempts": 88,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "retry_exhausted": 20,
+              "succeeded": 4
+            },
+            "side_effects": 4,
+            "committed_tasks": 4,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "transient-3-retry.json",
+          "policy": "retry",
+          "repeat": 3,
+          "manifest_hash": "717d0206526930e7898f03f4fee1ba1ebaae6f93d8cd34a71d58362863af30e3",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 564.897,
+            "p50_ms": 297.9125,
+            "p95_ms": 504.53889999999996,
+            "p99_ms": 550.9921400000001,
+            "success_p95_ms": 504.53889999999996,
+            "completion_per_second": 42.4856275171504,
+            "success_per_second": 42.4856275171504,
+            "attempts": 146,
+            "checkpoint_hits": 0,
+            "retries": 26,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "transient-3-resilient.json",
+          "policy": "resilient",
+          "repeat": 3,
+          "manifest_hash": "717d0206526930e7898f03f4fee1ba1ebaae6f93d8cd34a71d58362863af30e3",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 567.952,
+            "p50_ms": 299.4895,
+            "p95_ms": 503.7559499999999,
+            "p99_ms": 553.26397,
+            "success_p95_ms": 503.7559499999999,
+            "completion_per_second": 42.257126339421106,
+            "success_per_second": 42.257126339421106,
+            "attempts": 146,
+            "checkpoint_hits": 0,
+            "retries": 26,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "transient-4-baseline.json",
+          "policy": "baseline",
+          "repeat": 4,
+          "manifest_hash": "95218deadfc00b3b4dd71c4157612feedf9d49fe10ac24052960e6cff396c900",
+          "summary": {
+            "count": 24,
+            "succeeded": 7,
+            "success_rate": 0.2916666666666667,
+            "elapsed_ms": 289.614,
+            "p50_ms": 160.6205,
+            "p95_ms": 274.51865000000004,
+            "p99_ms": 285.87678,
+            "success_p95_ms": 256.1996,
+            "completion_per_second": 82.86896994742122,
+            "success_per_second": 24.170116234664523,
+            "attempts": 85,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "retry_exhausted": 17,
+              "succeeded": 7
+            },
+            "side_effects": 7,
+            "committed_tasks": 7,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "transient-4-retry.json",
+          "policy": "retry",
+          "repeat": 4,
+          "manifest_hash": "95218deadfc00b3b4dd71c4157612feedf9d49fe10ac24052960e6cff396c900",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 584.503,
+            "p50_ms": 287.775,
+            "p95_ms": 516.8250999999999,
+            "p99_ms": 569.6392999999999,
+            "success_p95_ms": 516.8250999999999,
+            "completion_per_second": 41.060527891805215,
+            "success_per_second": 41.060527891805215,
+            "attempts": 146,
+            "checkpoint_hits": 0,
+            "retries": 26,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "transient-4-resilient.json",
+          "policy": "resilient",
+          "repeat": 4,
+          "manifest_hash": "95218deadfc00b3b4dd71c4157612feedf9d49fe10ac24052960e6cff396c900",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 583.136,
+            "p50_ms": 289.151,
+            "p95_ms": 518.2315499999999,
+            "p99_ms": 568.60176,
+            "success_p95_ms": 518.2315499999999,
+            "completion_per_second": 41.1568004858309,
+            "success_per_second": 41.1568004858309,
+            "attempts": 146,
+            "checkpoint_hits": 0,
+            "retries": 26,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "transient-4-no_timeout.json",
+          "policy": "no_timeout",
+          "repeat": 4,
+          "manifest_hash": "95218deadfc00b3b4dd71c4157612feedf9d49fe10ac24052960e6cff396c900",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 582.857,
+            "p50_ms": 288.759,
+            "p95_ms": 516.6619999999999,
+            "p99_ms": 568.1149800000001,
+            "success_p95_ms": 516.6619999999999,
+            "completion_per_second": 41.17646885803782,
+            "success_per_second": 41.17646885803782,
+            "attempts": 146,
+            "checkpoint_hits": 0,
+            "retries": 26,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        }
+      ]
+    },
+    {
+      "profile": "mixed",
+      "aggregated": [
+        {
+          "policy": "baseline",
+          "runs": 5,
+          "success_rate_mean": 0.35000000000000003,
+          "success_rate_min": 0.25,
+          "success_rate_max": 0.4166666666666667,
+          "p95_ms_mean": 341.51752999999997,
+          "elapsed_ms_mean": 370.1768,
+          "duplicate_effects_total": 0,
+          "attempts_total": 432,
+          "attempt_timeouts_total": 23
+        },
+        {
+          "policy": "retry",
+          "runs": 5,
+          "success_rate_mean": 0.8833333333333333,
+          "success_rate_min": 0.8333333333333334,
+          "success_rate_max": 0.9166666666666666,
+          "p95_ms_mean": 517.4629399999999,
+          "elapsed_ms_mean": 598.4274,
+          "duplicate_effects_total": 22,
+          "attempts_total": 661,
+          "attempt_timeouts_total": 25
+        },
+        {
+          "policy": "resilient",
+          "runs": 5,
+          "success_rate_mean": 0.8833333333333333,
+          "success_rate_min": 0.8333333333333334,
+          "success_rate_max": 0.9166666666666666,
+          "p95_ms_mean": 518.31869,
+          "elapsed_ms_mean": 600.3728,
+          "duplicate_effects_total": 0,
+          "attempts_total": 661,
+          "attempt_timeouts_total": 25
+        },
+        {
+          "policy": "no_timeout",
+          "runs": 5,
+          "success_rate_mean": 0.8833333333333333,
+          "success_rate_min": 0.8333333333333334,
+          "success_rate_max": 0.9166666666666666,
+          "p95_ms_mean": 579.81395,
+          "elapsed_ms_mean": 688.7212000000001,
+          "duplicate_effects_total": 22,
+          "attempts_total": 636,
+          "attempt_timeouts_total": 0
+        }
+      ],
+      "runs": [
+        {
+          "file": "mixed-0-baseline.json",
+          "policy": "baseline",
+          "repeat": 0,
+          "manifest_hash": "c26db639abce9f35e76a0a0f32e8a6ff86a3546f7be366790aa4313c7b2e9bc8",
+          "summary": {
+            "count": 24,
+            "succeeded": 6,
+            "success_rate": 0.25,
+            "elapsed_ms": 386.1,
+            "p50_ms": 200.9255,
+            "p95_ms": 375.93754999999993,
+            "p99_ms": 384.26641,
+            "success_p95_ms": 252.98975,
+            "completion_per_second": 62.15998168039489,
+            "success_per_second": 15.539995420098723,
+            "attempts": 80,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 7,
+            "peak_active": 4,
+            "status_counts": {
+              "retry_exhausted": 16,
+              "succeeded": 6,
+              "permanent_failed": 2
+            },
+            "side_effects": 8,
+            "committed_tasks": 8,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "mixed-0-retry.json",
+          "policy": "retry",
+          "repeat": 0,
+          "manifest_hash": "c26db639abce9f35e76a0a0f32e8a6ff86a3546f7be366790aa4313c7b2e9bc8",
+          "summary": {
+            "count": 24,
+            "succeeded": 22,
+            "success_rate": 0.9166666666666666,
+            "elapsed_ms": 625.668,
+            "p50_ms": 323.50649999999996,
+            "p95_ms": 603.5578999999999,
+            "p99_ms": 622.39321,
+            "success_p95_ms": 608.8016499999999,
+            "completion_per_second": 38.35898657006674,
+            "success_per_second": 35.16240435589451,
+            "attempts": 135,
+            "checkpoint_hits": 0,
+            "retries": 20,
+            "attempt_timeouts": 7,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 22,
+              "permanent_failed": 2
+            },
+            "side_effects": 27,
+            "committed_tasks": 22,
+            "duplicate_effects": 5
+          }
+        },
+        {
+          "file": "mixed-0-resilient.json",
+          "policy": "resilient",
+          "repeat": 0,
+          "manifest_hash": "c26db639abce9f35e76a0a0f32e8a6ff86a3546f7be366790aa4313c7b2e9bc8",
+          "summary": {
+            "count": 24,
+            "succeeded": 22,
+            "success_rate": 0.9166666666666666,
+            "elapsed_ms": 625.461,
+            "p50_ms": 323.913,
+            "p95_ms": 603.8508499999999,
+            "p99_ms": 621.99575,
+            "success_p95_ms": 608.5202999999999,
+            "completion_per_second": 38.37170720540843,
+            "success_per_second": 35.17406493829106,
+            "attempts": 135,
+            "checkpoint_hits": 0,
+            "retries": 20,
+            "attempt_timeouts": 7,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 22,
+              "permanent_failed": 2
+            },
+            "side_effects": 22,
+            "committed_tasks": 22,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "mixed-0-no_timeout.json",
+          "policy": "no_timeout",
+          "repeat": 0,
+          "manifest_hash": "c26db639abce9f35e76a0a0f32e8a6ff86a3546f7be366790aa4313c7b2e9bc8",
+          "summary": {
+            "count": 24,
+            "succeeded": 22,
+            "success_rate": 0.9166666666666666,
+            "elapsed_ms": 740.451,
+            "p50_ms": 362.754,
+            "p95_ms": 712.7426499999998,
+            "p99_ms": 736.96474,
+            "success_p95_ms": 722.3395499999999,
+            "completion_per_second": 32.41266914099094,
+            "success_per_second": 29.711613379241694,
+            "attempts": 128,
+            "checkpoint_hits": 0,
+            "retries": 13,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 22,
+              "permanent_failed": 2
+            },
+            "side_effects": 27,
+            "committed_tasks": 22,
+            "duplicate_effects": 5
+          }
+        },
+        {
+          "file": "mixed-1-retry.json",
+          "policy": "retry",
+          "repeat": 1,
+          "manifest_hash": "1d76f8eccfc947b5403f44d43dfb45826aa4dc4fb88a1ccfa0f0ea4f964fa08e",
+          "summary": {
+            "count": 24,
+            "succeeded": 20,
+            "success_rate": 0.8333333333333334,
+            "elapsed_ms": 598.994,
+            "p50_ms": 306.744,
+            "p95_ms": 517.8066999999999,
+            "p99_ms": 581.59266,
+            "success_p95_ms": 485.86500000000007,
+            "completion_per_second": 40.067196007332754,
+            "success_per_second": 33.389330006110626,
+            "attempts": 130,
+            "checkpoint_hits": 0,
+            "retries": 15,
+            "attempt_timeouts": 5,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 20,
+              "permanent_failed": 4
+            },
+            "side_effects": 23,
+            "committed_tasks": 20,
+            "duplicate_effects": 3
+          }
+        },
+        {
+          "file": "mixed-1-resilient.json",
+          "policy": "resilient",
+          "repeat": 1,
+          "manifest_hash": "1d76f8eccfc947b5403f44d43dfb45826aa4dc4fb88a1ccfa0f0ea4f964fa08e",
+          "summary": {
+            "count": 24,
+            "succeeded": 20,
+            "success_rate": 0.8333333333333334,
+            "elapsed_ms": 602.623,
+            "p50_ms": 308.8835,
+            "p95_ms": 518.6809499999999,
+            "p99_ms": 584.1960799999999,
+            "success_p95_ms": 489.62565000000006,
+            "completion_per_second": 39.825875212494374,
+            "success_per_second": 33.18822934374531,
+            "attempts": 130,
+            "checkpoint_hits": 0,
+            "retries": 15,
+            "attempt_timeouts": 5,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 20,
+              "permanent_failed": 4
+            },
+            "side_effects": 20,
+            "committed_tasks": 20,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "mixed-1-no_timeout.json",
+          "policy": "no_timeout",
+          "repeat": 1,
+          "manifest_hash": "1d76f8eccfc947b5403f44d43dfb45826aa4dc4fb88a1ccfa0f0ea4f964fa08e",
+          "summary": {
+            "count": 24,
+            "succeeded": 20,
+            "success_rate": 0.8333333333333334,
+            "elapsed_ms": 701.288,
+            "p50_ms": 345.03049999999996,
+            "p95_ms": 561.3584,
+            "p99_ms": 669.18013,
+            "success_p95_ms": 558.1376500000001,
+            "completion_per_second": 34.222726132498295,
+            "success_per_second": 28.518938443748578,
+            "attempts": 125,
+            "checkpoint_hits": 0,
+            "retries": 10,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 20,
+              "permanent_failed": 4
+            },
+            "side_effects": 23,
+            "committed_tasks": 20,
+            "duplicate_effects": 3
+          }
+        },
+        {
+          "file": "mixed-1-baseline.json",
+          "policy": "baseline",
+          "repeat": 1,
+          "manifest_hash": "1d76f8eccfc947b5403f44d43dfb45826aa4dc4fb88a1ccfa0f0ea4f964fa08e",
+          "summary": {
+            "count": 24,
+            "succeeded": 10,
+            "success_rate": 0.4166666666666667,
+            "elapsed_ms": 412.297,
+            "p50_ms": 210.8665,
+            "p95_ms": 347.39685,
+            "p99_ms": 396.83741999999995,
+            "success_p95_ms": 333.18934999999993,
+            "completion_per_second": 58.21041755660163,
+            "success_per_second": 24.254340648584012,
+            "attempts": 90,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 5,
+            "peak_active": 4,
+            "status_counts": {
+              "retry_exhausted": 12,
+              "succeeded": 10,
+              "permanent_failed": 2
+            },
+            "side_effects": 11,
+            "committed_tasks": 11,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "mixed-2-resilient.json",
+          "policy": "resilient",
+          "repeat": 2,
+          "manifest_hash": "8546961bb767624fa1578ee30c595b50274fc657f23f4166e4b66888520e55cc",
+          "summary": {
+            "count": 24,
+            "succeeded": 21,
+            "success_rate": 0.875,
+            "elapsed_ms": 567.903,
+            "p50_ms": 290.26750000000004,
+            "p95_ms": 454.714,
+            "p99_ms": 541.7512199999999,
+            "success_p95_ms": 455.368,
+            "completion_per_second": 42.26075060020234,
+            "success_per_second": 36.97815677517705,
+            "attempts": 131,
+            "checkpoint_hits": 0,
+            "retries": 18,
+            "attempt_timeouts": 3,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 21,
+              "permanent_failed": 3
+            },
+            "side_effects": 21,
+            "committed_tasks": 21,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "mixed-2-no_timeout.json",
+          "policy": "no_timeout",
+          "repeat": 2,
+          "manifest_hash": "8546961bb767624fa1578ee30c595b50274fc657f23f4166e4b66888520e55cc",
+          "summary": {
+            "count": 24,
+            "succeeded": 21,
+            "success_rate": 0.875,
+            "elapsed_ms": 644.908,
+            "p50_ms": 326.79949999999997,
+            "p95_ms": 482.19169999999997,
+            "p99_ms": 607.57161,
+            "success_p95_ms": 484.223,
+            "completion_per_second": 37.2146248714721,
+            "success_per_second": 32.562796762538085,
+            "attempts": 128,
+            "checkpoint_hits": 0,
+            "retries": 15,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 21,
+              "permanent_failed": 3
+            },
+            "side_effects": 26,
+            "committed_tasks": 21,
+            "duplicate_effects": 5
+          }
+        },
+        {
+          "file": "mixed-2-baseline.json",
+          "policy": "baseline",
+          "repeat": 2,
+          "manifest_hash": "8546961bb767624fa1578ee30c595b50274fc657f23f4166e4b66888520e55cc",
+          "summary": {
+            "count": 24,
+            "succeeded": 10,
+            "success_rate": 0.4166666666666667,
+            "elapsed_ms": 351.379,
+            "p50_ms": 174.8105,
+            "p95_ms": 306.52919999999995,
+            "p99_ms": 340.76518,
+            "success_p95_ms": 305.2536,
+            "completion_per_second": 68.30227695709698,
+            "success_per_second": 28.459282065457074,
+            "attempts": 89,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 3,
+            "peak_active": 4,
+            "status_counts": {
+              "retry_exhausted": 11,
+              "succeeded": 10,
+              "permanent_failed": 3
+            },
+            "side_effects": 12,
+            "committed_tasks": 12,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "mixed-2-retry.json",
+          "policy": "retry",
+          "repeat": 2,
+          "manifest_hash": "8546961bb767624fa1578ee30c595b50274fc657f23f4166e4b66888520e55cc",
+          "summary": {
+            "count": 24,
+            "succeeded": 21,
+            "success_rate": 0.875,
+            "elapsed_ms": 565.906,
+            "p50_ms": 289.128,
+            "p95_ms": 453.52079999999995,
+            "p99_ms": 539.9238399999999,
+            "success_p95_ms": 454.614,
+            "completion_per_second": 42.409835827214415,
+            "success_per_second": 37.108606348812614,
+            "attempts": 131,
+            "checkpoint_hits": 0,
+            "retries": 18,
+            "attempt_timeouts": 3,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 21,
+              "permanent_failed": 3
+            },
+            "side_effects": 26,
+            "committed_tasks": 21,
+            "duplicate_effects": 5
+          }
+        },
+        {
+          "file": "mixed-3-no_timeout.json",
+          "policy": "no_timeout",
+          "repeat": 3,
+          "manifest_hash": "df480bbb68f66098f7611335d7e74a2d4893157d2d45862db9f162532fbda8d3",
+          "summary": {
+            "count": 24,
+            "succeeded": 22,
+            "success_rate": 0.9166666666666666,
+            "elapsed_ms": 610.994,
+            "p50_ms": 326.435,
+            "p95_ms": 567.5329499999999,
+            "p99_ms": 601.14941,
+            "success_p95_ms": 568.77765,
+            "completion_per_second": 39.280284316551516,
+            "success_per_second": 36.00692729017222,
+            "attempts": 131,
+            "checkpoint_hits": 0,
+            "retries": 15,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 22,
+              "permanent_failed": 2
+            },
+            "side_effects": 29,
+            "committed_tasks": 22,
+            "duplicate_effects": 7
+          }
+        },
+        {
+          "file": "mixed-3-baseline.json",
+          "policy": "baseline",
+          "repeat": 3,
+          "manifest_hash": "df480bbb68f66098f7611335d7e74a2d4893157d2d45862db9f162532fbda8d3",
+          "summary": {
+            "count": 24,
+            "succeeded": 7,
+            "success_rate": 0.2916666666666667,
+            "elapsed_ms": 371.547,
+            "p50_ms": 219.82049999999998,
+            "p95_ms": 353.5532999999999,
+            "p99_ms": 367.95221,
+            "success_p95_ms": 279.03959999999995,
+            "completion_per_second": 64.59486126895864,
+            "success_per_second": 18.840167870112936,
+            "attempts": 90,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 4,
+            "peak_active": 4,
+            "status_counts": {
+              "retry_exhausted": 15,
+              "permanent_failed": 2,
+              "succeeded": 7
+            },
+            "side_effects": 12,
+            "committed_tasks": 12,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "mixed-3-retry.json",
+          "policy": "retry",
+          "repeat": 3,
+          "manifest_hash": "df480bbb68f66098f7611335d7e74a2d4893157d2d45862db9f162532fbda8d3",
+          "summary": {
+            "count": 24,
+            "succeeded": 22,
+            "success_rate": 0.9166666666666666,
+            "elapsed_ms": 571.59,
+            "p50_ms": 296.014,
+            "p95_ms": 507.08115,
+            "p99_ms": 556.6485,
+            "success_p95_ms": 507.40105,
+            "completion_per_second": 41.98814144185123,
+            "success_per_second": 38.4891296550303,
+            "attempts": 135,
+            "checkpoint_hits": 0,
+            "retries": 19,
+            "attempt_timeouts": 4,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 22,
+              "permanent_failed": 2
+            },
+            "side_effects": 29,
+            "committed_tasks": 22,
+            "duplicate_effects": 7
+          }
+        },
+        {
+          "file": "mixed-3-resilient.json",
+          "policy": "resilient",
+          "repeat": 3,
+          "manifest_hash": "df480bbb68f66098f7611335d7e74a2d4893157d2d45862db9f162532fbda8d3",
+          "summary": {
+            "count": 24,
+            "succeeded": 22,
+            "success_rate": 0.9166666666666666,
+            "elapsed_ms": 570.185,
+            "p50_ms": 295.4885,
+            "p95_ms": 507.62444999999997,
+            "p99_ms": 555.70119,
+            "success_p95_ms": 508.03015,
+            "completion_per_second": 42.09161414930135,
+            "success_per_second": 38.58397963685957,
+            "attempts": 135,
+            "checkpoint_hits": 0,
+            "retries": 19,
+            "attempt_timeouts": 4,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 22,
+              "permanent_failed": 2
+            },
+            "side_effects": 22,
+            "committed_tasks": 22,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "mixed-4-baseline.json",
+          "policy": "baseline",
+          "repeat": 4,
+          "manifest_hash": "f7b2e3093d04fd48a307fad49eb78892dbd052a0346f07d11424c1e48fd30011",
+          "summary": {
+            "count": 24,
+            "succeeded": 9,
+            "success_rate": 0.375,
+            "elapsed_ms": 329.561,
+            "p50_ms": 179.8525,
+            "p95_ms": 324.17075,
+            "p99_ms": 328.4139,
+            "success_p95_ms": 279.0254,
+            "completion_per_second": 72.82419686210609,
+            "success_per_second": 27.309073823289783,
+            "attempts": 83,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 4,
+            "peak_active": 4,
+            "status_counts": {
+              "retry_exhausted": 13,
+              "succeeded": 9,
+              "permanent_failed": 2
+            },
+            "side_effects": 10,
+            "committed_tasks": 10,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "mixed-4-retry.json",
+          "policy": "retry",
+          "repeat": 4,
+          "manifest_hash": "f7b2e3093d04fd48a307fad49eb78892dbd052a0346f07d11424c1e48fd30011",
+          "summary": {
+            "count": 24,
+            "succeeded": 21,
+            "success_rate": 0.875,
+            "elapsed_ms": 629.979,
+            "p50_ms": 255.595,
+            "p95_ms": 505.34815000000003,
+            "p99_ms": 601.31867,
+            "success_p95_ms": 506.785,
+            "completion_per_second": 38.09650294058605,
+            "success_per_second": 33.33444007301279,
+            "attempts": 130,
+            "checkpoint_hits": 0,
+            "retries": 17,
+            "attempt_timeouts": 6,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 21,
+              "permanent_failed": 3
+            },
+            "side_effects": 23,
+            "committed_tasks": 21,
+            "duplicate_effects": 2
+          }
+        },
+        {
+          "file": "mixed-4-resilient.json",
+          "policy": "resilient",
+          "repeat": 4,
+          "manifest_hash": "f7b2e3093d04fd48a307fad49eb78892dbd052a0346f07d11424c1e48fd30011",
+          "summary": {
+            "count": 24,
+            "succeeded": 21,
+            "success_rate": 0.875,
+            "elapsed_ms": 635.692,
+            "p50_ms": 257.141,
+            "p95_ms": 506.72319999999996,
+            "p99_ms": 606.1286,
+            "success_p95_ms": 508.816,
+            "completion_per_second": 37.75415969474224,
+            "success_per_second": 33.03488973289946,
+            "attempts": 130,
+            "checkpoint_hits": 0,
+            "retries": 17,
+            "attempt_timeouts": 6,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 21,
+              "permanent_failed": 3
+            },
+            "side_effects": 21,
+            "committed_tasks": 21,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "mixed-4-no_timeout.json",
+          "policy": "no_timeout",
+          "repeat": 4,
+          "manifest_hash": "f7b2e3093d04fd48a307fad49eb78892dbd052a0346f07d11424c1e48fd30011",
+          "summary": {
+            "count": 24,
+            "succeeded": 21,
+            "success_rate": 0.875,
+            "elapsed_ms": 745.965,
+            "p50_ms": 286.3645,
+            "p95_ms": 575.24405,
+            "p99_ms": 707.2215799999999,
+            "success_p95_ms": 579.206,
+            "completion_per_second": 32.17308218270668,
+            "success_per_second": 28.151446909868348,
+            "attempts": 124,
+            "checkpoint_hits": 0,
+            "retries": 11,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 21,
+              "permanent_failed": 3
+            },
+            "side_effects": 23,
+            "committed_tasks": 21,
+            "duplicate_effects": 2
+          }
+        }
+      ]
+    },
+    {
+      "profile": "ack_loss",
+      "aggregated": [
+        {
+          "policy": "baseline",
+          "runs": 5,
+          "success_rate_mean": 0.5,
+          "success_rate_min": 0.2916666666666667,
+          "success_rate_max": 0.625,
+          "p95_ms_mean": 380.58251,
+          "elapsed_ms_mean": 389.5648,
+          "duplicate_effects_total": 0,
+          "attempts_total": 600,
+          "attempt_timeouts_total": 0
+        },
+        {
+          "policy": "retry",
+          "runs": 5,
+          "success_rate_mean": 1.0,
+          "success_rate_min": 1.0,
+          "success_rate_max": 1.0,
+          "p95_ms_mean": 443.02898,
+          "elapsed_ms_mean": 469.9104,
+          "duplicate_effects_total": 60,
+          "attempts_total": 660,
+          "attempt_timeouts_total": 0
+        },
+        {
+          "policy": "resilient",
+          "runs": 5,
+          "success_rate_mean": 1.0,
+          "success_rate_min": 1.0,
+          "success_rate_max": 1.0,
+          "p95_ms_mean": 442.47738,
+          "elapsed_ms_mean": 471.3652,
+          "duplicate_effects_total": 0,
+          "attempts_total": 660,
+          "attempt_timeouts_total": 0
+        },
+        {
+          "policy": "no_timeout",
+          "runs": 5,
+          "success_rate_mean": 1.0,
+          "success_rate_min": 1.0,
+          "success_rate_max": 1.0,
+          "p95_ms_mean": 442.94622999999996,
+          "elapsed_ms_mean": 470.3022,
+          "duplicate_effects_total": 60,
+          "attempts_total": 660,
+          "attempt_timeouts_total": 0
+        }
+      ],
+      "runs": [
+        {
+          "file": "ack_loss-0-baseline.json",
+          "policy": "baseline",
+          "repeat": 0,
+          "manifest_hash": "45438c2d75b4f5d67d8da2863eda22fc3442cfaa8135ce7746f2f65bb5f0a36f",
+          "summary": {
+            "count": 24,
+            "succeeded": 15,
+            "success_rate": 0.625,
+            "elapsed_ms": 396.521,
+            "p50_ms": 225.793,
+            "p95_ms": 389.27145,
+            "p99_ms": 394.82766999999996,
+            "success_p95_ms": 381.2772,
+            "completion_per_second": 60.52639048462466,
+            "success_per_second": 37.828994052890415,
+            "attempts": 120,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 15,
+              "retry_exhausted": 9
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "ack_loss-0-retry.json",
+          "policy": "retry",
+          "repeat": 0,
+          "manifest_hash": "45438c2d75b4f5d67d8da2863eda22fc3442cfaa8135ce7746f2f65bb5f0a36f",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 475.919,
+            "p50_ms": 248.92149999999998,
+            "p95_ms": 444.47184999999996,
+            "p99_ms": 468.74303,
+            "success_p95_ms": 444.47184999999996,
+            "completion_per_second": 50.42877164733148,
+            "success_per_second": 50.42877164733148,
+            "attempts": 129,
+            "checkpoint_hits": 0,
+            "retries": 9,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 33,
+            "committed_tasks": 24,
+            "duplicate_effects": 9
+          }
+        },
+        {
+          "file": "ack_loss-0-resilient.json",
+          "policy": "resilient",
+          "repeat": 0,
+          "manifest_hash": "45438c2d75b4f5d67d8da2863eda22fc3442cfaa8135ce7746f2f65bb5f0a36f",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 473.699,
+            "p50_ms": 249.173,
+            "p95_ms": 444.1413,
+            "p99_ms": 466.96416,
+            "success_p95_ms": 444.1413,
+            "completion_per_second": 50.66511599691654,
+            "success_per_second": 50.66511599691654,
+            "attempts": 129,
+            "checkpoint_hits": 0,
+            "retries": 9,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "ack_loss-0-no_timeout.json",
+          "policy": "no_timeout",
+          "repeat": 0,
+          "manifest_hash": "45438c2d75b4f5d67d8da2863eda22fc3442cfaa8135ce7746f2f65bb5f0a36f",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 473.109,
+            "p50_ms": 248.5095,
+            "p95_ms": 444.72245,
+            "p99_ms": 466.78137,
+            "success_p95_ms": 444.72245,
+            "completion_per_second": 50.728276741411946,
+            "success_per_second": 50.728276741411946,
+            "attempts": 129,
+            "checkpoint_hits": 0,
+            "retries": 9,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 33,
+            "committed_tasks": 24,
+            "duplicate_effects": 9
+          }
+        },
+        {
+          "file": "ack_loss-1-retry.json",
+          "policy": "retry",
+          "repeat": 1,
+          "manifest_hash": "60432593b6e13b228624fd9ca29ae647830b5ae3930a63d2411d0458fcd243cf",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 465.408,
+            "p50_ms": 257.1875,
+            "p95_ms": 443.99514999999997,
+            "p99_ms": 460.29627,
+            "success_p95_ms": 443.99514999999997,
+            "completion_per_second": 51.56761990821606,
+            "success_per_second": 51.56761990821606,
+            "attempts": 132,
+            "checkpoint_hits": 0,
+            "retries": 12,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 36,
+            "committed_tasks": 24,
+            "duplicate_effects": 12
+          }
+        },
+        {
+          "file": "ack_loss-1-resilient.json",
+          "policy": "resilient",
+          "repeat": 1,
+          "manifest_hash": "60432593b6e13b228624fd9ca29ae647830b5ae3930a63d2411d0458fcd243cf",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 466.537,
+            "p50_ms": 257.3435,
+            "p95_ms": 443.89225,
+            "p99_ms": 461.22781,
+            "success_p95_ms": 443.89225,
+            "completion_per_second": 51.442823846300755,
+            "success_per_second": 51.442823846300755,
+            "attempts": 132,
+            "checkpoint_hits": 0,
+            "retries": 12,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "ack_loss-1-no_timeout.json",
+          "policy": "no_timeout",
+          "repeat": 1,
+          "manifest_hash": "60432593b6e13b228624fd9ca29ae647830b5ae3930a63d2411d0458fcd243cf",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 466.751,
+            "p50_ms": 257.8135,
+            "p95_ms": 444.99609999999996,
+            "p99_ms": 461.64417,
+            "success_p95_ms": 444.99609999999996,
+            "completion_per_second": 51.419237892731964,
+            "success_per_second": 51.419237892731964,
+            "attempts": 132,
+            "checkpoint_hits": 0,
+            "retries": 12,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 36,
+            "committed_tasks": 24,
+            "duplicate_effects": 12
+          }
+        },
+        {
+          "file": "ack_loss-1-baseline.json",
+          "policy": "baseline",
+          "repeat": 1,
+          "manifest_hash": "60432593b6e13b228624fd9ca29ae647830b5ae3930a63d2411d0458fcd243cf",
+          "summary": {
+            "count": 24,
+            "succeeded": 12,
+            "success_rate": 0.5,
+            "elapsed_ms": 391.195,
+            "p50_ms": 226.363,
+            "p95_ms": 384.0731,
+            "p99_ms": 389.45566,
+            "success_p95_ms": 387.3251,
+            "completion_per_second": 61.35055579312974,
+            "success_per_second": 30.67527789656487,
+            "attempts": 120,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "retry_exhausted": 12,
+              "succeeded": 12
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "ack_loss-2-resilient.json",
+          "policy": "resilient",
+          "repeat": 2,
+          "manifest_hash": "878bd1b4104e52332f83c71376eb10fc09856a9f8e9245a14ff1a5c95426dc39",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 454.241,
+            "p50_ms": 254.526,
+            "p95_ms": 412.46569999999997,
+            "p99_ms": 444.72538,
+            "success_p95_ms": 412.46569999999997,
+            "completion_per_second": 52.83535999009008,
+            "success_per_second": 52.83535999009008,
+            "attempts": 131,
+            "checkpoint_hits": 0,
+            "retries": 11,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "ack_loss-2-no_timeout.json",
+          "policy": "no_timeout",
+          "repeat": 2,
+          "manifest_hash": "878bd1b4104e52332f83c71376eb10fc09856a9f8e9245a14ff1a5c95426dc39",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 452.41,
+            "p50_ms": 253.8365,
+            "p95_ms": 412.82204999999993,
+            "p99_ms": 443.36252,
+            "success_p95_ms": 412.82204999999993,
+            "completion_per_second": 53.04918120610597,
+            "success_per_second": 53.04918120610597,
+            "attempts": 131,
+            "checkpoint_hits": 0,
+            "retries": 11,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 35,
+            "committed_tasks": 24,
+            "duplicate_effects": 11
+          }
+        },
+        {
+          "file": "ack_loss-2-baseline.json",
+          "policy": "baseline",
+          "repeat": 2,
+          "manifest_hash": "878bd1b4104e52332f83c71376eb10fc09856a9f8e9245a14ff1a5c95426dc39",
+          "summary": {
+            "count": 24,
+            "succeeded": 13,
+            "success_rate": 0.5416666666666666,
+            "elapsed_ms": 372.244,
+            "p50_ms": 208.321,
+            "p95_ms": 367.15315,
+            "p99_ms": 371.09041,
+            "success_p95_ms": 364.4266,
+            "completion_per_second": 64.47388305609023,
+            "success_per_second": 34.923353322048875,
+            "attempts": 120,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "retry_exhausted": 11,
+              "succeeded": 13
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "ack_loss-2-retry.json",
+          "policy": "retry",
+          "repeat": 2,
+          "manifest_hash": "878bd1b4104e52332f83c71376eb10fc09856a9f8e9245a14ff1a5c95426dc39",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 451.637,
+            "p50_ms": 253.19799999999998,
+            "p95_ms": 411.864,
+            "p99_ms": 442.61883,
+            "success_p95_ms": 411.864,
+            "completion_per_second": 53.140016830192174,
+            "success_per_second": 53.140016830192174,
+            "attempts": 131,
+            "checkpoint_hits": 0,
+            "retries": 11,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 35,
+            "committed_tasks": 24,
+            "duplicate_effects": 11
+          }
+        },
+        {
+          "file": "ack_loss-3-no_timeout.json",
+          "policy": "no_timeout",
+          "repeat": 3,
+          "manifest_hash": "702a23de3b9101b286ce2ec6e8e90ff3c69c174402105d3f1370cf396a2f0658",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 486.672,
+            "p50_ms": 263.905,
+            "p95_ms": 465.22255,
+            "p99_ms": 481.78668999999996,
+            "success_p95_ms": 465.22255,
+            "completion_per_second": 49.314536550502964,
+            "success_per_second": 49.314536550502964,
+            "attempts": 137,
+            "checkpoint_hits": 0,
+            "retries": 17,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 41,
+            "committed_tasks": 24,
+            "duplicate_effects": 17
+          }
+        },
+        {
+          "file": "ack_loss-3-baseline.json",
+          "policy": "baseline",
+          "repeat": 3,
+          "manifest_hash": "702a23de3b9101b286ce2ec6e8e90ff3c69c174402105d3f1370cf396a2f0658",
+          "summary": {
+            "count": 24,
+            "succeeded": 7,
+            "success_rate": 0.2916666666666667,
+            "elapsed_ms": 391.148,
+            "p50_ms": 225.3845,
+            "p95_ms": 382.18625,
+            "p99_ms": 388.85397,
+            "success_p95_ms": 282.21159999999986,
+            "completion_per_second": 61.35780347200667,
+            "success_per_second": 17.896026012668614,
+            "attempts": 120,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "retry_exhausted": 17,
+              "succeeded": 7
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "ack_loss-3-retry.json",
+          "policy": "retry",
+          "repeat": 3,
+          "manifest_hash": "702a23de3b9101b286ce2ec6e8e90ff3c69c174402105d3f1370cf396a2f0658",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 485.795,
+            "p50_ms": 264.0625,
+            "p95_ms": 465.327,
+            "p99_ms": 480.98429,
+            "success_p95_ms": 465.327,
+            "completion_per_second": 49.40353808097038,
+            "success_per_second": 49.40353808097038,
+            "attempts": 137,
+            "checkpoint_hits": 0,
+            "retries": 17,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 41,
+            "committed_tasks": 24,
+            "duplicate_effects": 17
+          }
+        },
+        {
+          "file": "ack_loss-3-resilient.json",
+          "policy": "resilient",
+          "repeat": 3,
+          "manifest_hash": "702a23de3b9101b286ce2ec6e8e90ff3c69c174402105d3f1370cf396a2f0658",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 489.14,
+            "p50_ms": 264.88349999999997,
+            "p95_ms": 463.86449999999996,
+            "p99_ms": 483.35267999999996,
+            "success_p95_ms": 463.86449999999996,
+            "completion_per_second": 49.06574058479245,
+            "success_per_second": 49.06574058479245,
+            "attempts": 137,
+            "checkpoint_hits": 0,
+            "retries": 17,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "ack_loss-4-baseline.json",
+          "policy": "baseline",
+          "repeat": 4,
+          "manifest_hash": "7cba099f1107b72ead46faefa95ff6c647a494ab459d011c31228bdc2706232c",
+          "summary": {
+            "count": 24,
+            "succeeded": 13,
+            "success_rate": 0.5416666666666666,
+            "elapsed_ms": 396.716,
+            "p50_ms": 218.011,
+            "p95_ms": 380.2286,
+            "p99_ms": 392.72676,
+            "success_p95_ms": 369.1705999999999,
+            "completion_per_second": 60.4966840369377,
+            "success_per_second": 32.76903718667459,
+            "attempts": 120,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "retry_exhausted": 11,
+              "succeeded": 13
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "ack_loss-4-retry.json",
+          "policy": "retry",
+          "repeat": 4,
+          "manifest_hash": "7cba099f1107b72ead46faefa95ff6c647a494ab459d011c31228bdc2706232c",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 470.793,
+            "p50_ms": 252.0255,
+            "p95_ms": 449.48689999999993,
+            "p99_ms": 465.96909,
+            "success_p95_ms": 449.48689999999993,
+            "completion_per_second": 50.97784092106127,
+            "success_per_second": 50.97784092106127,
+            "attempts": 131,
+            "checkpoint_hits": 0,
+            "retries": 11,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 35,
+            "committed_tasks": 24,
+            "duplicate_effects": 11
+          }
+        },
+        {
+          "file": "ack_loss-4-resilient.json",
+          "policy": "resilient",
+          "repeat": 4,
+          "manifest_hash": "7cba099f1107b72ead46faefa95ff6c647a494ab459d011c31228bdc2706232c",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 473.209,
+            "p50_ms": 250.655,
+            "p95_ms": 448.02315,
+            "p99_ms": 467.58141,
+            "success_p95_ms": 448.02315,
+            "completion_per_second": 50.717534241371474,
+            "success_per_second": 50.717534241371474,
+            "attempts": 131,
+            "checkpoint_hits": 0,
+            "retries": 11,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "ack_loss-4-no_timeout.json",
+          "policy": "no_timeout",
+          "repeat": 4,
+          "manifest_hash": "7cba099f1107b72ead46faefa95ff6c647a494ab459d011c31228bdc2706232c",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 472.569,
+            "p50_ms": 250.42899999999997,
+            "p95_ms": 446.968,
+            "p99_ms": 466.59496,
+            "success_p95_ms": 446.968,
+            "completion_per_second": 50.7862613173744,
+            "success_per_second": 50.7862613173744,
+            "attempts": 131,
+            "checkpoint_hits": 0,
+            "retries": 11,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 35,
+            "committed_tasks": 24,
+            "duplicate_effects": 11
+          }
+        }
+      ]
+    },
+    {
+      "profile": "permanent",
+      "aggregated": [
+        {
+          "policy": "baseline",
+          "runs": 5,
+          "success_rate_mean": 0.5166666666666666,
+          "success_rate_min": 0.4583333333333333,
+          "success_rate_max": 0.5833333333333334,
+          "p95_ms_mean": 312.19939999999997,
+          "elapsed_ms_mean": 322.7146,
+          "duplicate_effects_total": 0,
+          "attempts_total": 484,
+          "attempt_timeouts_total": 0
+        },
+        {
+          "policy": "retry",
+          "runs": 5,
+          "success_rate_mean": 0.5166666666666666,
+          "success_rate_min": 0.4583333333333333,
+          "success_rate_max": 0.5833333333333334,
+          "p95_ms_mean": 312.14912999999996,
+          "elapsed_ms_mean": 323.4248,
+          "duplicate_effects_total": 0,
+          "attempts_total": 484,
+          "attempt_timeouts_total": 0
+        },
+        {
+          "policy": "resilient",
+          "runs": 5,
+          "success_rate_mean": 0.5166666666666666,
+          "success_rate_min": 0.4583333333333333,
+          "success_rate_max": 0.5833333333333334,
+          "p95_ms_mean": 313.29314999999997,
+          "elapsed_ms_mean": 322.878,
+          "duplicate_effects_total": 0,
+          "attempts_total": 484,
+          "attempt_timeouts_total": 0
+        },
+        {
+          "policy": "no_timeout",
+          "runs": 5,
+          "success_rate_mean": 0.5166666666666666,
+          "success_rate_min": 0.4583333333333333,
+          "success_rate_max": 0.5833333333333334,
+          "p95_ms_mean": 311.17577,
+          "elapsed_ms_mean": 321.9636,
+          "duplicate_effects_total": 0,
+          "attempts_total": 484,
+          "attempt_timeouts_total": 0
+        }
+      ],
+      "runs": [
+        {
+          "file": "permanent-0-baseline.json",
+          "policy": "baseline",
+          "repeat": 0,
+          "manifest_hash": "42cb0457b231aeca52c2ba4436b3b87a37ef475bf34953735a591c4abfbcd146",
+          "summary": {
+            "count": 24,
+            "succeeded": 11,
+            "success_rate": 0.4583333333333333,
+            "elapsed_ms": 320.289,
+            "p50_ms": 183.584,
+            "p95_ms": 312.93829999999997,
+            "p99_ms": 318.86852999999996,
+            "success_p95_ms": 289.56,
+            "completion_per_second": 74.93233634397974,
+            "success_per_second": 34.34398749099071,
+            "attempts": 94,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 11,
+              "permanent_failed": 13
+            },
+            "side_effects": 11,
+            "committed_tasks": 11,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "permanent-0-retry.json",
+          "policy": "retry",
+          "repeat": 0,
+          "manifest_hash": "42cb0457b231aeca52c2ba4436b3b87a37ef475bf34953735a591c4abfbcd146",
+          "summary": {
+            "count": 24,
+            "succeeded": 11,
+            "success_rate": 0.4583333333333333,
+            "elapsed_ms": 322.537,
+            "p50_ms": 183.998,
+            "p95_ms": 311.93965,
+            "p99_ms": 320.37717999999995,
+            "success_p95_ms": 291.356,
+            "completion_per_second": 74.40999069579286,
+            "success_per_second": 34.10457906890505,
+            "attempts": 94,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 11,
+              "permanent_failed": 13
+            },
+            "side_effects": 11,
+            "committed_tasks": 11,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "permanent-0-resilient.json",
+          "policy": "resilient",
+          "repeat": 0,
+          "manifest_hash": "42cb0457b231aeca52c2ba4436b3b87a37ef475bf34953735a591c4abfbcd146",
+          "summary": {
+            "count": 24,
+            "succeeded": 11,
+            "success_rate": 0.4583333333333333,
+            "elapsed_ms": 321.572,
+            "p50_ms": 184.8545,
+            "p95_ms": 313.72785,
+            "p99_ms": 319.98086,
+            "success_p95_ms": 290.83349999999996,
+            "completion_per_second": 74.63336356398554,
+            "success_per_second": 34.20695830016004,
+            "attempts": 94,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 11,
+              "permanent_failed": 13
+            },
+            "side_effects": 11,
+            "committed_tasks": 11,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "permanent-0-no_timeout.json",
+          "policy": "no_timeout",
+          "repeat": 0,
+          "manifest_hash": "42cb0457b231aeca52c2ba4436b3b87a37ef475bf34953735a591c4abfbcd146",
+          "summary": {
+            "count": 24,
+            "succeeded": 11,
+            "success_rate": 0.4583333333333333,
+            "elapsed_ms": 319.495,
+            "p50_ms": 183.163,
+            "p95_ms": 312.3947,
+            "p99_ms": 318.24126,
+            "success_p95_ms": 289.028,
+            "completion_per_second": 75.11865398310164,
+            "success_per_second": 34.42938307558825,
+            "attempts": 94,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 11,
+              "permanent_failed": 13
+            },
+            "side_effects": 11,
+            "committed_tasks": 11,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "permanent-1-retry.json",
+          "policy": "retry",
+          "repeat": 1,
+          "manifest_hash": "639a36a7cbb2ea3b8bceb4ce713ec5f2a1f44bb8bc5990f6903b10ebcf5d4474",
+          "summary": {
+            "count": 24,
+            "succeeded": 11,
+            "success_rate": 0.4583333333333333,
+            "elapsed_ms": 314.827,
+            "p50_ms": 179.853,
+            "p95_ms": 302.4362,
+            "p99_ms": 312.00154999999995,
+            "success_p95_ms": 296.9185,
+            "completion_per_second": 76.23222242901352,
+            "success_per_second": 34.939768613297865,
+            "attempts": 94,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 11,
+              "permanent_failed": 13
+            },
+            "side_effects": 11,
+            "committed_tasks": 11,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "permanent-1-resilient.json",
+          "policy": "resilient",
+          "repeat": 1,
+          "manifest_hash": "639a36a7cbb2ea3b8bceb4ce713ec5f2a1f44bb8bc5990f6903b10ebcf5d4474",
+          "summary": {
+            "count": 24,
+            "succeeded": 11,
+            "success_rate": 0.4583333333333333,
+            "elapsed_ms": 314.978,
+            "p50_ms": 179.68200000000002,
+            "p95_ms": 301.99789999999996,
+            "p99_ms": 311.93952,
+            "success_p95_ms": 296.22,
+            "completion_per_second": 76.1958782860776,
+            "success_per_second": 34.9231108811189,
+            "attempts": 94,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 11,
+              "permanent_failed": 13
+            },
+            "side_effects": 11,
+            "committed_tasks": 11,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "permanent-1-no_timeout.json",
+          "policy": "no_timeout",
+          "repeat": 1,
+          "manifest_hash": "639a36a7cbb2ea3b8bceb4ce713ec5f2a1f44bb8bc5990f6903b10ebcf5d4474",
+          "summary": {
+            "count": 24,
+            "succeeded": 11,
+            "success_rate": 0.4583333333333333,
+            "elapsed_ms": 313.408,
+            "p50_ms": 178.3425,
+            "p95_ms": 301.28085,
+            "p99_ms": 310.74483,
+            "success_p95_ms": 295.703,
+            "completion_per_second": 76.57751681012614,
+            "success_per_second": 35.098028537974486,
+            "attempts": 94,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 11,
+              "permanent_failed": 13
+            },
+            "side_effects": 11,
+            "committed_tasks": 11,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "permanent-1-baseline.json",
+          "policy": "baseline",
+          "repeat": 1,
+          "manifest_hash": "639a36a7cbb2ea3b8bceb4ce713ec5f2a1f44bb8bc5990f6903b10ebcf5d4474",
+          "summary": {
+            "count": 24,
+            "succeeded": 11,
+            "success_rate": 0.4583333333333333,
+            "elapsed_ms": 314.937,
+            "p50_ms": 178.7565,
+            "p95_ms": 302.20919999999995,
+            "p99_ms": 312.09407999999996,
+            "success_p95_ms": 296.01149999999996,
+            "completion_per_second": 76.20565689987876,
+            "success_per_second": 34.927592745777766,
+            "attempts": 94,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 11,
+              "permanent_failed": 13
+            },
+            "side_effects": 11,
+            "committed_tasks": 11,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "permanent-2-resilient.json",
+          "policy": "resilient",
+          "repeat": 2,
+          "manifest_hash": "678c077491a0975aed19069669e7d6181d7cf1e5f928b91ea2078f42f70f3772",
+          "summary": {
+            "count": 24,
+            "succeeded": 14,
+            "success_rate": 0.5833333333333334,
+            "elapsed_ms": 319.918,
+            "p50_ms": 167.766,
+            "p95_ms": 307.0012,
+            "p99_ms": 316.87548000000004,
+            "success_p95_ms": 304.4352,
+            "completion_per_second": 75.01914524124524,
+            "success_per_second": 43.76116805739306,
+            "attempts": 100,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "permanent_failed": 10,
+              "succeeded": 14
+            },
+            "side_effects": 14,
+            "committed_tasks": 14,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "permanent-2-no_timeout.json",
+          "policy": "no_timeout",
+          "repeat": 2,
+          "manifest_hash": "678c077491a0975aed19069669e7d6181d7cf1e5f928b91ea2078f42f70f3772",
+          "summary": {
+            "count": 24,
+            "succeeded": 14,
+            "success_rate": 0.5833333333333334,
+            "elapsed_ms": 320.368,
+            "p50_ms": 166.19299999999998,
+            "p95_ms": 303.00995,
+            "p99_ms": 316.33256,
+            "success_p95_ms": 300.76645,
+            "completion_per_second": 74.91386860195189,
+            "success_per_second": 43.699756684471936,
+            "attempts": 100,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "permanent_failed": 10,
+              "succeeded": 14
+            },
+            "side_effects": 14,
+            "committed_tasks": 14,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "permanent-2-baseline.json",
+          "policy": "baseline",
+          "repeat": 2,
+          "manifest_hash": "678c077491a0975aed19069669e7d6181d7cf1e5f928b91ea2078f42f70f3772",
+          "summary": {
+            "count": 24,
+            "succeeded": 14,
+            "success_rate": 0.5833333333333334,
+            "elapsed_ms": 319.787,
+            "p50_ms": 167.249,
+            "p95_ms": 305.65074999999996,
+            "p99_ms": 316.34572000000003,
+            "success_p95_ms": 303.20325,
+            "completion_per_second": 75.0498866423552,
+            "success_per_second": 43.77910054137387,
+            "attempts": 100,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "permanent_failed": 10,
+              "succeeded": 14
+            },
+            "side_effects": 14,
+            "committed_tasks": 14,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "permanent-2-retry.json",
+          "policy": "retry",
+          "repeat": 2,
+          "manifest_hash": "678c077491a0975aed19069669e7d6181d7cf1e5f928b91ea2078f42f70f3772",
+          "summary": {
+            "count": 24,
+            "succeeded": 14,
+            "success_rate": 0.5833333333333334,
+            "elapsed_ms": 321.475,
+            "p50_ms": 167.0695,
+            "p95_ms": 304.6448,
+            "p99_ms": 317.37723,
+            "success_p95_ms": 302.2408,
+            "completion_per_second": 74.65584429693318,
+            "success_per_second": 43.54924250654436,
+            "attempts": 100,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "permanent_failed": 10,
+              "succeeded": 14
+            },
+            "side_effects": 14,
+            "committed_tasks": 14,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "permanent-3-no_timeout.json",
+          "policy": "no_timeout",
+          "repeat": 3,
+          "manifest_hash": "74a9fe4e7527d6d9b756757c6785c9efd3ea0b77f4d45034a157676fb84efbac",
+          "summary": {
+            "count": 24,
+            "succeeded": 13,
+            "success_rate": 0.5416666666666666,
+            "elapsed_ms": 332.679,
+            "p50_ms": 194.11200000000002,
+            "p95_ms": 317.92349999999993,
+            "p99_ms": 330.09934000000004,
+            "success_p95_ms": 326.34680000000003,
+            "completion_per_second": 72.14156880356454,
+            "success_per_second": 39.0766831019308,
+            "attempts": 98,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 13,
+              "permanent_failed": 11
+            },
+            "side_effects": 13,
+            "committed_tasks": 13,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "permanent-3-baseline.json",
+          "policy": "baseline",
+          "repeat": 3,
+          "manifest_hash": "74a9fe4e7527d6d9b756757c6785c9efd3ea0b77f4d45034a157676fb84efbac",
+          "summary": {
+            "count": 24,
+            "succeeded": 13,
+            "success_rate": 0.5416666666666666,
+            "elapsed_ms": 333.996,
+            "p50_ms": 195.531,
+            "p95_ms": 318.24629999999996,
+            "p99_ms": 331.0672,
+            "success_p95_ms": 326.753,
+            "completion_per_second": 71.8572107549364,
+            "success_per_second": 38.92265582559055,
+            "attempts": 98,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 13,
+              "permanent_failed": 11
+            },
+            "side_effects": 13,
+            "committed_tasks": 13,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "permanent-3-retry.json",
+          "policy": "retry",
+          "repeat": 3,
+          "manifest_hash": "74a9fe4e7527d6d9b756757c6785c9efd3ea0b77f4d45034a157676fb84efbac",
+          "summary": {
+            "count": 24,
+            "succeeded": 13,
+            "success_rate": 0.5416666666666666,
+            "elapsed_ms": 333.763,
+            "p50_ms": 195.4065,
+            "p95_ms": 320.0449499999999,
+            "p99_ms": 331.31188,
+            "success_p95_ms": 328.0766,
+            "completion_per_second": 71.90741007485066,
+            "success_per_second": 38.94984712387744,
+            "attempts": 98,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 13,
+              "permanent_failed": 11
+            },
+            "side_effects": 13,
+            "committed_tasks": 13,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "permanent-3-resilient.json",
+          "policy": "resilient",
+          "repeat": 3,
+          "manifest_hash": "74a9fe4e7527d6d9b756757c6785c9efd3ea0b77f4d45034a157676fb84efbac",
+          "summary": {
+            "count": 24,
+            "succeeded": 13,
+            "success_rate": 0.5416666666666666,
+            "elapsed_ms": 333.329,
+            "p50_ms": 195.1605,
+            "p95_ms": 321.62555,
+            "p99_ms": 331.44527999999997,
+            "success_p95_ms": 328.94259999999997,
+            "completion_per_second": 72.00094515580868,
+            "success_per_second": 39.00051195939636,
+            "attempts": 98,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 13,
+              "permanent_failed": 11
+            },
+            "side_effects": 13,
+            "committed_tasks": 13,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "permanent-4-baseline.json",
+          "policy": "baseline",
+          "repeat": 4,
+          "manifest_hash": "9d4369423a5aa566420253fc91eb1b07087e31b28b7c23acafd7a0b54fbd0da6",
+          "summary": {
+            "count": 24,
+            "succeeded": 13,
+            "success_rate": 0.5416666666666666,
+            "elapsed_ms": 324.564,
+            "p50_ms": 158.536,
+            "p95_ms": 321.95244999999994,
+            "p99_ms": 324.30241,
+            "success_p95_ms": 314.9788,
+            "completion_per_second": 73.94543042211,
+            "success_per_second": 40.05377481197624,
+            "attempts": 98,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "permanent_failed": 11,
+              "succeeded": 13
+            },
+            "side_effects": 13,
+            "committed_tasks": 13,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "permanent-4-retry.json",
+          "policy": "retry",
+          "repeat": 4,
+          "manifest_hash": "9d4369423a5aa566420253fc91eb1b07087e31b28b7c23acafd7a0b54fbd0da6",
+          "summary": {
+            "count": 24,
+            "succeeded": 13,
+            "success_rate": 0.5416666666666666,
+            "elapsed_ms": 324.522,
+            "p50_ms": 160.48649999999998,
+            "p95_ms": 321.68005,
+            "p99_ms": 324.04898,
+            "success_p95_ms": 314.7738,
+            "completion_per_second": 73.95496250832232,
+            "success_per_second": 40.05893802534126,
+            "attempts": 98,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "permanent_failed": 11,
+              "succeeded": 13
+            },
+            "side_effects": 13,
+            "committed_tasks": 13,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "permanent-4-resilient.json",
+          "policy": "resilient",
+          "repeat": 4,
+          "manifest_hash": "9d4369423a5aa566420253fc91eb1b07087e31b28b7c23acafd7a0b54fbd0da6",
+          "summary": {
+            "count": 24,
+            "succeeded": 13,
+            "success_rate": 0.5416666666666666,
+            "elapsed_ms": 324.593,
+            "p50_ms": 159.418,
+            "p95_ms": 322.11324999999994,
+            "p99_ms": 324.37786,
+            "success_p95_ms": 315.36099999999993,
+            "completion_per_second": 73.93868148159315,
+            "success_per_second": 40.05011913586296,
+            "attempts": 98,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "permanent_failed": 11,
+              "succeeded": 13
+            },
+            "side_effects": 13,
+            "committed_tasks": 13,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "permanent-4-no_timeout.json",
+          "policy": "no_timeout",
+          "repeat": 4,
+          "manifest_hash": "9d4369423a5aa566420253fc91eb1b07087e31b28b7c23acafd7a0b54fbd0da6",
+          "summary": {
+            "count": 24,
+            "succeeded": 13,
+            "success_rate": 0.5416666666666666,
+            "elapsed_ms": 323.868,
+            "p50_ms": 159.6695,
+            "p95_ms": 321.26984999999996,
+            "p99_ms": 323.61279,
+            "success_p95_ms": 314.30339999999995,
+            "completion_per_second": 74.10423615735053,
+            "success_per_second": 40.139794585231535,
+            "attempts": 98,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "permanent_failed": 11,
+              "succeeded": 13
+            },
+            "side_effects": 13,
+            "committed_tasks": 13,
+            "duplicate_effects": 0
+          }
+        }
+      ]
+    },
+    {
+      "profile": "slow",
+      "aggregated": [
+        {
+          "policy": "baseline",
+          "runs": 5,
+          "success_rate_mean": 0.3333333333333333,
+          "success_rate_min": 0.25,
+          "success_rate_max": 0.375,
+          "p95_ms_mean": 487.01199999999994,
+          "elapsed_ms_mean": 506.8662,
+          "duplicate_effects_total": 0,
+          "attempts_total": 393,
+          "attempt_timeouts_total": 80
+        },
+        {
+          "policy": "retry",
+          "runs": 5,
+          "success_rate_mean": 0.9916666666666667,
+          "success_rate_min": 0.9583333333333334,
+          "success_rate_max": 1.0,
+          "p95_ms_mean": 767.52418,
+          "elapsed_ms_mean": 891.8004,
+          "duplicate_effects_total": 0,
+          "attempts_total": 702,
+          "attempt_timeouts_total": 102
+        },
+        {
+          "policy": "resilient",
+          "runs": 5,
+          "success_rate_mean": 0.9916666666666667,
+          "success_rate_min": 0.9583333333333334,
+          "success_rate_max": 1.0,
+          "p95_ms_mean": 768.08654,
+          "elapsed_ms_mean": 893.2924,
+          "duplicate_effects_total": 0,
+          "attempts_total": 702,
+          "attempt_timeouts_total": 102
+        },
+        {
+          "policy": "no_timeout",
+          "runs": 5,
+          "success_rate_mean": 0.9,
+          "success_rate_min": 0.7916666666666666,
+          "success_rate_max": 0.9583333333333334,
+          "p95_ms_mean": 974.9800299999999,
+          "elapsed_ms_mean": 1001.2034,
+          "duplicate_effects_total": 0,
+          "attempts_total": 571,
+          "attempt_timeouts_total": 0
+        }
+      ],
+      "runs": [
+        {
+          "file": "slow-0-baseline.json",
+          "policy": "baseline",
+          "repeat": 0,
+          "manifest_hash": "462b94110ffe63b67e543769600d64e7889bec1c592eb1eb1bce64321f7d8078",
+          "summary": {
+            "count": 24,
+            "succeeded": 6,
+            "success_rate": 0.25,
+            "elapsed_ms": 509.951,
+            "p50_ms": 291.05600000000004,
+            "p95_ms": 508.18764999999996,
+            "p99_ms": 509.64233,
+            "success_p95_ms": 306.28274999999996,
+            "completion_per_second": 47.06337984501164,
+            "success_per_second": 11.76584496125291,
+            "attempts": 73,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 18,
+            "peak_active": 4,
+            "status_counts": {
+              "retry_exhausted": 18,
+              "succeeded": 6
+            },
+            "side_effects": 6,
+            "committed_tasks": 6,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "slow-0-retry.json",
+          "policy": "retry",
+          "repeat": 0,
+          "manifest_hash": "462b94110ffe63b67e543769600d64e7889bec1c592eb1eb1bce64321f7d8078",
+          "summary": {
+            "count": 24,
+            "succeeded": 23,
+            "success_rate": 0.9583333333333334,
+            "elapsed_ms": 1000.933,
+            "p50_ms": 470.6445,
+            "p95_ms": 796.56825,
+            "p99_ms": 953.6586799999999,
+            "success_p95_ms": 794.4749999999999,
+            "completion_per_second": 23.97764083319451,
+            "success_per_second": 22.978572465144737,
+            "attempts": 143,
+            "checkpoint_hits": 0,
+            "retries": 23,
+            "attempt_timeouts": 23,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 23,
+              "budget_exhausted": 1
+            },
+            "side_effects": 23,
+            "committed_tasks": 23,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "slow-0-resilient.json",
+          "policy": "resilient",
+          "repeat": 0,
+          "manifest_hash": "462b94110ffe63b67e543769600d64e7889bec1c592eb1eb1bce64321f7d8078",
+          "summary": {
+            "count": 24,
+            "succeeded": 23,
+            "success_rate": 0.9583333333333334,
+            "elapsed_ms": 1000.664,
+            "p50_ms": 469.6305,
+            "p95_ms": 796.40615,
+            "p99_ms": 953.5730399999999,
+            "success_p95_ms": 794.7367,
+            "completion_per_second": 23.98407358273756,
+            "success_per_second": 22.984737183456833,
+            "attempts": 143,
+            "checkpoint_hits": 0,
+            "retries": 23,
+            "attempt_timeouts": 23,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 23,
+              "budget_exhausted": 1
+            },
+            "side_effects": 23,
+            "committed_tasks": 23,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "slow-0-no_timeout.json",
+          "policy": "no_timeout",
+          "repeat": 0,
+          "manifest_hash": "462b94110ffe63b67e543769600d64e7889bec1c592eb1eb1bce64321f7d8078",
+          "summary": {
+            "count": 24,
+            "succeeded": 19,
+            "success_rate": 0.7916666666666666,
+            "elapsed_ms": 1001.086,
+            "p50_ms": 614.7045,
+            "p95_ms": 1000.6506999999999,
+            "p99_ms": 1000.651,
+            "success_p95_ms": 839.4250999999999,
+            "completion_per_second": 23.973972250915903,
+            "success_per_second": 18.97939469864176,
+            "attempts": 106,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 19,
+              "budget_exhausted": 5
+            },
+            "side_effects": 19,
+            "committed_tasks": 19,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "slow-1-retry.json",
+          "policy": "retry",
+          "repeat": 1,
+          "manifest_hash": "80b420fda3ffc497aa0d16120fd510e4c0e10bb17b164b4c09391fd7c38b260a",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 782.537,
+            "p50_ms": 428.8225,
+            "p95_ms": 777.8699999999999,
+            "p99_ms": 782.2509,
+            "success_p95_ms": 777.8699999999999,
+            "completion_per_second": 30.669474678990714,
+            "success_per_second": 30.669474678990714,
+            "attempts": 139,
+            "checkpoint_hits": 0,
+            "retries": 19,
+            "attempt_timeouts": 19,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "slow-1-resilient.json",
+          "policy": "resilient",
+          "repeat": 1,
+          "manifest_hash": "80b420fda3ffc497aa0d16120fd510e4c0e10bb17b164b4c09391fd7c38b260a",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 788.509,
+            "p50_ms": 428.69100000000003,
+            "p95_ms": 776.8136,
+            "p99_ms": 786.40577,
+            "success_p95_ms": 776.8136,
+            "completion_per_second": 30.437189016622813,
+            "success_per_second": 30.437189016622813,
+            "attempts": 139,
+            "checkpoint_hits": 0,
+            "retries": 19,
+            "attempt_timeouts": 19,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "slow-1-no_timeout.json",
+          "policy": "no_timeout",
+          "repeat": 1,
+          "manifest_hash": "80b420fda3ffc497aa0d16120fd510e4c0e10bb17b164b4c09391fd7c38b260a",
+          "summary": {
+            "count": 24,
+            "succeeded": 22,
+            "success_rate": 0.9166666666666666,
+            "elapsed_ms": 1000.519,
+            "p50_ms": 545.6034999999999,
+            "p95_ms": 996.72955,
+            "p99_ms": 1000.1997,
+            "success_p95_ms": 964.4102999999999,
+            "completion_per_second": 23.98754045826906,
+            "success_per_second": 21.988578753413304,
+            "attempts": 118,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 22,
+              "budget_exhausted": 2
+            },
+            "side_effects": 22,
+            "committed_tasks": 22,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "slow-1-baseline.json",
+          "policy": "baseline",
+          "repeat": 1,
+          "manifest_hash": "80b420fda3ffc497aa0d16120fd510e4c0e10bb17b164b4c09391fd7c38b260a",
+          "summary": {
+            "count": 24,
+            "succeeded": 9,
+            "success_rate": 0.375,
+            "elapsed_ms": 497.413,
+            "p50_ms": 258.418,
+            "p95_ms": 493.59009999999995,
+            "p99_ms": 496.51419,
+            "success_p95_ms": 421.8452,
+            "completion_per_second": 48.249655843181635,
+            "success_per_second": 18.093620941193112,
+            "attempts": 83,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 15,
+            "peak_active": 4,
+            "status_counts": {
+              "retry_exhausted": 15,
+              "succeeded": 9
+            },
+            "side_effects": 9,
+            "committed_tasks": 9,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "slow-2-resilient.json",
+          "policy": "resilient",
+          "repeat": 2,
+          "manifest_hash": "0c0e586ddb5153005173dcf24511fc62c3c6e81ae57babac1a3357e1b00dbab0",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 888.655,
+            "p50_ms": 474.931,
+            "p95_ms": 698.3884,
+            "p99_ms": 844.9313199999999,
+            "success_p95_ms": 698.3884,
+            "completion_per_second": 27.007108752739214,
+            "success_per_second": 27.007108752739214,
+            "attempts": 139,
+            "checkpoint_hits": 0,
+            "retries": 19,
+            "attempt_timeouts": 19,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "slow-2-no_timeout.json",
+          "policy": "no_timeout",
+          "repeat": 2,
+          "manifest_hash": "0c0e586ddb5153005173dcf24511fc62c3c6e81ae57babac1a3357e1b00dbab0",
+          "summary": {
+            "count": 24,
+            "succeeded": 23,
+            "success_rate": 0.9583333333333334,
+            "elapsed_ms": 1001.489,
+            "p50_ms": 598.5550000000001,
+            "p95_ms": 934.06135,
+            "p99_ms": 987.0920600000001,
+            "success_p95_ms": 898.0777999999999,
+            "completion_per_second": 23.96432808672609,
+            "success_per_second": 22.965814416445838,
+            "attempts": 117,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 23,
+              "budget_exhausted": 1
+            },
+            "side_effects": 23,
+            "committed_tasks": 23,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "slow-2-baseline.json",
+          "policy": "baseline",
+          "repeat": 2,
+          "manifest_hash": "0c0e586ddb5153005173dcf24511fc62c3c6e81ae57babac1a3357e1b00dbab0",
+          "summary": {
+            "count": 24,
+            "succeeded": 9,
+            "success_rate": 0.375,
+            "elapsed_ms": 500.923,
+            "p50_ms": 277.615,
+            "p95_ms": 465.40684999999996,
+            "p99_ms": 492.70442,
+            "success_p95_ms": 464.5016,
+            "completion_per_second": 47.91158713243598,
+            "success_per_second": 17.966845174663494,
+            "attempts": 81,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 15,
+            "peak_active": 4,
+            "status_counts": {
+              "retry_exhausted": 15,
+              "succeeded": 9
+            },
+            "side_effects": 9,
+            "committed_tasks": 9,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "slow-2-retry.json",
+          "policy": "retry",
+          "repeat": 2,
+          "manifest_hash": "0c0e586ddb5153005173dcf24511fc62c3c6e81ae57babac1a3357e1b00dbab0",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 888.849,
+            "p50_ms": 474.23900000000003,
+            "p95_ms": 698.3782,
+            "p99_ms": 844.9102599999999,
+            "success_p95_ms": 698.3782,
+            "completion_per_second": 27.001216758274676,
+            "success_per_second": 27.001216758274676,
+            "attempts": 139,
+            "checkpoint_hits": 0,
+            "retries": 19,
+            "attempt_timeouts": 19,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "slow-3-no_timeout.json",
+          "policy": "no_timeout",
+          "repeat": 3,
+          "manifest_hash": "2acc3b642415b940f0859e4c74fe58a4714f88b114099998959f58905ffc964a",
+          "summary": {
+            "count": 24,
+            "succeeded": 23,
+            "success_rate": 0.9583333333333334,
+            "elapsed_ms": 1001.468,
+            "p50_ms": 582.2715000000001,
+            "p95_ms": 942.2236999999999,
+            "p99_ms": 989.3219899999999,
+            "success_p95_ms": 899.234,
+            "completion_per_second": 23.96482860378911,
+            "success_per_second": 22.96629407863123,
+            "attempts": 118,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 23,
+              "budget_exhausted": 1
+            },
+            "side_effects": 23,
+            "committed_tasks": 23,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "slow-3-baseline.json",
+          "policy": "baseline",
+          "repeat": 3,
+          "manifest_hash": "2acc3b642415b940f0859e4c74fe58a4714f88b114099998959f58905ffc964a",
+          "summary": {
+            "count": 24,
+            "succeeded": 9,
+            "success_rate": 0.375,
+            "elapsed_ms": 501.246,
+            "p50_ms": 274.679,
+            "p95_ms": 482.43295,
+            "p99_ms": 496.97688,
+            "success_p95_ms": 489.0446,
+            "completion_per_second": 47.88072113641894,
+            "success_per_second": 17.955270426157103,
+            "attempts": 82,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 15,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 9,
+              "retry_exhausted": 15
+            },
+            "side_effects": 9,
+            "committed_tasks": 9,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "slow-3-retry.json",
+          "policy": "retry",
+          "repeat": 3,
+          "manifest_hash": "2acc3b642415b940f0859e4c74fe58a4714f88b114099998959f58905ffc964a",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 854.744,
+            "p50_ms": 456.7355,
+            "p95_ms": 709.1661,
+            "p99_ms": 821.26507,
+            "success_p95_ms": 709.1661,
+            "completion_per_second": 28.078599010413072,
+            "success_per_second": 28.078599010413072,
+            "attempts": 138,
+            "checkpoint_hits": 0,
+            "retries": 18,
+            "attempt_timeouts": 18,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "slow-3-resilient.json",
+          "policy": "resilient",
+          "repeat": 3,
+          "manifest_hash": "2acc3b642415b940f0859e4c74fe58a4714f88b114099998959f58905ffc964a",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 856.287,
+            "p50_ms": 458.452,
+            "p95_ms": 712.9904,
+            "p99_ms": 823.2772299999999,
+            "success_p95_ms": 712.9904,
+            "completion_per_second": 28.0279954930205,
+            "success_per_second": 28.0279954930205,
+            "attempts": 138,
+            "checkpoint_hits": 0,
+            "retries": 18,
+            "attempt_timeouts": 18,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "slow-4-baseline.json",
+          "policy": "baseline",
+          "repeat": 4,
+          "manifest_hash": "96b8816751190a947106a59be1c6453380b0e10509ed692c833b40f2ded61f11",
+          "summary": {
+            "count": 24,
+            "succeeded": 7,
+            "success_rate": 0.2916666666666667,
+            "elapsed_ms": 524.798,
+            "p50_ms": 297.73850000000004,
+            "p95_ms": 485.44244999999995,
+            "p99_ms": 516.16198,
+            "success_p95_ms": 459.476,
+            "completion_per_second": 45.73191793844751,
+            "success_per_second": 13.338476065380522,
+            "attempts": 74,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 17,
+            "peak_active": 4,
+            "status_counts": {
+              "retry_exhausted": 17,
+              "succeeded": 7
+            },
+            "side_effects": 7,
+            "committed_tasks": 7,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "slow-4-retry.json",
+          "policy": "retry",
+          "repeat": 4,
+          "manifest_hash": "96b8816751190a947106a59be1c6453380b0e10509ed692c833b40f2ded61f11",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 931.939,
+            "p50_ms": 495.99,
+            "p95_ms": 855.63835,
+            "p99_ms": 914.8716699999999,
+            "success_p95_ms": 855.63835,
+            "completion_per_second": 25.752764279245287,
+            "success_per_second": 25.752764279245287,
+            "attempts": 143,
+            "checkpoint_hits": 0,
+            "retries": 23,
+            "attempt_timeouts": 23,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "slow-4-resilient.json",
+          "policy": "resilient",
+          "repeat": 4,
+          "manifest_hash": "96b8816751190a947106a59be1c6453380b0e10509ed692c833b40f2ded61f11",
+          "summary": {
+            "count": 24,
+            "succeeded": 24,
+            "success_rate": 1.0,
+            "elapsed_ms": 932.347,
+            "p50_ms": 496.151,
+            "p95_ms": 855.8341499999999,
+            "p99_ms": 914.91711,
+            "success_p95_ms": 855.8341499999999,
+            "completion_per_second": 25.741500429964244,
+            "success_per_second": 25.741500429964244,
+            "attempts": 143,
+            "checkpoint_hits": 0,
+            "retries": 23,
+            "attempt_timeouts": 23,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 24
+            },
+            "side_effects": 24,
+            "committed_tasks": 24,
+            "duplicate_effects": 0
+          }
+        },
+        {
+          "file": "slow-4-no_timeout.json",
+          "policy": "no_timeout",
+          "repeat": 4,
+          "manifest_hash": "96b8816751190a947106a59be1c6453380b0e10509ed692c833b40f2ded61f11",
+          "summary": {
+            "count": 24,
+            "succeeded": 21,
+            "success_rate": 0.875,
+            "elapsed_ms": 1001.455,
+            "p50_ms": 670.642,
+            "p95_ms": 1001.23485,
+            "p99_ms": 1001.2457,
+            "success_p95_ms": 946.67,
+            "completion_per_second": 23.965135712634986,
+            "success_per_second": 20.96949374855561,
+            "attempts": 112,
+            "checkpoint_hits": 0,
+            "retries": 0,
+            "attempt_timeouts": 0,
+            "peak_active": 4,
+            "status_counts": {
+              "succeeded": 21,
+              "budget_exhausted": 3
+            },
+            "side_effects": 21,
+            "committed_tasks": 21,
+            "duplicate_effects": 0
+          }
+        }
+      ]
+    }
+  ],
+  "recovery_file": "recovery.json",
+  "recovery": {
+    "pause": {
+      "count": 8,
+      "succeeded": 0,
+      "success_rate": 0.0,
+      "elapsed_ms": 85.595,
+      "p50_ms": 58.503,
+      "p95_ms": 83.1275,
+      "p99_ms": 84.7991,
+      "success_p95_ms": null,
+      "completion_per_second": 93.46353892124498,
+      "success_per_second": 0.0,
+      "attempts": 24,
+      "checkpoint_hits": 0,
+      "retries": 0,
+      "attempt_timeouts": 0,
+      "peak_active": 4,
+      "status_counts": {
+        "paused": 8
+      },
+      "side_effects": 0,
+      "committed_tasks": 0,
+      "duplicate_effects": 0
+    },
+    "resumed": {
+      "count": 8,
+      "succeeded": 8,
+      "success_rate": 1.0,
+      "elapsed_ms": 54.601,
+      "p50_ms": 39.0655,
+      "p95_ms": 54.1762,
+      "p99_ms": 54.33524,
+      "success_p95_ms": 54.1762,
+      "completion_per_second": 146.5162343185286,
+      "success_per_second": 146.5162343185286,
+      "attempts": 16,
+      "checkpoint_hits": 24,
+      "retries": 0,
+      "attempt_timeouts": 0,
+      "peak_active": 4,
+      "status_counts": {
+        "succeeded": 8
+      },
+      "side_effects": 8,
+      "committed_tasks": 8,
+      "duplicate_effects": 0
+    },
+    "warm": {
+      "count": 8,
+      "succeeded": 8,
+      "success_rate": 1.0,
+      "elapsed_ms": 0.625,
+      "p50_ms": 0.0515,
+      "p95_ms": 0.08599999999999998,
+      "p99_ms": 0.0972,
+      "success_p95_ms": 0.08599999999999998,
+      "completion_per_second": 12807.684358999591,
+      "success_per_second": 12807.684358999591,
+      "attempts": 0,
+      "checkpoint_hits": 40,
+      "retries": 0,
+      "attempt_timeouts": 0,
+      "peak_active": 1,
+      "status_counts": {
+        "succeeded": 8
+      },
+      "side_effects": 8,
+      "committed_tasks": 8,
+      "duplicate_effects": 0
+    }
+  },
+  "limits": [
+    "synthetic I/O, not LLM inference",
+    "local single-process, not distributed",
+    "sequential policy runs; timing sensitive to machine load",
+    "same seed fixes fault manifest, not wall-clock timing",
+    "5-run summaries are descriptive, not causal production estimates"
+  ]
+}
