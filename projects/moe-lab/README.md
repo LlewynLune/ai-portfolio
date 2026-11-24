@@ -23,3 +23,11 @@ LoRA与DPO依赖tiny-attention/artifacts/model.json，需先训练TinyAttention�
 ## 个人贡献与参考
 
 用户选择扩充前沿算法，代码/文档/评测AI辅助完成；本人独立理解、改动、测试贡献待记录。不能作为过去论文/实习/生产项目。参考原论文：https://arxiv.org/abs/2101.03961。本批数字全部来自本仓库代码，不搬用论文结果。
+
+## 深化批次：研究与工程验证
+
+新增有限专家容量、丢弃及第二选择路由；同时报告全批误差、接收覆盖率与仅接收项误差，避免隐藏丢弃。
+
+[深化交互分析](depth-demo.html) · [新增实测报告](artifacts/depth/REPORT.md) · [新实验代码](depth.py) · [逐条新证据](artifacts/depth/results.json)
+
+原模型和原报告保持冻结；本批结果只写artifacts/depth。所有参数扫描均为探索，不在测试上选择配置后声称独立评测；AI辅助实现与本人独立贡献分开。

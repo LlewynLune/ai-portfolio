@@ -86,3 +86,11 @@ python3 -m videoguard.media my-owned-clip.mp4 --out local-report.json
 ## 坚持的边界
 
 所有视频是本项目脚本生成的几何打击垫/闪光合成数据，没有私人视频、人脸、公司资料或用户声纹。公开仓库只含公开研究引用和本项目代码。未下载或运行 BAGEL、LatentSync、Depth Anything 权重，未执行真实 LLM/生成视频 API。代码与研究整理由 AI 辅助，本人的独立理解、修改和复核须继续记录。
+
+## 深化批次：研究与工程验证
+
+新增同时约束定位容差与实际报警延迟的事件匹配，比较500–2000ms时限；明确回溯边界准确不等于及时报警。
+
+[深化交互分析](depth-demo.html) · [新增实测报告](artifacts/depth/REPORT.md) · [新实验代码](depth.py) · [逐条新证据](artifacts/depth/results.json)
+
+原模型和原报告保持冻结；本批结果只写artifacts/depth。所有参数扫描均为探索，不在测试上选择配置后声称独立评测；AI辅助实现与本人独立贡献分开。

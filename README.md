@@ -82,6 +82,12 @@ Agent / AI 产品 · 机电与电气工程背景
 
 [前沿机制实验地图](docs/frontier-evidence.md) · [跨学科证据](docs/cross-disciplinary-evidence.md) · [数据与方法来源](docs/ai-project-reference.md) · [实验真实性](docs/ai-evidence.md)
 
+## 14项深化批次
+
+本轮每项新增针对性的代码、压力实验或冻结证据再分析，以及可操作的Depth Study：条件/模型/指标筛选、失败下钻、专属诊断和证据导出。原模型与报告不覆盖；新前缀排除已有数据ID，相关扰动和重复计时不冒充独立样本。
+
+[逐项深化清单与完整入口](docs/project-depth.md) · [复现与本机API说明](docs/depth-engineering.md)。新增只读localhost分页API见scripts/depth_server.py；不运行外部模型、设备或公网服务。
+
 ## 复现与维护
 
 - 结构、Markdown链接与敏感入口检查：python3 scripts/check_portfolio.py。
@@ -90,4 +96,4 @@ Agent / AI 产品 · 机电与电气工程背景
 - 履历内容由 profile/resume.json 管理；python3 scripts/build_resume_portfolio.py 确定性重建主页，不修改既有案例文档或重训模型。
 - [公开披露与证据边界](PUBLISHING.md) · [GitHub维护](docs/github-setup-guide.md)。
 
-当前展示版 v1.3：保留星空首屏与图文成果布局，教育区采用两校官网完整标识；14项研究配图改为冻结报告驱动的矢量证据图，点击可放大，保留指标、对照和失败边界。业务图仍为模块示意。本人头像与原版式不变。发布状态以最新GitHub Actions为准。
+当前展示版 v1.4：14项研究全部增加Depth Study入口；完成项目特定的研究与工程深化，保留原模型、原报告与矢量配图。星空首屏、校徽、头像及4项真实业务履历不变。发布状态以最新GitHub Actions为准。

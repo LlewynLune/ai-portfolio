@@ -83,3 +83,11 @@ clean / transient / mixed / ack_loss / permanent / slow。故障定义见 [confi
 不是模型准确率评测、不是 RL 训练、不是生产集群、不是远程 exactly-once、没有 token 费用或业务收益；控制暂停不是主机断电证明。研究部分是方法比较与工程实验，不是发表论文或新算法。
 
 你的个人贡献目前仅可明确为提出作品集需求、选定方向；代码和实验由 AI 辅助完成。独立讲解、修改、复核后才能补充本人承担的真实部分。
+
+## 深化批次：研究与工程验证
+
+新增81次真实本地异步负载实验，分故障/并发/种子比较策略；增加SQLite重开后暂停恢复和重复副作用核验。
+
+[深化交互分析](depth-demo.html) · [新增实测报告](artifacts/depth/REPORT.md) · [新实验代码](depth.py) · [逐条新证据](artifacts/depth/results.json)
+
+原模型和原报告保持冻结；本批结果只写artifacts/depth。所有参数扫描均为探索，不在测试上选择配置后声称独立评测；AI辅助实现与本人独立贡献分开。

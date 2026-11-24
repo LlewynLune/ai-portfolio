@@ -35,3 +35,11 @@ python3 scripts/build_cross_demos.py
 ## 参考与归属
 
 概念/数据参考：https://openstax.org/books/university-physics-volume-2/pages/10-5-rc-circuits。本实验结果只由本仓库代码产生，不是参考材料作者的结果。用户选方向；代码、实验、文档与展示由AI辅助完成，本人亲自修改/复核贡献待记录。没有虚构作者、论文、实习身份或上线指标。
+
+## 深化批次：研究与工程验证
+
+新增增益/偏置未知条件下的变量投影物理拟合，对照单位输入拟合与冻结Ridge；保留长tau不可辨识风险。
+
+[深化交互分析](depth-demo.html) · [新增实测报告](artifacts/depth/REPORT.md) · [新实验代码](depth.py) · [逐条新证据](artifacts/depth/results.json)
+
+原模型和原报告保持冻结；本批结果只写artifacts/depth。所有参数扫描均为探索，不在测试上选择配置后声称独立评测；AI辅助实现与本人独立贡献分开。

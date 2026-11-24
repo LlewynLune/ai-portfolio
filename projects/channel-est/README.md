@@ -35,3 +35,11 @@ python3 scripts/build_cross_demos.py
 ## 参考与归属
 
 概念/数据参考：https://wirelesspi.com/channel-estimation-in-ofdm-systems/。本实验结果只由本仓库代码产生，不是参考材料作者的结果。用户选方向；代码、实验、文档与展示由AI辅助完成，本人亲自修改/复核贡献待记录。没有虚构作者、论文、实习身份或上线指标。
+
+## 深化批次：研究与工程验证
+
+新增缺失导频输入与观测导频LS对照，少于4观测时显式拒估；零填充值不能冒充已观测数据。
+
+[深化交互分析](depth-demo.html) · [新增实测报告](artifacts/depth/REPORT.md) · [新实验代码](depth.py) · [逐条新证据](artifacts/depth/results.json)
+
+原模型和原报告保持冻结；本批结果只写artifacts/depth。所有参数扫描均为探索，不在测试上选择配置后声称独立评测；AI辅助实现与本人独立贡献分开。

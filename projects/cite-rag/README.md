@@ -40,3 +40,11 @@ python3 projects/cite-rag/llm_adapter.py --query "retry transient bounded attemp
 ## 贡献
 
 用户提出需求与混合方案，代码和文档 AI 辅助完成，个人独立实现贡献待记录。大模型接口是本项目一个模块，不重复计为独立新项目；下一阶段经用户配置后才运行真实调用、冻结问题集、人评支持率和费用记录。
+
+## 深化批次：研究与工程验证
+
+新增内容指纹去重的RRF检索模块，在重复文档与无关文档注入下对照排名、拒答和可追踪摘录。
+
+[深化交互分析](depth-demo.html) · [新增实测报告](artifacts/depth/REPORT.md) · [新实验代码](depth.py) · [逐条新证据](artifacts/depth/results.json)
+
+原模型和原报告保持冻结；本批结果只写artifacts/depth。所有参数扫描均为探索，不在测试上选择配置后声称独立评测；AI辅助实现与本人独立贡献分开。
