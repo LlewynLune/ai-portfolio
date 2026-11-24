@@ -1,0 +1,103 @@
+Generating independent media groups [1600, 400, 500, 600]
+Training shared lag ranker seed 7
+Training shared lag ranker seed 19
+Training shared lag ranker seed 31
+Evaluating id
+Evaluating noise
+Evaluating periodic
+Evaluating silent
+Evaluating distractor
+Evaluating drift
+Evaluating missing
+Evaluating long
+{
+  "id": {
+    "accuracy": 1.0,
+    "mae_frames": 0.0,
+    "ece_10_equal_width": 0.0007094231327528245,
+    "selective": {
+      "threshold": 0.0,
+      "accepted": 600,
+      "coverage": 1.0,
+      "accepted_error": 0.0
+    }
+  },
+  "noise": {
+    "accuracy": 0.9916666666666667,
+    "mae_frames": 0.025,
+    "ece_10_equal_width": 0.00626560188115491,
+    "selective": {
+      "threshold": 0.0,
+      "accepted": 240,
+      "coverage": 1.0,
+      "accepted_error": 0.008333333333333333
+    }
+  },
+  "periodic": {
+    "accuracy": 0.8583333333333333,
+    "mae_frames": 0.85,
+    "ece_10_equal_width": 0.14931212855727374,
+    "selective": {
+      "threshold": 0.0,
+      "accepted": 240,
+      "coverage": 1.0,
+      "accepted_error": 0.14166666666666666
+    }
+  },
+  "silent": {
+    "accuracy": 0.07083333333333333,
+    "mae_frames": 3.279166666666667,
+    "ece_10_equal_width": 0.008200740001770665,
+    "selective": {
+      "threshold": 0.0,
+      "accepted": 0,
+      "coverage": 0.0,
+      "accepted_error": null
+    }
+  },
+  "distractor": {
+    "accuracy": 0.975,
+    "mae_frames": 0.15,
+    "ece_10_equal_width": 0.020550338179933892,
+    "selective": {
+      "threshold": 0.0,
+      "accepted": 240,
+      "coverage": 1.0,
+      "accepted_error": 0.025
+    }
+  },
+  "drift": {
+    "accuracy": 0.5791666666666667,
+    "mae_frames": 1.8666666666666667,
+    "ece_10_equal_width": 0.29602969557487996,
+    "selective": {
+      "threshold": 0.0,
+      "accepted": 240,
+      "coverage": 1.0,
+      "accepted_error": 0.42083333333333334
+    }
+  },
+  "missing": {
+    "accuracy": 0.9666666666666667,
+    "mae_frames": 0.14583333333333334,
+    "ece_10_equal_width": 0.015868224462956944,
+    "selective": {
+      "threshold": 0.0,
+      "accepted": 240,
+      "coverage": 1.0,
+      "accepted_error": 0.03333333333333333
+    }
+  },
+  "long": {
+    "accuracy": 1.0,
+    "mae_frames": 0.0,
+    "ece_10_equal_width": 0.0010563015341610292,
+    "selective": {
+      "threshold": 0.0,
+      "accepted": 240,
+      "coverage": 1.0,
+      "accepted_error": 0.0
+    }
+  }
+}
+Completed in 27.40621937531978 seconds

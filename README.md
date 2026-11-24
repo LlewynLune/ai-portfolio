@@ -1,6 +1,12 @@
 # 于跃｜AI 作品集
 
-> 十三个 AI 辅助研究项目：本批五项前沿机制复现加已有八项。小型CPU模型真实训练，共享基座、合成数据和真实硬件边界明确披露；不是最新论文榜单、大模型训练或原创突破，真实远程LLM未调用。[GitHub](https://github.com/LlewynLune/ai-portfolio)源码版本v0.5，覆盖全部十三项；[网站](https://llewynlune.github.io/ai-portfolio/)部署状态以最新Actions记录为准。
+> 十四个 AI 辅助研究项目：新增专精音画同步可靠性的 VideoGuard-Lab，加已有十三项机制与跨学科研究原型。真实CPU训练、合成数据、共享基座与未验证边界分别披露；不是大模型训练、原创突破或生产成果，真实远程LLM未调用。当前本地源码 v0.6；GitHub 与 Pages 是否已更新以最新提交/部署记录为准。
+
+## 专精主项目：VideoGuard-Lab（v0.6）
+
+[交互Demo](projects/video-guard/demo.html) · [代码与复现](projects/video-guard/README.md) · [实测报告](projects/video-guard/artifacts/REPORT.md) · [方法](projects/video-guard/METHOD.md) · [公开研究对照](projects/video-guard/RESEARCH.md)
+
+单一主线：音画事件同步与拒估。自建RGB/PCM、手写共享MLP和双塔InfoNCE、三seed训练、同场基线、校准集合、滑窗矛盾、八类条件、四组负对照与本地FFmpeg入口。ID不优于简单相关性、双塔未稳定胜出、集合覆盖与拒估均有失败；不把合成满分包装为SOTA。项目不依赖旧模型，不复制字节/Anthropic私有实现。
 
 ## 五项前沿机制：本批v0.5
 

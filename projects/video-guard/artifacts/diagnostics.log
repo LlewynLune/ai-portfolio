@@ -1,0 +1,84 @@
+{
+  "operational_floor": 0.9,
+  "not_used_for_model_selection": true,
+  "conditions": {
+    "id": {
+      "n": 240,
+      "accepted": 211,
+      "coverage": 0.8791666666666667,
+      "accepted_error": 0.0,
+      "window_disagreement_rate": 0.004166666666666667
+    },
+    "noise": {
+      "n": 240,
+      "accepted": 190,
+      "coverage": 0.7916666666666666,
+      "accepted_error": 0.0,
+      "window_disagreement_rate": 0.0375
+    },
+    "periodic": {
+      "n": 240,
+      "accepted": 0,
+      "coverage": 0.0,
+      "accepted_error": null,
+      "window_disagreement_rate": 0.0125
+    },
+    "silent": {
+      "n": 240,
+      "accepted": 0,
+      "coverage": 0.0,
+      "accepted_error": null,
+      "window_disagreement_rate": 0.0
+    },
+    "distractor": {
+      "n": 240,
+      "accepted": 63,
+      "coverage": 0.2625,
+      "accepted_error": 0.0,
+      "window_disagreement_rate": 0.058333333333333334
+    },
+    "drift": {
+      "n": 240,
+      "accepted": 3,
+      "coverage": 0.0125,
+      "accepted_error": 0.0,
+      "window_disagreement_rate": 0.7333333333333333
+    },
+    "missing": {
+      "n": 240,
+      "accepted": 41,
+      "coverage": 0.17083333333333334,
+      "accepted_error": 0.0,
+      "window_disagreement_rate": 0.2708333333333333
+    },
+    "long": {
+      "n": 240,
+      "accepted": 166,
+      "coverage": 0.6916666666666667,
+      "accepted_error": 0.0,
+      "window_disagreement_rate": 0.2
+    }
+  },
+  "negative_controls": {
+    "reversed_audio": {
+      "n": 240,
+      "incorrect_unique_estimate_rate": 0.004166666666666667,
+      "note": "No valid stable in-range alignment in this negative control; accepted unique estimates are unsupported."
+    },
+    "unrelated_audio": {
+      "n": 240,
+      "incorrect_unique_estimate_rate": 0.0,
+      "note": "No valid stable in-range alignment in this negative control; accepted unique estimates are unsupported."
+    },
+    "range_out": {
+      "n": 240,
+      "incorrect_unique_estimate_rate": 0.0,
+      "note": "No valid stable in-range alignment in this negative control; accepted unique estimates are unsupported."
+    },
+    "low_visual_evidence": {
+      "n": 240,
+      "incorrect_unique_estimate_rate": 0.016666666666666666,
+      "note": "This is acceptance under deliberately attenuated visual evidence, NOT necessarily incorrect delay. Metric name retained for compatibility; do not interpret as error rate."
+    }
+  }
+}
