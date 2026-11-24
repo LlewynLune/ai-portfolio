@@ -6,7 +6,7 @@ permissions:
   contents: read
 jobs:
   videoguard:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -16,14 +16,22 @@ jobs:
         with:
           node-version: '22'
       - name: Install bounded local media adapter dependency
-        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+        run: |
+          if ! command -v ffmpeg >/dev/null; then
+            sudo apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=30 update
+            sudo apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=30 install -y --no-install-recommends ffmpeg
+          fi
+          ffmpeg -version
       - run: python -m pip install -r projects/video-guard/requirements.txt
       - name: Gradients, protocol, frozen evidence, JS parity
         working-directory: projects/video-guard
         run: python -m unittest discover -s tests -v
       - name: Rebuild standalone demo
         working-directory: projects/video-guard
-        run: python enhance_demo.py
+        run: python localize_demo.py
+      - name: Causal detector alarm-time parity
+        working-directory: projects/video-guard
+        run: python check_drift_js.py
       - name: Set-valued inference and risk JS parity
         working-directory: projects/video-guard
         run: python check_depth_js.py

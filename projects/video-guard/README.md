@@ -14,7 +14,11 @@
 
 [纵深方法](CALIBRATION.md) · [新增实测](artifacts/calibration-depth/REPORT.md)。保留原v0.6模型与证据，新增LAC、对数LAC、随机APS、保守crossing、top1补全五方法；八组各600新留出，24轮独立校准/测试，置信门限风险曲线、零错例二项上界。不是新模型或新项目，不把集合大/无空集解释为更可靠。项目全部55项测试通过，新增JS/Python288个集合与32个风险计数一致。
 
-重建包含纵深页的当前Demo：python3 enhance_demo.py；原build_demo.py只恢复旧版展示，仍保留用于历史复现。
+重建包含校准与漂移定位的当前Demo：python3 localize_demo.py；原build_demo.py只恢复初版、enhance_demo.py恢复校准版，均保留用于历史复现。
+
+## 因果漂移定位更新（0.3 / 作品集v0.8）
+
+[定位协议](DRIFT.md) · [定位实测](artifacts/drift-localization/REPORT.md)。十类自建媒体变化点真值、32帧尾随窗、实际报警时间、验证参数选择、raw/onset/冻结MLP三对照、事件匹配F1/误报漏报、200–1200ms容差敏感性和三次独立重复。项目全部77项测试通过，240条轨迹JS/Python报警完全一致。时间误差只统计匹配事件，漏检单列，不把回溯边界当即时报警。
 
 ## 为什么不再多堆项目
 
