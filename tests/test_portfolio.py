@@ -49,7 +49,11 @@ class PortfolioTest(unittest.TestCase):
         self.assertEqual(text.count('class="research-group"'),4)
         self.assertEqual(text.count('AI-assisted</span>'),14)
         self.assertEqual(text.count('<style>'),1)
-        self.assertEqual(text.count('本仓库 Demo 实际画面'),14)
+        self.assertEqual(text.count('冻结实验报告重绘 · 点击放大'),14)
+        self.assertIn('ntu-logo.png',text)
+        self.assertIn('um-logo.png',text)
+        self.assertNotIn('class="edu-symbol"',text)
+        self.assertIn('image-dialog',text)
         self.assertEqual(text.count('产品流程示意 · 非系统截图'),4)
         for item in ['stars.jpg','identity.svg','drawing-review.svg','standards-platform.svg','skills-knowledge.svg','force-aigc.svg']:
             self.assertTrue((ROOT/'assets/portfolio'/item).is_file())
@@ -59,6 +63,9 @@ class PortfolioTest(unittest.TestCase):
             def handle_starttag(self,tag,attrs):
                 a=dict(attrs)
                 if 'id' in a: ids.append(a['id'])
+                if tag=='img' and a.get('src'):
+                    self_test.assertTrue((ROOT/a['src']).is_file(),a['src'])
+        self_test=self
         IdParser().feed(text)
         self.assertEqual(len(ids),len(set(ids)))
         spec=importlib.util.spec_from_file_location('resume_builder',ROOT/'scripts/build_resume_portfolio.py')
@@ -66,6 +73,17 @@ class PortfolioTest(unittest.TestCase):
         spec.loader.exec_module(builder)
         builder.build()
         self.assertEqual(text,(ROOT/'index.html').read_text())
+    def test_evidence_figures_match_frozen_reports(self):
+        import json,hashlib,statistics
+        records=json.loads((ROOT/'assets/portfolio/evidence-figures.json').read_text())
+        self.assertEqual(len(records),14)
+        for r in records:
+            self.assertEqual(hashlib.sha256((ROOT/r['source']).read_bytes()).hexdigest(),r['sha256'])
+            self.assertTrue((ROOT/'assets/portfolio'/(r['project']+'-evidence.svg')).is_file())
+            for i,g in enumerate(r['groups']):
+                for j,m in enumerate(r['models']):
+                    hits=[x for x in r['rows'] if x[r['model_column']]==m and (r['group_column'] is None or x[r['group_column']]==g)]
+                    self.assertAlmostEqual(statistics.mean(float(x[r['metric']]) for x in hits),r['values'][i][j])
     def test_evidence_trace_runs(self):
         result = subprocess.run(
             [sys.executable, 'examples/evidence-trace/evidence_trace.py',

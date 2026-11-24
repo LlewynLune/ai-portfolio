@@ -1,0 +1,1323 @@
+[
+  {
+    "project": "video-guard",
+    "source": "projects/video-guard/artifacts/drift-localization/REPORT.md",
+    "sha256": "9113179017ebec2253c16f164eba4d367beea5f60b8d73be694b61df04f16dbe",
+    "metric": "F1",
+    "group_column": null,
+    "model_column": "方法",
+    "models": [
+      "raw",
+      "onset",
+      "mlp"
+    ],
+    "model_labels": [
+      "Raw",
+      "Onset",
+      "MLP"
+    ],
+    "groups": [
+      null
+    ],
+    "series_labels": [
+      "Frozen test"
+    ],
+    "values": [
+      [
+        0.816,
+        0.818,
+        0.838
+      ]
+    ],
+    "aggregation": "mean of available selected repetitions; no cherry-pick",
+    "rows": [
+      {
+        "方法": "raw",
+        "P": "0.883",
+        "R": "0.758",
+        "F1": "0.816",
+        "TP / FP / FN": "1001 / 132 / 319",
+        "匹配定位MAE ms": "269.880",
+        "匹配警报延迟中位 ms": "1350.000",
+        "匹配警报P90 ms": "1750.000"
+      },
+      {
+        "方法": "onset",
+        "P": "0.906",
+        "R": "0.746",
+        "F1": "0.818",
+        "TP / FP / FN": "985 / 102 / 335",
+        "匹配定位MAE ms": "410.305",
+        "匹配警报延迟中位 ms": "1600.000",
+        "匹配警报P90 ms": "1900.000"
+      },
+      {
+        "方法": "mlp",
+        "P": "0.912",
+        "R": "0.774",
+        "F1": "0.838",
+        "TP / FP / FN": "1022 / 98 / 298",
+        "匹配定位MAE ms": "238.503",
+        "匹配警报延迟中位 ms": "1350.000",
+        "匹配警报P90 ms": "1700.000"
+      }
+    ],
+    "notes": [
+      "Time cost remains: matched MLP median alarm delay 1350 ms.",
+      "Synthetic RGB/PCM only; quiet gaps and ramps still fail."
+    ]
+  },
+  {
+    "project": "vision-cal",
+    "source": "projects/vision-cal/artifacts/REPORT.md",
+    "sha256": "ef610c8c3fd50a234f8757c6b2afa136b206fe6ba81bf70c2bc3a04a04e6c648",
+    "metric": "accuracy",
+    "group_column": "group",
+    "model_column": "model",
+    "models": [
+      "logistic",
+      "mlp_raw",
+      "mlp_temperature"
+    ],
+    "model_labels": [
+      "Linear",
+      "MLP",
+      "Temp"
+    ],
+    "groups": [
+      "clean",
+      "shift_right1px"
+    ],
+    "series_labels": [
+      "Clean",
+      "1 px shift"
+    ],
+    "values": [
+      [
+        0.95556,
+        0.97222,
+        0.97222
+      ],
+      [
+        0.39444,
+        0.49722,
+        0.49722
+      ]
+    ],
+    "aggregation": "mean of available selected repetitions; no cherry-pick",
+    "rows": [
+      {
+        "group": "clean",
+        "model": "logistic",
+        "accuracy": "0.95556",
+        "nll": "0.19277",
+        "ece10": "0.07449",
+        "coverage90": "0.64444",
+        "selective_error90": "0.00000"
+      },
+      {
+        "group": "clean",
+        "model": "mlp_raw",
+        "accuracy": "0.97222",
+        "nll": "0.11267",
+        "ece10": "0.01236",
+        "coverage90": "0.89167",
+        "selective_error90": "0.00623"
+      },
+      {
+        "group": "clean",
+        "model": "mlp_temperature",
+        "accuracy": "0.97222",
+        "nll": "0.12101",
+        "ece10": "0.01658",
+        "coverage90": "0.92778",
+        "selective_error90": "0.00898"
+      },
+      {
+        "group": "shift_right1px",
+        "model": "logistic",
+        "accuracy": "0.39444",
+        "nll": "2.22489",
+        "ece10": "0.28029",
+        "coverage90": "0.18611",
+        "selective_error90": "0.44776"
+      },
+      {
+        "group": "shift_right1px",
+        "model": "mlp_raw",
+        "accuracy": "0.49722",
+        "nll": "3.04769",
+        "ece10": "0.33904",
+        "coverage90": "0.51944",
+        "selective_error90": "0.40107"
+      },
+      {
+        "group": "shift_right1px",
+        "model": "mlp_temperature",
+        "accuracy": "0.49722",
+        "nll": "3.93613",
+        "ece10": "0.38164",
+        "coverage90": "0.62500",
+        "selective_error90": "0.44000"
+      }
+    ],
+    "notes": [
+      "Calibration does not remove distribution-shift errors.",
+      "Public 8 x 8 images; not a deployed OCR model."
+    ]
+  },
+  {
+    "project": "novelty-lab",
+    "source": "projects/novelty-lab/artifacts/REPORT.md",
+    "sha256": "ec3bc10debd9a03a251f5f4ecb618ca3cc1b9edc1bd25cb4205fb34e932395fb",
+    "metric": "Recall",
+    "group_column": null,
+    "model_column": "模型",
+    "models": [
+      "centroid_distance",
+      "isolation_forest",
+      "one_class_svm"
+    ],
+    "model_labels": [
+      "Distance",
+      "IForest",
+      "OCSVM"
+    ],
+    "groups": [
+      null
+    ],
+    "series_labels": [
+      "Frozen test"
+    ],
+    "values": [
+      [
+        0.8908,
+        0.7983,
+        0.958
+      ]
+    ],
+    "aggregation": "mean of available selected repetitions; no cherry-pick",
+    "rows": [
+      {
+        "模型": "centroid_distance",
+        "ROC-AUC": "0.9993",
+        "PR-AUC": "0.9999",
+        "Precision": "1.0000",
+        "Recall": "0.8908",
+        "正常误报率": "0.0000"
+      },
+      {
+        "模型": "isolation_forest",
+        "ROC-AUC": "0.9909",
+        "PR-AUC": "0.9990",
+        "Precision": "1.0000",
+        "Recall": "0.7983",
+        "正常误报率": "0.0000"
+      },
+      {
+        "模型": "one_class_svm",
+        "ROC-AUC": "0.9993",
+        "PR-AUC": "0.9999",
+        "Precision": "1.0000",
+        "Recall": "0.9580",
+        "正常误报率": "0.0000"
+      }
+    ],
+    "notes": [
+      "Normal train / validation: 35 / 12; test unknowns: 119.",
+      "Class novelty is not an industrial fault label."
+    ]
+  },
+  {
+    "project": "textguard",
+    "source": "projects/textguard/artifacts/REPORT.md",
+    "sha256": "7ec0d5d63d8dacc87ce22c812d7679571d70bfaac62b4c0b982a601cfe4b9291",
+    "metric": "F1",
+    "group_column": null,
+    "model_column": "模型",
+    "models": [
+      "majority",
+      "multinomial_nb",
+      "tfidf_logistic"
+    ],
+    "model_labels": [
+      "Majority",
+      "NB",
+      "Logistic"
+    ],
+    "groups": [
+      null
+    ],
+    "series_labels": [
+      "Frozen test"
+    ],
+    "values": [
+      [
+        0.0,
+        0.8774,
+        0.904
+      ]
+    ],
+    "aggregation": "mean of available selected repetitions; no cherry-pick",
+    "rows": [
+      {
+        "模型": "majority",
+        "Precision": "0.0000",
+        "Recall": "0.0000",
+        "F1": "0.0000",
+        "ROC-AUC": "0.5000",
+        "Brier": "0.1031"
+      },
+      {
+        "模型": "multinomial_nb",
+        "Precision": "1.0000",
+        "Recall": "0.7815",
+        "F1": "0.8774",
+        "ROC-AUC": "0.9831",
+        "Brier": "0.0212"
+      },
+      {
+        "模型": "tfidf_logistic",
+        "Precision": "0.8626",
+        "Recall": "0.9496",
+        "F1": "0.9040",
+        "ROC-AUC": "0.9902",
+        "Brier": "0.0201"
+      }
+    ],
+    "notes": [
+      "Vocabulary fit on train; threshold selected on validation.",
+      "Old English SMS dataset; no modern fraud deployment claim."
+    ]
+  },
+  {
+    "project": "reliability-lab",
+    "source": "projects/reliability-lab/results/advanced/REPORT.md",
+    "sha256": "8878ec2cbde4884a7b6e33c5d594982dfe052d48c75e19c6bb7f6980ed16cc2e",
+    "metric": "重复副作用",
+    "group_column": "崩溃边界",
+    "model_column": "策略",
+    "models": [
+      "retry",
+      "resilient"
+    ],
+    "model_labels": [
+      "Retry",
+      "Resilient"
+    ],
+    "groups": [
+      "after_commit"
+    ],
+    "series_labels": [
+      "After commit"
+    ],
+    "values": [
+      [
+        1.0,
+        0.0
+      ]
+    ],
+    "aggregation": "mean of available selected repetitions; no cherry-pick",
+    "rows": [
+      {
+        "崩溃边界": "after_commit",
+        "策略": "retry",
+        "退出码": "73",
+        "数据库检查": "ok",
+        "恢复成功": "4",
+        "检查点命中": "0",
+        "重复副作用": "1"
+      },
+      {
+        "崩溃边界": "after_commit",
+        "策略": "resilient",
+        "退出码": "73",
+        "数据库检查": "ok",
+        "恢复成功": "4",
+        "检查点命中": "4",
+        "重复副作用": "0"
+      }
+    ],
+    "notes": [
+      "Both recover 4 tasks; idempotence removes duplicated effects.",
+      "Only experiment subprocesses; not power-loss resilience."
+    ]
+  },
+  {
+    "project": "cite-rag",
+    "source": "projects/cite-rag/artifacts/REPORT.md",
+    "sha256": "710df34cfe749245e6959a9ceccf9927f1c0b882fbe6a6d5fd379354bca75e9d",
+    "metric": "Recall@3",
+    "group_column": "集合",
+    "model_column": "方法",
+    "models": [
+      "bm25",
+      "char",
+      "hybrid"
+    ],
+    "model_labels": [
+      "BM25",
+      "Char",
+      "RRF"
+    ],
+    "groups": [
+      "challenge"
+    ],
+    "series_labels": [
+      "Challenge"
+    ],
+    "values": [
+      [
+        0.5,
+        0.625,
+        0.75
+      ]
+    ],
+    "aggregation": "mean of available selected repetitions; no cherry-pick",
+    "rows": [
+      {
+        "方法": "bm25",
+        "集合": "challenge",
+        "问题": "4",
+        "Recall@3": "0.500",
+        "MRR@3": "0.750",
+        "拒答正确率": "—"
+      },
+      {
+        "方法": "char",
+        "集合": "challenge",
+        "问题": "4",
+        "Recall@3": "0.625",
+        "MRR@3": "0.458",
+        "拒答正确率": "—"
+      },
+      {
+        "方法": "hybrid",
+        "集合": "challenge",
+        "问题": "4",
+        "Recall@3": "0.750",
+        "MRR@3": "0.750",
+        "拒答正确率": "—"
+      }
+    ],
+    "notes": [
+      "Valid citation IDs do not prove semantic support.",
+      "15 authored documents / 25 questions; LLM not invoked."
+    ]
+  },
+  {
+    "project": "tiny-attention",
+    "source": "projects/tiny-attention/artifacts/REPORT.md",
+    "sha256": "0f65c185ff14495470e9b98dc0d3a2527ad37049bdc41212e3bcafb2c0b845a7",
+    "metric": "accuracy",
+    "group_column": "group",
+    "model_column": "model",
+    "models": [
+      "causal_attention",
+      "no_attention_ablation"
+    ],
+    "model_labels": [
+      "Attention",
+      "No-attn"
+    ],
+    "groups": [
+      "heldout3pairs",
+      "length5pairs_ood"
+    ],
+    "series_labels": [
+      "3 pairs",
+      "5 pairs OOD"
+    ],
+    "values": [
+      [
+        0.415,
+        0.14
+      ],
+      [
+        0.20333,
+        0.12
+      ]
+    ],
+    "aggregation": "mean of available selected repetitions; no cherry-pick",
+    "rows": [
+      {
+        "group": "heldout3pairs",
+        "model": "causal_attention",
+        "trainable_parameters": "10226",
+        "accuracy": "0.41500",
+        "nll": "1.11553"
+      },
+      {
+        "group": "heldout3pairs",
+        "model": "no_attention_ablation",
+        "trainable_parameters": "10226",
+        "accuracy": "0.14000",
+        "nll": "2.08841"
+      },
+      {
+        "group": "length5pairs_ood",
+        "model": "causal_attention",
+        "trainable_parameters": "10226",
+        "accuracy": "0.20333",
+        "nll": "2.34030"
+      },
+      {
+        "group": "length5pairs_ood",
+        "model": "no_attention_ablation",
+        "trainable_parameters": "10226",
+        "accuracy": "0.12000",
+        "nll": "2.12432"
+      }
+    ],
+    "notes": [
+      "Longer inputs degrade performance; failures are retained.",
+      "10226 trainable parameters; not language pretraining."
+    ]
+  },
+  {
+    "project": "lora-lab",
+    "source": "projects/lora-lab/artifacts/REPORT.md",
+    "sha256": "5a9d2210a90d5131b57be42dae1a47dfe7a21ae5a13a53f4e8fe4b95fab20702",
+    "metric": "accuracy",
+    "group_column": "group",
+    "model_column": "model",
+    "models": [
+      "frozen",
+      "lora_r4",
+      "full_finetune"
+    ],
+    "model_labels": [
+      "Frozen",
+      "Rank 4",
+      "Full FT"
+    ],
+    "groups": [
+      "test_shift1",
+      "original_task_retention"
+    ],
+    "series_labels": [
+      "New task",
+      "Old task"
+    ],
+    "values": [
+      [
+        0.07,
+        0.432,
+        0.442
+      ],
+      [
+        0.45,
+        0.104,
+        0.05
+      ]
+    ],
+    "aggregation": "mean of available selected repetitions; no cherry-pick",
+    "rows": [
+      {
+        "group": "test_shift1",
+        "model": "frozen",
+        "trainable_parameters": "0",
+        "accuracy": "0.07000",
+        "nll": "5.45016"
+      },
+      {
+        "group": "test_shift1",
+        "model": "lora_r4",
+        "trainable_parameters": "712",
+        "accuracy": "0.43200",
+        "nll": "1.47049"
+      },
+      {
+        "group": "test_shift1",
+        "model": "full_finetune",
+        "trainable_parameters": "10226",
+        "accuracy": "0.44200",
+        "nll": "1.46826"
+      },
+      {
+        "group": "original_task_retention",
+        "model": "frozen",
+        "trainable_parameters": "0",
+        "accuracy": "0.45000",
+        "nll": "1.10203"
+      },
+      {
+        "group": "original_task_retention",
+        "model": "lora_r4",
+        "trainable_parameters": "712",
+        "accuracy": "0.10400",
+        "nll": "3.01848"
+      },
+      {
+        "group": "original_task_retention",
+        "model": "full_finetune",
+        "trainable_parameters": "10226",
+        "accuracy": "0.05000",
+        "nll": "5.54176"
+      }
+    ],
+    "notes": [
+      "Low-rank learning still forgets the original task.",
+      "Rank 4: 712 trainable parameters; Full FT: 10226."
+    ]
+  },
+  {
+    "project": "dpo-lab",
+    "source": "projects/dpo-lab/artifacts/REPORT.md",
+    "sha256": "7c6c891c7f015169efda297a1ccd7def4380dabc85ee883e1c30720e6f72e9bd",
+    "metric": "pair_win_rate",
+    "group_column": "group",
+    "model_column": "model",
+    "models": [
+      "reference",
+      "dpo_beta0.1",
+      "sft_chosen"
+    ],
+    "model_labels": [
+      "Reference",
+      "DPO 0.1",
+      "SFT"
+    ],
+    "groups": [
+      "heldout_pairs"
+    ],
+    "series_labels": [
+      "Held-out"
+    ],
+    "values": [
+      [
+        0.092,
+        0.99,
+        0.878
+      ]
+    ],
+    "aggregation": "mean of available selected repetitions; no cherry-pick",
+    "rows": [
+      {
+        "group": "heldout_pairs",
+        "model": "reference",
+        "pair_win_rate": "0.09200",
+        "chosen_top1_accuracy": "0.04600",
+        "original_top1_retention": "0.47200",
+        "kl_to_reference": "0.00000"
+      },
+      {
+        "group": "heldout_pairs",
+        "model": "dpo_beta0.1",
+        "pair_win_rate": "0.99000",
+        "chosen_top1_accuracy": "0.42200",
+        "original_top1_retention": "0.00800",
+        "kl_to_reference": "6.23081"
+      },
+      {
+        "group": "heldout_pairs",
+        "model": "sft_chosen",
+        "pair_win_rate": "0.87800",
+        "chosen_top1_accuracy": "0.44200",
+        "original_top1_retention": "0.08400",
+        "kl_to_reference": "4.10003"
+      }
+    ],
+    "notes": [
+      "DPO 0.1: win 0.990 vs chosen top1 0.422; KL 6.231.",
+      "Single-token synthetic preference; not human alignment."
+    ]
+  },
+  {
+    "project": "moe-lab",
+    "source": "projects/moe-lab/artifacts/REPORT.md",
+    "sha256": "1c1a80289a2a3be5266fe5524e54da5c3d3b816725cab71d1ef032ff838ea5f9",
+    "metric": "rmse",
+    "group_column": "group",
+    "model_column": "model",
+    "models": [
+      "top1_lb0.03",
+      "dense_active16",
+      "dense_total64"
+    ],
+    "model_labels": [
+      "Top1 + LB",
+      "Dense 16",
+      "Dense 64"
+    ],
+    "groups": [
+      "heldout_uniform"
+    ],
+    "series_labels": [
+      "Held-out"
+    ],
+    "values": [
+      [
+        0.25433,
+        0.22029,
+        0.23041
+      ]
+    ],
+    "aggregation": "mean of available selected repetitions; no cherry-pick",
+    "rows": [
+      {
+        "group": "heldout_uniform",
+        "model": "top1_lb0.03",
+        "rmse": "0.25433",
+        "total_parameters": "272",
+        "active_parameter_estimate": "77",
+        "max_expert_fraction": "0.34143",
+        "routing_entropy": "1.31576"
+      },
+      {
+        "group": "heldout_uniform",
+        "model": "dense_active16",
+        "rmse": "0.22029",
+        "total_parameters": "65",
+        "active_parameter_estimate": "65",
+        "max_expert_fraction": "None",
+        "routing_entropy": "None"
+      },
+      {
+        "group": "heldout_uniform",
+        "model": "dense_total64",
+        "rmse": "0.23041",
+        "total_parameters": "257",
+        "active_parameter_estimate": "257",
+        "max_expert_fraction": "None",
+        "routing_entropy": "None"
+      }
+    ],
+    "notes": [
+      "Sparse routing does not automatically beat dense baselines.",
+      "272 total / 77 active-estimate parameters; no speed claim."
+    ]
+  },
+  {
+    "project": "spec-decode",
+    "source": "projects/spec-decode/artifacts/REPORT.md",
+    "sha256": "fbc35e93a02e745a985efd08c5b76ebe79bc96d9f1c4049751643ad518634c69",
+    "metric": "speculative_ms",
+    "group_column": null,
+    "model_column": "k",
+    "models": [
+      "2",
+      "4"
+    ],
+    "model_labels": [
+      "k = 2",
+      "k = 4"
+    ],
+    "groups": [
+      null
+    ],
+    "series_labels": [
+      "Frozen test"
+    ],
+    "values": [
+      [
+        31.402256666666666,
+        40.80561
+      ]
+    ],
+    "aggregation": "mean of available selected repetitions; no cherry-pick",
+    "rows": [
+      {
+        "k": "2",
+        "repeat": "0",
+        "prompts": "8",
+        "exact_prompts": "8",
+        "baseline_ms": "21.48512",
+        "speculative_ms": "31.55981",
+        "speed_ratio_baseline_over_spec": "0.68077",
+        "target_calls": "33",
+        "draft_calls": "65",
+        "acceptance_checked": "0.65385"
+      },
+      {
+        "k": "2",
+        "repeat": "1",
+        "prompts": "8",
+        "exact_prompts": "8",
+        "baseline_ms": "21.23275",
+        "speculative_ms": "31.36544",
+        "speed_ratio_baseline_over_spec": "0.67695",
+        "target_calls": "33",
+        "draft_calls": "65",
+        "acceptance_checked": "0.65385"
+      },
+      {
+        "k": "2",
+        "repeat": "2",
+        "prompts": "8",
+        "exact_prompts": "8",
+        "baseline_ms": "21.26095",
+        "speculative_ms": "31.28152",
+        "speed_ratio_baseline_over_spec": "0.67966",
+        "target_calls": "33",
+        "draft_calls": "65",
+        "acceptance_checked": "0.65385"
+      },
+      {
+        "k": "4",
+        "repeat": "0",
+        "prompts": "8",
+        "exact_prompts": "8",
+        "baseline_ms": "21.43287",
+        "speculative_ms": "40.92135",
+        "speed_ratio_baseline_over_spec": "0.52376",
+        "target_calls": "30",
+        "draft_calls": "100",
+        "acceptance_checked": "0.69492"
+      },
+      {
+        "k": "4",
+        "repeat": "1",
+        "prompts": "8",
+        "exact_prompts": "8",
+        "baseline_ms": "20.97462",
+        "speculative_ms": "40.54971",
+        "speed_ratio_baseline_over_spec": "0.51726",
+        "target_calls": "30",
+        "draft_calls": "100",
+        "acceptance_checked": "0.69492"
+      },
+      {
+        "k": "4",
+        "repeat": "2",
+        "prompts": "8",
+        "exact_prompts": "8",
+        "baseline_ms": "21.40031",
+        "speculative_ms": "40.94577",
+        "speed_ratio_baseline_over_spec": "0.52265",
+        "target_calls": "30",
+        "draft_calls": "100",
+        "acceptance_checked": "0.69492"
+      }
+    ],
+    "notes": [
+      "Baseline ~21 ms; speculative path is slower in this setup.",
+      "All 8 prompts match greedy target output; no GPU claims."
+    ]
+  },
+  {
+    "project": "circuit-id",
+    "source": "projects/circuit-id/artifacts/REPORT.md",
+    "sha256": "ae8a97a321a157977d2d6f2eacd2f93d53bd7b400ce1753b6554e4d5d7a47679",
+    "metric": "mae",
+    "group_column": "group",
+    "model_column": "model",
+    "models": [
+      "physical_curve_fit",
+      "ridge",
+      "mlp"
+    ],
+    "model_labels": [
+      "Physics",
+      "Ridge",
+      "MLP"
+    ],
+    "groups": [
+      "id",
+      "slow_ood"
+    ],
+    "series_labels": [
+      "In range",
+      "Slow OOD"
+    ],
+    "values": [
+      [
+        0.04989,
+        0.034716666666666667,
+        0.11322
+      ],
+      [
+        0.10094666666666667,
+        1.10199,
+        2.55164
+      ]
+    ],
+    "aggregation": "mean of available selected repetitions; no cherry-pick",
+    "rows": [
+      {
+        "group": "id",
+        "seed": "31",
+        "model": "physical_curve_fit",
+        "mae": "0.05126",
+        "rmse": "0.06429",
+        "p95_abs_error": "0.12703",
+        "coverage90": "None"
+      },
+      {
+        "group": "id",
+        "seed": "32",
+        "model": "physical_curve_fit",
+        "mae": "0.04885",
+        "rmse": "0.06137",
+        "p95_abs_error": "0.12116",
+        "coverage90": "None"
+      },
+      {
+        "group": "id",
+        "seed": "33",
+        "model": "physical_curve_fit",
+        "mae": "0.04956",
+        "rmse": "0.06408",
+        "p95_abs_error": "0.13015",
+        "coverage90": "None"
+      },
+      {
+        "group": "id",
+        "seed": "31",
+        "model": "ridge",
+        "mae": "0.04109",
+        "rmse": "0.05871",
+        "p95_abs_error": "0.12105",
+        "coverage90": "0.89375"
+      },
+      {
+        "group": "id",
+        "seed": "32",
+        "model": "ridge",
+        "mae": "0.03281",
+        "rmse": "0.04072",
+        "p95_abs_error": "0.08036",
+        "coverage90": "0.95000"
+      },
+      {
+        "group": "id",
+        "seed": "33",
+        "model": "ridge",
+        "mae": "0.03025",
+        "rmse": "0.04088",
+        "p95_abs_error": "0.08659",
+        "coverage90": "0.94375"
+      },
+      {
+        "group": "id",
+        "seed": "31",
+        "model": "mlp",
+        "mae": "0.12869",
+        "rmse": "0.17831",
+        "p95_abs_error": "0.38362",
+        "coverage90": "None"
+      },
+      {
+        "group": "id",
+        "seed": "32",
+        "model": "mlp",
+        "mae": "0.10103",
+        "rmse": "0.14242",
+        "p95_abs_error": "0.32258",
+        "coverage90": "None"
+      },
+      {
+        "group": "id",
+        "seed": "33",
+        "model": "mlp",
+        "mae": "0.10994",
+        "rmse": "0.15382",
+        "p95_abs_error": "0.32476",
+        "coverage90": "None"
+      },
+      {
+        "group": "slow_ood",
+        "seed": "31",
+        "model": "physical_curve_fit",
+        "mae": "0.10195",
+        "rmse": "0.12141",
+        "p95_abs_error": "0.21579",
+        "coverage90": "None"
+      },
+      {
+        "group": "slow_ood",
+        "seed": "32",
+        "model": "physical_curve_fit",
+        "mae": "0.09905",
+        "rmse": "0.11852",
+        "p95_abs_error": "0.21709",
+        "coverage90": "None"
+      },
+      {
+        "group": "slow_ood",
+        "seed": "33",
+        "model": "physical_curve_fit",
+        "mae": "0.10184",
+        "rmse": "0.12426",
+        "p95_abs_error": "0.23332",
+        "coverage90": "None"
+      },
+      {
+        "group": "slow_ood",
+        "seed": "31",
+        "model": "ridge",
+        "mae": "1.12906",
+        "rmse": "1.20861",
+        "p95_abs_error": "1.81777",
+        "coverage90": "0.00000"
+      },
+      {
+        "group": "slow_ood",
+        "seed": "32",
+        "model": "ridge",
+        "mae": "1.08729",
+        "rmse": "1.16405",
+        "p95_abs_error": "1.76174",
+        "coverage90": "0.00000"
+      },
+      {
+        "group": "slow_ood",
+        "seed": "33",
+        "model": "ridge",
+        "mae": "1.08962",
+        "rmse": "1.16096",
+        "p95_abs_error": "1.72718",
+        "coverage90": "0.00000"
+      },
+      {
+        "group": "slow_ood",
+        "seed": "31",
+        "model": "mlp",
+        "mae": "2.59824",
+        "rmse": "2.70531",
+        "p95_abs_error": "3.75153",
+        "coverage90": "None"
+      },
+      {
+        "group": "slow_ood",
+        "seed": "32",
+        "model": "mlp",
+        "mae": "2.53158",
+        "rmse": "2.63835",
+        "p95_abs_error": "3.67951",
+        "coverage90": "None"
+      },
+      {
+        "group": "slow_ood",
+        "seed": "33",
+        "model": "mlp",
+        "mae": "2.52510",
+        "rmse": "2.62401",
+        "p95_abs_error": "3.55486",
+        "coverage90": "None"
+      }
+    ],
+    "notes": [
+      "Learning helps in range; physics extrapolates more reliably.",
+      "Ideal RC simulation; only tau = RC is identifiable."
+    ]
+  },
+  {
+    "project": "channel-est",
+    "source": "projects/channel-est/artifacts/REPORT.md",
+    "sha256": "d9df112ee9b2191ff1aa984923970e7e11e8187dbbb175893134080192946841",
+    "metric": "nmse",
+    "group_column": "group",
+    "model_column": "model",
+    "models": [
+      "linear_interpolation",
+      "learned_ridge",
+      "known_prior_lmmse4"
+    ],
+    "model_labels": [
+      "Linear",
+      "Learned",
+      "LMMSE"
+    ],
+    "groups": [
+      "snr15",
+      "long_delay_ood"
+    ],
+    "series_labels": [
+      "SNR 15",
+      "Delay OOD"
+    ],
+    "values": [
+      [
+        0.06358333333333333,
+        0.023046666666666667,
+        0.021226666666666668
+      ],
+      [
+        0.23002,
+        0.19910666666666668,
+        0.19791333333333333
+      ]
+    ],
+    "aggregation": "mean of available selected repetitions; no cherry-pick",
+    "rows": [
+      {
+        "group": "snr15",
+        "seed": "31",
+        "model": "linear_interpolation",
+        "nmse": "0.06175",
+        "ber": "0.03627",
+        "bit_errors": "383",
+        "bits": "10560"
+      },
+      {
+        "group": "snr15",
+        "seed": "32",
+        "model": "linear_interpolation",
+        "nmse": "0.06391",
+        "ber": "0.03996",
+        "bit_errors": "422",
+        "bits": "10560"
+      },
+      {
+        "group": "snr15",
+        "seed": "33",
+        "model": "linear_interpolation",
+        "nmse": "0.06509",
+        "ber": "0.04100",
+        "bit_errors": "433",
+        "bits": "10560"
+      },
+      {
+        "group": "snr15",
+        "seed": "31",
+        "model": "learned_ridge",
+        "nmse": "0.02216",
+        "ber": "0.02045",
+        "bit_errors": "216",
+        "bits": "10560"
+      },
+      {
+        "group": "snr15",
+        "seed": "32",
+        "model": "learned_ridge",
+        "nmse": "0.02301",
+        "ber": "0.02500",
+        "bit_errors": "264",
+        "bits": "10560"
+      },
+      {
+        "group": "snr15",
+        "seed": "33",
+        "model": "learned_ridge",
+        "nmse": "0.02397",
+        "ber": "0.02311",
+        "bit_errors": "244",
+        "bits": "10560"
+      },
+      {
+        "group": "snr15",
+        "seed": "31",
+        "model": "known_prior_lmmse4",
+        "nmse": "0.02028",
+        "ber": "0.01932",
+        "bit_errors": "204",
+        "bits": "10560"
+      },
+      {
+        "group": "snr15",
+        "seed": "32",
+        "model": "known_prior_lmmse4",
+        "nmse": "0.02099",
+        "ber": "0.02453",
+        "bit_errors": "259",
+        "bits": "10560"
+      },
+      {
+        "group": "snr15",
+        "seed": "33",
+        "model": "known_prior_lmmse4",
+        "nmse": "0.02241",
+        "ber": "0.02348",
+        "bit_errors": "248",
+        "bits": "10560"
+      },
+      {
+        "group": "long_delay_ood",
+        "seed": "31",
+        "model": "linear_interpolation",
+        "nmse": "0.22924",
+        "ber": "0.11752",
+        "bit_errors": "1241",
+        "bits": "10560"
+      },
+      {
+        "group": "long_delay_ood",
+        "seed": "32",
+        "model": "linear_interpolation",
+        "nmse": "0.23228",
+        "ber": "0.12102",
+        "bit_errors": "1278",
+        "bits": "10560"
+      },
+      {
+        "group": "long_delay_ood",
+        "seed": "33",
+        "model": "linear_interpolation",
+        "nmse": "0.22854",
+        "ber": "0.11506",
+        "bit_errors": "1215",
+        "bits": "10560"
+      },
+      {
+        "group": "long_delay_ood",
+        "seed": "31",
+        "model": "learned_ridge",
+        "nmse": "0.20066",
+        "ber": "0.09223",
+        "bit_errors": "974",
+        "bits": "10560"
+      },
+      {
+        "group": "long_delay_ood",
+        "seed": "32",
+        "model": "learned_ridge",
+        "nmse": "0.19595",
+        "ber": "0.09299",
+        "bit_errors": "982",
+        "bits": "10560"
+      },
+      {
+        "group": "long_delay_ood",
+        "seed": "33",
+        "model": "learned_ridge",
+        "nmse": "0.20071",
+        "ber": "0.09678",
+        "bit_errors": "1022",
+        "bits": "10560"
+      },
+      {
+        "group": "long_delay_ood",
+        "seed": "31",
+        "model": "known_prior_lmmse4",
+        "nmse": "0.19984",
+        "ber": "0.09138",
+        "bit_errors": "965",
+        "bits": "10560"
+      },
+      {
+        "group": "long_delay_ood",
+        "seed": "32",
+        "model": "known_prior_lmmse4",
+        "nmse": "0.19516",
+        "ber": "0.09261",
+        "bit_errors": "978",
+        "bits": "10560"
+      },
+      {
+        "group": "long_delay_ood",
+        "seed": "33",
+        "model": "known_prior_lmmse4",
+        "nmse": "0.19874",
+        "ber": "0.09678",
+        "bit_errors": "1022",
+        "bits": "10560"
+      }
+    ],
+    "notes": [
+      "LMMSE uses known noise and prior: privileged comparator.",
+      "Ideal frequency-domain simulation; no SDR / RF hardware."
+    ]
+  },
+  {
+    "project": "power-scope",
+    "source": "projects/power-scope/artifacts/REPORT.md",
+    "sha256": "287994e4aadfd3495004a0e4e77c6610df10bb337d1c3bdf63e53414ec187852",
+    "metric": "rmse",
+    "group_column": "group",
+    "model_column": "model",
+    "models": [
+      "persistence",
+      "ridge_full",
+      "ridge_no_plan"
+    ],
+    "model_labels": [
+      "Persist",
+      "Plan",
+      "No plan"
+    ],
+    "groups": [
+      "chronological_test",
+      "cooling_drift_ood"
+    ],
+    "series_labels": [
+      "Time test",
+      "Drift OOD"
+    ],
+    "values": [
+      [
+        62.6238,
+        36.06194,
+        61.70302
+      ],
+      [
+        82.40778,
+        138.52914,
+        123.23154
+      ]
+    ],
+    "aggregation": "mean of available selected repetitions; no cherry-pick",
+    "rows": [
+      {
+        "group": "chronological_test",
+        "model": "persistence",
+        "mae": "23.58225",
+        "rmse": "62.62380",
+        "p95_abs_error": "41.51952",
+        "interval90_coverage": "None",
+        "flag_tp": "117",
+        "flag_fp": "102",
+        "flag_fn": "9"
+      },
+      {
+        "group": "chronological_test",
+        "model": "ridge_full",
+        "mae": "26.04800",
+        "rmse": "36.06194",
+        "p95_abs_error": "65.51139",
+        "interval90_coverage": "0.91976",
+        "flag_tp": "121",
+        "flag_fp": "65",
+        "flag_fn": "5"
+      },
+      {
+        "group": "chronological_test",
+        "model": "ridge_no_plan",
+        "mae": "24.55043",
+        "rmse": "61.70302",
+        "p95_abs_error": "54.45204",
+        "interval90_coverage": "None",
+        "flag_tp": "116",
+        "flag_fp": "76",
+        "flag_fn": "10"
+      },
+      {
+        "group": "cooling_drift_ood",
+        "model": "persistence",
+        "mae": "33.33552",
+        "rmse": "82.40778",
+        "p95_abs_error": "185.17849",
+        "interval90_coverage": "None",
+        "flag_tp": "254",
+        "flag_fp": "200",
+        "flag_fn": "13"
+      },
+      {
+        "group": "cooling_drift_ood",
+        "model": "ridge_full",
+        "mae": "120.61264",
+        "rmse": "138.52914",
+        "p95_abs_error": "246.92509",
+        "interval90_coverage": "0.17329",
+        "flag_tp": "178",
+        "flag_fp": "0",
+        "flag_fn": "89"
+      },
+      {
+        "group": "cooling_drift_ood",
+        "model": "ridge_no_plan",
+        "mae": "96.64242",
+        "rmse": "123.23154",
+        "p95_abs_error": "209.29678",
+        "interval90_coverage": "None",
+        "flag_tp": "192",
+        "flag_fp": "14",
+        "flag_fn": "75"
+      }
+    ],
+    "notes": [
+      "Plan features help jumps, but cooling drift reverses gains.",
+      "Synthetic time series; read-only, not equipment control."
+    ]
+  }
+]
