@@ -1,7 +1,7 @@
 """Render a close visual reconstruction of the selected academic homepage.
 Authored markup and CSS; owner facts in resume.json. Experimental contributions explicit.
 Reference geometry: Bootstrap 3 containers, fixed charcoal nav, star hero, 4/8 item rows.
-The portrait position is a name monogram, NOT an invented portrait.
+The portrait uses the owner's supplied photo, fitted without facial alteration.
 """
 from pathlib import Path
 import json,html
@@ -49,7 +49,7 @@ def build():
     d=json.loads((ROOT/'profile/resume.json').read_text());o=[]
     o.append('<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>于跃 | Agent & AI Product Portfolio</title><meta name="description" content="于跃的领域型Agent产品实践与AI研究实验：审图、标准评审、多模态可靠性、检索、算法与跨学科工程。"><style>'+STYLE+'</style></head><body id="page-top"><a class="skip" href="#about">跳至正文</a>')
     o.append('<header class="navbar"><div class="container nav-inner"><a class="navbar-brand" href="#page-top">Home</a><button class="navbar-toggle" aria-label="展开导航" aria-expanded="false"><span></span><span></span><span></span></button><nav class="navbar-nav" aria-label="主导航"><a href="#about">About</a><a href="#news">News</a><a href="#projects">Products</a><a href="#experiments">Research</a><a href="#education">Education</a><a href="#focus">Product Focus</a></nav></div></header>')
-    o.append('<section id="home"><div class="container profile" id="top"><div class="row"><div class="col profile-img"><img src="assets/portfolio/identity.svg" width="322" height="242" alt="于跃姓名标识，非个人照片"><p class="portrait-note">姓名标识 · 非个人照片</p></div><div class="col profile-info"><span class="english-name">Yu Yue (于跃)</span><div class="spacer"></div><div class="info-list"><div>Agent / AI Product</div><div>新加坡南洋理工大学 · 硕士在读</div><div>机电工程 · 领域型 AI 产品实践</div><div class="profile-handle">LlewynLune / AI Portfolio</div></div><div class="social-list">')
+    o.append('<section id="home"><div class="container profile" id="top"><div class="row"><div class="col profile-img"><img src="assets/portfolio/avatar.webp" width="322" height="242" alt="于跃个人头像"></div><div class="col profile-info"><span class="english-name">Yu Yue (于跃)</span><div class="spacer"></div><div class="info-list"><div>Agent / AI Product</div><div>新加坡南洋理工大学 · 硕士在读</div><div>机电工程 · 领域型 AI 产品实践</div><div class="profile-handle">LlewynLune / AI Portfolio</div></div><div class="social-list">')
     for k,label,url in [('github','GitHub','https://github.com/LlewynLune'),('education','Education','#education'),('file','Projects','#projects'),('play','Research','#experiments')]:o.append('<div class="social-links'+(' wide' if k=='education' else '')+'"><a href="'+url+'">'+icon(k)+label+'</a></div>')
     o.append('</div></div></div></div></section><main>')
     o.append('<section class="section about-section" id="about"><div class="container"><h2>About Me</h2><p>我关注<strong>专业知识密集、强规则约束场景中的 Agent 产品</strong>。我的实践从机电审图和技术标准评审出发：将专家经验转成规则与知识，再组织为可协作、可追溯、可复算的产品流程。</p><p>我负责过审核工作台、混合审核策略、权限、风险评分与数据看板的设计，推动产品上线或试点。我的工作方式是把判定与证据校验分层，以人工复核兜住高风险结论，并通过真实使用数据和 Badcase 持续迭代。</p><p>目前在新加坡南洋理工大学攻读硕士，预计 2028 年毕业；本科就读澳门大学机电工程。我使用 Python、SQL 与 AI Coding 验证方案，在 AI 辅助下搭建了多模态可靠性、工作流恢复、检索及算法机制等 <a href="#experiments">14 项研究实验</a>，公开代码、Demo 与失败证据。</p></div></section>')

@@ -41,7 +41,8 @@ class PortfolioTest(unittest.TestCase):
         self.assertIn('Selected Research & Engineering', text)
         self.assertIn('background:#3d3d3d',text)
         self.assertIn('assets/portfolio/stars.jpg',text)
-        self.assertIn('姓名标识 · 非个人照片',text)
+        self.assertIn('assets/portfolio/avatar.webp',text)
+        self.assertNotIn('姓名标识 · 非个人照片',text)
         self.assertNotIn('Trebuchet MS',text)
         self.assertEqual(text.count('work-row"'), 4)
         self.assertEqual(text.count('data-track="'), 14)
@@ -52,7 +53,7 @@ class PortfolioTest(unittest.TestCase):
         self.assertEqual(text.count('产品流程示意 · 非系统截图'),4)
         for item in ['stars.jpg','identity.svg','drawing-review.svg','standards-platform.svg','skills-knowledge.svg','force-aigc.svg']:
             self.assertTrue((ROOT/'assets/portfolio'/item).is_file())
-        self.assertEqual(len(list((ROOT/'assets/portfolio').glob('*.webp'))),14)
+        self.assertEqual(len(list((ROOT/'assets/portfolio').glob('*.webp'))),15)
         ids=[]
         class IdParser(HTMLParser):
             def handle_starttag(self,tag,attrs):
