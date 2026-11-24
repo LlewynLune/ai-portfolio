@@ -1,19 +1,114 @@
-<!doctype html>
-<html lang="zh-CN">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="于跃 AI 作品集；FlowBench 本地可靠性实验台，含合成负载评测、交互展示和 AI 辅助贡献声明。">
-<title>于跃｜AI 作品集</title>
-<style>
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="于跃｜Agent与AI产品作品集。AI审图、标准化评审、Skill与知识运营、AIGC内容实践，以及可复现研究实验。"><title>于跃｜Agent / AI 产品作品集</title><style>
 :root{--ink:#192a27;--muted:#66756f;--paper:#f7f8f3;--line:#d8e0d9;--green:#225d48;--mint:#e9f0e8;--gold:#825b18}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.75}a{color:var(--green);text-underline-offset:5px}a:focus-visible,button:focus-visible{outline:3px solid #bb8c3c;outline-offset:4px}header{max-width:1120px;margin:auto;padding:22px 36px;display:flex;justify-content:space-between;gap:16px;align-items:center;border-bottom:1px solid var(--line)}.brand{font-weight:700;text-decoration:none}nav{display:flex;gap:24px;font-size:14px}nav a{text-decoration:none}.wrap{max-width:1120px;margin:auto;padding:0 36px}.hero{display:grid;grid-template-columns:1.6fr 1fr;gap:50px;padding:72px 0 58px}.eyebrow{font-size:12px;letter-spacing:2px;color:var(--green);font-weight:600}.hero h1{font-size:clamp(34px,5vw,56px);line-height:1.3;letter-spacing:-1px;margin:20px 0}.hero p{color:var(--muted);max-width:580px}.badge{display:inline-block;border:1px solid #d8cbb1;color:var(--gold);padding:3px 11px;border-radius:30px;font-size:12px}.note{background:var(--mint);padding:28px;border-radius:10px;align-self:center}.note h2{font-size:18px;margin:0 0 15px}.note ul{padding-left:20px;color:var(--muted);font-size:14px}.button{display:inline-block;background:var(--green);color:white;text-decoration:none;padding:9px 18px;border-radius:5px;font-size:14px;margin-top:16px}section{border-top:1px solid var(--line);padding:36px 0 42px}.section-head{display:flex;justify-content:space-between;gap:20px;align-items:end}.section-head h2{margin:0;font-size:26px}.section-head p{color:var(--muted);font-size:14px;margin:0}.filters{display:flex;gap:8px;flex-wrap:wrap;margin:24px 0}button{border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:25px;padding:7px 16px;cursor:pointer;font:inherit;font-size:13px}button[aria-pressed="true"]{background:var(--green);color:white;border-color:var(--green)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;border:1px solid var(--line);padding:25px;border-radius:8px}.card[hidden]{display:none}.tag{font-size:12px;color:var(--green)}.card h3{font-size:20px;line-height:1.5;margin:14px 0}.card p{font-size:14px;color:var(--muted)}.card ul{font-size:13px;color:var(--muted);padding-left:18px;min-height:90px}.card a{font-size:13px}.placeholder{font-size:12px;background:#f5f0e5;color:var(--gold);padding:5px 8px;display:block}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:26px}.step .num{font-size:26px;color:#a6b3a9}.step h3{font-size:17px}.step p{font-size:14px;color:var(--muted)}.split{display:grid;grid-template-columns:1fr 1fr;gap:40px}.split p,.split li{font-size:14px;color:var(--muted)}.split ul{padding-left:20px}.ref{padding:15px 0;border-bottom:1px solid var(--line)}.ref strong{font-size:15px}.ref p{margin:5px 0;font-size:13px}footer{padding:24px 0 44px;font-size:12px;color:var(--muted)}@media(max-width:780px){header,.wrap{padding-left:22px;padding-right:22px}nav{gap:14px}.hero{grid-template-columns:1fr;gap:20px;padding-top:40px}.cards,.steps,.split{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:10px}.card ul{min-height:0}}
-</style>
-</head>
-<body>
-<header><a class="brand" href="#top">于跃 / AI Portfolio</a><nav aria-label="主导航"><a href="#projects">项目</a><a href="#method">证据</a><a href="#about">关于</a></nav></header>
-<main class="wrap" id="top">
-<div class="hero"><div><div class="eyebrow">PRODUCT · RESEARCH · ENGINEERING</div><h1>让 AI 解决问题，<br>也让结果经得起验证。</h1><p>从具体问题、可复现实验到可靠交付。十四个研究原型新增视频音画同步可靠性主项目，覆盖因果注意力、LoRA、DPO、稀疏MoE、推测解码，以及视觉/电子/通信/数据中心/工作流；共享基座、实际训练与仿真分别标注。</p><span class="badge">14 项目 · AI 辅助研究原型 · 开放源码</span><br><a class="button" href="#projects">查看项目结构</a></div><aside class="note"><h2>先做好一个，才谈覆盖三类。</h2><ul><li>产品：谁需要它，怎么用，错了怎么办。</li><li>研究：相对什么基线，方法是否有效。</li><li>工程：怎样复现，怎样稳定地交付。</li></ul><p>本地模型 Demo 已可运行；真实大模型接口未调用。FlowBench 的合成负载不等于模型推理；学习原型不包装成生产成果。</p></aside></div>
-<section id="projects"><div class="section-head"><h2>项目结构</h2><p>十四个可运行研究项目；新增单领域音画同步深度实验，三类模板不计成果。</p></div><div class="note" style="margin-top:24px"><div class="tag">FLAGSHIP / FLOWBENCH 0.2.0</div><h2 style="margin-top:10px">AI 工作流可靠性实验台</h2><p>固定故障清单下，对照单次执行、有限重试与幂等恢复。新增实际本地 BM25、困难改写组、进程崩溃恢复和参数矩阵；保留原始事件，非 LLM 或生产数据。</p><p><a class="button" href="projects/reliability-lab/demo.html">打开交互实验台</a> · <a href="projects/reliability-lab/README.md">代码与运行</a> · <a href="projects/reliability-lab/results/reference/REPORT.md">实测报告</a> · <a href="projects/reliability-lab/results/advanced/REPORT.md">深化报告</a> · <a href="projects/reliability-lab/CONTRIBUTIONS.md">贡献与边界</a></p></div><div class="filters" role="group" aria-label="按能力方向筛选"><button type="button" data-filter="all" aria-pressed="true">全部方向</button><button type="button" data-filter="product" aria-pressed="false">产品应用</button><button type="button" data-filter="research" aria-pressed="false">算法研究</button><button type="button" data-filter="infra" aria-pressed="false">基础设施</button></div><div class="cards">
+
+.case-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:26px}.case{background:#fff;border:1px solid var(--line);padding:28px;border-radius:8px}.case h3{font-size:25px;margin:10px 0}.case p{font-size:14px;color:var(--muted)}.case .role{font-size:13px;color:var(--green)}.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:24px 0}.kpi{padding:15px 12px;background:var(--mint);border-radius:6px}.kpi strong{display:block;font-size:23px;line-height:1.3}.kpi span{font-size:11px;color:var(--muted)}.case-detail{padding:30px;border:1px solid var(--line);background:white;border-radius:8px;margin-top:20px;scroll-margin-top:20px}.case-detail h3{margin-top:0;font-size:28px}.modules{display:grid;grid-template-columns:1fr 1fr;gap:22px}.module h4{margin:0 0 8px;font-size:17px}.module p{margin:0;color:var(--muted);font-size:14px}.flow{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}.flow span{border:1px solid var(--line);padding:6px 10px;border-radius:5px;font-size:12px;color:var(--green)}.case-source{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}.case-detail summary{cursor:pointer;font-size:14px;color:var(--green);margin:20px 0}details[open] summary{margin-bottom:20px}.skills{display:flex;gap:8px;flex-wrap:wrap}.skills span{font-size:12px;background:var(--mint);padding:5px 10px;border-radius:5px}.education-item{padding:20px 0;border-bottom:1px solid var(--line)}.education-item h3{font-size:18px;margin:0 0 5px}.education-item p{margin:4px 0}.source-banner{border-left:3px solid var(--green);padding:2px 16px;margin:24px 0;font-size:12px;color:var(--muted)}@media(max-width:780px){.case-grid,.modules{grid-template-columns:1fr}.kpis{grid-template-columns:1fr 1fr}.case,.case-detail{padding:22px}}
+
+.case-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:26px}.case{background:#fff;border:1px solid var(--line);padding:28px;border-radius:8px}.case h3{font-size:25px;margin:10px 0}.case p{font-size:14px;color:var(--muted)}.case .role{font-size:13px;color:var(--green)}.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:24px 0}.kpi{padding:15px 12px;background:var(--mint);border-radius:6px}.kpi strong{display:block;font-size:23px;line-height:1.3}.kpi span{font-size:11px;color:var(--muted)}.case-detail{padding:30px;border:1px solid var(--line);background:white;border-radius:8px;margin-top:20px;scroll-margin-top:20px}.case-detail h3{margin-top:0;font-size:28px}.modules{display:grid;grid-template-columns:1fr 1fr;gap:22px}.module h4{margin:0 0 8px;font-size:17px}.module p{margin:0;color:var(--muted);font-size:14px}.flow{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}.flow span{border:1px solid var(--line);padding:6px 10px;border-radius:5px;font-size:12px;color:var(--green)}.case-source{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}.case-detail summary{cursor:pointer;font-size:14px;color:var(--green);margin:20px 0}details[open] summary{margin-bottom:20px}.skills{display:flex;gap:8px;flex-wrap:wrap}.skills span{font-size:12px;background:var(--mint);padding:5px 10px;border-radius:5px}.education-item{padding:20px 0;border-bottom:1px solid var(--line)}.education-item h3{font-size:18px;margin:0 0 5px}.education-item p{margin:4px 0}.source-banner{border-left:3px solid var(--green);padding:2px 16px;margin:24px 0;font-size:12px;color:var(--muted)}@media(max-width:780px){.case-grid,.modules{grid-template-columns:1fr}.kpis{grid-template-columns:1fr 1fr}.case,.case-detail{padding:22px}}
+</style></head><body>
+<header><a class="brand" href="#top">于跃 / AI Product Portfolio</a><nav aria-label="主导航"><a href="#projects">产品实践</a><a href="#experiments">研究实验</a><a href="#about">关于</a></nav></header><main class="wrap" id="top">
+<div class="hero"><div><div class="eyebrow">DOMAIN KNOWLEDGE · AGENT PRODUCT · DELIVERY</div><h1>把专业规则，<br>做成可用的 AI 产品。</h1><p>具备 AI 产品从 0—1 到上线试点的完整实践，擅长把高知识密度、强规则约束的业务流程拆解为可操作的产品模块。将专家经验沉淀为规则库、知识库与人工复核机制，让 AI 输出可追溯、可复算。</p><span class="badge">Agent / AI 产品 · 机电与电气工程背景</span><br><a class="button" href="#projects">查看产品实践</a> · <a href="#about">教育与能力</a></div>
+<aside class="note"><h2>产品定义 × 领域理解 × 落地判断</h2><ul><li>独立负责审核工作台、混合策略、权限和风险评分等功能设计。</li><li>推动产品上线 / 试点，关注真实使用数据与 Badcase。</li><li>用 Python、SQL 与 AI Coding 快速验证方案。</li></ul><p>四项实践分别标明业务使用、试点、团队公共资产与草稿交付；研究实验独立展示，不混作上线成果。</p></aside></div>
+<section id="projects"><div class="section-head"><h2>核心产品实践</h2><p>从规则拆解到上线 / 试点，再到公共能力沉淀。</p></div><div class="case-grid">
+<article class="case"><div class="tag">01 / 规则约束 × AI 审核</div><h3>AI 审图平台</h3><div class="role">立项发起 · 核心产品模块设计与上线</div><span class="badge">已上线 · 业务使用与持续迭代</span><p>负责机电图纸 AI 审图平台的产品设计，包括审核端界面、混合审核策略、账号与权限、数据看板等核心模块，推动系统上线并投入业务使用，同时基于真实使用数据持续监控和迭代升级。</p><p><a href="#case-drawing-review" data-case="drawing-review">查看产品案例 →</a> · <a href="business-cases/drawing-review/README.md">案例文档</a></p></article>
+<article class="case"><div class="tag">02 / 标准评审 × 决策可复算</div><h3>标准化线上平台</h3><div class="role">独立负责人 · 0—1 自主搭建</div><span class="badge">试点使用 · 配置化复用</span><p>负责技术标准应答与偏离评审平台的产品设计，包括标准规则库、评审工作台、智能判定、风险评分和权限管理等核心模块，将原本依赖表格和邮件流转的评审流程线上化，推动平台在试点项目中使用。</p><p><a href="#case-standards-platform" data-case="standards-platform">查看产品案例 →</a> · <a href="business-cases/standards-platform/README.md">案例文档</a></p></article>
+<article class="case"><div class="tag">03 / Skill × 知识运营</div><h3>团队智能体技能空间与知识库</h3><div class="role">AI 基建产品化 · 公共能力资产沉淀</div><span class="badge">团队公共资产 · 服务两项 AI 产品</span><p>负责将团队在多个 AI 产品中重复使用的规则、术语和工具能力沉淀为公共产品资产，服务 AI 审图平台和标准化线上平台，提升能力复用效率，降低后续产品的建设和维护成本。</p><p><a href="#case-skills-knowledge" data-case="skills-knowledge">查看产品案例 →</a> · <a href="business-cases/skills-knowledge/README.md">案例文档</a></p></article>
+<article class="case"><div class="tag">04 / 创意策划 × 生成质量</div><h3>火山引擎 FORCE 大会宣传片</h3><div class="role">独立完成 · AIGC 内容实践</div><span class="badge">文生视频草稿交付</span><p>独立完成从创意构思、分镜脚本、提示词设计到文生视频草稿交付的完整流程，验证 AIGC 在内容生产场景中的创意表达和质量控制方法。</p><p><a href="#case-force-aigc" data-case="force-aigc">查看产品案例 →</a> · <a href="business-cases/force-aigc/README.md">案例文档</a></p></article>
+</div><div class="source-banner">项目职责、上线 / 试点状态和业务指标依据本人提供并确认可公开的简历。未公开公司系统、客户材料或原始统计数据；页面不将简历指标称作本仓库独立审计结果。</div>
+<article class="case-detail" id="case-drawing-review"><div class="tag">PRODUCT CASE / 规则约束 × AI 审核</div><h3>AI 审图平台</h3><div class="role">立项发起 · 核心产品模块设计与上线 · 已上线 · 业务使用与持续迭代</div><p>机电图纸审核涉及专业规范、不同类型审核条目与风险差异，需要把任务提交、规则和模型审核、人工复核及报告输出组织为可追踪的产品流程。</p><div class="kpis">
+<div class="kpi"><strong>11 条</strong><span>结构化规则</span></div>
+<div class="kpi"><strong>9 条</strong><span>模型审核 Prompt 规则</span></div>
+<div class="kpi"><strong>6 轮 / 300+</strong><span>Badcase 复盘</span></div>
+<div class="kpi"><strong>&lt;1%</strong><span>人工复核打回率</span></div>
+</div><details><summary>展开核心模块、产品决策与验证边界</summary><div class="modules">
+<div class="module"><h4>审核工作台</h4><p>完成任务提交、审核进度跟踪、人工介入、问题清单、报告导出和数据看板等前端模块的产品设计，明确提交、审核、复核、导出等不同角色的操作路径，并推动产品上线。</p></div>
+<div class="module"><h4>混合审核策略</h4><p>根据审核条目的类型和风险差异，设计“规则审核＋模型审核”的混合审核策略。在规则审核中，完成 11 条规则的梳理、结构化与录入；在模型审核中，基于专家知识库与图纸上下文完成 9 条规则的 Prompt 设计，并设计分级路由，让不同类型条目进入对应审核策略，降低漏检和误报。</p></div>
+<div class="module"><h4>账号与权限</h4><p>设计管理员、审核人员、复核人员等角色的权限边界，覆盖任务分配、结果查看、人工复核和规则维护等操作；增加操作留痕，保证审核过程和结论可追溯。</p></div>
+<div class="module"><h4>数据监控与策略调优</h4><p>设计全链路数据埋点，持续监控任务提交量、审核完成情况、人工介入率和复核结果；基于人工打回数据与专家进行问题分析和定位，通过 6 轮、300+ 个 Badcase 的复盘，持续优化 Prompt、专家知识库召回策略和审核规则，最终实现人工复核打回率低于 1%。</p></div>
+</div><h4>产品流程 · 按简历职责整理</h4><div class="flow">
+<span>任务提交</span>
+<span>按条目类型与风险路由</span>
+<span>规则审核 / 模型审核</span>
+<span>人工介入与复核</span>
+<span>问题清单与报告</span>
+<span>Badcase 复盘与规则迭代</span>
+</div><h4>关键产品取舍</h4><ul>
+<li>按条目类型和风险分级路由，不将全部审核交给单一模型。</li>
+<li>将专家知识、图纸上下文与人工复核组合，保留判断理由和操作轨迹。</li>
+<li>把人工打回作为迭代线索，持续优化规则、Prompt 与知识库召回。</li>
+</ul><p class="case-source">上线与指标依据本人提供的履历；原始图纸、内部系统、代码及统计记录未公开。打回率的统计时间、分母及基线未提供，不将其改写为准确率、召回率或降本收益。</p></details><p><a href="#projects">返回实践总览 ↑</a></p></article>
+<article class="case-detail" id="case-standards-platform"><div class="tag">PRODUCT CASE / 标准评审 × 决策可复算</div><h3>标准化线上平台</h3><div class="role">独立负责人 · 0—1 自主搭建 · 试点使用 · 配置化复用</div><p>原有评审依赖表格和邮件流转，不同项目口径不一致；需要把标准条目、证据、偏离等级、责任人及评审状态组织到统一工作台。</p><div class="kpis">
+<div class="kpi"><strong>0—1</strong><span>自主搭建</span></div>
+<div class="kpi"><strong>双层</strong><span>判定＋校验机制</span></div>
+<div class="kpi"><strong>五级</strong><span>状态评分</span></div>
+<div class="kpi"><strong>试点</strong><span>使用与反馈迭代</span></div>
+</div><details><summary>展开核心模块、产品决策与验证边界</summary><div class="modules">
+<div class="module"><h4>标准规则库</h4><p>将技术标准拆解为条目级规则，明确每条规则的适用范围、证据要求、偏离等级和责任人，支持规则维护与多项目复用，解决不同项目评审口径不一致的问题。</p></div>
+<div class="module"><h4>评审工作台</h4><p>设计任务创建、材料提交、状态流转、补充说明、结果确认和操作留痕等功能，统一多角色协作入口，使评审过程从线下表格流转转变为线上可追踪流程。</p></div>
+<div class="module"><h4>智能判定与复核</h4><p>设计“判定＋校验”的双层评审机制：判定模块输出偏离等级、理由和引用条款，校验模块核验证据是否充分；当证据不足或结果置信度较低时，自动转入人工复核，保证高风险结论可追溯、可确认。</p></div>
+<div class="module"><h4>风险评分与决策看板</h4><p>打通标准应答、偏离评审、五级状态评分和风险评级流程，按不同维度独立评分后加权汇总，形成项目风险看板，让原本主观的评审结果变得可量化、可复算。</p></div>
+<div class="module"><h4>试点运营与复用</h4><p>收集试点项目反馈，持续优化规则口径、提示词和评分量表；通过配置化规则和统一接口支持多项目复用，将平台从单项目试用沉淀为可复制的标准化评审流程。</p></div>
+</div><h4>产品流程 · 按简历职责整理</h4><div class="flow">
+<span>条目级规则与证据要求</span>
+<span>任务创建与材料提交</span>
+<span>判定：等级 / 理由 / 引用</span>
+<span>校验：证据充分性</span>
+<span>人工复核与结果确认</span>
+<span>独立评分与加权看板</span>
+</div><h4>关键产品取舍</h4><ul>
+<li>将判断与证据校验分成两层，避免模型理由替代真实证据。</li>
+<li>证据不足或低置信结果转人工复核，不强制自动给出高风险结论。</li>
+<li>分维度独立评分后加权汇总，规则与评分配置化以支持复用。</li>
+</ul><p class="case-source">职责、搭建与试点状态依据本人履历；项目名单、原始评审材料、评分权重和使用规模未公开，不补造试点数量或结论采纳率。</p></details><p><a href="#projects">返回实践总览 ↑</a></p></article>
+<article class="case-detail" id="case-skills-knowledge"><div class="tag">PRODUCT CASE / Skill × 知识运营</div><h3>团队智能体技能空间与知识库</h3><div class="role">AI 基建产品化 · 公共能力资产沉淀 · 团队公共资产 · 服务两项 AI 产品</div><p>多个 AI 产品重复使用术语、规则和工具能力，需要统一场景、输入输出与使用边界，并避免知识扩容后占满模型上下文。</p><div class="kpis">
+<div class="kpi"><strong>6 个</strong><span>可复用 Skill</span></div>
+<div class="kpi"><strong>10 章</strong><span>术语知识库</span></div>
+<div class="kpi"><strong>约446条</strong><span>结构化术语</span></div>
+<div class="kpi"><strong>2 项</strong><span>AI 产品公共支撑</span></div>
+</div><details><summary>展开核心模块、产品决策与验证边界</summary><div class="modules">
+<div class="module"><h4>智能体 Skill 管理</h4><p>将高频任务封装为 6 个可复用 Skill，统一沉淀适用场景、输入输出、使用边界和调用方式，减少团队成员重复搭建同类能力。</p></div>
+<div class="module"><h4>术语知识库建设</h4><p>建设 10 章、约 446 条术语知识库，规范词条结构、分类方式和检索口径，为两个 AI 产品提供统一的术语基线和公共知识来源。</p></div>
+<div class="module"><h4>知识调用与运营成本控制</h4><p>采用“技能说明常驻、详细内容按需调用”的组织方式，避免规则扩容后占用过多模型上下文；根据使用反馈持续补充词条和 Skill，并在产品版本更新时同步回归验证。</p></div>
+</div><h4>产品流程 · 按简历职责整理</h4><div class="flow">
+<span>高频任务与公共术语</span>
+<span>Skill 输入输出与边界</span>
+<span>术语结构化与分类</span>
+<span>技能说明常驻</span>
+<span>详细知识按需调用</span>
+<span>反馈补充与版本回归</span>
+</div><h4>关键产品取舍</h4><ul>
+<li>将能力封装边界与调用方式一并记录，不只堆工具名称。</li>
+<li>统一术语结构和检索口径，作为多个产品共享知识来源。</li>
+<li>说明与详情分层组织，按需调用；版本更新同步回归。</li>
+</ul><p class="case-source">规模和服务对象依据本人履历；未公开内部Skill文件与知识条目，未提供量化token、成本或效率节省数据，不增加节省百分比。</p></details><p><a href="#projects">返回实践总览 ↑</a></p></article>
+<article class="case-detail" id="case-force-aigc"><div class="tag">PRODUCT CASE / 创意策划 × 生成质量</div><h3>火山引擎 FORCE 大会宣传片</h3><div class="role">独立完成 · AIGC 内容实践 · 文生视频草稿交付</div><p>将大会主题与传播重点转化为具体镜头、画面风格和叙事节奏，同时控制生成内容的一致性与衔接。</p><div class="kpis">
+<div class="kpi"><strong>独立</strong><span>完整创作流程</span></div>
+<div class="kpi"><strong>分镜</strong><span>脚本与 Prompt</span></div>
+<div class="kpi"><strong>多轮</strong><span>筛选与修正</span></div>
+<div class="kpi"><strong>草稿</strong><span>交付状态</span></div>
+</div><details><summary>展开核心模块、产品决策与验证边界</summary><div class="modules">
+<div class="module"><h4>内容策划与分镜设计</h4><p>围绕大会主题拆解核心信息和传播重点，完成脚本结构、镜头语言、画面风格和叙事节奏设计。</p></div>
+<div class="module"><h4>生成质量控制</h4><p>将创意拆分为分镜提示词，对主体一致性、画面风格和镜头衔接进行多轮筛选与修正，提升生成结果的可用性，完成宣传片草稿交付。</p></div>
+</div><h4>产品流程 · 按简历职责整理</h4><div class="flow">
+<span>主题与传播重点</span>
+<span>创意构思</span>
+<span>分镜与镜头语言</span>
+<span>分镜 Prompt</span>
+<span>一致性筛选与修正</span>
+<span>草稿交付</span>
+</div><h4>关键产品取舍</h4><ul>
+<li>先拆解叙事与镜头，再将创意转成分镜提示词。</li>
+<li>对主体、风格、镜头衔接分别做筛选和修正。</li>
+<li>明确交付为草稿，不写成正式投放、大会播放或传播成绩。</li>
+</ul><p class="case-source">草稿交付依据本人履历；成片、分镜源文件、使用模型、播放与投放记录未提供。本页不生成替代视频冒充真实作品。</p></details><p><a href="#projects">返回实践总览 ↑</a></p></article>
+</section><section id="method"><div class="section-head"><h2>如何判断 AI 是否真正有效</h2><p>规则、模型与人工协作；让迭代有依据。</p></div><div class="steps">
+<div class="step"><span class="num">01</span><h3>专业流程产品化</h3><p>把图纸与标准拆成条目、适用范围、证据要求与责任边界，再组织为工作台、权限和状态流转。</p></div>
+<div class="step"><span class="num">02</span><h3>判定与校验分层</h3><p>规则与模型分级路由；要求理由和引用条款，证据不足或低置信时转人工复核，不让模型解释替代证据。</p></div>
+<div class="step"><span class="num">03</span><h3>真实使用与 Badcase 迭代</h3><p>关注命中率、误报率、人工打回率与结论采纳率；基于反馈持续迭代规则、Prompt、知识召回与评分量表。</p></div>
+</div><p class="case-source">这些是我采用的产品验证视角；未在简历中提供的指标不补写结果，未明确统计口径的指标不外推为模型整体准确率。</p></section>
+<section id="experiments"><div class="section-head"><h2>研究与工程实验</h2><p>14 项可复现实验，作为技术理解与验证能力的补充。</p></div><div class="note" style="margin-top:24px"><div class="tag">RESEARCH LAB / NOT BUSINESS DEPLOYMENT</div><h2>与真实产品实践分开展示</h2><p>以下实验由 AI 辅助搭建，代码、模型、日志、失败样本和贡献边界分别披露。本地模型 Demo 已可运行，真实大模型接口未调用；合成负载与仿真结果不等于生产业务效果。</p><p><a href="projects/reliability-lab/demo.html">FlowBench 可靠性实验台</a> · <a href="projects/reliability-lab/README.md">代码与复现</a> · <a href="projects/video-guard/demo.html">VideoGuard 深度研究</a> · <a href="docs/ai-evidence.md">实验真实性清单</a></p></div>
+<div class="filters" role="group" aria-label="按实验方向筛选"><button type="button" data-filter="all" aria-pressed="true">全部实验</button><button type="button" data-filter="product" aria-pressed="false">检索应用</button><button type="button" data-filter="research" aria-pressed="false">算法研究</button><button type="button" data-filter="infra" aria-pressed="false">基础设施</button></div><div class="cards">
 <article class="card" data-track="research"><div class="tag">01 / TEXTGUARD · TRAINED MODEL</div><h3>可解释文本分类<br>从训练到留出评测</h3><span class="badge">真实训练 · 无密钥模型 Demo</span><p>TF-IDF＋Logistic，比较多数类和朴素贝叶斯；去重后隔离训练、验证与测试，导出权重在浏览器直接推断。</p><ul><li>固定留出测试，阈值仅验证选择</li><li>误判哈希与导出一致性核验</li><li>旧英文短信，不是现代诈骗系统</li></ul><a href="projects/textguard/demo.html">运行模型 →</a> · <a href="projects/textguard/README.md">代码与方法</a> · <a href="projects/textguard/artifacts/REPORT.md">实测</a></article>
 <article class="card" data-track="product"><div class="tag">02 / CITERAG · EVIDENCE-FIRST QA</div><h3>引用优先问答<br>检索、摘录与拒答</h3><span class="badge">本地实测 · LLM 接口未调用</span><p>BM25、字符余弦与RRF，困难问题和无答案问题单列；引用ID核验不替代语义支持复核。</p><ul><li>15篇自建说明、25个问题</li><li>共享 FlowBench 语料如实披露</li><li>真实 HTTPS 接口另需密钥及费用配置</li></ul><a href="projects/cite-rag/demo.html">检索与摘录 →</a> · <a href="projects/cite-rag/README.md">代码与方法</a> · <a href="projects/cite-rag/artifacts/REPORT.md">实测</a></article>
 <article class="card" data-track="research"><div class="tag">03 / NOVELTYLAB · NUMERICAL ML</div><h3>多变量新颖性<br>模型对照与解释</h3><span class="badge">实际拟合 · 13维输入 Demo</span><p>比较距离、Isolation Forest、One-Class SVM；只在正常训练拟合，在正常验证选阈值。</p><ul><li>178行公开数值样本</li><li>预先固定默认模型，不按测试挑选</li><li>类别迁移不是工业故障标签</li></ul><a href="projects/novelty-lab/demo.html">计算分布偏离 →</a> · <a href="projects/novelty-lab/README.md">代码与方法</a> · <a href="projects/novelty-lab/artifacts/REPORT.md">实测</a></article>
@@ -27,20 +122,27 @@
 <article class="card" data-track="research"><div class="tag">11 / SPARSE COMPUTE · MOE-LAB</div><h3>稀疏专家路由<br>负载与dense对照</h3><span class="badge">实际top1分发 · 4专家</span><p>只计算所选expert，辅助负载平衡、偏斜分布与路由entropy。小型MoE不一定优于dense。</p><ul><li>hook核验真实稀疏执行</li><li>active-like与total-like双基线</li><li>非Transformer或分布式MoE</li></ul><a href="projects/moe-lab/demo.html">检查专家选择 →</a> · <a href="projects/moe-lab/METHOD.md">公式与方法</a> · <a href="projects/moe-lab/artifacts/REPORT.md">实测</a></article>
 <article class="card" data-track="infra"><div class="tag">12 / INFERENCE · SPECDECODE</div><h3>推测解码<br>精确路径与真实开销</h3><span class="badge">两模型实际训练 · greedy块验证</span><p>逐块draft/target比对、拒绝后恢复正确路径，原始CPU计时和目标调用次数同时保留，不只报减少calls。</p><ul><li>k2/k4、3重复、逐prompt计时</li><li>原生双模型实时验证轨迹</li><li>非随机采样算法或GPU加速结论</li></ul><a href="projects/spec-decode/demo.html">运行草稿验证 →</a> · <a href="projects/spec-decode/METHOD.md">公式与方法</a> · <a href="projects/spec-decode/artifacts/REPORT.md">实测</a></article>
 <article class="card" data-track="research"><div class="tag">13 / MULTIMODAL · VIDEOGUARD-LAB</div><h3>音画事件同步<br>对比学习、校准与拒估</h3><span class="badge">单领域深度 · 双模型真实训练</span><p>RGB/PCM测量、13候选延时、共享MLP与双塔InfoNCE；滑窗矛盾、四组负对照和完整失败记录。</p><ul><li>三seed、基线与特征消融，ID不胜过相关性</li><li>概率/集合/OOD拒估均保留不利结果</li><li>无人物、无生成API，真实媒体强制复核</li></ul><a href="projects/video-guard/demo.html">运行深度实验 →</a> · <a href="projects/video-guard/README.md">代码与复现</a> · <a href="projects/video-guard/artifacts/REPORT.md">实测</a></article>
-<article class="card" data-track="product"><div class="tag">TEMPLATE / PRODUCT</div><h3>用户问题与<br>人机协同工作流</h3><span class="placeholder">待填 · 尚未收录本人项目</span><p>把需求、范围、交互和失败处理连起来，证明不是只有一份产品概念。</p><ul><li>明确用户与价值假设</li><li>正常流程 + 异常流程</li><li>Demo、个人职责与验证</li></ul><a href="projects/product-workflow/README.md">查看产品案例模板 →</a></article>
-<article class="card" data-track="research"><div class="tag">02 / RESEARCH</div><h3>可证伪问题与<br>算法评测实验</h3><span class="placeholder">待填 · 实验未完成</span><p>围绕明确假设建立公平基线，区分复现、提示词改进与原创算法。</p><ul><li>固定数据与实验条件</li><li>基线、消融与分组评测</li><li>失败样本与复现方法</li></ul><a href="projects/research-evaluation/README.md">查看研究案例模板 →</a></article>
-<article class="card" data-track="infra"><div class="tag">03 / ENGINEERING</div><h3>可靠运行与<br>性能成本验证</h3><span class="placeholder">待填 · 系统未实现</span><p>从具体瓶颈出发，验证可靠性与性能，不把中间件名单当成工程成果。</p><ul><li>超时、重试与版本固定</li><li>延迟、吞吐与成功率</li><li>测量环境与故障实验</li></ul><a href="projects/infra-runtime/README.md">查看工程案例模板 →</a></article>
 </div></section>
-<section id="method"><div class="section-head"><h2>每项成果，都能追问下去。</h2><p>展示结构建议，不是招聘评分标准。</p></div><div class="steps"><div class="step"><span class="num">01</span><h3>问题与贡献</h3><p>说清为什么值得做、我负责哪一步，哪些依赖团队、开源和 AI 工具。</p></div><div class="step"><span class="num">02</span><h3>结果与边界</h3><p>说清与什么比较、用多少样本、在哪个环境测量；未测量的收益不填数字。</p></div><div class="step"><span class="num">03</span><h3>演示与复现</h3><p>留下能复核的输出、运行说明和失败样本。模拟数据、原型与真实上线分别标注。</p></div></div><p class="inline-links"><a href="examples/evidence-trace/README.md">运行证据轨迹示例</a> · <a href="docs/portfolio-case-matrix.md">查看公开案例矩阵</a> · <a href="docs/github-setup-guide.md">查看 GitHub 上传指南</a></p></section>
-<section id="about" class="split"><div><h2>关于我</h2><p>当前只用姓名标识作品集，不自动加入教育、工作、奖项或未经本人确认的指标。</p><ul><li>个人简介、目标岗位：待本人确认。</li><li>公开联系方式：待补。</li><li>FlowBench：本地可运行、AI 辅助搭建；个人复核贡献待记录。</li></ul><p><a href="https://github.com/LlewynLune/ai-portfolio">GitHub 完整源码</a> · <a href="https://llewynlune.github.io/ai-portfolio/">在线作品集</a> · <a href="README.md">仓库说明</a> · <a href="PUBLISHING.md">公开发布检查</a> · <a href="profile/README-template.md">Profile README 模板</a></p></div><div><h2>形式参考</h2><p>完整逐人矩阵见 <a href="docs/portfolio-case-matrix.md">公开案例矩阵</a>。</p><div class="ref"><strong><a href="https://zhongwanjun.github.io/cn/" target="_blank" rel="noopener noreferrer">Wanjun Zhong / 个人主页</a></strong><p>公开个人主页自述参与 TopSeed。以研究方向、职责与论文组织成果；不代表公司官方人事确认。</p></div><div class="ref"><strong><a href="http://www.liziniu.org/" target="_blank" rel="noopener noreferrer">Ziniu Li / 个人网站</a></strong><p>网站分设 Bio、Publication、Blog、Talk、CV；<a href="http://www.liziniu.org/bio.html" target="_blank" rel="noopener noreferrer">Bio</a> 自述曾任 Top Seed Intern。仅借鉴展示结构。</p></div><p>本页不复制他人项目内容、肖像或代码，也不包含内部资料。</p></div></section>
-</main><footer class="wrap">GitHub 源码与 Pages 静态展示已公开 / Python 实验仅本机运行 / AI 辅助实现，个人贡献如实说明</footer>
+<section id="about" class="split"><div><h2>关于我</h2><p>具备 AI 产品从 0—1 到上线试点的完整实践，擅长把高知识密度、强规则约束的业务流程拆解为可操作的产品模块。独立负责过审核工作台、混合审核策略、权限体系、数据看板和风险评分等功能设计，能够将专家经验沉淀为规则库、知识库与人工复核机制，让 AI 输出可追溯、可复算。关注真实使用数据与 Badcase，习惯通过命中率、误报率、人工打回率和结论采纳率验证产品效果，并推动规则、Prompt 与知识库持续迭代。机电与电气工程背景，能读懂图纸和专业规范，可使用 Python、SQL 与 AI Coding 快速验证方案，适合需要领域理解、产品定义和 AI 落地判断的 Agent 产品岗位。</p><div class="skills">
+<span>专业规则产品化</span>
+<span>人机协同审核</span>
+<span>Agent 工作流</span>
+<span>权限与留痕</span>
+<span>风险评分</span>
+<span>Badcase 运营</span>
+<span>Python</span>
+<span>SQL</span>
+<span>AI Coding</span>
+</div><p><a href="https://github.com/LlewynLune/ai-portfolio">GitHub 完整源码</a> · <a href="profile/README.md">个人介绍</a> · <a href="PUBLISHING.md">披露与证据边界</a></p></div><div><h2>教育经历</h2>
+<div class="education-item"><h3>新加坡南洋理工大学</h3><p>硕士在读 · 预计 2028 年毕业</p>
+</div>
+<div class="education-item"><h3>澳门大学</h3><p>全日制本科 · 2021.08—2026.01</p>
+<p>科技学院 · 机电工程</p><p>模拟与混合信号超大规模集成电路国家重点实验室</p><p>校级学生干部</p>
+</div>
+<p class="case-source">教育经历与项目信息由本人提供。硕士专业和入学日期未提供，不自动补写；导师与联系方式不公开展示。</p></div></section></main><footer class="wrap">真实产品实践依据本人简历 / 研究实验为 AI 辅助原型 / Python 实验仅本机运行 / 不公开内部系统、图纸或未授权素材</footer>
 <script>
-const buttons = [...document.querySelectorAll('[data-filter]')];
-const cards = [...document.querySelectorAll('[data-track]')];
-buttons.forEach(button => button.addEventListener('click', () => {
-  const filter = button.dataset.filter;
-  buttons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
-  cards.forEach(card => {card.hidden = filter !== 'all' && card.dataset.track !== filter;});
-}));
-</script>
-</body></html>
+const buttons=[...document.querySelectorAll('[data-filter]')],cards=[...document.querySelectorAll('[data-track]')];
+buttons.forEach(button=>button.addEventListener('click',()=>{const filter=button.dataset.filter;buttons.forEach(item=>item.setAttribute('aria-pressed',String(item===button)));cards.forEach(card=>{card.hidden=filter!=='all'&&card.dataset.track!==filter;})}));
+function openCase(){let id=location.hash.slice(1);if(!id.startsWith('case-'))return;let target=document.getElementById(id);if(target){target.querySelector('details').open=true;}}
+window.addEventListener('hashchange',openCase);openCase();
+</script></body></html>

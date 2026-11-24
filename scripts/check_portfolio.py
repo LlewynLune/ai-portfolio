@@ -7,14 +7,15 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 REQUIRED = ['README.md', 'PUBLISHING.md', 'index.html', '.gitignore',
-            'docs/portfolio-case-matrix.md', 'docs/github-setup-guide.md',
-            'profile/README-template.md',
+            'docs/github-setup-guide.md',
+            'profile/README.md', 'profile/resume.json',
+            'business-cases/drawing-review/README.md',
+            'business-cases/standards-platform/README.md',
+            'business-cases/skills-knowledge/README.md',
+            'business-cases/force-aigc/README.md',
             'examples/evidence-trace/README.md',
             'examples/evidence-trace/evidence_trace.py',
             'examples/evidence-trace/sample-events.jsonl',
-            'projects/product-workflow/README.md',
-            'projects/research-evaluation/README.md',
-            'projects/infra-runtime/README.md',
             'projects/reliability-lab/README.md',
             'projects/reliability-lab/demo.html',
             'projects/reliability-lab/ARCHITECTURE.md',
@@ -74,11 +75,15 @@ def check(root=ROOT):
         if path.suffix == '.md':
             for link in re.findall(r'\]\(([^)]+)\)', text):
                 if '://' not in link and not link.startswith('#'):
-                    if not (path.parent / link).is_file():
+                    local_path=link.split('#',1)[0].split('?',1)[0]
+                    if not (path.parent / local_path).is_file():
                         errors.append('Missing Markdown link: ' + link)
-    for name in REQUIRED:
-        if name in {'projects/product-workflow/README.md', 'projects/research-evaluation/README.md', 'projects/infra-runtime/README.md'} and '状态：待填' not in (root / name).read_text(encoding='utf-8'):
-            errors.append('Missing draft status: ' + name)
+    for marker in ['形式参考', '公开案例矩阵', 'TEMPLATE /', '待填 ·', 'TopSeed', 'Top Seed']:
+        if marker in html:
+            errors.append('Removed showcase content still present: ' + marker)
+    for marker in ['真实产品实践依据本人简历', '研究实验为 AI 辅助原型', '预计 2028 年毕业']:
+        if marker not in html:
+            errors.append('Missing resume or evidence boundary: ' + marker)
     return errors
 
 if __name__ == '__main__':

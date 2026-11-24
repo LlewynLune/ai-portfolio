@@ -1,6 +1,6 @@
 # FlowBench｜AI 工作流可靠性实验台
 
-> 状态：本地可运行研究原型（0.2.0），AI 辅助搭建；支持合成 I/O 和实际本地 BM25 检索，不含真实 LLM。不是字节官方项目，也不代表 Top Seed 身份或对应研究水平。
+> 状态：本地可运行研究原型（0.2.0），AI 辅助搭建；支持合成 I/O 和实际本地 BM25 检索，不含真实 LLM。不是公司业务平台或生产上线成果。
 
 面向正在搭建 Agent/AI 工作流的人，回答一个小而可验证的问题：**模型之外的执行框架，如何让暂时失败可恢复、永久错误可解释、提交副作用不重复？**
 
@@ -11,7 +11,7 @@
 - [v0.2 深化报告](results/advanced/REPORT.md)：本地检索、困难改写组、实际子进程崩溃恢复、并发与单次超时参数矩阵。
 - [评测报告](results/reference/REPORT.md)：6 类负载、4 种策略、每种 5 次重复；原始事件完整保留。
 - [汇总结果](results/reference/benchmark.json) 与 [完整性清单](results/reference/checksums.json)。
-- [架构与决策](ARCHITECTURE.md) · [产品假设](PRODUCT.md) · [实验方法](EVALUATION.md) · [讲解与自验证](WALKTHROUGH.md) · [贡献与限制](CONTRIBUTIONS.md) · [对标依据](../../docs/reliability-benchmark-design.md)。
+- [架构与决策](ARCHITECTURE.md) · [产品假设](PRODUCT.md) · [实验方法](EVALUATION.md) · [讲解与自验证](WALKTHROUGH.md) · [贡献与限制](CONTRIBUTIONS.md) · [方法依据](../../docs/reliability-benchmark-design.md)。
 
 ## 快速开始
 

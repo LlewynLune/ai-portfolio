@@ -12,10 +12,20 @@ spec.loader.exec_module(checker)
 class PortfolioTest(unittest.TestCase):
     def test_structure_and_links(self):
         self.assertEqual(checker.check(ROOT), [])
-    def test_no_fabricated_results(self):
-        for name in checker.REQUIRED:
-            if name in {'projects/product-workflow/README.md', 'projects/research-evaluation/README.md', 'projects/infra-runtime/README.md'}:
-                self.assertIn('待补', (ROOT / name).read_text(encoding='utf-8'))
+    def test_resume_cases_and_evidence_boundaries(self):
+        import json
+        data=json.loads((ROOT/'profile/resume.json').read_text())
+        self.assertEqual(len(data['cases']),4)
+        self.assertEqual(data['education'][0]['degree'],'硕士在读')
+        self.assertTrue(data['publication']['projects_and_metrics_owner_confirmed_public'])
+        for case in data['cases']:
+            text=(ROOT/'business-cases'/case['id']/'README.md').read_text()
+            self.assertIn('本人提供并确认可公开的履历',text)
+            self.assertIn(case['title'],text)
+    def test_form_references_and_placeholders_removed(self):
+        text=(ROOT/'index.html').read_text()
+        for marker in ['形式参考','TopSeed','Wanjun','liziniu','TEMPLATE /','待填 ·']:
+            self.assertNotIn(marker,text)
     def test_site_declares_limitations(self):
         text = (ROOT / 'index.html').read_text(encoding='utf-8')
         self.assertIn('本地模型 Demo 已可运行', text)

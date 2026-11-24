@@ -74,7 +74,7 @@ GitHub Pages 不是建仓后自动开启；公开后任何人都可能访问，�
 
 ## 账号同名 Profile README（可选）
 
-另建一个与 GitHub 用户名完全同名的仓库，在其中放 README.md。可先复制 profile/README-template.md 的结构，等你有真实项目后再启用。
+账号同名仓库已启用，当前个人介绍源文为[profile/README.md](../profile/README.md)。更新公开履历时同步此文与个人Profile，不复制旧占位版本。
 
 ## 公开前最低门槛
 
