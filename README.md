@@ -1,8 +1,10 @@
 # 于跃｜AI 作品集
 
-> 十四个 AI 辅助研究项目：新增专精音画同步可靠性的 VideoGuard-Lab，加已有十三项机制与跨学科研究原型。真实CPU训练、合成数据、共享基座与未验证边界分别披露；不是大模型训练、原创突破或生产成果，真实远程LLM未调用。当前本地源码 v0.6；GitHub 与 Pages 是否已更新以最新提交/部署记录为准。
+> 十四个 AI 辅助研究项目：新增专精音画同步可靠性的 VideoGuard-Lab，加已有十三项机制与跨学科研究原型。真实CPU训练、合成数据、共享基座与未验证边界分别披露；不是大模型训练、原创突破或生产成果，真实远程LLM未调用。当前本地源码 v0.7；GitHub 与 Pages 是否已更新以最新提交/部署记录为准。
 
-## 专精主项目：VideoGuard-Lab（v0.6）
+## 专精主项目：VideoGuard-Lab（v0.7）
+
+新增[校准纵深方法](projects/video-guard/CALIBRATION.md)与[实测](projects/video-guard/artifacts/calibration-depth/REPORT.md)：五种集合方法、24轮独立重复、八组新留出、风险—保留曲线。模型冻结，旧版证据保留，项目数仍14。
 
 [交互Demo](projects/video-guard/demo.html) · [代码与复现](projects/video-guard/README.md) · [实测报告](projects/video-guard/artifacts/REPORT.md) · [方法](projects/video-guard/METHOD.md) · [公开研究对照](projects/video-guard/RESEARCH.md)
 
