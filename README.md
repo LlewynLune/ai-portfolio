@@ -1,6 +1,40 @@
 # 于跃｜AI 作品集
 
-> 现已包含 FlowBench 0.2 可靠性实验台：合成 I/O、实际本地检索、进程崩溃恢复和参数扫描；可运行、可测试、实测可复核。代码由 AI 辅助搭建，用户个人实现与复核贡献尚待记录；三类旧目录仍是待填模板。已公开至 [GitHub 仓库](https://github.com/LlewynLune/ai-portfolio)，[作品集网站](https://llewynlune.github.io/ai-portfolio/) 已上线。
+> 十三个 AI 辅助研究项目：本批五项前沿机制复现加已有八项。小型CPU模型真实训练，共享基座、合成数据和真实硬件边界明确披露；不是最新论文榜单、大模型训练或原创突破，真实远程LLM未调用。[GitHub](https://github.com/LlewynLune/ai-portfolio)源码版本v0.5，覆盖全部十三项；[网站](https://llewynlune.github.io/ai-portfolio/)部署状态以最新Actions记录为准。
+
+## 五项前沿机制：本批v0.5
+
+|作品|实际训练与核验|深入入口|
+|---|---|---|
+|[TinyAttention](projects/tiny-attention/README.md)|单块因果多头、查找任务、无attention消融/长度OOD|[Demo](projects/tiny-attention/demo.html) · [报告](projects/tiny-attention/artifacts/REPORT.md)|
+|[LoRA-Lab](projects/lora-lab/README.md)|冻结基座、A/B rank1/4、全量基线、合并与遗忘|[Demo](projects/lora-lab/demo.html) · [报告](projects/lora-lab/artifacts/REPORT.md)|
+|[DPO-Lab](projects/dpo-lab/README.md)|真实DPO损失、reference、beta与SFT、win/top1/KL|[Demo](projects/dpo-lab/demo.html) · [报告](projects/dpo-lab/artifacts/REPORT.md)|
+|[SparseMoE](projects/moe-lab/README.md)|真正top1分发、负载辅助、dense双基线、skewOOD|[Demo](projects/moe-lab/demo.html) · [报告](projects/moe-lab/artifacts/REPORT.md)|
+|[SpecDecode](projects/spec-decode/README.md)|独立训练target/draft、greedy块验证、逐token一致、实际CPU计时|[Demo](projects/spec-decode/demo.html) · [报告](projects/spec-decode/artifacts/REPORT.md)|
+
+[前沿机制阅读地图与完整结果](docs/frontier-evidence.md)。前三项共享TinyAttention基座，不宣称独立数据/大模型研究。原论文用于概念对照，本批数字来自本仓库；2017–2023经典机制复现，不是2026最新前沿综述。
+
+## 跨学科四项目：本批v0.4
+
+|方向|独立作品|可验证核心|边界|
+|---|---|---|---|
+|AI算法|[VisionCal](projects/vision-cal/README.md)|真实小型神经网、温度校准、噪声/平移、可编辑像素[Demo](projects/vision-cal/demo.html)|公开8×8图像，不是大型视觉模型|
+|电子科学与技术|[CircuitID](projects/circuit-id/README.md)|RC辨识，规则/物理/学习对照、OOD和波形[Demo](projects/circuit-id/demo.html)|纯数学仿真，无硬件实测|
+|信息与通信工程|[ChannelEst](projects/channel-est/README.md)|导频估计，NMSE/BER，多SNR/先验/长delay [Demo](projects/channel-est/demo.html)|理想频域，无真实无线设备|
+|AI数据中心/电气工程|[PowerScope](projects/power-scope/README.md)|下一步负荷预测、时间留出、计划消融、漂移[Demo](projects/power-scope/demo.html)|合成时序，只读预测，非容量设计/控制|
+
+[跨学科实验阅读指南](docs/cross-disciplinary-evidence.md)说明全部结果、不利发现与同场景公平对照。
+
+## 新三项目：可运行，不虚报上线
+
+|作品|实际实现|证据入口|状态边界|
+|---|---|---|---|
+|[TextGuard](projects/textguard/README.md)|TF-IDF＋Logistic，训练/验证/测试、NB对照、权重推断|[Demo](projects/textguard/demo.html) · [报告](projects/textguard/artifacts/REPORT.md)|旧英文短信；不是现代诈骗识别|
+|[CiteRAG](projects/cite-rag/README.md)|BM25/字符/RRF，引用、摘录、拒答与真实HTTPS接口|[Demo](projects/cite-rag/demo.html) · [报告](projects/cite-rag/artifacts/REPORT.md)|自建小语料；本地非LLM，真实LLM未调用|
+|[NoveltyLab](projects/novelty-lab/README.md)|正常训练拟合、验证阈值、3模型对照、13维推断|[Demo](projects/novelty-lab/demo.html) · [报告](projects/novelty-lab/artifacts/REPORT.md)|类别迁移非故障标签；非生产效果|
+
+[公开人才形式参照及数据来源](docs/ai-project-reference.md) · [实验与真实性清单](docs/ai-evidence.md) · [独立掌握路线](docs/learning-roadmap.md)
+
 
 我的作品集将围绕一条主线组织：从真实用户问题出发，用可检验的方法设计 AI 方案，再用工程机制把结果稳定交付。
 

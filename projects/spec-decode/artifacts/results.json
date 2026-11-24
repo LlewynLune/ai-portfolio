@@ -1,0 +1,1342 @@
+{
+  "title": "SpecDecode-Lab",
+  "protocol": "Independent tiny causal next-token models trained on48 synthetic modular-recurrence initial states;8validation/8test states. Target700steps d32, draft250steps d16. Evaluation measures greedy equivalence and actual CPU timing,8outputs after4token prompt,k2/k4,3 paired repeats,warmup; noKV cache.",
+  "metrics": [
+    {
+      "k": 2,
+      "repeat": 0,
+      "prompts": 8,
+      "exact_prompts": 8,
+      "baseline_ms": 21.485122999990836,
+      "speculative_ms": 31.559807999940404,
+      "speed_ratio_baseline_over_spec": 0.6807748323447154,
+      "target_calls": 33,
+      "draft_calls": 65,
+      "acceptance_checked": 0.6538461538461539
+    },
+    {
+      "k": 2,
+      "repeat": 1,
+      "prompts": 8,
+      "exact_prompts": 8,
+      "baseline_ms": 21.23274800010222,
+      "speculative_ms": 31.365444999948977,
+      "speed_ratio_baseline_over_spec": 0.6769471308357576,
+      "target_calls": 33,
+      "draft_calls": 65,
+      "acceptance_checked": 0.6538461538461539
+    },
+    {
+      "k": 2,
+      "repeat": 2,
+      "prompts": 8,
+      "exact_prompts": 8,
+      "baseline_ms": 21.260950999931083,
+      "speculative_ms": 31.281517000024905,
+      "speed_ratio_baseline_over_spec": 0.6796649599798551,
+      "target_calls": 33,
+      "draft_calls": 65,
+      "acceptance_checked": 0.6538461538461539
+    },
+    {
+      "k": 4,
+      "repeat": 0,
+      "prompts": 8,
+      "exact_prompts": 8,
+      "baseline_ms": 21.43287300003749,
+      "speculative_ms": 40.92134799998348,
+      "speed_ratio_baseline_over_spec": 0.5237577462024502,
+      "target_calls": 30,
+      "draft_calls": 100,
+      "acceptance_checked": 0.6949152542372882
+    },
+    {
+      "k": 4,
+      "repeat": 1,
+      "prompts": 8,
+      "exact_prompts": 8,
+      "baseline_ms": 20.974615000113772,
+      "speculative_ms": 40.549710999982835,
+      "speed_ratio_baseline_over_spec": 0.5172568307607087,
+      "target_calls": 30,
+      "draft_calls": 100,
+      "acceptance_checked": 0.6949152542372882
+    },
+    {
+      "k": 4,
+      "repeat": 2,
+      "prompts": 8,
+      "exact_prompts": 8,
+      "baseline_ms": 21.400314000004528,
+      "speculative_ms": 40.9457730000895,
+      "speed_ratio_baseline_over_spec": 0.5226501402222337,
+      "target_calls": 30,
+      "draft_calls": 100,
+      "acceptance_checked": 0.6949152542372882
+    }
+  ],
+  "timings": [
+    {
+      "k": 2,
+      "repeat": 0,
+      "prompt": 0,
+      "baseline_ms": 2.6839600000130304,
+      "speculative_ms": 4.889180000020588,
+      "baseline_calls": 8,
+      "target_calls": 5,
+      "draft_calls": 10,
+      "exact": true
+    },
+    {
+      "k": 2,
+      "repeat": 0,
+      "prompt": 1,
+      "baseline_ms": 2.7122230000031777,
+      "speculative_ms": 3.8953039999682915,
+      "baseline_calls": 8,
+      "target_calls": 4,
+      "draft_calls": 8,
+      "exact": true
+    },
+    {
+      "k": 2,
+      "repeat": 0,
+      "prompt": 2,
+      "baseline_ms": 2.6886980000426774,
+      "speculative_ms": 3.8179289999789034,
+      "baseline_calls": 8,
+      "target_calls": 4,
+      "draft_calls": 8,
+      "exact": true
+    },
+    {
+      "k": 2,
+      "repeat": 0,
+      "prompt": 3,
+      "baseline_ms": 2.7459959999873718,
+      "speculative_ms": 2.914180999994187,
+      "baseline_calls": 8,
+      "target_calls": 3,
+      "draft_calls": 6,
+      "exact": true
+    },
+    {
+      "k": 2,
+      "repeat": 0,
+      "prompt": 4,
+      "baseline_ms": 2.6524809999841636,
+      "speculative_ms": 3.7273579999919093,
+      "baseline_calls": 8,
+      "target_calls": 4,
+      "draft_calls": 8,
+      "exact": true
+    },
+    {
+      "k": 2,
+      "repeat": 0,
+      "prompt": 5,
+      "baseline_ms": 2.6674989999833087,
+      "speculative_ms": 5.431318999967516,
+      "baseline_calls": 8,
+      "target_calls": 6,
+      "draft_calls": 11,
+      "exact": true
+    },
+    {
+      "k": 2,
+      "repeat": 0,
+      "prompt": 6,
+      "baseline_ms": 2.6770970000029592,
+      "speculative_ms": 2.9020989999821722,
+      "baseline_calls": 8,
+      "target_calls": 3,
+      "draft_calls": 6,
+      "exact": true
+    },
+    {
+      "k": 2,
+      "repeat": 0,
+      "prompt": 7,
+      "baseline_ms": 2.6571689999741466,
+      "speculative_ms": 3.9824380000368365,
+      "baseline_calls": 8,
+      "target_calls": 4,
+      "draft_calls": 8,
+      "exact": true
+    },
+    {
+      "k": 2,
+      "repeat": 1,
+      "prompt": 0,
+      "baseline_ms": 2.6365399999690453,
+      "speculative_ms": 4.759287000013046,
+      "baseline_calls": 8,
+      "target_calls": 5,
+      "draft_calls": 10,
+      "exact": true
+    },
+    {
+      "k": 2,
+      "repeat": 1,
+      "prompt": 1,
+      "baseline_ms": 2.687296000033257,
+      "speculative_ms": 3.93648099998245,
+      "baseline_calls": 8,
+      "target_calls": 4,
+      "draft_calls": 8,
+      "exact": true
+    },
+    {
+      "k": 2,
+      "repeat": 1,
+      "prompt": 2,
+      "baseline_ms": 2.6195590000384072,
+      "speculative_ms": 3.8444689999437287,
+      "baseline_calls": 8,
+      "target_calls": 4,
+      "draft_calls": 8,
+      "exact": true
+    },
+    {
+      "k": 2,
+      "repeat": 1,
+      "prompt": 3,
+      "baseline_ms": 2.6553460000400264,
+      "speculative_ms": 2.884095000013076,
+      "baseline_calls": 8,
+      "target_calls": 3,
+      "draft_calls": 6,
+      "exact": true
+    },
+    {
+      "k": 2,
+      "repeat": 1,
+      "prompt": 4,
+      "baseline_ms": 2.6446859999964545,
+      "speculative_ms": 3.812618999972983,
+      "baseline_calls": 8,
+      "target_calls": 4,
+      "draft_calls": 8,
+      "exact": true
+    },
+    {
+      "k": 2,
+      "repeat": 1,
+      "prompt": 5,
+      "baseline_ms": 2.7062010000236114,
+      "speculative_ms": 5.39538100002801,
+      "baseline_calls": 8,
+      "target_calls": 6,
+      "draft_calls": 11,
+      "exact": true
+    },
+    {
+      "k": 2,
+      "repeat": 1,
+      "prompt": 6,
+      "baseline_ms": 2.6733999999919433,
+      "speculative_ms": 2.8955669999959355,
+      "baseline_calls": 8,
+      "target_calls": 3,
+      "draft_calls": 6,
+      "exact": true
+    },
+    {
+      "k": 2,
+      "repeat": 1,
+      "prompt": 7,
+      "baseline_ms": 2.6097200000094745,
+      "speculative_ms": 3.8375459999997474,
+      "baseline_calls": 8,
+      "target_calls": 4,
+      "draft_calls": 8,
+      "exact": true
+    },
+    {
+      "k": 2,
+      "repeat": 2,
+      "prompt": 0,
+      "baseline_ms": 2.6538829999935842,
+      "speculative_ms": 4.761269999960405,
+      "baseline_calls": 8,
+      "target_calls": 5,
+      "draft_calls": 10,
+      "exact": true
+    },
+    {
+      "k": 2,
+      "repeat": 2,
+      "prompt": 1,
+      "baseline_ms": 2.6258309999889207,
+      "speculative_ms": 3.815926000015679,
+      "baseline_calls": 8,
+      "target_calls": 4,
+      "draft_calls": 8,
+      "exact": true
+    },
+    {
+      "k": 2,
+      "repeat": 2,
+      "prompt": 2,
+      "baseline_ms": 2.721489999998994,
+      "speculative_ms": 3.824181000027238,
+      "baseline_calls": 8,
+      "target_calls": 4,
+      "draft_calls": 8,
+      "exact": true
+    },
+    {
+      "k": 2,
+      "repeat": 2,
+      "prompt": 3,
+      "baseline_ms": 2.607114999989335,
+      "speculative_ms": 2.881410000043161,
+      "baseline_calls": 8,
+      "target_calls": 3,
+      "draft_calls": 6,
+      "exact": true
+    },
+    {
+      "k": 2,
+      "repeat": 2,
+      "prompt": 4,
+      "baseline_ms": 2.6817749999850093,
+      "speculative_ms": 3.7711909999984528,
+      "baseline_calls": 8,
+      "target_calls": 4,
+      "draft_calls": 8,
+      "exact": true
+    },
+    {
+      "k": 2,
+      "repeat": 2,
+      "prompt": 5,
+      "baseline_ms": 2.6590530000021317,
+      "speculative_ms": 5.495377999977791,
+      "baseline_calls": 8,
+      "target_calls": 6,
+      "draft_calls": 11,
+      "exact": true
+    },
+    {
+      "k": 2,
+      "repeat": 2,
+      "prompt": 6,
+      "baseline_ms": 2.6585819999809246,
+      "speculative_ms": 2.891418999979578,
+      "baseline_calls": 8,
+      "target_calls": 3,
+      "draft_calls": 6,
+      "exact": true
+    },
+    {
+      "k": 2,
+      "repeat": 2,
+      "prompt": 7,
+      "baseline_ms": 2.6532219999921836,
+      "speculative_ms": 3.840742000022601,
+      "baseline_calls": 8,
+      "target_calls": 4,
+      "draft_calls": 8,
+      "exact": true
+    },
+    {
+      "k": 4,
+      "repeat": 0,
+      "prompt": 0,
+      "baseline_ms": 2.667028000018945,
+      "speculative_ms": 5.586309000022993,
+      "baseline_calls": 8,
+      "target_calls": 4,
+      "draft_calls": 14,
+      "exact": true
+    },
+    {
+      "k": 4,
+      "repeat": 0,
+      "prompt": 1,
+      "baseline_ms": 2.71688200001563,
+      "speculative_ms": 5.955342999982349,
+      "baseline_calls": 8,
+      "target_calls": 4,
+      "draft_calls": 15,
+      "exact": true
+    },
+    {
+      "k": 4,
+      "repeat": 0,
+      "prompt": 2,
+      "baseline_ms": 2.679811999996673,
+      "speculative_ms": 5.380211999977291,
+      "baseline_calls": 8,
+      "target_calls": 4,
+      "draft_calls": 13,
+      "exact": true
+    },
+    {
+      "k": 4,
+      "repeat": 0,
+      "prompt": 3,
+      "baseline_ms": 2.6942079999798807,
+      "speculative_ms": 3.7390510000250288,
+      "baseline_calls": 8,
+      "target_calls": 3,
+      "draft_calls": 9,
+      "exact": true
+    },
+    {
+      "k": 4,
+      "repeat": 0,
+      "prompt": 4,
+      "baseline_ms": 2.7333720000228823,
+      "speculative_ms": 5.388217000017903,
+      "baseline_calls": 8,
+      "target_calls": 4,
+      "draft_calls": 13,
+      "exact": true
+    },
+    {
+      "k": 4,
+      "repeat": 0,
+      "prompt": 5,
+      "baseline_ms": 2.6508270000249468,
+      "speculative_ms": 6.3472479999973075,
+      "baseline_calls": 8,
+      "target_calls": 5,
+      "draft_calls": 15,
+      "exact": true
+    },
+    {
+      "k": 4,
+      "repeat": 0,
+      "prompt": 6,
+      "baseline_ms": 2.654914999993707,
+      "speculative_ms": 3.8487369999984367,
+      "baseline_calls": 8,
+      "target_calls": 3,
+      "draft_calls": 9,
+      "exact": true
+    },
+    {
+      "k": 4,
+      "repeat": 0,
+      "prompt": 7,
+      "baseline_ms": 2.635828999984824,
+      "speculative_ms": 4.676230999962172,
+      "baseline_calls": 8,
+      "target_calls": 3,
+      "draft_calls": 12,
+      "exact": true
+    },
+    {
+      "k": 4,
+      "repeat": 1,
+      "prompt": 0,
+      "baseline_ms": 2.6861239999789177,
+      "speculative_ms": 5.698850999976912,
+      "baseline_calls": 8,
+      "target_calls": 4,
+      "draft_calls": 14,
+      "exact": true
+    },
+    {
+      "k": 4,
+      "repeat": 1,
+      "prompt": 1,
+      "baseline_ms": 2.6470999999901323,
+      "speculative_ms": 6.015014000013252,
+      "baseline_calls": 8,
+      "target_calls": 4,
+      "draft_calls": 15,
+      "exact": true
+    },
+    {
+      "k": 4,
+      "repeat": 1,
+      "prompt": 2,
+      "baseline_ms": 2.6638920000436883,
+      "speculative_ms": 5.34527600001411,
+      "baseline_calls": 8,
+      "target_calls": 4,
+      "draft_calls": 13,
+      "exact": true
+    },
+    {
+      "k": 4,
+      "repeat": 1,
+      "prompt": 3,
+      "baseline_ms": 2.610843000013574,
+      "speculative_ms": 3.6991059999991194,
+      "baseline_calls": 8,
+      "target_calls": 3,
+      "draft_calls": 9,
+      "exact": true
+    },
+    {
+      "k": 4,
+      "repeat": 1,
+      "prompt": 4,
+      "baseline_ms": 2.546281000036288,
+      "speculative_ms": 5.230953000022964,
+      "baseline_calls": 8,
+      "target_calls": 4,
+      "draft_calls": 13,
+      "exact": true
+    },
+    {
+      "k": 4,
+      "repeat": 1,
+      "prompt": 5,
+      "baseline_ms": 2.60396999999557,
+      "speculative_ms": 6.263941999975486,
+      "baseline_calls": 8,
+      "target_calls": 5,
+      "draft_calls": 15,
+      "exact": true
+    },
+    {
+      "k": 4,
+      "repeat": 1,
+      "prompt": 6,
+      "baseline_ms": 2.653463000001466,
+      "speculative_ms": 3.7198250000187727,
+      "baseline_calls": 8,
+      "target_calls": 3,
+      "draft_calls": 9,
+      "exact": true
+    },
+    {
+      "k": 4,
+      "repeat": 1,
+      "prompt": 7,
+      "baseline_ms": 2.562942000054136,
+      "speculative_ms": 4.576743999962218,
+      "baseline_calls": 8,
+      "target_calls": 3,
+      "draft_calls": 12,
+      "exact": true
+    },
+    {
+      "k": 4,
+      "repeat": 2,
+      "prompt": 0,
+      "baseline_ms": 2.6407789999893794,
+      "speculative_ms": 5.602148999969359,
+      "baseline_calls": 8,
+      "target_calls": 4,
+      "draft_calls": 14,
+      "exact": true
+    },
+    {
+      "k": 4,
+      "repeat": 2,
+      "prompt": 1,
+      "baseline_ms": 2.6788910000163924,
+      "speculative_ms": 5.910398000025907,
+      "baseline_calls": 8,
+      "target_calls": 4,
+      "draft_calls": 15,
+      "exact": true
+    },
+    {
+      "k": 4,
+      "repeat": 2,
+      "prompt": 2,
+      "baseline_ms": 2.6214819999950123,
+      "speculative_ms": 5.380563000016991,
+      "baseline_calls": 8,
+      "target_calls": 4,
+      "draft_calls": 13,
+      "exact": true
+    },
+    {
+      "k": 4,
+      "repeat": 2,
+      "prompt": 3,
+      "baseline_ms": 2.6533220000146684,
+      "speculative_ms": 3.8272660000302494,
+      "baseline_calls": 8,
+      "target_calls": 3,
+      "draft_calls": 9,
+      "exact": true
+    },
+    {
+      "k": 4,
+      "repeat": 2,
+      "prompt": 4,
+      "baseline_ms": 2.713765000009971,
+      "speculative_ms": 5.32874600003197,
+      "baseline_calls": 8,
+      "target_calls": 4,
+      "draft_calls": 13,
+      "exact": true
+    },
+    {
+      "k": 4,
+      "repeat": 2,
+      "prompt": 5,
+      "baseline_ms": 2.6938480000353593,
+      "speculative_ms": 6.349831999955313,
+      "baseline_calls": 8,
+      "target_calls": 5,
+      "draft_calls": 15,
+      "exact": true
+    },
+    {
+      "k": 4,
+      "repeat": 2,
+      "prompt": 6,
+      "baseline_ms": 2.7062219999720583,
+      "speculative_ms": 3.835683000033896,
+      "baseline_calls": 8,
+      "target_calls": 3,
+      "draft_calls": 9,
+      "exact": true
+    },
+    {
+      "k": 4,
+      "repeat": 2,
+      "prompt": 7,
+      "baseline_ms": 2.6920049999716866,
+      "speculative_ms": 4.711136000025817,
+      "baseline_calls": 8,
+      "target_calls": 3,
+      "draft_calls": 12,
+      "exact": true
+    }
+  ],
+  "examples": [
+    {
+      "group": "greedy_k2",
+      "tokens": [
+        3,
+        5,
+        0,
+        5
+      ],
+      "baseline_output": [
+        2,
+        5,
+        7,
+        1,
+        0,
+        2,
+        2,
+        1
+      ],
+      "speculative_output": [
+        2,
+        5,
+        7,
+        1,
+        0,
+        2,
+        2,
+        1
+      ],
+      "target_calls": 5,
+      "draft_calls": 10,
+      "accepted": 4,
+      "proposed_checked": 7,
+      "trace": [
+        {
+          "proposal": [
+            6,
+            7
+          ],
+          "checks": [
+            {
+              "draft": 6,
+              "target": 2,
+              "accepted": false
+            }
+          ],
+          "accepted_count": 0,
+          "output_so_far": [
+            2
+          ]
+        },
+        {
+          "proposal": [
+            7,
+            7
+          ],
+          "checks": [
+            {
+              "draft": 7,
+              "target": 5,
+              "accepted": false
+            }
+          ],
+          "accepted_count": 0,
+          "output_so_far": [
+            2,
+            5
+          ]
+        },
+        {
+          "proposal": [
+            7,
+            1
+          ],
+          "checks": [
+            {
+              "draft": 7,
+              "target": 7,
+              "accepted": true
+            },
+            {
+              "draft": 1,
+              "target": 1,
+              "accepted": true
+            }
+          ],
+          "accepted_count": 2,
+          "output_so_far": [
+            2,
+            5,
+            7,
+            1,
+            0
+          ]
+        },
+        {
+          "proposal": [
+            7,
+            2
+          ],
+          "checks": [
+            {
+              "draft": 7,
+              "target": 2,
+              "accepted": false
+            }
+          ],
+          "accepted_count": 0,
+          "output_so_far": [
+            2,
+            5,
+            7,
+            1,
+            0,
+            2
+          ]
+        },
+        {
+          "proposal": [
+            2,
+            1
+          ],
+          "checks": [
+            {
+              "draft": 2,
+              "target": 2,
+              "accepted": true
+            },
+            {
+              "draft": 1,
+              "target": 1,
+              "accepted": true
+            }
+          ],
+          "accepted_count": 2,
+          "output_so_far": [
+            2,
+            5,
+            7,
+            1,
+            0,
+            2,
+            2,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "group": "greedy_k2",
+      "tokens": [
+        1,
+        6,
+        7,
+        5
+      ],
+      "baseline_output": [
+        0,
+        1,
+        5,
+        6,
+        3,
+        1,
+        0,
+        5
+      ],
+      "speculative_output": [
+        0,
+        1,
+        5,
+        6,
+        3,
+        1,
+        0,
+        5
+      ],
+      "target_calls": 4,
+      "draft_calls": 8,
+      "accepted": 4,
+      "proposed_checked": 7,
+      "trace": [
+        {
+          "proposal": [
+            1,
+            3
+          ],
+          "checks": [
+            {
+              "draft": 1,
+              "target": 0,
+              "accepted": false
+            }
+          ],
+          "accepted_count": 0,
+          "output_so_far": [
+            0
+          ]
+        },
+        {
+          "proposal": [
+            1,
+            1
+          ],
+          "checks": [
+            {
+              "draft": 1,
+              "target": 1,
+              "accepted": true
+            },
+            {
+              "draft": 1,
+              "target": 5,
+              "accepted": false
+            }
+          ],
+          "accepted_count": 1,
+          "output_so_far": [
+            0,
+            1,
+            5
+          ]
+        },
+        {
+          "proposal": [
+            6,
+            7
+          ],
+          "checks": [
+            {
+              "draft": 6,
+              "target": 6,
+              "accepted": true
+            },
+            {
+              "draft": 7,
+              "target": 3,
+              "accepted": false
+            }
+          ],
+          "accepted_count": 1,
+          "output_so_far": [
+            0,
+            1,
+            5,
+            6,
+            3
+          ]
+        },
+        {
+          "proposal": [
+            1,
+            0
+          ],
+          "checks": [
+            {
+              "draft": 1,
+              "target": 1,
+              "accepted": true
+            },
+            {
+              "draft": 0,
+              "target": 0,
+              "accepted": true
+            }
+          ],
+          "accepted_count": 2,
+          "output_so_far": [
+            0,
+            1,
+            5,
+            6,
+            3,
+            1,
+            0,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "group": "greedy_k4",
+      "tokens": [
+        3,
+        5,
+        0,
+        5
+      ],
+      "baseline_output": [
+        2,
+        5,
+        7,
+        1,
+        0,
+        2,
+        2,
+        1
+      ],
+      "speculative_output": [
+        2,
+        5,
+        7,
+        1,
+        0,
+        2,
+        2,
+        1
+      ],
+      "target_calls": 4,
+      "draft_calls": 14,
+      "accepted": 5,
+      "proposed_checked": 8,
+      "trace": [
+        {
+          "proposal": [
+            6,
+            7,
+            7,
+            1
+          ],
+          "checks": [
+            {
+              "draft": 6,
+              "target": 2,
+              "accepted": false
+            }
+          ],
+          "accepted_count": 0,
+          "output_so_far": [
+            2
+          ]
+        },
+        {
+          "proposal": [
+            7,
+            7,
+            1,
+            0
+          ],
+          "checks": [
+            {
+              "draft": 7,
+              "target": 5,
+              "accepted": false
+            }
+          ],
+          "accepted_count": 0,
+          "output_so_far": [
+            2,
+            5
+          ]
+        },
+        {
+          "proposal": [
+            7,
+            1,
+            0,
+            7
+          ],
+          "checks": [
+            {
+              "draft": 7,
+              "target": 7,
+              "accepted": true
+            },
+            {
+              "draft": 1,
+              "target": 1,
+              "accepted": true
+            },
+            {
+              "draft": 0,
+              "target": 0,
+              "accepted": true
+            },
+            {
+              "draft": 7,
+              "target": 2,
+              "accepted": false
+            }
+          ],
+          "accepted_count": 3,
+          "output_so_far": [
+            2,
+            5,
+            7,
+            1,
+            0,
+            2
+          ]
+        },
+        {
+          "proposal": [
+            2,
+            1
+          ],
+          "checks": [
+            {
+              "draft": 2,
+              "target": 2,
+              "accepted": true
+            },
+            {
+              "draft": 1,
+              "target": 1,
+              "accepted": true
+            }
+          ],
+          "accepted_count": 2,
+          "output_so_far": [
+            2,
+            5,
+            7,
+            1,
+            0,
+            2,
+            2,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "group": "greedy_k4",
+      "tokens": [
+        1,
+        6,
+        7,
+        5
+      ],
+      "baseline_output": [
+        0,
+        1,
+        5,
+        6,
+        3,
+        1,
+        0,
+        5
+      ],
+      "speculative_output": [
+        0,
+        1,
+        5,
+        6,
+        3,
+        1,
+        0,
+        5
+      ],
+      "target_calls": 4,
+      "draft_calls": 15,
+      "accepted": 5,
+      "proposed_checked": 8,
+      "trace": [
+        {
+          "proposal": [
+            1,
+            3,
+            5,
+            6
+          ],
+          "checks": [
+            {
+              "draft": 1,
+              "target": 0,
+              "accepted": false
+            }
+          ],
+          "accepted_count": 0,
+          "output_so_far": [
+            0
+          ]
+        },
+        {
+          "proposal": [
+            1,
+            1,
+            6,
+            7
+          ],
+          "checks": [
+            {
+              "draft": 1,
+              "target": 1,
+              "accepted": true
+            },
+            {
+              "draft": 1,
+              "target": 5,
+              "accepted": false
+            }
+          ],
+          "accepted_count": 1,
+          "output_so_far": [
+            0,
+            1,
+            5
+          ]
+        },
+        {
+          "proposal": [
+            6,
+            7,
+            1,
+            0
+          ],
+          "checks": [
+            {
+              "draft": 6,
+              "target": 6,
+              "accepted": true
+            },
+            {
+              "draft": 7,
+              "target": 3,
+              "accepted": false
+            }
+          ],
+          "accepted_count": 1,
+          "output_so_far": [
+            0,
+            1,
+            5,
+            6,
+            3
+          ]
+        },
+        {
+          "proposal": [
+            1,
+            0,
+            5
+          ],
+          "checks": [
+            {
+              "draft": 1,
+              "target": 1,
+              "accepted": true
+            },
+            {
+              "draft": 0,
+              "target": 0,
+              "accepted": true
+            },
+            {
+              "draft": 5,
+              "target": 5,
+              "accepted": true
+            }
+          ],
+          "accepted_count": 3,
+          "output_so_far": [
+            0,
+            1,
+            5,
+            6,
+            3,
+            1,
+            0,
+            5
+          ]
+        }
+      ]
+    }
+  ],
+  "loss_curve": [
+    {
+      "step": 0,
+      "loss": 3.1702070236206055
+    },
+    {
+      "step": 50,
+      "loss": 1.3887008428573608
+    },
+    {
+      "step": 100,
+      "loss": 0.6455104947090149
+    },
+    {
+      "step": 150,
+      "loss": 0.4025813639163971
+    },
+    {
+      "step": 200,
+      "loss": 0.23582200706005096
+    },
+    {
+      "step": 250,
+      "loss": 0.23475980758666992
+    },
+    {
+      "step": 300,
+      "loss": 0.21256500482559204
+    },
+    {
+      "step": 350,
+      "loss": 0.17918753623962402
+    },
+    {
+      "step": 400,
+      "loss": 0.16955697536468506
+    },
+    {
+      "step": 450,
+      "loss": 0.17535001039505005
+    },
+    {
+      "step": 500,
+      "loss": 0.17700336873531342
+    },
+    {
+      "step": 550,
+      "loss": 0.16597096621990204
+    },
+    {
+      "step": 600,
+      "loss": 0.1726313829421997
+    },
+    {
+      "step": 650,
+      "loss": 0.19455944001674652
+    }
+  ],
+  "draft_loss": [
+    {
+      "step": 0,
+      "loss": 3.175203561782837
+    },
+    {
+      "step": 50,
+      "loss": 1.8956317901611328
+    },
+    {
+      "step": 100,
+      "loss": 1.228306531906128
+    },
+    {
+      "step": 150,
+      "loss": 0.7624614834785461
+    },
+    {
+      "step": 200,
+      "loss": 0.6080822944641113
+    }
+  ],
+  "split": {
+    "train": [
+      9,
+      22,
+      28,
+      40,
+      16,
+      50,
+      25,
+      38,
+      33,
+      24,
+      0,
+      52,
+      21,
+      39,
+      5,
+      54,
+      32,
+      17,
+      4,
+      51,
+      18,
+      56,
+      62,
+      8,
+      63,
+      42,
+      46,
+      45,
+      35,
+      58,
+      3,
+      60,
+      30,
+      27,
+      6,
+      41,
+      10,
+      2,
+      43,
+      34,
+      53,
+      26,
+      49,
+      55,
+      20,
+      12,
+      37,
+      61
+    ],
+    "validation": [
+      1,
+      44,
+      31,
+      59,
+      36,
+      48,
+      23,
+      15
+    ],
+    "test": [
+      29,
+      14,
+      47,
+      7,
+      11,
+      57,
+      13,
+      19
+    ]
+  },
+  "limits": [
+    "Implements deterministic greedy block verification only, not rejection-sampling distribution preservation.",
+    "Synthetic recurrence state paths overlap later; test is inference-correctness probe, not generalization score.",
+    "NoKV cache/GPU/parallel kernels; Python tiny CPU models can be slower despite fewer target calls.",
+    "Includes draft time and verification time; speed ratio is actual this environment only, not service throughput.",
+    "Target path is reference, not correctness against arithmetic labels.",
+    "No inference service, foundation-model accelerator or original algorithm claims."
+  ],
+  "environment": {
+    "torch": "2.5.1+cpu",
+    "numpy": "2.5.5",
+    "platform": "Linux-6.6.95.bck.4-rc2-amd64-x86_64-with-glibc2.35",
+    "threads": 2,
+    "device": "cpu"
+  },
+  "code_sha256": "30dc168201e9cdb186b22b455951090e7951d997d550437b853265d33e1947db",
+  "support_sha256": "7d7eeaa6e7ec0a8d4bc818d054ca8eb63db43cf4fcae59cd9522cd1f6a3c2160"
+}

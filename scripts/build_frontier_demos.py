@@ -1,0 +1,43 @@
+"""Native transformer and MoE inference for self-contained CPU-learning demos."""
+import json
+from pathlib import Path
+from build_ai_demos import build
+ROOT=Path(__file__).resolve().parents[1]
+ENGINE='''function dot(a,b){return a.reduce((s,v,i)=>s+v*b[i],0);}function lin(x,w,b){return w.map((v,j)=>dot(x,v)+b[j]);}function soft(v){if(!v.every(Number.isFinite))throw Error('输入超出数值范围');const hi=Math.max(...v),e=v.map(x=>Math.exp(x-hi)),s=e.reduce((a,b)=>a+b,0);return e.map(x=>x/s);}function norm(x,w,b){const mu=x.reduce((a,b)=>a+b,0)/x.length,variance=x.reduce((s,v)=>s+(v-mu)**2,0)/x.length;return x.map((v,i)=>(v-mu)/Math.sqrt(variance+1e-5)*w[i]+b[i]);}
+function transformer(tokens,m){const c=m.config,s=m.state,D=c.d,H=c.heads,A=D/H;if(!tokens.length||tokens.length>16||!tokens.every(x=>Number.isInteger(x)&&x>=0&&x<18))throw Error('需要1–16个词表ID整数0–17');let x=tokens.map((id,t)=>s['embed.weight'][id].map((v,i)=>v+s['pos.weight'][t][i]));let lastAtt=[];
+if(c.attention){const z=x.map(v=>norm(v,s['ln1.weight'],s['ln1.bias'])),q=z.map(v=>lin(v,s['q.weight'],s['q.bias'])),k=z.map(v=>lin(v,s['k.weight'],s['k.bias'])),val=z.map(v=>lin(v,s['v.weight'],s['v.bias']));const out=x.map(()=>new Array(D).fill(0));for(let h=0;h<H;h++){for(let t=0;t<x.length;t++){const scores=k.slice(0,t+1).map(v=>dot(q[t].slice(h*A,(h+1)*A),v.slice(h*A,(h+1)*A))/Math.sqrt(A)),p=soft(scores);for(let a=0;a<A;a++)out[t][h*A+a]=p.reduce((v,w,j)=>v+w*val[j][h*A+a],0);if(t===x.length-1)lastAtt.push(p);}}x=x.map((v,t)=>{const o=lin(out[t],s['proj.weight'],s['proj.bias']);return v.map((a,i)=>a+o[i]);});}
+const logits=x.map(v=>{const z=norm(v,s['ln2.weight'],s['ln2.bias']),ff=lin(z,s['ff1.weight'],s['ff1.bias']).map(a=>Math.max(0,a)),out=lin(ff,s['ff2.weight'],s['ff2.bias']),h=v.map((a,i)=>a+out[i]);return lin(h,s['head.weight'],s['head.bias']);});return {logits,probabilities:soft(logits[logits.length-1]),attention:lastAtt};}
+function moe(input,m){if(input.length!==2||!input.every(Number.isFinite))throw Error('需要2维有限数字');const probs=soft(lin(input,m.router.weight,m.router.bias)),route=probs.indexOf(Math.max(...probs)),e=m.experts[route],hidden=lin(input,e.first.weight,e.first.bias).map(Math.tanh),out=lin(hidden,e.last.weight,e.last.bias)[0]*probs[route];return {output:out,route,probabilities:probs};}
+function greedy(m,prefix,count=8){const seq=[...prefix];for(let i=0;i<count;i++){const p=transformer(seq,m).probabilities;seq.push(p.indexOf(Math.max(...p)));}return seq.slice(prefix.length);}
+function speculate(target,draft,prefix,k=4,count=8){const seq=[...prefix],trace=[];let tc=0,dc=0;while(seq.length-prefix.length<count){const len=Math.min(k,count-seq.length+prefix.length),temp=[...seq],proposal=[];for(let i=0;i<len;i++){const p=transformer(temp,draft).probabilities,token=p.indexOf(Math.max(...p));proposal.push(token);temp.push(token);dc++;}const result=transformer(seq.concat(proposal),target),offset=seq.length-1,checks=[];tc++;let accepted=0;for(let i=0;i<proposal.length;i++){const v=result.logits[offset+i],actual=v.indexOf(Math.max(...v)),ok=actual===proposal[i];checks.push({draft:proposal[i],target:actual,accepted:ok});seq.push(ok?proposal[i]:actual);if(!ok)break;accepted++;}if(accepted===proposal.length&&seq.length-prefix.length<count){const v=result.logits[result.logits.length-1];seq.push(v.indexOf(Math.max(...v)));}trace.push({proposal,checks,accepted_count:accepted,output_so_far:seq.slice(prefix.length)});}return {output:seq.slice(prefix.length),target_calls:tc,draft_calls:dc,trace};}
+// END FRONTIER ENGINE
+'''
+PROJECTS={
+ 'tiny-attention':('TinyAttention｜从零训练因果注意力','小型Transformer机制：合成键值查找、因果mask与无注意力消融。不是自然语言大模型。','tokens'),
+ 'lora-lab':('LoRA-Lab｜低秩适配与遗忘','冻结已训练小型注意力，真实q/v/head低秩更新，参数量与原任务保留单列。','tokens'),
+ 'dpo-lab':('DPO-Lab｜偏好优化、准确率与漂移','真实DPO损失，固定reference；偏好赢率不等于最佳答案概率，更不等于安全性。','tokens'),
+ 'moe-lab':('SparseMoE｜路由、负载与稀疏执行','4个小型专家，只执行选择的专家分支；负载平衡与dense基线。非大型TransformerMoE。','input'),
+ 'spec-decode':('SpecDecode｜推测解码的精确性与开销','两个实际训练小模型，greedy块验证与基线完全对齐。不是采样分布保持算法或GPU加速。','tokens')}
+
+def main():
+ for p,(title,subtitle,field) in PROJECTS.items():
+  folder=ROOT/'projects'/p/'artifacts';r=json.loads((folder/'results.json').read_text());m=json.loads((folder/'model.json').read_text());d={'model':m,'examples':r['examples'],'metrics':r['metrics'],'limits':r['limits'],'protocol':r['protocol']}
+  keys=list(r['metrics'][0]);head=''.join('<th>'+k+'</th>' for k in keys)
+  hint='两个-1到1数值输入' if p=='moe-lab' else '词表：key0–7，value8–15，query标记16；合成符号，不是自然语言。'
+  if p=='spec-decode':hint='4个0–7初始tokens，输出8个greedy tokens；可切换k2/k4。'
+  body=f'''<section class="card"><h2>真实参数推断</h2><select id="examples" aria-label="示例"></select><p>{hint}</p><textarea id="input" aria-label="模型输入数组"></textarea><select id="k" aria-label="草稿块长度"><option value="4">k=4</option><option value="2">k=2</option></select><button id="run">运行</button><div id="summary" role="status"></div><div id="output"></div><div id="details"></div><p class="warning">页面运行冻结参数，不重新训练，不调用外部API；修改输入后预设标签不再当作真值。</p></section><section class="card"><h2>冻结训练与失败记录</h2><p id="protocol"></p><div class="scroll"><table><thead><tr>{head}</tr></thead><tbody id="scores"></tbody></table></div><p><a href="README.md">运行与贡献</a> · <a href="METHOD.md">公式/原理</a> · <a href="MODEL_CARD.md">模型卡</a> · <a href="artifacts/REPORT.md">报告</a> · <a href="artifacts/results.json">逐项证据</a></p><div id="limits"></div></section>'''
+  js=ENGINE+'''const m=data.model;let current=null,edited=false;function input(){const x=JSON.parse($('input').value);if(!Array.isArray(x)||!x.every(v=>typeof v==='number'&&Number.isFinite(v)))throw Error('输入须为有限数字数组');return x;}function bars(p){$('output').replaceChildren();p.forEach((v,i)=>{const el=text('div',(m.kind==='sparse_moe'?'expert ':'token ')+i+' / '+(v*100).toFixed(2)+'%');el.style.borderLeft=Math.round(v*180)+'px solid #d8e0d9';el.style.paddingLeft='8px';$('output').append(el);});}
+'''
+  if p=='moe-lab':
+   js+='''function run(){try{const x=input(),r=moe(x,m);$('summary').textContent='输出 '+r.output.toFixed(4)+' / expert '+r.route+(current&&!edited?' / 真值 '+current.truth.toFixed(4):' / 自定义无标签');bars(r.probabilities);$('details').textContent='仅所选expert执行，router权重非语义解释；域外输入需人复核。';}catch(e){$('summary').textContent=e.message;$('output').replaceChildren();$('details').replaceChildren();}}'''
+  elif p=='spec-decode':
+   js+='''function run(){try{const x=input();if(x.length!==4||!x.every(v=>Number.isInteger(v)&&v>=0&&v<=7))throw Error('需要4个初始tokens整数0–7');const g=greedy(m.target,x),s=speculate(m.target,m.draft,x,Number($('k').value));$('summary').textContent='基线：'+g.join(' ')+' / 逐token一致 '+String(JSON.stringify(g)===JSON.stringify(s.output));$('output').textContent='推测：'+s.output.join(' ')+' / target calls '+s.target_calls+' / draft calls '+s.draft_calls;$('details').replaceChildren();s.trace.forEach((t,i)=>$('details').append(text('p','块'+i+' draft '+t.proposal.join(' ')+ ' / accepted '+t.accepted_count+' / checks '+t.checks.map(c=>c.draft+'→'+c.target+(c.accepted?' ✓':' ×')).join(', '))));}catch(e){$('summary').textContent=e.message;$('output').replaceChildren();$('details').replaceChildren();}}'''
+  else:
+   js+='''function run(){try{const x=input(),r=transformer(x,m),p=r.probabilities,id=p.indexOf(Math.max(...p));$('summary').textContent='预测token '+id+(current&&!edited?' / 期望 '+current.truth:' / 自定义无标签');bars(p);$('details').replaceChildren();r.attention.forEach((a,i)=>$('details').append(text('p','head'+i+' query注意力 '+a.map(v=>v.toFixed(3)).join(' / '))));if(current&&!edited&&current.rejected!==undefined)$('details').append(text('p','chosen '+current.truth+' / rejected '+current.rejected+' / 概率排序 '+(p[current.truth]>p[current.rejected])));}catch(e){$('summary').textContent=e.message;$('output').replaceChildren();$('details').replaceChildren();}}'''
+  js+=f"data.examples.forEach((e,i)=>{{const op=text('option',e.group+' / '+i);op.value=i;$('examples').append(op);}});$('examples').value='0';function example(){{current=data.examples[Number($('examples').value)];edited=false;$('input').value=JSON.stringify(current.{field});run();}};"
+  js+='''$('examples').addEventListener('change',example);$('input').addEventListener('input',()=>edited=true);$('run').addEventListener('click',run);$('k').addEventListener('change',run);$('protocol').textContent=data.protocol;data.limits.forEach(l=>{const e=text('p',l);e.className='warning';$('limits').append(e);});'''
+  js+='table("scores",data.metrics.map(r=>'+json.dumps(keys)+'.map(k=>typeof r[k]==="number"?r[k].toFixed(4):String(r[k]??"—"))));'
+  if p!='spec-decode':js+="$('k').hidden=true;"
+  js+='example();'
+  build(p,title,subtitle,body,js,d);print('Built',p)
+if __name__=='__main__':main()

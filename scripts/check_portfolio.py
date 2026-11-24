@@ -64,7 +64,7 @@ def check(root=ROOT):
     if page.tracks != {'product', 'research', 'infra'}:
         errors.append('Incorrect project tracks')
     for path in root.rglob('*'):
-        if '.git' in path.parts or not path.is_file():
+        if any(part in {'.git', '.venv', 'private', '__pycache__'} for part in path.parts) or not path.is_file():
             continue
         if path.suffix not in {'.md', '.html'}:
             continue

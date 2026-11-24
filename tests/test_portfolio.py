@@ -18,7 +18,8 @@ class PortfolioTest(unittest.TestCase):
                 self.assertIn('待补', (ROOT / name).read_text(encoding='utf-8'))
     def test_site_declares_limitations(self):
         text = (ROOT / 'index.html').read_text(encoding='utf-8')
-        self.assertIn('没有可运行模型 Demo', text)
+        self.assertIn('本地模型 Demo 已可运行', text)
+        self.assertIn('真实大模型接口未调用', text)
         self.assertIn('https://github.com/LlewynLune/ai-portfolio', text)
         self.assertIn('Python 实验仅本机运行', text)
     def test_evidence_trace_runs(self):
