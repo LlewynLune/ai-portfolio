@@ -36,21 +36,23 @@ class PortfolioTest(unittest.TestCase):
         import importlib.util
         from html.parser import HTMLParser
         text=(ROOT/'index.html').read_text()
-        self.assertIn('class="identity"', text)
-        self.assertIn('自我介绍', text)
-        self.assertIn('产品实践', text)
-        self.assertIn('研究与工程项目', text)
-        self.assertIn('"Trebuchet MS"',text)
-        self.assertNotIn('class="hero"', text)
-        self.assertNotIn('class="kpis"', text)
-        self.assertNotIn('work-figure',text)
-        self.assertEqual(text.count('class="work-row"'), 4)
+        self.assertIn('profile-info', text)
+        self.assertIn('Selected Products', text)
+        self.assertIn('Selected Research & Engineering', text)
+        self.assertIn('background:#3d3d3d',text)
+        self.assertIn('assets/portfolio/stars.jpg',text)
+        self.assertIn('姓名标识 · 非个人照片',text)
+        self.assertNotIn('Trebuchet MS',text)
+        self.assertEqual(text.count('work-row"'), 4)
         self.assertEqual(text.count('data-track="'), 14)
         self.assertEqual(text.count('class="research-group"'),4)
         self.assertEqual(text.count('AI-assisted</span>'),14)
         self.assertEqual(text.count('<style>'),1)
-        self.assertEqual(text.count('[Demo]'),14)
-        self.assertEqual(text.count('[Report]'),14)
+        self.assertEqual(text.count('本仓库 Demo 实际画面'),14)
+        self.assertEqual(text.count('产品流程示意 · 非系统截图'),4)
+        for item in ['stars.jpg','identity.svg','drawing-review.svg','standards-platform.svg','skills-knowledge.svg','force-aigc.svg']:
+            self.assertTrue((ROOT/'assets/portfolio'/item).is_file())
+        self.assertEqual(len(list((ROOT/'assets/portfolio').glob('*.webp'))),14)
         ids=[]
         class IdParser(HTMLParser):
             def handle_starttag(self,tag,attrs):
