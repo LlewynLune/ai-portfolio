@@ -1,23 +1,44 @@
-# 于跃｜Agent / AI 产品作品集
+# 于跃 | AI Product Portfolio
 
-> 把高知识密度、强规则约束的业务流程拆解为可操作的产品模块，让 AI 输出可追溯、可复算。
+Agent / AI 产品 · 机电与电气工程背景
 
 [作品集主页](https://llewynlune.github.io/ai-portfolio/) · [GitHub 源码](https://github.com/LlewynLune/ai-portfolio) · [个人介绍](profile/README.md)
 
 ## 关于我
 
-具备 AI 产品从 0—1 到上线试点的完整实践，擅长把高知识密度、强规则约束的业务流程拆解为可操作的产品模块。独立负责过审核工作台、混合审核策略、权限体系、数据看板和风险评分等功能设计，能够将专家经验沉淀为规则库、知识库与人工复核机制，让 AI 输出可追溯、可复算。
+我关注强规则、专业知识密集场景中的 Agent 产品，具备从 0—1 产品设计到上线、试点和持续迭代的实践。负责过审核工作台、混合审核策略、权限、风险评分和数据看板等模块，将专家知识沉淀为规则库、知识库与人工复核机制。
 
-关注真实使用数据与 Badcase，习惯通过命中率、误报率、人工打回率和结论采纳率验证产品效果，并推动规则、Prompt 与知识库持续迭代。机电与电气工程背景，能读懂图纸和专业规范，可使用 Python、SQL 与 AI Coding 快速验证方案，适合需要领域理解、产品定义和 AI 落地判断的 Agent 产品岗位。
+机电与电气工程背景，能读懂图纸和专业规范；使用 Python、SQL 与 AI Coding 验证方案，通过真实使用数据与 Badcase 持续迭代。
 
-## 核心产品实践
+## Selected Projects · 产品实践
 
-|实践|本人职责|核心模块与结果|阶段|
-|---|---|---|---|
-|[AI 审图平台](business-cases/drawing-review/README.md)|立项发起；核心产品模块设计与上线|审核工作台、规则＋模型分级路由、账号权限、数据看板；11条规则、9条Prompt规则，6轮/300+ Badcase复盘，人工复核打回率低于1%|已上线、业务使用与迭代|
-|[标准化线上平台](business-cases/standards-platform/README.md)|独立负责人；0—1自主搭建|条目级规则库、评审工作台、判定＋校验、人工复核、五级状态评分和风险看板|试点使用、配置化复用|
-|[团队智能体技能空间与知识库](business-cases/skills-knowledge/README.md)|公共AI能力产品化|6个可复用Skill；10章、约446条术语；说明常驻、详情按需调用与版本回归|团队公共资产，支撑两项AI产品|
-|[火山引擎 FORCE 大会宣传片](business-cases/force-aigc/README.md)|独立完整创作流程|创意、分镜、Prompt、主体/风格/衔接筛选与修正|文生视频草稿交付|
+### [AI 审图平台](business-cases/drawing-review/README.md)
+**于跃 · 立项发起 / 核心产品模块设计与上线**
+
+已上线，业务使用与持续迭代。
+
+审核工作台、规则＋模型分级路由、账号权限和数据看板。11 条结构化规则、9 条模型 Prompt 规则；6 轮、300+ Badcase 复盘，人工复核打回率低于 1%。
+
+### [标准化线上平台](business-cases/standards-platform/README.md)
+**于跃 · 独立负责人 / 0—1 自主搭建**
+
+试点使用，配置化复用。
+
+将技术标准应答与偏离评审线上化；条目级规则、判定＋校验、人工复核、五级状态评分和可复算风险看板。
+
+### [团队智能体技能空间与知识库](business-cases/skills-knowledge/README.md)
+**于跃 · AI 基建产品化 / 公共资产沉淀**
+
+团队公共资产，服务两项 AI 产品。
+
+6 个可复用 Skill；10 章、约 446 条术语。技能说明常驻、详细知识按需调用，版本更新同步回归。
+
+### [火山引擎 FORCE 大会宣传片](business-cases/force-aigc/README.md)
+**于跃 · 独立完整创作流程**
+
+文生视频草稿交付。
+
+从创意、分镜到 Prompt，按镜头筛选与修正主体、风格和衔接；交付状态不等于正式投放。
 
 项目职责、阶段与指标来自本人提供并确认可公开的简历。未公开公司系统、图纸、客户材料、代码或原始统计记录；指标未在本仓库独立审计。打回率不改写为整体准确率，草稿不写成正式投放成果。
 
@@ -64,7 +85,7 @@
 - 结构、Markdown链接与敏感入口检查：python3 scripts/check_portfolio.py。
 - 仓库回归：python3 -m unittest discover -s tests -v；各项目训练依赖与运行见对应README。
 - VideoGuard：进入projects/video-guard，运行python3 -m unittest discover -s tests -v。
-- 履历内容由profile/resume.json统一管理；python3 scripts/build_resume_portfolio.py重建主页面和四项案例文档，不重训模型。
+- 履历内容由 profile/resume.json 管理；python3 scripts/build_resume_portfolio.py 确定性重建主页，不修改既有案例文档或重训模型。
 - [公开披露与证据边界](PUBLISHING.md) · [GitHub维护](docs/github-setup-guide.md)。
 
-当前内容版v0.9；发布状态以最新GitHub Actions为准。
+当前展示版 v1.0：白底蓝色链接、个人侧栏、纵向成果列表。发布状态以最新 GitHub Actions 为准。

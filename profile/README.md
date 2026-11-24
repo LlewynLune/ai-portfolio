@@ -1,6 +1,6 @@
-# 于跃｜Agent / AI 产品
+# 于跃 | AI Product Portfolio
 
-把专业规则转成可用的产品模块，让 AI 输出可追溯、可复算。
+Agent / AI 产品 · 机电与电气工程背景
 
 ## 关于我
 

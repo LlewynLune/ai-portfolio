@@ -32,6 +32,30 @@ class PortfolioTest(unittest.TestCase):
         self.assertIn('真实大模型接口未调用', text)
         self.assertIn('https://github.com/LlewynLune/ai-portfolio', text)
         self.assertIn('Python 实验仅本机运行', text)
+    def test_redesign_content_and_reproducible_build(self):
+        import importlib.util
+        from html.parser import HTMLParser
+        text=(ROOT/'index.html').read_text()
+        self.assertIn('class="identity"', text)
+        self.assertIn('Selected Projects', text)
+        self.assertNotIn('class="hero"', text)
+        self.assertNotIn('class="kpis"', text)
+        self.assertEqual(text.count('class="work-row"'), 4)
+        self.assertEqual(text.count('data-track="'), 14)
+        self.assertEqual(text.count('产品模块示意 · 非系统截图'),4)
+        self.assertEqual(text.count('<style>'),5) # one CSS block + four schematic SVG blocks
+        ids=[]
+        class IdParser(HTMLParser):
+            def handle_starttag(self,tag,attrs):
+                a=dict(attrs)
+                if 'id' in a: ids.append(a['id'])
+        IdParser().feed(text)
+        self.assertEqual(len(ids),len(set(ids)))
+        spec=importlib.util.spec_from_file_location('resume_builder',ROOT/'scripts/build_resume_portfolio.py')
+        builder=importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(builder)
+        builder.build()
+        self.assertEqual(text,(ROOT/'index.html').read_text())
     def test_evidence_trace_runs(self):
         result = subprocess.run(
             [sys.executable, 'examples/evidence-trace/evidence_trace.py',

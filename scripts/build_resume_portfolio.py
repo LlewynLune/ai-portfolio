@@ -1,71 +1,94 @@
-"""Build public portfolio from owner-supplied resume; preserve research cards and visual language.
-Business text originates only from profile/resume.json, never from internal sources.
-No synthetic project screenshots or fabricated audit evidence.
+"""Build a clean personal academic-style portfolio with owner-specific content.
+Layout is authored here, not copied source code. Owner facts remain resume.json.
+Business diagrams are original module schematics, not screenshots or implementation evidence.
+Rebuilding is deterministic and does not rewrite research artifacts or business case documents.
 """
 from pathlib import Path
-import json,re,html
+import json,html
 ROOT=Path(__file__).resolve().parents[1]
 E=html.escape
 
+STYLE=r'''
+:root{--ink:#222b38;--muted:#647084;--blue:#1756a9;--line:#e3e8ef;--wash:#f6f8fb;--paper:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;font-size:15px;line-height:1.8;-webkit-font-smoothing:antialiased}a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline;text-underline-offset:4px}a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #1756a9;outline-offset:5px}button,summary{font:inherit}button{cursor:pointer}.masthead{position:sticky;top:0;z-index:10;background:rgba(246,248,251,.97);border-bottom:1px solid var(--line)}.nav-inner{max-width:1120px;margin:0 auto;padding:17px 36px;display:flex;align-items:center;justify-content:space-between;gap:25px}.brand{font-size:20px;font-weight:600;color:var(--ink);letter-spacing:-.3px}.navlinks{display:flex;gap:26px;font-size:14px;flex-wrap:wrap}.navlinks a{color:#354054}.navlinks a.active{color:var(--blue)}.layout{max-width:1120px;margin:0 auto;padding:45px 36px 20px;display:grid;grid-template-columns:210px minmax(0,1fr);gap:50px}.identity{position:sticky;top:125px;align-self:start}.identity h1{margin:0;font-size:29px;line-height:1.3;font-weight:600;letter-spacing:-.5px}.identity .english{font-size:14px;margin:7px 0 20px;color:var(--muted)}.identity .position{font-size:15px;color:var(--ink);margin:16px 0 6px}.identity .description{font-size:13px;color:var(--muted);line-height:1.9;margin:0}.identity-links{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;margin-top:20px}.identity-meta{margin:25px 0 0;padding-top:18px;border-top:1px solid var(--line);font-size:12px;line-height:1.9;color:var(--muted)}.content{min-width:0}.section{padding:0 0 30px;margin:0 0 30px;border-bottom:1px solid var(--line);scroll-margin-top:105px}.section:last-child{border-bottom:0}.section h2{font-size:23px;font-weight:600;line-height:1.4;margin:0 0 21px;letter-spacing:-.35px}.section h2 .zh{font-size:14px;color:var(--muted);font-weight:400;margin-left:12px;letter-spacing:0}.section h3{font-weight:600;line-height:1.5}.bio p{margin:0 0 15px}.bio strong{font-weight:600}.intro-links{font-size:13px;margin-top:20px}.focus-line{font-size:14px;margin:0;color:#43536a}.status-note{font-size:12px;color:var(--muted);line-height:1.8;margin:0 0 25px}.works{display:flex;flex-direction:column;gap:30px}.work-row{display:grid;grid-template-columns:196px minmax(0,1fr);gap:25px;align-items:start}.work-figure{margin:0}.work-figure svg{display:block;width:100%;height:auto;background:#fbfcfe;border:1px solid #dce4ef}.work-figure figcaption{font-size:10px;line-height:1.5;color:#8090a5;margin-top:6px}.work-copy h3{font-size:17px;margin:0 0 5px}.work-copy .ownership{font-size:12px;color:#47566c;margin:0 0 3px}.work-copy .stage{font-size:12px;margin:0 0 9px;font-style:italic;color:var(--muted)}.work-copy .abstract{font-size:14px;margin:0 0 9px;line-height:1.8}.work-copy .result{font-size:13px;margin:0 0 10px;line-height:1.8}.work-links{font-size:13px;display:flex;gap:14px;flex-wrap:wrap}.work-links a:before{content:'[';color:var(--blue)}.work-links a:after{content:']';color:var(--blue)}.case-more{margin-top:14px}.case-more summary{color:var(--blue);font-size:12px;cursor:pointer;list-style:revert}.case-more[open] summary{margin-bottom:15px}.module{margin:0 0 14px}.module h4{font-size:13px;margin:0 0 3px;font-weight:600}.module p{font-size:13px;margin:0;line-height:1.85}.small-title{font-size:13px;margin:18px 0 7px}.decision-list{font-size:13px;padding-left:18px;margin:0}.decision-list li{margin:5px 0}.case-source{font-size:11px;color:var(--muted);line-height:1.8;margin:14px 0 0;padding-top:10px;border-top:1px solid var(--line)}.capability{padding-left:18px;font-size:14px;margin:0}.capability li{margin:8px 0}.capability strong{font-weight:600}.filters{display:flex;gap:17px;flex-wrap:wrap;margin:18px 0 25px}.filters button{background:transparent;border:0;border-bottom:1px solid transparent;padding:2px 0;font-size:12px;color:var(--muted);line-height:1.6}.filters button[aria-pressed=true]{color:var(--blue);border-bottom-color:var(--blue)}.experiments{display:flex;flex-direction:column;gap:20px}.experiment{padding:0}.experiment[hidden]{display:none}.experiment h3{font-size:16px;margin:0 0 4px}.experiment p{font-size:13px;color:#425168;margin:0 0 5px;line-height:1.8}.experiment .limit{font-size:11px;color:var(--muted)}.experiment .links{font-size:12px;display:flex;gap:14px;flex-wrap:wrap}.experiment .links a:before{content:'['}.experiment .links a:after{content:']'}.research-feature{padding-bottom:19px;margin-bottom:2px;border-bottom:1px dotted var(--line)}.edu{display:grid;grid-template-columns:1fr auto;gap:20px;margin-bottom:20px}.edu h3{font-size:16px;margin:0 0 3px}.edu p{font-size:13px;margin:3px 0;color:#4b5a70}.edu .date{font-size:12px;color:var(--muted);white-space:nowrap;padding-top:3px}.reading-note{font-size:11px;color:var(--muted);margin:20px 0 0;line-height:1.85}.footer{max-width:1120px;margin:0 auto;padding:0 36px 28px;font-size:11px;line-height:1.8;color:#7a8596}.footer-inner{margin-left:260px;padding-top:14px;border-top:1px solid var(--line)}.skip{position:absolute;left:15px;top:-80px;background:#fff;padding:10px;z-index:20}.skip:focus{top:8px}
+@media(max-width:850px){.layout{grid-template-columns:175px minmax(0,1fr);gap:30px;padding-left:26px;padding-right:26px}.nav-inner{padding-left:26px;padding-right:26px}.work-row{grid-template-columns:160px minmax(0,1fr);gap:19px}.navlinks{gap:18px}.footer-inner{margin-left:205px}.work-copy h3{font-size:16px}}
+@media(max-width:640px){html{scroll-padding-top:98px}.nav-inner{display:block;padding:12px 22px}.brand{font-size:18px}.navlinks{margin-top:5px;gap:20px;font-size:12px}.layout{display:block;padding:28px 22px 10px}.identity{position:static;margin-bottom:30px;padding-bottom:24px;border-bottom:1px solid var(--line)}.identity h1{font-size:27px}.identity .english{margin:5px 0 11px}.identity .position{display:inline;margin-right:12px}.identity .description{display:inline}.identity-meta{display:none}.identity-links{margin-top:12px}.section{padding-bottom:25px;margin-bottom:27px}.section h2{font-size:21px;margin-bottom:17px}.work-row{grid-template-columns:135px minmax(0,1fr);gap:17px}.work-copy .abstract{font-size:13px}.work-copy .result{font-size:12px}.work-links{font-size:12px;gap:10px}.edu{grid-template-columns:1fr}.edu .date{padding:0}.footer{padding:0 22px 22px}.footer-inner{margin-left:0}.work-figure figcaption{font-size:9px}}
+@media(max-width:420px){.work-row{grid-template-columns:1fr}.work-figure{width:180px}.work-figure figcaption{display:block}.section h2 .zh{margin-left:8px}.navlinks{gap:15px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+'''
+
+SHORT={
+'drawing-review':{'abstract':'将机电图纸审核拆解为审核工作台、规则与模型分级路由、角色权限和数据看板，推动上线并持续迭代。','result':'11 条结构化规则 / 9 条模型审核 Prompt；6 轮、300+ Badcase 复盘，人工复核打回率低于 1%。'},
+'standards-platform':{'abstract':'独立搭建技术标准应答与偏离评审平台，将表格、邮件流转改为线上可追踪流程；通过判定＋校验和人工复核管理高风险结论。','result':'条目级规则库、五级状态评分与可复算风险看板；在试点中迭代，支持配置化复用。'},
+'skills-knowledge':{'abstract':'将多产品共用的规则、术语和工具组织为团队公共能力，统一 Skill 输入输出、知识分类和检索口径。','result':'6 个可复用 Skill；10 章、约 446 条术语。技能说明常驻，详细知识按需调用，版本更新同步回归。'},
+'force-aigc':{'abstract':'独立完成大会宣传片从创意、分镜、Prompt 到文生视频草稿交付的完整流程；按镜头控制主体、风格与衔接。','result':'多轮筛选与修正生成结果；交付状态为宣传片草稿。'}
+}
+RESEARCH=[
+('video-guard','VideoGuard-Lab','音画同步、校准拒估与因果漂移定位','共享 MLP / 双塔对比学习；预测集合、变化点真值、因果窗口、误报漏报与检测延迟。','合成 RGB/PCM，真实媒体强制复核；不是视频生成或生产审核。','research','artifacts/REPORT.md'),
+('reliability-lab','FlowBench','AI 工作流可靠性实验台','对照单次执行、有限重试、检查点和幂等恢复；保留 BM25、崩溃回放与原始事件。','本地受控故障与合成负载，非模型推理或生产集群。','infra','results/advanced/REPORT.md'),
+('cite-rag','CiteRAG','引用优先检索、摘录与拒答','BM25、字符余弦与 RRF；核验引用、困难改写与无答案问题。','自建小语料；本地摘录不是 LLM 生成，真实接口未调用。','product','artifacts/REPORT.md'),
+('textguard','TextGuard','可解释文本分类','TF-IDF＋Logistic 真实训练，留出评测、朴素贝叶斯对照和浏览器权重推断。','旧英文短信数据，非现代诈骗系统。','research','artifacts/REPORT.md'),
+('novelty-lab','NoveltyLab','多变量新颖性与分布偏移','正常训练拟合，验证阈值；距离、Isolation Forest、One-Class SVM 对照。','类别迁移不是工业故障标签。','research','artifacts/REPORT.md'),
+('vision-cal','VisionCal','小型神经网络置信校准','温度缩放、噪声和平移；同时报告 NLL、ECE、覆盖率及错误率。','公开 8×8 图像，小模型而非通用视觉系统。','research','artifacts/REPORT.md'),
+('circuit-id','CircuitID','电子电路辨识','32 点噪声 RC 阶跃；规则、物理拟合、Ridge 与 MLP 对照。','数学仿真，无硬件实测。','research','artifacts/REPORT.md'),
+('channel-est','ChannelEst','学习型信道估计','导频估计、均衡与 QPSK；NMSE/BER、SNR 和先验迁移分析。','理想频域仿真，无真实无线设备。','research','artifacts/REPORT.md'),
+('power-scope','PowerScope','数据中心功率预测','下一步负荷预测、计划特征消融、时间留出和冷却漂移失败。','合成时序、离线只读，不控制电气设备。','infra','artifacts/REPORT.md'),
+('tiny-attention','TinyAttention','因果注意力从零训练','多头注意力、mask、残差与层归一；消融和长度 OOD。','合成查找微型模型，非自然语言预训练。','research','artifacts/REPORT.md'),
+('lora-lab','LoRA-Lab','低秩适配与遗忘','冻结基座、rank1/4、全量微调对照；合并一致性与旧任务保留。','共享 TinyAttention 基座，不外推大模型显存收益。','research','artifacts/REPORT.md'),
+('dpo-lab','DPO-Lab','偏好优化与性能漂移','frozen reference、beta 与 SFT 对照；赢率、top1、KL 分开报告。','规则单 token 偏好，不是真人对齐。','research','artifacts/REPORT.md'),
+('moe-lab','SparseMoE','稀疏专家路由','真实 top1 分发、负载平衡、偏斜 OOD 与两种 dense 基线。','小型机制，不是分布式 Transformer MoE。','research','artifacts/REPORT.md'),
+('spec-decode','SpecDecode','精确推测解码','双模型 CPU 训练、greedy 块验证、逐 token 一致性与实际计时。','非随机采样分布保持或 GPU 加速结论。','infra','artifacts/REPORT.md')]
+
+
+def diagram(case):
+    # Inline original schematic, using factual module names; no downloaded media.
+    common='<svg viewBox="0 0 260 160" role="img" aria-label="'+E(case['title'])+'产品模块示意"><style>text{font-family:Arial,PingFang SC,Microsoft YaHei,sans-serif;font-size:10px;fill:#435775}.box{fill:#f1f5fb;stroke:#ccd9ed;stroke-width:1}.arr{stroke:#7794bd;stroke-width:1.3;fill:none}.cap{fill:#1756a9;font-size:11px;font-weight:600}</style><defs><marker id="arrow-'+case['id']+'" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto"><path d="M0,0 L5,2.5 L0,5" fill="#7794bd"/></marker></defs>'
+    def box(x,y,w,h,text):return f'<rect class="box" x="{x}" y="{y}" width="{w}" height="{h}" rx="2"/><text x="{x+w/2}" y="{y+h/2+3}" text-anchor="middle">{E(text)}</text>'
+    def arrow(x1,y1,x2,y2):return f'<path class="arr" d="M{x1},{y1} L{x2},{y2}" marker-end="url(#arrow-{case["id"]})"/>'
+    if case['id']=='drawing-review':
+        s='<text class="cap" x="15" y="23">Hybrid Review Workflow</text>'+box(17,37,64,25,'图纸任务')+box(99,37,65,25,'分级路由')+arrow(81,49,97,49)+box(184,18,62,25,'规则审核')+box(184,55,62,25,'模型审核')+arrow(164,49,180,31)+arrow(164,49,180,66)+box(111,104,80,27,'人工复核')+arrow(216,80,183,103)+arrow(217,43,165,102)+box(17,104,72,27,'报告 / 留痕')+arrow(111,117,92,117)
+    elif case['id']=='standards-platform':
+        s='<text class="cap" x="15" y="23">Evidence-based Assessment</text>'+box(16,39,73,25,'条目规则')+box(108,39,60,25,'判定')+box(187,39,60,25,'校验')+arrow(89,51,106,51)+arrow(168,51,185,51)+box(16,104,73,27,'风险看板')+box(108,104,60,27,'评分')+box(187,104,60,27,'人工复核')+arrow(217,64,217,102)+arrow(187,118,170,118)+arrow(108,118,91,118)
+    elif case['id']=='skills-knowledge':
+        s='<text class="cap" x="15" y="23">Reusable Knowledge Assets</text>'+box(16,40,104,29,'6 个 Skill')+box(140,40,104,29,'约 446 条术语')+box(64,86,130,25,'详情按需调用')+arrow(69,69,101,84)+arrow(192,69,158,84)+box(16,129,104,21,'AI 审图平台')+box(140,129,104,21,'标准化评审')+arrow(110,111,79,127)+arrow(148,111,183,127)
+    else:
+        s='<text class="cap" x="15" y="23">AIGC Creative Pipeline</text>'+box(15,42,67,28,'创意 / 分镜')+box(97,42,67,28,'镜头 Prompt')+box(179,42,67,28,'视频草稿')+arrow(82,56,95,56)+arrow(164,56,177,56)+box(75,106,113,29,'一致性筛选与修正')+arrow(212,70,170,104)+arrow(75,121,45,72)
+    return common+s+'</svg>'
+
 
 def build():
-    data=json.loads((ROOT/'profile/resume.json').read_text())
-    old=(ROOT/'index.html').read_text()
-    cards=re.findall(r'<article class="card" data-track="[^"]+">.*?</article>',old,re.S)
-    research=[c for c in cards if 'projects/' in c and 'TEMPLATE /' not in c and not any(x in c for x in ['product-workflow','research-evaluation','infra-runtime','business-cases/'])]
-    assert len(research)==13,len(research)
-    style=re.search(r'<style>(.*?)</style>',old,re.S)[1]
-    style+='''
-.case-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:26px}.case{background:#fff;border:1px solid var(--line);padding:28px;border-radius:8px}.case h3{font-size:25px;margin:10px 0}.case p{font-size:14px;color:var(--muted)}.case .role{font-size:13px;color:var(--green)}.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:24px 0}.kpi{padding:15px 12px;background:var(--mint);border-radius:6px}.kpi strong{display:block;font-size:23px;line-height:1.3}.kpi span{font-size:11px;color:var(--muted)}.case-detail{padding:30px;border:1px solid var(--line);background:white;border-radius:8px;margin-top:20px;scroll-margin-top:20px}.case-detail h3{margin-top:0;font-size:28px}.modules{display:grid;grid-template-columns:1fr 1fr;gap:22px}.module h4{margin:0 0 8px;font-size:17px}.module p{margin:0;color:var(--muted);font-size:14px}.flow{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}.flow span{border:1px solid var(--line);padding:6px 10px;border-radius:5px;font-size:12px;color:var(--green)}.case-source{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}.case-detail summary{cursor:pointer;font-size:14px;color:var(--green);margin:20px 0}details[open] summary{margin-bottom:20px}.skills{display:flex;gap:8px;flex-wrap:wrap}.skills span{font-size:12px;background:var(--mint);padding:5px 10px;border-radius:5px}.education-item{padding:20px 0;border-bottom:1px solid var(--line)}.education-item h3{font-size:18px;margin:0 0 5px}.education-item p{margin:4px 0}.source-banner{border-left:3px solid var(--green);padding:2px 16px;margin:24px 0;font-size:12px;color:var(--muted)}@media(max-width:780px){.case-grid,.modules{grid-template-columns:1fr}.kpis{grid-template-columns:1fr 1fr}.case,.case-detail{padding:22px}}
-'''
-    out=['<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">',
-         '<meta name="description" content="于跃｜Agent与AI产品作品集。AI审图、标准化评审、Skill与知识运营、AIGC内容实践，以及可复现研究实验。"><title>于跃｜Agent / AI 产品作品集</title><style>'+style+'</style></head><body>',
-         '<header><a class="brand" href="#top">于跃 / AI Product Portfolio</a><nav aria-label="主导航"><a href="#projects">产品实践</a><a href="#experiments">研究实验</a><a href="#about">关于</a></nav></header><main class="wrap" id="top">',
-         '<div class="hero"><div><div class="eyebrow">DOMAIN KNOWLEDGE · AGENT PRODUCT · DELIVERY</div><h1>把专业规则，<br>做成可用的 AI 产品。</h1><p>具备 AI 产品从 0—1 到上线试点的完整实践，擅长把高知识密度、强规则约束的业务流程拆解为可操作的产品模块。将专家经验沉淀为规则库、知识库与人工复核机制，让 AI 输出可追溯、可复算。</p><span class="badge">Agent / AI 产品 · 机电与电气工程背景</span><br><a class="button" href="#projects">查看产品实践</a> · <a href="#about">教育与能力</a></div>',
-         '<aside class="note"><h2>产品定义 × 领域理解 × 落地判断</h2><ul><li>独立负责审核工作台、混合策略、权限和风险评分等功能设计。</li><li>推动产品上线 / 试点，关注真实使用数据与 Badcase。</li><li>用 Python、SQL 与 AI Coding 快速验证方案。</li></ul><p>四项实践分别标明业务使用、试点、团队公共资产与草稿交付；研究实验独立展示，不混作上线成果。</p></aside></div>',
-         '<section id="projects"><div class="section-head"><h2>核心产品实践</h2><p>从规则拆解到上线 / 试点，再到公共能力沉淀。</p></div><div class="case-grid">']
-    for i,c in enumerate(data['cases']):
-        out.append(f'<article class="case"><div class="tag">0{i+1} / {E(c["category"])}</div><h3>{E(c["title"])}</h3><div class="role">{E(c["role"])}</div><span class="badge">{E(c["status"])}</span><p>{E(c["overview"])}</p><p><a href="#case-{c["id"]}" data-case="{c["id"]}">查看产品案例 →</a> · <a href="business-cases/{c["id"]}/README.md">案例文档</a></p></article>')
-    out.append('</div><div class="source-banner">项目职责、上线 / 试点状态和业务指标依据本人提供并确认可公开的简历。未公开公司系统、客户材料或原始统计数据；页面不将简历指标称作本仓库独立审计结果。</div>')
-    for c in data['cases']:
-        out.append(f'<article class="case-detail" id="case-{c["id"]}"><div class="tag">PRODUCT CASE / {E(c["category"])}</div><h3>{E(c["title"])}</h3><div class="role">{E(c["role"])} · {E(c["status"])}</div><p>{E(c["problem"])}</p><div class="kpis">')
-        for metric in c['metrics']:out.append(f'<div class="kpi"><strong>{E(metric["value"])}</strong><span>{E(metric["label"])}</span></div>')
-        out.append('</div><details><summary>展开核心模块、产品决策与验证边界</summary><div class="modules">')
-        for mod in c['modules']:out.append(f'<div class="module"><h4>{E(mod["title"])}</h4><p>{E(mod["text"])}</p></div>')
-        out.append('</div><h4>产品流程 · 按简历职责整理</h4><div class="flow">')
-        for step in c['flow']:out.append('<span>'+E(step)+'</span>')
-        out.append('</div><h4>关键产品取舍</h4><ul>')
-        for dec in c['decisions']:out.append('<li>'+E(dec)+'</li>')
-        out.append('</ul><p class="case-source">'+E(c['evidence'])+'</p></details><p><a href="#projects">返回实践总览 ↑</a></p></article>')
-    out.append('</section><section id="method"><div class="section-head"><h2>如何判断 AI 是否真正有效</h2><p>规则、模型与人工协作；让迭代有依据。</p></div><div class="steps">')
-    for num,title,text in [('01','专业流程产品化','把图纸与标准拆成条目、适用范围、证据要求与责任边界，再组织为工作台、权限和状态流转。'),('02','判定与校验分层','规则与模型分级路由；要求理由和引用条款，证据不足或低置信时转人工复核，不让模型解释替代证据。'),('03','真实使用与 Badcase 迭代','关注命中率、误报率、人工打回率与结论采纳率；基于反馈持续迭代规则、Prompt、知识召回与评分量表。')]:
-        out.append(f'<div class="step"><span class="num">{num}</span><h3>{title}</h3><p>{text}</p></div>')
-    out.append('</div><p class="case-source">这些是我采用的产品验证视角；未在简历中提供的指标不补写结果，未明确统计口径的指标不外推为模型整体准确率。</p></section>')
-    out.append('<section id="experiments"><div class="section-head"><h2>研究与工程实验</h2><p>14 项可复现实验，作为技术理解与验证能力的补充。</p></div><div class="note" style="margin-top:24px"><div class="tag">RESEARCH LAB / NOT BUSINESS DEPLOYMENT</div><h2>与真实产品实践分开展示</h2><p>以下实验由 AI 辅助搭建，代码、模型、日志、失败样本和贡献边界分别披露。本地模型 Demo 已可运行，真实大模型接口未调用；合成负载与仿真结果不等于生产业务效果。</p><p><a href="projects/reliability-lab/demo.html">FlowBench 可靠性实验台</a> · <a href="projects/reliability-lab/README.md">代码与复现</a> · <a href="projects/video-guard/demo.html">VideoGuard 深度研究</a> · <a href="docs/ai-evidence.md">实验真实性清单</a></p></div>')
-    out.append('<div class="filters" role="group" aria-label="按实验方向筛选"><button type="button" data-filter="all" aria-pressed="true">全部实验</button><button type="button" data-filter="product" aria-pressed="false">检索应用</button><button type="button" data-filter="research" aria-pressed="false">算法研究</button><button type="button" data-filter="infra" aria-pressed="false">基础设施</button></div><div class="cards">')
-    out.extend(research);out.append('</div></section>')
-    out.append('<section id="about" class="split"><div><h2>关于我</h2><p>'+E(data['summary'])+'</p><div class="skills">')
-    for skill in ['专业规则产品化','人机协同审核','Agent 工作流','权限与留痕','风险评分','Badcase 运营','Python','SQL','AI Coding']:out.append('<span>'+skill+'</span>')
-    out.append('</div><p><a href="https://github.com/LlewynLune/ai-portfolio">GitHub 完整源码</a> · <a href="profile/README.md">个人介绍</a> · <a href="PUBLISHING.md">披露与证据边界</a></p></div><div><h2>教育经历</h2>')
-    for edu in data['education']:
-        out.append('<div class="education-item"><h3>'+E(edu['school'])+'</h3><p>'+E(edu['degree'])+' · '+E(edu['date'])+'</p>')
-        if 'major' in edu:out.append('<p>'+E(edu['faculty']+' · '+edu['major'])+'</p><p>'+E(edu['lab'])+'</p><p>'+E(edu['student_leadership'])+'</p>')
-        out.append('</div>')
-    out.append('<p class="case-source">教育经历与项目信息由本人提供。硕士专业和入学日期未提供，不自动补写；导师与联系方式不公开展示。</p></div></section></main><footer class="wrap">真实产品实践依据本人简历 / 研究实验为 AI 辅助原型 / Python 实验仅本机运行 / 不公开内部系统、图纸或未授权素材</footer>')
+    d=json.loads((ROOT/'profile/resume.json').read_text());out=[]
+    out.append('<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>于跃 | AI Product Portfolio</title><meta name="description" content="于跃的个人AI产品作品集：机电审图、标准评审、Skill与知识运营、AIGC实践，以及可复现研究实验。"><style>'+STYLE+'</style></head><body>')
+    out.append('<a class="skip" href="#about">跳至主要内容</a><header class="masthead"><div class="nav-inner"><a class="brand" href="#top">于跃</a><nav class="navlinks" aria-label="主导航"><a href="#about">About</a><a href="#projects">Projects</a><a href="#experiments">Research</a><a href="#education">Education</a></nav></div></header>')
+    out.append('<div class="layout" id="top"><aside class="identity"><h1>于跃</h1><p class="english">AI Product Portfolio</p><p class="position">Agent / AI 产品</p><p class="description">机电与电气工程背景<br>产品定义 · 领域知识 · AI 落地</p><div class="identity-links"><a href="https://github.com/LlewynLune">GitHub</a><a href="profile/README.md">Profile</a></div><p class="identity-meta">新加坡南洋理工大学<br>硕士在读 · 预计 2028 年毕业<br><br>澳门大学<br>机电工程 · 本科</p></aside><main class="content">')
+    out.append('<section class="section bio" id="about"><h2>About Me<span class="zh">关于我</span></h2><p>我关注<strong>强规则、专业知识密集场景中的 Agent 产品</strong>，具备从 0—1 产品设计到上线、试点和持续迭代的实践。工作涵盖机电图纸审核、技术标准应答与偏离评审，以及团队 Skill 和知识库建设。</p><p>我负责过审核工作台、规则＋模型分级路由、账号权限、风险评分和数据看板等核心模块设计。通过专家知识、引用条款与人工复核，让 AI 结论<strong>可追溯、可确认、可复算</strong>；基于真实使用数据与 Badcase，持续迭代规则、Prompt 和知识召回。</p><p>我具有机电与电气工程背景，能够阅读图纸和专业规范，使用 <strong>Python、SQL 与 AI Coding</strong> 快速验证方案。目前在新加坡南洋理工大学攻读硕士，预计 2028 年毕业；本科就读于澳门大学机电工程专业。</p><p class="intro-links"><a href="#projects">Selected Projects</a> / <a href="https://github.com/LlewynLune/ai-portfolio">Code &amp; Experiments</a> / <a href="PUBLISHING.md">披露边界</a></p></section>')
+    out.append('<section class="section" id="projects"><h2>Selected Projects<span class="zh">产品实践</span></h2><p class="status-note">以下职责与指标依据本人提供并确认可公开的履历；业务系统、图纸和原始数据不公开。完整口径及边界见各项案例文档。</p><div class="works">')
+    for c in d['cases']:
+        brief=SHORT[c['id']]
+        out.append('<article class="work-row" id="case-'+c['id']+'"><figure class="work-figure">'+diagram(c)+'<figcaption>产品模块示意 · 非系统截图</figcaption></figure><div class="work-copy"><h3><a href="business-cases/'+c['id']+'/README.md">'+E(c['title'])+'</a></h3><p class="ownership"><strong>于跃</strong> · '+E(c['role'])+'</p><p class="stage">'+E(c['status'])+'</p><p class="abstract">'+E(brief['abstract'])+'</p><p class="result">'+E(brief['result'])+'</p><div class="work-links"><a href="business-cases/'+c['id']+'/README.md">Case Study</a><a href="#case-'+c['id']+'" data-case="'+c['id']+'">Details</a></div><details class="case-more"><summary>产品模块与关键决策</summary>')
+        for mod in c['modules']:out.append('<div class="module"><h4>'+E(mod['title'])+'</h4><p>'+E(mod['text'])+'</p></div>')
+        out.append('<h4 class="small-title">关键产品取舍</h4><ul class="decision-list">'+''.join('<li>'+E(t)+'</li>' for t in c['decisions'])+'</ul><p class="case-source">'+E(c['evidence'])+'</p></details></div></article>')
+    out.append('</div></section>')
+    out.append('<section class="section" id="method"><h2>Product Focus<span class="zh">工作方法</span></h2><ul class="capability"><li><strong>专业流程产品化：</strong>将规范拆成条目、适用范围、证据与责任边界，再定义工作台、权限和状态流转。</li><li><strong>人机协作与风险管理：</strong>规则、模型分级路由；判定与校验分层，低置信或证据不足转人工复核。</li><li><strong>数据与知识运营：</strong>关注命中率、误报率、人工打回率和结论采纳率，通过 Badcase 迭代规则、Prompt、知识库与评分量表。</li></ul></section>')
+    out.append('<section class="section" id="experiments"><h2>Research &amp; Engineering<span class="zh">研究实验</span></h2><p class="status-note">14 项 AI 辅助研究原型，与上述业务实践分开。公开代码、Demo、方法和失败证据；本地模型 Demo 已可运行，真实大模型接口未调用，仿真不代表业务效果。</p><div class="filters" role="group" aria-label="按研究方向筛选"><button data-filter="all" aria-pressed="true">All</button><button data-filter="product" aria-pressed="false">Retrieval</button><button data-filter="research" aria-pressed="false">Algorithms</button><button data-filter="infra" aria-pressed="false">Infrastructure</button></div><div class="experiments">')
+    for i,(folder,name,title,desc,limit,track,report) in enumerate(RESEARCH):
+        out.append('<article class="experiment'+(' research-feature' if i<2 else '')+'" data-track="'+track+'"><h3><a href="projects/'+folder+'/demo.html">'+name+'</a> — '+E(title)+'</h3><p>'+E(desc)+'</p><p class="limit">'+E(limit)+'</p><div class="links"><a href="projects/'+folder+'/demo.html">Demo</a><a href="projects/'+folder+'/README.md">Code</a><a href="projects/'+folder+'/'+report+'">Report</a></div></article>')
+    out.append('</div><p class="reading-note">LoRA 与 DPO 共享 TinyAttention 小型基座；机制模块不计为独立大模型研究。实验的 AI 辅助贡献与个人独立复核分开记录。<a href="docs/ai-evidence.md">实验真实性</a> / <a href="docs/frontier-evidence.md">前沿机制方法</a></p></section>')
+    out.append('<section class="section" id="education"><h2>Education<span class="zh">教育经历</span></h2>')
+    for edu in d['education']:
+        out.append('<div class="edu"><div><h3>'+E(edu['school'])+'</h3><p>'+E(edu['degree'])+((' · '+E(edu['faculty']+' / '+edu['major'])) if 'major' in edu else '')+'</p>')
+        if 'lab' in edu:out.append('<p>'+E(edu['lab'])+'</p><p>'+E(edu['student_leadership'])+'</p>')
+        out.append('</div><div class="date">'+E(edu['date'])+'</div></div>')
+    out.append('<p class="reading-note">教育信息依据本人提供；硕士专业与入学日期未列，不补写。</p></section></main></div><footer class="footer"><div class="footer-inner">真实产品实践依据本人简历 · 研究实验为 AI 辅助原型 · Python 实验仅本机运行<br><a href="PUBLISHING.md">披露与证据边界</a> · <a href="https://github.com/LlewynLune/ai-portfolio">GitHub</a> · 不公开内部系统、图纸或未授权素材</div></footer>')
     out.append('''<script>
-const buttons=[...document.querySelectorAll('[data-filter]')],cards=[...document.querySelectorAll('[data-track]')];
-buttons.forEach(button=>button.addEventListener('click',()=>{const filter=button.dataset.filter;buttons.forEach(item=>item.setAttribute('aria-pressed',String(item===button)));cards.forEach(card=>{card.hidden=filter!=='all'&&card.dataset.track!==filter;})}));
-function openCase(){let id=location.hash.slice(1);if(!id.startsWith('case-'))return;let target=document.getElementById(id);if(target){target.querySelector('details').open=true;}}
-window.addEventListener('hashchange',openCase);openCase();
+const buttons=[...document.querySelectorAll('[data-filter]')],experiments=[...document.querySelectorAll('[data-track]')];
+buttons.forEach(b=>b.addEventListener('click',()=>{buttons.forEach(x=>x.setAttribute('aria-pressed',String(x===b)));experiments.forEach(x=>x.hidden=b.dataset.filter!=='all'&&x.dataset.track!==b.dataset.filter)}));
+function openCase(){const id=location.hash.slice(1);if(id.startsWith('case-')){const item=document.getElementById(id);if(item)item.querySelector('details').open=true}}
+window.addEventListener('hashchange',openCase);document.querySelectorAll('[data-case]').forEach(a=>a.addEventListener('click',()=>document.getElementById('case-'+a.dataset.case).querySelector('details').open=true));openCase();
+const nav=[...document.querySelectorAll('.navlinks a')];const sections=nav.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)nav.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))})},{rootMargin:'-10% 0px -65% 0px',threshold:0});sections.forEach(s=>observer.observe(s))}
 </script></body></html>''')
     (ROOT/'index.html').write_text('\n'.join(out))
-    for c in data['cases']:
-        folder=ROOT/'business-cases'/c['id'];folder.mkdir(parents=True,exist_ok=True)
-        lines=['# '+c['title'],'',c['role']+'｜'+c['status'],'',c['overview'],'','## 场景与问题','',c['problem'],'','## 核心模块','']
-        for mod in c['modules']:lines+=['### '+mod['title'],'',mod['text'],'']
-        lines+=['## 产品流程','', ' → '.join(c['flow']),'','## 关键取舍','']+['- '+x for x in c['decisions']]
-        lines+=['','## 结果与披露边界','',c['evidence'],'','本案例基于本人提供并确认可公开的履历。不是新生成的业务平台，不提供未经授权的内部源代码、截图、图纸或原始数据；不将学习实验作为真实项目演示。','', '[返回作品集](../../index.html#case-'+c['id']+')','']
-        (folder/'README.md').write_text('\n'.join(lines))
-    print('Built owner resume portfolio: 4 cases + 14 separate research projects')
+    print('Built fully redesigned personal portfolio: white/blue, identity sidebar, 4 case rows + 14 experiment entries')
 
 if __name__=='__main__':build()
