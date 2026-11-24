@@ -121,4 +121,4 @@ Independent tiny causal next-token models trained on48 synthetic modular-recurre
 - MoE在小型任务上不必超过dense，平衡不等于语义分工或速度。
 - 推测解码减少target calls但可能CPU更慢，真实3次计时全保留。
 
-后续本人深度贡献：重跑一项、手算一个forward/梯度、改变明确训练条件并预先冻结验证协议，解释一条失败后才填写“本人实现”。不盲目靠数量代替能力。前沿不是标题，重点是实现和可核验边界。GitHub新版发布尚未核验，真实远程LLM未调用。
+后续本人深度贡献：重跑一项、手算一个forward/梯度、改变明确训练条件并预先冻结验证协议，解释一条失败后才填写“本人实现”。不盲目靠数量代替能力。前沿不是标题，重点是实现和可核验边界。GitHub新版源码与Pages已发布并核验，真实远程LLM未调用。

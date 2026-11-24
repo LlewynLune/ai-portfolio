@@ -123,4 +123,4 @@ Authored synthetic36days at5min; train first20days, validation next6days, test l
 
 ## 后续深度不是盲目堆项目
 
-各README已有本人能执行的独立修改问题。先重跑、讲清一个失败、做一处有证据的修改再填写个人贡献；不把本批AI辅助代码包装成过去论文/实习/工作成果。真实LLM仍未调用，未授权外发内部数据。GitHub新版尚未核验发布。
+各README已有本人能执行的独立修改问题。先重跑、讲清一个失败、做一处有证据的修改再填写个人贡献；不把本批AI辅助代码包装成过去论文/实习/工作成果。真实LLM仍未调用，未授权外发内部数据。GitHub新版源码与Pages已发布并核验。
