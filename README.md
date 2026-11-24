@@ -10,7 +10,9 @@ Agent / AI 产品 · 机电与电气工程背景
 
 机电与电气工程背景，能读懂图纸和专业规范；使用 Python、SQL 与 AI Coding 验证方案，通过真实使用数据与 Badcase 持续迭代。
 
-## Selected Projects · 产品实践
+此外，我在 AI 辅助下搭建了14项研究与工程原型，覆盖多模态可靠性、Agent工作流、知识检索、大模型算法机制，以及电子、通信与AI数据中心场景。源码、Demo、实验报告和失败记录公开；AI辅助实现与本人独立复核分开记录，不以项目数量代替独立能力证明。
+
+## 产品实践
 
 ### [AI 审图平台](business-cases/drawing-review/README.md)
 **于跃 · 立项发起 / 核心产品模块设计与上线**
@@ -88,4 +90,4 @@ Agent / AI 产品 · 机电与电气工程背景
 - 履历内容由 profile/resume.json 管理；python3 scripts/build_resume_portfolio.py 确定性重建主页，不修改既有案例文档或重训模型。
 - [公开披露与证据边界](PUBLISHING.md) · [GitHub维护](docs/github-setup-guide.md)。
 
-当前展示版 v1.0：白底蓝色链接、个人侧栏、纵向成果列表。发布状态以最新 GitHub Actions 为准。
+当前展示版 v1.1：简洁个人介绍、深蓝成果标签，四项真实产品实践与14项AI辅助项目按主题分组；不展示人才参照栏目。发布状态以最新 GitHub Actions 为准。

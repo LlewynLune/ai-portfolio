@@ -37,13 +37,20 @@ class PortfolioTest(unittest.TestCase):
         from html.parser import HTMLParser
         text=(ROOT/'index.html').read_text()
         self.assertIn('class="identity"', text)
-        self.assertIn('Selected Projects', text)
+        self.assertIn('自我介绍', text)
+        self.assertIn('产品实践', text)
+        self.assertIn('研究与工程项目', text)
+        self.assertIn('"Trebuchet MS"',text)
         self.assertNotIn('class="hero"', text)
         self.assertNotIn('class="kpis"', text)
+        self.assertNotIn('work-figure',text)
         self.assertEqual(text.count('class="work-row"'), 4)
         self.assertEqual(text.count('data-track="'), 14)
-        self.assertEqual(text.count('产品模块示意 · 非系统截图'),4)
-        self.assertEqual(text.count('<style>'),5) # one CSS block + four schematic SVG blocks
+        self.assertEqual(text.count('class="research-group"'),4)
+        self.assertEqual(text.count('AI-assisted</span>'),14)
+        self.assertEqual(text.count('<style>'),1)
+        self.assertEqual(text.count('[Demo]'),14)
+        self.assertEqual(text.count('[Report]'),14)
         ids=[]
         class IdParser(HTMLParser):
             def handle_starttag(self,tag,attrs):

@@ -2,7 +2,16 @@
 
 ## 当前事实
 
-四个项目，不把模型对照/模块拆成独立项目。所有为 AI 辅助的学习研究实现，未验证本人独立研发能力、论文贡献或生产上线。
+当前仓库包含四项履历产品案例，以及14项AI辅助研究与工程原型，两者不混合计数。以下具体评测表保留早期三个项目的实验口径；其余项目证据见下方完整入口。对照模型和模块不拆为新项目，不将AI辅助实现写成本人独立研发、论文贡献或生产上线。
+
+## 完整实验入口
+
+- 多模态与模型评估：[VideoGuard-Lab](../projects/video-guard/README.md)、[VisionCal](../projects/vision-cal/README.md)、[NoveltyLab](../projects/novelty-lab/README.md)、[TextGuard](../projects/textguard/README.md)。
+- Agent与检索：[FlowBench](../projects/reliability-lab/README.md)、[CiteRAG](../projects/cite-rag/README.md)。
+- 算法机制：[TinyAttention](../projects/tiny-attention/README.md)、[LoRA-Lab](../projects/lora-lab/README.md)、[DPO-Lab](../projects/dpo-lab/README.md)、[SparseMoE](../projects/moe-lab/README.md)、[SpecDecode](../projects/spec-decode/README.md)。
+- 跨学科仿真：[CircuitID](../projects/circuit-id/README.md)、[ChannelEst](../projects/channel-est/README.md)、[PowerScope](../projects/power-scope/README.md)。
+
+AI辅助生成与执行的代码、报告，不等于本人已经独立掌握全部实现。本人后续重跑、修改和解释应另记证据，不以主页包装替代复核。
 
 TextGuard 与 NoveltyLab 已在云端实际训练/拟合，CiteRAG 已运行本地检索评测；FlowBench 原有计时来自先前 Mac 实测。两批环境不同，不比较彼此延迟。
 
