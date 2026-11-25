@@ -84,6 +84,7 @@ def build():
         if 'lab' in edu:o.append('<p class="detail">'+E(edu['lab'])+'<br>'+E(edu['student_leadership'])+'</p>')
         o.append('</div></div>')
     o.append('<p class="scope">学校标识仅用于说明本人教育经历；本页面非两校官方页面，也不代表学校背书。</p></div></section><section class="section work-section" id="focus"><div class="container"><h2>Product Focus</h2><ul><li><strong>专业规则产品化：</strong>明确条目、证据、责任和权限，再组织工作台与状态流转。</li><li><strong>人机协同与风险管理：</strong>规则、模型分级路由，判定与校验分层，证据不足或低置信转人工复核。</li><li><strong>数据与知识运营：</strong>关注命中率、误报率、人工打回率与结论采纳率，持续迭代规则、Prompt 和知识召回。</li></ul></div></section></main><footer class="footer"><div class="container"><p>于跃 · Agent & AI Product Portfolio</p><p class="last-update">Updated: 2026.11</p><p><a href="https://github.com/LlewynLune/ai-portfolio">GitHub Repository</a> · <a href="PUBLISHING.md">披露与贡献边界</a></p><p class="boundary">真实产品实践依据本人简历 / 研究实验为 AI 辅助原型 / Python 实验仅本机运行<br>不公开内部系统、图纸或未授权材料；不将草稿、仿真、辅助实现写成生产成果。</p></div></footer>')
+    more=('<section class="section news-section" id="more"><div class="container"><h2>More about me <small>写作与播客 · 了解我的补充</small></h2><p>工程项目之外，我也通过写作和对话表达观察。</p><p><strong>愤怒的墨镜</strong> · 我创立的公众号。<a href="https://mp.weixin.qq.com/s/F12ydRzh1u-T2M8EuSPWJg">原创文章：《Continual Learning 时代最缺的一层 AI Infra——“谁来给 AI 验收？”》</a>，由我撰写，讨论 reward、结果验收与可复核证据。<a href="profile/writing/verification-layer.html">阅读完整原文归档 →</a></p><p><strong>小青年广场</strong> · 我创立的播客。围绕独立书店、音乐与文学展开对话，呈现技术工作之外的兴趣与表达。<a href="https://www.xiaoyuzhoufm.com/podcast/615ffb31ef56f237f8e18917">在小宇宙收听 →</a></p><p class="scope">这一部分不计入主要项目或工程成果；创立与作者身份由本人确认，原文观点及数字保留写作时口径。</p></div></section>')
     o.append('<dialog class="image-dialog" aria-label="实验图放大"><div class="dialog-top"><span id="image-caption"></span><button type="button" id="close-image">关闭</button></div><img id="zoom-image" alt=""></dialog>')
     o.append('''<script>
 const zoomDialog=document.querySelector('.image-dialog'),zoomImage=document.getElementById('zoom-image'),zoomCaption=document.getElementById('image-caption');
@@ -93,7 +94,7 @@ const buttons=[...document.querySelectorAll('[data-filter]')],experiments=[...do
 function openCase(){const id=location.hash.slice(1);if(id.startsWith('case-')){const e=document.getElementById(id);if(e)e.querySelector('details').open=true}}window.addEventListener('hashchange',openCase);document.querySelectorAll('[data-case]').forEach(a=>a.addEventListener('click',()=>document.getElementById('case-'+a.dataset.case).querySelector('details').open=true));openCase();
 if('IntersectionObserver'in window){const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)nav.querySelectorAll('a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-10% 0px -65% 0px'});nav.querySelectorAll('a').forEach(a=>{const e=document.querySelector(a.getAttribute('href'));if(e)obs.observe(e)})}
 </script></body></html>''')
-    page='\n'.join(o)
+    page='\n'.join(o).replace('</main>',more+'</main>',1)
     import re
     page=re.sub(r'href="(?!https?://)([^"#]+\.md)"',lambda m:'href="https://github.com/LlewynLune/ai-portfolio/blob/main/'+m[1]+'"',page)
     (ROOT/'index.html').write_text(page);print('Built refined star portfolio: 4 business cases and 14 evidence-linked experiments')

@@ -52,6 +52,13 @@ class LaminarContracts(unittest.TestCase):
   d=json.loads((Path(__file__).resolve().parents[1]/'projects/laminar-lab/artifacts/ood-length.json').read_text());self.assertEqual(len(d['runs']),12)
   for run in d['runs']:
    self.assertEqual(len(run['probes']),128);self.assertTrue(all(p['length']>8 for p in run['probes']))
+ def test_durable_learner_actual_failures(self):
+  root=Path(__file__).resolve().parents[1]/'projects/laminar-lab';d=json.loads((root/'artifacts/system/durable-learner.json').read_text());self.assertEqual(len(d['results']),9)
+  for r in d['results']:
+   self.assertTrue(r['exact_model_and_consumption_match']);self.assertEqual(r['recovered']['consumption_count'],72);self.assertEqual(r['baseline']['final_sha256'],r['recovered']['final_sha256']);self.assertIn(r['killed_returncode'],[81,82,83])
+ def test_paired_frozen_ratio_reconstruction(self):
+  root=Path(__file__).resolve().parents[1]/'projects/laminar-lab';d=json.loads((root/'artifacts/paired-replay.json').read_text());self.assertEqual(len(d['cases']),3)
+  for c in d['cases']:self.assertTrue(c['ratio_matches_frozen_model']);self.assertTrue(c['same_fixed_samples']);self.assertEqual(len(c['updates']),40)
  def test_optimizer_really_changes_weights(self):
   m=init(7);_,g,_=objective_gradient(m,m,[group(7,i,m,0) for i in range(6)]);n,_=apply(m,g,.8);self.assertNotEqual(model_hash(m),model_hash(n))
 if __name__=='__main__':unittest.main()

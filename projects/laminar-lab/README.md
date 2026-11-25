@@ -16,6 +16,14 @@
 - 另6次取消 token sleep 的真实训练，保留每更新2ms控制开销；异步部分种子更差，不能把速度当质量。
 - 12个冻结模型 ×128个长度12/16 OOD探针，训练长度上限8，确无完全相同训练prompt。追加探针仍是已见合成语法，不是通用语言盲测。
 
+## 本轮继续深化
+
+- **学习器原子恢复**：3种子×3故障阶段，共9个真实强制退出的学习进程。快照和消费账本在SQLite同一事务提交；提交前/事务内/提交后恢复到与未中断基线一致的模型指纹、12更新和72组唯一消费。采用确定顺序批次，不是实时异步worker恢复，不作分布式exactly-once保证。
+- **同样本配对重放**：3种子×ratio/no_ratio两路重新优化，使用完全相同冻结轨迹、behavior logprob与顺序；ratio精确重构旧结果。no_ratio并非总是更差：seed41固定探针更高。这是离线损失机制消融，不是在线同分布随机对照。
+- 新证据：artifacts/system/durable-learner.json、artifacts/paired-replay.json。新源码：laminar_lab/durable.py、paired.py。
+
+运行：python -m laminar_lab.durable --output artifacts/my-recovery；python -m laminar_lab.paired（默认immutable输出，已有结果不会覆盖）。原30次训练证据保持，不把恢复/重放记录并成独立任务样本。
+
 ## 最重要的负结果与边界
 
 三个种子的学习结果并不一致；更快的异步时间线没有稳定地达到更高任务分数。staleness 上限是额外消融，不是 Laminar 论文原始设计的必须配置。token ratio clipping 不是无偏的 full-trajectory importance sampling，更不是 V-trace。

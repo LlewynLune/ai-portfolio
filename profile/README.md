@@ -34,6 +34,17 @@ Agent / AI 产品 · 机电与电气工程背景
 
 ## 研究实验
 
-另有14项AI辅助研究原型，用于技术理解与验证能力补充，不与真实业务实践混淆。包含FlowBench可靠性、VideoGuard音画同步/校准/因果定位，以及RAG、LoRA、DPO、MoE、推测解码和电子/通信/功率仿真。代码、模型与失败记录可复查；不声明生产效果或全部代码由本人独立研发。
+另有15项AI辅助研究原型，用于技术理解与验证能力补充，不与真实业务实践混淆。包含FlowBench可靠性、VideoGuard音画同步/校准/因果定位，以及RAG、LoRA、DPO、MoE、推测解码和电子/通信/功率仿真。代码、模型与失败记录可复查；不声明生产效果或全部代码由本人独立研发。
 
 [VideoGuard深度实验](https://llewynlune.github.io/ai-portfolio/projects/video-guard/demo.html) · [全部实验](https://llewynlune.github.io/ai-portfolio/#experiments)
+
+## More about me · 写作与播客
+
+工程项目之外，我也通过写作和对话表达自己的观察。这一部分是了解我的补充，不计入主要项目或工程成果。
+
+- **公众号「愤怒的墨镜」｜由我创立**。我在这里记录对技术、产品和商业问题的思考。
+- **原创文章｜由我撰写**：《Continual Learning 时代最缺的一层 AI Infra——“谁来给 AI 验收？”》。从 reward 的来源与可复核性出发，讨论 AI 验收、证据、商业交付与定价。[公众号与原文](https://mp.weixin.qq.com/s/F12ydRzh1u-T2M8EuSPWJg) · [完整正文归档](writing/verification-layer.md)。原文观点与数字保留写作时口径，不作为工程实验结论。
+- **播客「小青年广场」｜由我创立**。内容涵盖独立书店、音乐与文学，呈现我在技术工作之外的兴趣与表达。[在小宇宙收听](https://www.xiaoyuzhoufm.com/podcast/615ffb31ef56f237f8e18917)。
+
+创立与作者身份由本人确认；平台公开名称、文章题目与节目内容据原链接核对。不补写订阅规模、持续更新或商业化成绩。
+
