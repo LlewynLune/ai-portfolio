@@ -18,7 +18,8 @@ class PresentationTests(unittest.TestCase):
    text=p.read_text();self.assertEqual(text.count('class="demo-navigation"'),1);self.assertEqual(polish(text,p.parent.name),polish(polish(text,p.parent.name),p.parent.name));self.assertIn('depth-demo.html',text)
  def test_academic_project_pages_and_source_tables(self):
   from academic_project_style import PROJECTS
-  pages=list(ROOT.glob('projects/*/project.html'));self.assertEqual(len(pages),14)
+  pages=[ROOT/'projects'/folder/'project.html' for folder in PROJECTS];self.assertEqual(len(pages),14)
+  self.assertTrue((ROOT/'projects/laminar-lab/project.html').is_file())
   for p in pages:
    text=p.read_text();parser=P();parser.feed(text);self.assertEqual(len(parser.ids),len(set(parser.ids)))
    for section in ['Introduction','Overview','Method','Experimental Results','Interactive Demo','Limitations &amp; Reproducibility']:
@@ -43,5 +44,5 @@ class PresentationTests(unittest.TestCase):
   demo_links=re.findall(r'\]\(([^)]+(?:demo\.html|depth-demo\.html))\)',text);self.assertGreaterEqual(len(demo_links),14)
   self.assertTrue(all(x.startswith('https://llewynlune.github.io/ai-portfolio/') for x in demo_links))
  def test_home_keeps_style_and_eager_evidence(self):
-  text=(ROOT/'index.html').read_text();self.assertIn('stars.jpg',text);self.assertIn('class="featured-path"',text);self.assertEqual(text.count('loading="eager"'),14)
+  text=(ROOT/'index.html').read_text();self.assertIn('stars.jpg',text);self.assertIn('class="featured-path"',text);self.assertEqual(text.count('loading="eager"'),15)
 if __name__=='__main__':unittest.main()

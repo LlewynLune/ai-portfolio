@@ -44,6 +44,12 @@
 
 > 以上职责、阶段和指标来自本人提供并确认可公开的履历。仓库不公开内部代码、图纸、客户材料或原始统计；打回率不等于整体准确率，草稿不等于正式投放。
 
+## 新增项目：Laminar-Lab · 异步 RL 后训练机制
+
+[项目页](https://llewynlune.github.io/ai-portfolio/projects/laminar-lab/project.html) · [实际训练证据浏览](https://llewynlune.github.io/ai-portfolio/projects/laminar-lab/evidence.html) · [代码、方法与边界](projects/laminar-lab/README.md)
+
+实际自回归小型 MLP RL、rollout/learner 解耦、不可变 Relay、同版本组、token ratio clipping、staleness、packing 与真实子进程恢复。30 次训练包含探索/控制/敏感性，不是 30 个独立任务；直接执行固定官方 pure repack planner 的 100 个合约场景，不冒充官方完整训练或集群性能。固定学习探针有 prompt overlap、结果随种子变化，保留失败而非宣称满分。
+
 ## 本轮主攻：CiteRAG · 来源可校验的大模型记忆
 
 不是增加第15项，而是深化同一项目：真实本地量化LLM、来源版本与撤销、模型笔记回放、冲突校验、token预算、SQLite持久化、污染挑战和v2修复回归。
@@ -137,4 +143,4 @@
 
 </details>
 
-研发版本 v1.9 · 14研究工程项目逐项深化，4业务案例深化产品判断与验收建议。原模型、旧证据与履历事实源保持不变；发布核验以远端提交和Actions实际状态为准。
+研发版本 v2.0 · 原14项目与4业务案例保持，新增第15项 Laminar-Lab。小模型 RL 实际训练、官方 pure planner 合约和进程恢复单独报告；不是官方完整 Laminar 后训练框架复现。
