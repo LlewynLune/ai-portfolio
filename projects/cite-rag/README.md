@@ -8,7 +8,14 @@
 
 
 
-状态：本地检索/摘录已实测，真实 LLM HTTPS 调用模块已实现但未配置、未调用评测；不把测试桩或本地摘录当作大模型成果。
+状态：原检索与摘录实验保持冻结；新增 **Source-backed Agent Memory** 已真实运行本地公开量化大模型，保存521次实际调用（512问答、6记忆整理、3预热）。远程付费LLM接口未调用。相同问题的策略/挑战/回归不是独立样本。
+
+## 本轮代表作：来源可校验的 Agent 记忆
+
+版本、撤销、冲突、namespace、token预算与独立校验；真实本地模型、受控记忆污染挑战、预算消融、传统强基线、v2修复回归。模型记忆与回放在原主实验同分，传统规则基线更强；不包装为通用Agent满分。
+
+[项目说明](project.html) · [真实证据浏览器](memory-demo.html) · [方法与公开前沿来源](MEMORY_METHOD.md) · [真实实验全报告](artifacts/memory/REPORT.md) · [本地运行](LOCAL_LLM.md) · [记忆模块源码](memory_agent/core.py) · [核心测试](../../tests/test_memory_agent.py)
+
 
 [Demo](https://llewynlune.github.io/ai-portfolio/projects/cite-rag/demo.html) · [本地评测](artifacts/REPORT.md) · [全部结果](artifacts/results.json) · [完整性](artifacts/checksums.json) · [真实接口](llm_adapter.py)
 
@@ -41,7 +48,7 @@ python3 projects/cite-rag/llm_adapter.py --query "retry transient bounded attemp
 
 ## 测试和评测边界
 
-测试中的假 transport 仅验证请求/响应契约、调用上限和拒绝伪引用；不作为真实 LLM 评测数据。当前 artifacts 的 llm_used 始终为 false。
+测试中的假 transport 仅验证旧HTTPS接口契约，不作为真实 LLM 评测。历史 artifacts/results.json 与 artifacts/depth 仍为 llm_used=false；新 artifacts/memory 含真实本地模型调用，逐条llm_used=true。
 
 混合召回对困难词汇可能有效，也可能把不相关文档拉上来。RRF 分数不是真实相关概率；拒答启发式会漏拒。保留不利结果和作者偏差，不要求满分。
 
@@ -56,3 +63,15 @@ python3 projects/cite-rag/llm_adapter.py --query "retry transient bounded attemp
 [深化交互分析](https://llewynlune.github.io/ai-portfolio/projects/cite-rag/depth-demo.html) · [新增实测报告](artifacts/depth/REPORT.md) · [新实验代码](depth.py) · [逐条新证据](artifacts/depth/results.json)
 
 原模型和原报告保持冻结；本批结果只写artifacts/depth。所有参数扫描均为探索，不在测试上选择配置后声称独立评测；AI辅助实现与本人独立贡献分开。
+
+
+<!-- investigation-link -->
+## 本轮专项深入研究
+
+在此前未出现的源ID、团队与措辞上，v2来源校验仍能处理修订、冲突和计算吗？
+
+[Deep Investigation](https://llewynlune.github.io/ai-portfolio/projects/cite-rag/deep-study.html) · [全部实测条件](artifacts/investigation/REPORT.md) · [结果讨论与未完成项](artifacts/investigation/DISCUSSION.md) · [原始证据](artifacts/investigation/results.json)
+
+source_rag：严格通过28/48，解析失败11；最终拒答可能被guard纠正，不等于原始生成正确。
+
+原模型、旧Depth和CiteRAG记忆证据保持冻结。新调查按各自协议区分训练、推断、合成仿真和历史再分析，不能以记录数证明泛化。

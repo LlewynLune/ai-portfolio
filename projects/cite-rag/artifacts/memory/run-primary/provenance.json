@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "model": "mlx-community/Qwen3-4B-Instruct-2507-4bit",
+  "revision": "50d427756c6b1b2fe0c0a10f67fbda1fc8e82c1b",
+  "weight_sha256": "2a73c6c248601ab904e035548abd8e6abb65ea27dcb5f342fb0a8910eb44173f",
+  "dataset_sha256": "db916e1a443d618e09c72e551fb682995908ea4772c0c2700247e1cb648ccd21",
+  "python": "3.11.18",
+  "machine": "arm64",
+  "os": "26.5.1",
+  "packages": {
+    "mlx": "0.32.4",
+    "mlx-lm": "0.31.3",
+    "transformers": "5.24.1",
+    "numpy": "2.4.6",
+    "huggingface-hub": "1.33.0"
+  },
+  "load_seconds": 0.6290833745151758,
+  "warmup": {
+    "text": "{\"ok\":true}",
+    "llm_used": true,
+    "model": "mlx-community/Qwen3-4B-Instruct-2507-4bit",
+    "revision": "50d427756c6b1b2fe0c0a10f67fbda1fc8e82c1b",
+    "prompt_sha256": "97d95e50c744f1e8779e9a90398d4a89f8cde0cded51711251a11ac14ddb6c64",
+    "prompt_tokens": 23,
+    "completion_tokens": 6,
+    "elapsed_seconds": 1.0482258331030607,
+    "first_token_seconds": 0.9925780417397618,
+    "peak_gpu_memory_bytes": 2372468096,
+    "max_tokens": 24,
+    "temperature": 0,
+    "finish_reason": "stop",
+    "raw_output_sha256": "4062edaf750fb8074e7e83e0c9028c94e32468a8b6f1614774328ef045150f93"
+  },
+  "calls": 199,
+  "query_calls": 192,
+  "consolidation_calls": 6,
+  "real_local_llm": true,
+  "paid_api_calls": 0,
+  "context_token_budget": 1600,
+  "max_prompt_tokens": 8192,
+  "decode": "greedy temperature 0, output capped 200; notes capped 1024",
+  "system_prompt_sha256": "3c71814831e76d824cc5d3ef5463f67a2f07a4b24356592eddd99a1db7f00f2f",
+  "note_prompt_sha256": "8163a97c0594498edffe1b87127c515ff7369a0286813b48b4e50cb6f3322590",
+  "source_code_sha256": {
+    "evaluate.py": "5642b134f9c2a38a9a477ad90464684c88b1ee557d1d56185369940b13945e5e",
+    "core.py": "a9365bac820d0fbcdf442e9196453a7163ad35ef56584778b2adc11785ca546c",
+    "local_model.py": "13768e334bd56474b29fe567dee6dc5aa4e4a9d7d325294040cb5d12e333d249"
+  },
+  "scope": "synthetic finite settings only; no general entailment, online RL, parametric memory, flagship replication, human scoring or production claim"
+}

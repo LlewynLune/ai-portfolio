@@ -1,0 +1,24 @@
+{
+  "kind": "real_process_abrupt_exit_and_queue_deadline",
+  "crash_points": [
+    "before_effect",
+    "after_effect_before_checkpoint",
+    "after_checkpoint"
+  ],
+  "strategies": [
+    "retry",
+    "resilient"
+  ],
+  "repeats": 3,
+  "subprocess_exit": 73,
+  "effects": "local SQLite only",
+  "deadline_budget_ms": [
+    30,
+    80,
+    200
+  ],
+  "concurrency": [
+    1,
+    4
+  ]
+}

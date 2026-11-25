@@ -1,0 +1,174 @@
+[
+  {
+    "project": "channel-est",
+    "title": "ChannelEst · 导频几何与错误模型阶数",
+    "question": "观测数量够了是否就可可靠估计？导频几何和错误四径假设带来什么风险？",
+    "record_count": 2160,
+    "metric_conditions": 18,
+    "observations": [
+      "4tap spread：条件数 1.00，NMSE 0.0144。",
+      "4tap clustered：条件数 15.26，NMSE 0.4630。",
+      "4tap full：条件数 1.00，NMSE 0.0076。"
+    ],
+    "next_step": "下一阶段未知tap阶数选择与独立场景仿真；实际硬件需单独授权与测量。"
+  },
+  {
+    "project": "circuit-id",
+    "title": "CircuitID · 观察窗与参数可辨识性",
+    "question": "观察窗短于时间常数时，低残差为何仍可能给出不可靠RC参数？",
+    "record_count": 432,
+    "metric_conditions": 36,
+    "observations": [
+      "tau12ms噪声0.08，观察窗1ms：MAE 15.175ms，启发式profile宽度 29.900ms。",
+      "tau12ms噪声0.08，观察窗3ms：MAE 12.044ms，启发式profile宽度 29.887ms。",
+      "tau12ms噪声0.08，观察窗10ms：MAE 6.460ms，启发式profile宽度 27.845ms。"
+    ],
+    "next_step": "下一阶段用独立采集、仪器噪声和未知多时间常数验证，不控制设备。"
+  },
+  {
+    "project": "cite-rag",
+    "title": "CiteRAG · 新namespace与乱序修订迁移",
+    "question": "在此前未出现的源ID、团队与措辞上，v2来源校验仍能处理修订、冲突和计算吗？",
+    "record_count": 96,
+    "metric_conditions": 2,
+    "observations": [
+      "source_rag：严格通过28/48，解析失败11；最终拒答可能被guard纠正，不等于原始生成正确。",
+      "release_v2：严格通过48/48，解析失败2；最终拒答可能被guard纠正，不等于原始生成正确。"
+    ],
+    "next_step": "下一阶段独立人工审核自然语言任务与多模型对照；新ID不等于新语义分布。"
+  },
+  {
+    "project": "dpo-lab",
+    "title": "DPO-Lab · 三种子真实偏好优化与SFT对照",
+    "question": "偏好目标和单token正确率如何随真实训练变化，而非只做权重插值？",
+    "record_count": 1728,
+    "metric_conditions": 9,
+    "observations": [
+      "sft：三种子平均pair win 88.0%，chosen top1 45.7%，原规则保留 9.4%。",
+      "dpo_0.1：三种子平均pair win 15.8%，chosen top1 14.4%，原规则保留 43.6%。",
+      "dpo_0.5：三种子平均pair win 36.6%，chosen top1 24.0%，原规则保留 38.9%。"
+    ],
+    "next_step": "下一阶段增加非规则偏好并独立标注；冻结输出头无法代表全模型RLHF。"
+  },
+  {
+    "project": "lora-lab",
+    "title": "LoRA-Lab · 层级增量全因子消融",
+    "question": "适配收益究竟来自query、value还是输出头？哪些组合破坏旧任务？",
+    "record_count": 3072,
+    "metric_conditions": 24,
+    "observations": [
+      "8种层组合全部报告，不在测试上选最佳子集。",
+      "低秩奇异值解释参数增量的有效秩，不证明通用语义结构。"
+    ],
+    "next_step": "下一阶段每层组合分别训练而非屏蔽既有adapter，以分辨训练交互。"
+  },
+  {
+    "project": "moe-lab",
+    "title": "SparseMoE · 输入顺序与容量公平性",
+    "question": "同一批输入仅改变排队顺序，哪些样本会持续被丢弃？",
+    "record_count": 18432,
+    "metric_conditions": 84,
+    "observations": [
+      "同批6排列是相关变体，非新增独立数据。",
+      "均值接收率不表明每样本公平，always/never-admitted公开。"
+    ],
+    "next_step": "下一阶段引入明确公平性/优先级分发，并在真实GPU测路由开销。"
+  },
+  {
+    "project": "novelty-lab",
+    "title": "NoveltyLab · 相关特征与收缩协方差",
+    "question": "忽略特征相关性的中心距离，和只在正常训练拟合的协方差基线有什么差异？",
+    "record_count": 393,
+    "metric_conditions": 3,
+    "observations": [
+      "协方差只拟合35条正常训练，13维估计不稳定，condition number必须报告。",
+      "12条正常验证不足以支持高置信误报保证；95%经验分位数非认证。"
+    ],
+    "next_step": "后续增大正常校准集并用新分布正常样本检验误报；当前12验证过少。"
+  },
+  {
+    "project": "power-scope",
+    "title": "PowerScope · 严格先预测后更新的区间运营",
+    "question": "只用过去误差在线更新区间，冷却漂移下能否恢复覆盖，而代价多大？",
+    "record_count": 10940,
+    "metric_conditions": 4,
+    "observations": [
+      "chronological_test fixed：覆盖 92.0%、区间宽 113.7kW、点预测MAE 26.0kW。",
+      "chronological_test past_residual_quantile：覆盖 89.7%、区间宽 104.1kW、点预测MAE 26.0kW。",
+      "cooling_drift_ood fixed：覆盖 17.3%、区间宽 113.7kW、点预测MAE 120.6kW。",
+      "cooling_drift_ood past_residual_quantile：覆盖 87.7%、区间宽 415.4kW、点预测MAE 120.6kW。"
+    ],
+    "next_step": "下一阶段用公开实测负荷并重新冻结时序分割；区间更新不解决点预测漂移。"
+  },
+  {
+    "project": "reliability-lab",
+    "title": "FlowBench · 崩溃窗口与端到端期限",
+    "question": "真正进程退出发生在提交与检查点之间时，重启会重复副作用吗？",
+    "record_count": 54,
+    "metric_conditions": 54,
+    "observations": [
+      "18次真实进程退出恢复：retry重复副作用6次，resilient 0次；仅局部SQLite边界。"
+    ],
+    "next_step": "下一阶段跨进程并发与模拟外部服务协议，不把SQLite幂等当分布式exactly-once。"
+  },
+  {
+    "project": "spec-decode",
+    "title": "SpecDecode · 分布正确的拒绝采样与修正",
+    "question": "greedy一致性之外，随机草稿接受/修正能否保持目标token分布？",
+    "record_count": 16,
+    "metric_conditions": 16,
+    "observations": [
+      "16上下文解析分布恒等式最大误差 1.11e-16；1000抽样经验TV最大 0.0274。没有做速度收益测量。"
+    ],
+    "next_step": "下一阶段真正多token随机验证与KV回滚，并用目标/draft的wall-clock比较，不只算调用。"
+  },
+  {
+    "project": "textguard",
+    "title": "TextGuard · 部署先验变化与误报成本",
+    "question": "低发生率部署下，旧测试准确率是否掩盖精确率失效？",
+    "record_count": 30600,
+    "metric_conditions": 30,
+    "observations": [
+      "这是原测试预测的假设性重加权，不是新用户或真实部署数据。",
+      "先验校正依赖标签条件分布不变，不能纠正新词汇/语言/诈骗概念漂移。"
+    ],
+    "next_step": "后续用独立时间/语言来源评测真实概念漂移；不能只重加权旧标签。"
+  },
+  {
+    "project": "tiny-attention",
+    "title": "TinyAttention · 相关与无关信息的因果干预",
+    "question": "改变被查询值和无关值，模型是否只对真正相关的信息做出响应？",
+    "record_count": 768,
+    "metric_conditions": 6,
+    "observations": [
+      "无关值改动导致的输出翻转均值 61.5%；相关值改动后正确率 44.5%。模型并未稳定学到查询相关性。"
+    ],
+    "next_step": "下一阶段先修复或重训查询相关性，再检验未见结构；当前无关值敏感是关键失败。"
+  },
+  {
+    "project": "video-guard",
+    "title": "VideoGuard · 流式因果验证与观测丢失",
+    "question": "未来窗口是否改变已经发出的报警？少量观测窗口丢失会损害及时检测吗？",
+    "record_count": 1080,
+    "metric_conditions": 36,
+    "observations": [
+      "逐前缀重新检测与完整运行已发报警精确一致，测试的是无未来信息正确性。",
+      "观测丢失固定跳过窗口，时间戳不重写；报警错过时限不补信用。"
+    ],
+    "next_step": "下一阶段获取可公开许可的自然视频和独立音画标注；当前只重分析合成轨迹。"
+  },
+  {
+    "project": "vision-cal",
+    "title": "VisionCal · 留出校准的预测集合与失效",
+    "question": "不在测试上挑置信门槛，预测集合在干净和迁移图像上还能覆盖真值吗？",
+    "record_count": 3240,
+    "metric_conditions": 9,
+    "observations": [
+      "校准集合与先前温度选择共用359条validation：模型并非独立于这些校准标签，因此即使干净集也不能声称严格split-conformal有限样本覆盖保证；这里只报告经验覆盖。",
+      "clean：名义90%集合实际覆盖 90.8%，平均集合大小 0.914。",
+      "gaussian_0.2：名义90%集合实际覆盖 80.8%，平均集合大小 0.828。",
+      "translation_1：名义90%集合实际覆盖 34.4%，平均集合大小 0.600。"
+    ],
+    "next_step": "后续做按writer隔离和新设备数据；同数字数据集的交换性条件不能推到OCR。"
+  }
+]

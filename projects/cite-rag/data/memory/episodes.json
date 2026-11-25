@@ -1,0 +1,1324 @@
+{
+  "schema_version": 1,
+  "authored": true,
+  "data_origin": "self-authored synthetic software review notes; no company documents, customer data or real engineering rules",
+  "split_protocol": "Namespaces Iris/Cobalt are development; Maple/Quartz/Linden/Saffron are held out. Freeze before inference; no tuning on held-out results. Templates shared across splits: limited structural generalization only.",
+  "sources": [
+    {
+      "id": "iris-budget-old",
+      "namespace": "iris",
+      "key": "review_budget",
+      "revision": 1,
+      "event": 1,
+      "state": "active",
+      "text": "Iris simulation note budget-old. Setting review_budget: 10 minutes. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "iris-budget-current",
+      "namespace": "iris",
+      "key": "review_budget",
+      "revision": 2,
+      "event": 3,
+      "state": "active",
+      "text": "Iris simulation note budget-current. Setting review_budget: 17 minutes. Status: active. Revision 2. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "iris-route-a",
+      "namespace": "iris",
+      "key": "review_route",
+      "revision": 3,
+      "event": 4,
+      "state": "active",
+      "text": "Iris simulation note route-a. Setting review_route: route_alpha. Status: active. Revision 3. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "iris-route-b",
+      "namespace": "iris",
+      "key": "review_route",
+      "revision": 3,
+      "event": 4,
+      "state": "active",
+      "text": "Iris simulation note route-b. Setting review_route: route_beta. Status: active. Revision 3. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "iris-retired",
+      "namespace": "iris",
+      "key": "legacy_mode",
+      "revision": 2,
+      "event": 4,
+      "state": "revoked",
+      "text": "Iris simulation note retired. Setting legacy_mode: enabled. Status: revoked. Revision 2. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "iris-scope",
+      "namespace": "iris",
+      "key": "region",
+      "revision": 1,
+      "event": 1,
+      "state": "active",
+      "text": "Iris simulation note scope. Setting region: west. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "iris-late-old",
+      "namespace": "iris",
+      "key": "queue_size",
+      "revision": 1,
+      "event": 1,
+      "state": "active",
+      "text": "Iris simulation note late-old. Setting queue_size: 10. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "iris-late-new",
+      "namespace": "iris",
+      "key": "queue_size",
+      "revision": 2,
+      "event": 5,
+      "state": "active",
+      "text": "Iris simulation note late-new. Setting queue_size: 12. Status: active. Revision 2. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "iris-units",
+      "namespace": "iris",
+      "key": "latency_budget",
+      "revision": 1,
+      "event": 2,
+      "state": "active",
+      "text": "Iris simulation note units. Setting latency_budget: 250 milliseconds. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "iris-base",
+      "namespace": "iris",
+      "key": "base_cost",
+      "revision": 1,
+      "event": 2,
+      "state": "active",
+      "text": "Iris simulation note base. Setting base_cost: 10. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "iris-extra",
+      "namespace": "iris",
+      "key": "extra_cost",
+      "revision": 1,
+      "event": 2,
+      "state": "active",
+      "text": "Iris simulation note extra. Setting extra_cost: 13. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "iris-noise",
+      "namespace": "iris",
+      "key": "newsletter",
+      "revision": 1,
+      "event": 1,
+      "state": "active",
+      "text": "Iris simulation note noise. Setting newsletter: welcome. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "iris-noise2",
+      "namespace": "iris",
+      "key": "meeting",
+      "revision": 1,
+      "event": 4,
+      "state": "active",
+      "text": "Iris simulation note noise2. Setting meeting: rescheduled. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "cobalt-budget-old",
+      "namespace": "cobalt",
+      "key": "review_budget",
+      "revision": 1,
+      "event": 1,
+      "state": "active",
+      "text": "Cobalt simulation note budget-old. Setting review_budget: 13 minutes. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "cobalt-budget-current",
+      "namespace": "cobalt",
+      "key": "review_budget",
+      "revision": 2,
+      "event": 3,
+      "state": "active",
+      "text": "Cobalt simulation note budget-current. Setting review_budget: 20 minutes. Status: active. Revision 2. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "cobalt-route-a",
+      "namespace": "cobalt",
+      "key": "review_route",
+      "revision": 3,
+      "event": 4,
+      "state": "active",
+      "text": "Cobalt simulation note route-a. Setting review_route: route_alpha. Status: active. Revision 3. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "cobalt-route-b",
+      "namespace": "cobalt",
+      "key": "review_route",
+      "revision": 3,
+      "event": 4,
+      "state": "active",
+      "text": "Cobalt simulation note route-b. Setting review_route: route_beta. Status: active. Revision 3. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "cobalt-retired",
+      "namespace": "cobalt",
+      "key": "legacy_mode",
+      "revision": 2,
+      "event": 4,
+      "state": "revoked",
+      "text": "Cobalt simulation note retired. Setting legacy_mode: enabled. Status: revoked. Revision 2. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "cobalt-scope",
+      "namespace": "cobalt",
+      "key": "region",
+      "revision": 1,
+      "event": 1,
+      "state": "active",
+      "text": "Cobalt simulation note scope. Setting region: north. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "cobalt-late-old",
+      "namespace": "cobalt",
+      "key": "queue_size",
+      "revision": 1,
+      "event": 1,
+      "state": "active",
+      "text": "Cobalt simulation note late-old. Setting queue_size: 13. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "cobalt-late-new",
+      "namespace": "cobalt",
+      "key": "queue_size",
+      "revision": 2,
+      "event": 5,
+      "state": "active",
+      "text": "Cobalt simulation note late-new. Setting queue_size: 15. Status: active. Revision 2. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "cobalt-units",
+      "namespace": "cobalt",
+      "key": "latency_budget",
+      "revision": 1,
+      "event": 2,
+      "state": "active",
+      "text": "Cobalt simulation note units. Setting latency_budget: 325 milliseconds. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "cobalt-base",
+      "namespace": "cobalt",
+      "key": "base_cost",
+      "revision": 1,
+      "event": 2,
+      "state": "active",
+      "text": "Cobalt simulation note base. Setting base_cost: 13. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "cobalt-extra",
+      "namespace": "cobalt",
+      "key": "extra_cost",
+      "revision": 1,
+      "event": 2,
+      "state": "active",
+      "text": "Cobalt simulation note extra. Setting extra_cost: 16. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "cobalt-noise",
+      "namespace": "cobalt",
+      "key": "newsletter",
+      "revision": 1,
+      "event": 1,
+      "state": "active",
+      "text": "Cobalt simulation note noise. Setting newsletter: welcome. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "cobalt-noise2",
+      "namespace": "cobalt",
+      "key": "meeting",
+      "revision": 1,
+      "event": 4,
+      "state": "active",
+      "text": "Cobalt simulation note noise2. Setting meeting: rescheduled. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "maple-budget-old",
+      "namespace": "maple",
+      "key": "review_budget",
+      "revision": 1,
+      "event": 1,
+      "state": "active",
+      "text": "Maple simulation note budget-old. Setting review_budget: 16 minutes. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "maple-budget-current",
+      "namespace": "maple",
+      "key": "review_budget",
+      "revision": 2,
+      "event": 3,
+      "state": "active",
+      "text": "Maple simulation note budget-current. Setting review_budget: 23 minutes. Status: active. Revision 2. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "maple-route-a",
+      "namespace": "maple",
+      "key": "review_route",
+      "revision": 3,
+      "event": 4,
+      "state": "active",
+      "text": "Maple simulation note route-a. Setting review_route: route_alpha. Status: active. Revision 3. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "maple-route-b",
+      "namespace": "maple",
+      "key": "review_route",
+      "revision": 3,
+      "event": 4,
+      "state": "active",
+      "text": "Maple simulation note route-b. Setting review_route: route_beta. Status: active. Revision 3. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "maple-retired",
+      "namespace": "maple",
+      "key": "legacy_mode",
+      "revision": 2,
+      "event": 4,
+      "state": "revoked",
+      "text": "Maple simulation note retired. Setting legacy_mode: enabled. Status: revoked. Revision 2. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "maple-scope",
+      "namespace": "maple",
+      "key": "region",
+      "revision": 1,
+      "event": 1,
+      "state": "active",
+      "text": "Maple simulation note scope. Setting region: east. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "maple-late-old",
+      "namespace": "maple",
+      "key": "queue_size",
+      "revision": 1,
+      "event": 1,
+      "state": "active",
+      "text": "Maple simulation note late-old. Setting queue_size: 16. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "maple-late-new",
+      "namespace": "maple",
+      "key": "queue_size",
+      "revision": 2,
+      "event": 5,
+      "state": "active",
+      "text": "Maple simulation note late-new. Setting queue_size: 18. Status: active. Revision 2. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "maple-units",
+      "namespace": "maple",
+      "key": "latency_budget",
+      "revision": 1,
+      "event": 2,
+      "state": "active",
+      "text": "Maple simulation note units. Setting latency_budget: 400 milliseconds. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "maple-base",
+      "namespace": "maple",
+      "key": "base_cost",
+      "revision": 1,
+      "event": 2,
+      "state": "active",
+      "text": "Maple simulation note base. Setting base_cost: 16. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "maple-extra",
+      "namespace": "maple",
+      "key": "extra_cost",
+      "revision": 1,
+      "event": 2,
+      "state": "active",
+      "text": "Maple simulation note extra. Setting extra_cost: 19. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "maple-noise",
+      "namespace": "maple",
+      "key": "newsletter",
+      "revision": 1,
+      "event": 1,
+      "state": "active",
+      "text": "Maple simulation note noise. Setting newsletter: welcome. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "maple-noise2",
+      "namespace": "maple",
+      "key": "meeting",
+      "revision": 1,
+      "event": 4,
+      "state": "active",
+      "text": "Maple simulation note noise2. Setting meeting: rescheduled. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "quartz-budget-old",
+      "namespace": "quartz",
+      "key": "review_budget",
+      "revision": 1,
+      "event": 1,
+      "state": "active",
+      "text": "Quartz simulation note budget-old. Setting review_budget: 19 minutes. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "quartz-budget-current",
+      "namespace": "quartz",
+      "key": "review_budget",
+      "revision": 2,
+      "event": 3,
+      "state": "active",
+      "text": "Quartz simulation note budget-current. Setting review_budget: 26 minutes. Status: active. Revision 2. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "quartz-route-a",
+      "namespace": "quartz",
+      "key": "review_route",
+      "revision": 3,
+      "event": 4,
+      "state": "active",
+      "text": "Quartz simulation note route-a. Setting review_route: route_alpha. Status: active. Revision 3. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "quartz-route-b",
+      "namespace": "quartz",
+      "key": "review_route",
+      "revision": 3,
+      "event": 4,
+      "state": "active",
+      "text": "Quartz simulation note route-b. Setting review_route: route_beta. Status: active. Revision 3. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "quartz-retired",
+      "namespace": "quartz",
+      "key": "legacy_mode",
+      "revision": 2,
+      "event": 4,
+      "state": "revoked",
+      "text": "Quartz simulation note retired. Setting legacy_mode: enabled. Status: revoked. Revision 2. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "quartz-scope",
+      "namespace": "quartz",
+      "key": "region",
+      "revision": 1,
+      "event": 1,
+      "state": "active",
+      "text": "Quartz simulation note scope. Setting region: south. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "quartz-late-old",
+      "namespace": "quartz",
+      "key": "queue_size",
+      "revision": 1,
+      "event": 1,
+      "state": "active",
+      "text": "Quartz simulation note late-old. Setting queue_size: 19. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "quartz-late-new",
+      "namespace": "quartz",
+      "key": "queue_size",
+      "revision": 2,
+      "event": 5,
+      "state": "active",
+      "text": "Quartz simulation note late-new. Setting queue_size: 21. Status: active. Revision 2. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "quartz-units",
+      "namespace": "quartz",
+      "key": "latency_budget",
+      "revision": 1,
+      "event": 2,
+      "state": "active",
+      "text": "Quartz simulation note units. Setting latency_budget: 475 milliseconds. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "quartz-base",
+      "namespace": "quartz",
+      "key": "base_cost",
+      "revision": 1,
+      "event": 2,
+      "state": "active",
+      "text": "Quartz simulation note base. Setting base_cost: 19. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "quartz-extra",
+      "namespace": "quartz",
+      "key": "extra_cost",
+      "revision": 1,
+      "event": 2,
+      "state": "active",
+      "text": "Quartz simulation note extra. Setting extra_cost: 22. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "quartz-noise",
+      "namespace": "quartz",
+      "key": "newsletter",
+      "revision": 1,
+      "event": 1,
+      "state": "active",
+      "text": "Quartz simulation note noise. Setting newsletter: welcome. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "quartz-noise2",
+      "namespace": "quartz",
+      "key": "meeting",
+      "revision": 1,
+      "event": 4,
+      "state": "active",
+      "text": "Quartz simulation note noise2. Setting meeting: rescheduled. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "linden-budget-old",
+      "namespace": "linden",
+      "key": "review_budget",
+      "revision": 1,
+      "event": 1,
+      "state": "active",
+      "text": "Linden simulation note budget-old. Setting review_budget: 22 minutes. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "linden-budget-current",
+      "namespace": "linden",
+      "key": "review_budget",
+      "revision": 2,
+      "event": 3,
+      "state": "active",
+      "text": "Linden simulation note budget-current. Setting review_budget: 29 minutes. Status: active. Revision 2. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "linden-route-a",
+      "namespace": "linden",
+      "key": "review_route",
+      "revision": 3,
+      "event": 4,
+      "state": "active",
+      "text": "Linden simulation note route-a. Setting review_route: route_alpha. Status: active. Revision 3. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "linden-route-b",
+      "namespace": "linden",
+      "key": "review_route",
+      "revision": 3,
+      "event": 4,
+      "state": "active",
+      "text": "Linden simulation note route-b. Setting review_route: route_beta. Status: active. Revision 3. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "linden-retired",
+      "namespace": "linden",
+      "key": "legacy_mode",
+      "revision": 2,
+      "event": 4,
+      "state": "revoked",
+      "text": "Linden simulation note retired. Setting legacy_mode: enabled. Status: revoked. Revision 2. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "linden-scope",
+      "namespace": "linden",
+      "key": "region",
+      "revision": 1,
+      "event": 1,
+      "state": "active",
+      "text": "Linden simulation note scope. Setting region: central. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "linden-late-old",
+      "namespace": "linden",
+      "key": "queue_size",
+      "revision": 1,
+      "event": 1,
+      "state": "active",
+      "text": "Linden simulation note late-old. Setting queue_size: 22. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "linden-late-new",
+      "namespace": "linden",
+      "key": "queue_size",
+      "revision": 2,
+      "event": 5,
+      "state": "active",
+      "text": "Linden simulation note late-new. Setting queue_size: 24. Status: active. Revision 2. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "linden-units",
+      "namespace": "linden",
+      "key": "latency_budget",
+      "revision": 1,
+      "event": 2,
+      "state": "active",
+      "text": "Linden simulation note units. Setting latency_budget: 550 milliseconds. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "linden-base",
+      "namespace": "linden",
+      "key": "base_cost",
+      "revision": 1,
+      "event": 2,
+      "state": "active",
+      "text": "Linden simulation note base. Setting base_cost: 22. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "linden-extra",
+      "namespace": "linden",
+      "key": "extra_cost",
+      "revision": 1,
+      "event": 2,
+      "state": "active",
+      "text": "Linden simulation note extra. Setting extra_cost: 25. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "linden-noise",
+      "namespace": "linden",
+      "key": "newsletter",
+      "revision": 1,
+      "event": 1,
+      "state": "active",
+      "text": "Linden simulation note noise. Setting newsletter: welcome. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "linden-noise2",
+      "namespace": "linden",
+      "key": "meeting",
+      "revision": 1,
+      "event": 4,
+      "state": "active",
+      "text": "Linden simulation note noise2. Setting meeting: rescheduled. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "saffron-budget-old",
+      "namespace": "saffron",
+      "key": "review_budget",
+      "revision": 1,
+      "event": 1,
+      "state": "active",
+      "text": "Saffron simulation note budget-old. Setting review_budget: 25 minutes. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "saffron-budget-current",
+      "namespace": "saffron",
+      "key": "review_budget",
+      "revision": 2,
+      "event": 3,
+      "state": "active",
+      "text": "Saffron simulation note budget-current. Setting review_budget: 32 minutes. Status: active. Revision 2. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "saffron-route-a",
+      "namespace": "saffron",
+      "key": "review_route",
+      "revision": 3,
+      "event": 4,
+      "state": "active",
+      "text": "Saffron simulation note route-a. Setting review_route: route_alpha. Status: active. Revision 3. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "saffron-route-b",
+      "namespace": "saffron",
+      "key": "review_route",
+      "revision": 3,
+      "event": 4,
+      "state": "active",
+      "text": "Saffron simulation note route-b. Setting review_route: route_beta. Status: active. Revision 3. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "saffron-retired",
+      "namespace": "saffron",
+      "key": "legacy_mode",
+      "revision": 2,
+      "event": 4,
+      "state": "revoked",
+      "text": "Saffron simulation note retired. Setting legacy_mode: enabled. Status: revoked. Revision 2. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "saffron-scope",
+      "namespace": "saffron",
+      "key": "region",
+      "revision": 1,
+      "event": 1,
+      "state": "active",
+      "text": "Saffron simulation note scope. Setting region: island. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "saffron-late-old",
+      "namespace": "saffron",
+      "key": "queue_size",
+      "revision": 1,
+      "event": 1,
+      "state": "active",
+      "text": "Saffron simulation note late-old. Setting queue_size: 25. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "saffron-late-new",
+      "namespace": "saffron",
+      "key": "queue_size",
+      "revision": 2,
+      "event": 5,
+      "state": "active",
+      "text": "Saffron simulation note late-new. Setting queue_size: 27. Status: active. Revision 2. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "saffron-units",
+      "namespace": "saffron",
+      "key": "latency_budget",
+      "revision": 1,
+      "event": 2,
+      "state": "active",
+      "text": "Saffron simulation note units. Setting latency_budget: 625 milliseconds. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "saffron-base",
+      "namespace": "saffron",
+      "key": "base_cost",
+      "revision": 1,
+      "event": 2,
+      "state": "active",
+      "text": "Saffron simulation note base. Setting base_cost: 25. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "saffron-extra",
+      "namespace": "saffron",
+      "key": "extra_cost",
+      "revision": 1,
+      "event": 2,
+      "state": "active",
+      "text": "Saffron simulation note extra. Setting extra_cost: 28. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "saffron-noise",
+      "namespace": "saffron",
+      "key": "newsletter",
+      "revision": 1,
+      "event": 1,
+      "state": "active",
+      "text": "Saffron simulation note noise. Setting newsletter: welcome. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    },
+    {
+      "id": "saffron-noise2",
+      "namespace": "saffron",
+      "key": "meeting",
+      "revision": 1,
+      "event": 4,
+      "state": "active",
+      "text": "Saffron simulation note noise2. Setting meeting: rescheduled. Status: active. Revision 1. This is a fictional software review exercise, not a physical engineering standard."
+    }
+  ],
+  "queries": [
+    {
+      "id": "iris-revision",
+      "namespace": "iris",
+      "key": "review_budget",
+      "question": "What is the current review_budget setting?",
+      "split": "development",
+      "family": "revision",
+      "expected_status": "answer",
+      "expected_value": "17 minutes",
+      "expected_sources": [
+        "iris-budget-current"
+      ]
+    },
+    {
+      "id": "iris-conflict",
+      "namespace": "iris",
+      "key": "review_route",
+      "question": "What is review_route? Do not silently choose one of conflicting active revisions.",
+      "split": "development",
+      "family": "conflict",
+      "expected_status": "review",
+      "expected_value": null,
+      "expected_sources": [
+        "iris-route-a",
+        "iris-route-b"
+      ]
+    },
+    {
+      "id": "iris-revocation",
+      "namespace": "iris",
+      "key": "legacy_mode",
+      "question": "What is legacy_mode now? Revoked evidence cannot authorize a setting.",
+      "split": "development",
+      "family": "revocation",
+      "expected_status": "abstain",
+      "expected_value": null,
+      "expected_sources": []
+    },
+    {
+      "id": "iris-namespace",
+      "namespace": "iris",
+      "key": "region",
+      "question": "What is the region setting for this namespace only?",
+      "split": "development",
+      "family": "namespace",
+      "expected_status": "answer",
+      "expected_value": "west",
+      "expected_sources": [
+        "iris-scope"
+      ]
+    },
+    {
+      "id": "iris-correction",
+      "namespace": "iris",
+      "key": "queue_size",
+      "question": "What is the most recent corrected queue_size?",
+      "split": "development",
+      "family": "correction",
+      "expected_status": "answer",
+      "expected_value": "12",
+      "expected_sources": [
+        "iris-late-new"
+      ]
+    },
+    {
+      "id": "iris-missing",
+      "namespace": "iris",
+      "key": "approval_limit",
+      "question": "What is approval_limit? No supplied note states it.",
+      "split": "development",
+      "family": "missing",
+      "expected_status": "abstain",
+      "expected_value": null,
+      "expected_sources": []
+    },
+    {
+      "id": "iris-units",
+      "namespace": "iris",
+      "key": "latency_budget",
+      "question": "What is latency_budget? Preserve the exact unit; do not substitute seconds.",
+      "split": "development",
+      "family": "units",
+      "expected_status": "answer",
+      "expected_value": "250 milliseconds",
+      "expected_sources": [
+        "iris-units"
+      ]
+    },
+    {
+      "id": "iris-multi_source",
+      "namespace": "iris",
+      "key": "total_cost",
+      "question": "What is total_cost, the integer sum of base_cost and extra_cost? Cite both sources.",
+      "split": "development",
+      "family": "multi_source",
+      "expected_status": "answer",
+      "expected_value": "23",
+      "expected_sources": [
+        "iris-base",
+        "iris-extra"
+      ]
+    },
+    {
+      "id": "cobalt-revision",
+      "namespace": "cobalt",
+      "key": "review_budget",
+      "question": "What is the current review_budget setting?",
+      "split": "development",
+      "family": "revision",
+      "expected_status": "answer",
+      "expected_value": "20 minutes",
+      "expected_sources": [
+        "cobalt-budget-current"
+      ]
+    },
+    {
+      "id": "cobalt-conflict",
+      "namespace": "cobalt",
+      "key": "review_route",
+      "question": "What is review_route? Do not silently choose one of conflicting active revisions.",
+      "split": "development",
+      "family": "conflict",
+      "expected_status": "review",
+      "expected_value": null,
+      "expected_sources": [
+        "cobalt-route-a",
+        "cobalt-route-b"
+      ]
+    },
+    {
+      "id": "cobalt-revocation",
+      "namespace": "cobalt",
+      "key": "legacy_mode",
+      "question": "What is legacy_mode now? Revoked evidence cannot authorize a setting.",
+      "split": "development",
+      "family": "revocation",
+      "expected_status": "abstain",
+      "expected_value": null,
+      "expected_sources": []
+    },
+    {
+      "id": "cobalt-namespace",
+      "namespace": "cobalt",
+      "key": "region",
+      "question": "What is the region setting for this namespace only?",
+      "split": "development",
+      "family": "namespace",
+      "expected_status": "answer",
+      "expected_value": "north",
+      "expected_sources": [
+        "cobalt-scope"
+      ]
+    },
+    {
+      "id": "cobalt-correction",
+      "namespace": "cobalt",
+      "key": "queue_size",
+      "question": "What is the most recent corrected queue_size?",
+      "split": "development",
+      "family": "correction",
+      "expected_status": "answer",
+      "expected_value": "15",
+      "expected_sources": [
+        "cobalt-late-new"
+      ]
+    },
+    {
+      "id": "cobalt-missing",
+      "namespace": "cobalt",
+      "key": "approval_limit",
+      "question": "What is approval_limit? No supplied note states it.",
+      "split": "development",
+      "family": "missing",
+      "expected_status": "abstain",
+      "expected_value": null,
+      "expected_sources": []
+    },
+    {
+      "id": "cobalt-units",
+      "namespace": "cobalt",
+      "key": "latency_budget",
+      "question": "What is latency_budget? Preserve the exact unit; do not substitute seconds.",
+      "split": "development",
+      "family": "units",
+      "expected_status": "answer",
+      "expected_value": "325 milliseconds",
+      "expected_sources": [
+        "cobalt-units"
+      ]
+    },
+    {
+      "id": "cobalt-multi_source",
+      "namespace": "cobalt",
+      "key": "total_cost",
+      "question": "What is total_cost, the integer sum of base_cost and extra_cost? Cite both sources.",
+      "split": "development",
+      "family": "multi_source",
+      "expected_status": "answer",
+      "expected_value": "29",
+      "expected_sources": [
+        "cobalt-base",
+        "cobalt-extra"
+      ]
+    },
+    {
+      "id": "maple-revision",
+      "namespace": "maple",
+      "key": "review_budget",
+      "question": "What is the current review_budget setting?",
+      "split": "evaluation",
+      "family": "revision",
+      "expected_status": "answer",
+      "expected_value": "23 minutes",
+      "expected_sources": [
+        "maple-budget-current"
+      ]
+    },
+    {
+      "id": "maple-conflict",
+      "namespace": "maple",
+      "key": "review_route",
+      "question": "What is review_route? Do not silently choose one of conflicting active revisions.",
+      "split": "evaluation",
+      "family": "conflict",
+      "expected_status": "review",
+      "expected_value": null,
+      "expected_sources": [
+        "maple-route-a",
+        "maple-route-b"
+      ]
+    },
+    {
+      "id": "maple-revocation",
+      "namespace": "maple",
+      "key": "legacy_mode",
+      "question": "What is legacy_mode now? Revoked evidence cannot authorize a setting.",
+      "split": "evaluation",
+      "family": "revocation",
+      "expected_status": "abstain",
+      "expected_value": null,
+      "expected_sources": []
+    },
+    {
+      "id": "maple-namespace",
+      "namespace": "maple",
+      "key": "region",
+      "question": "What is the region setting for this namespace only?",
+      "split": "evaluation",
+      "family": "namespace",
+      "expected_status": "answer",
+      "expected_value": "east",
+      "expected_sources": [
+        "maple-scope"
+      ]
+    },
+    {
+      "id": "maple-correction",
+      "namespace": "maple",
+      "key": "queue_size",
+      "question": "What is the most recent corrected queue_size?",
+      "split": "evaluation",
+      "family": "correction",
+      "expected_status": "answer",
+      "expected_value": "18",
+      "expected_sources": [
+        "maple-late-new"
+      ]
+    },
+    {
+      "id": "maple-missing",
+      "namespace": "maple",
+      "key": "approval_limit",
+      "question": "What is approval_limit? No supplied note states it.",
+      "split": "evaluation",
+      "family": "missing",
+      "expected_status": "abstain",
+      "expected_value": null,
+      "expected_sources": []
+    },
+    {
+      "id": "maple-units",
+      "namespace": "maple",
+      "key": "latency_budget",
+      "question": "What is latency_budget? Preserve the exact unit; do not substitute seconds.",
+      "split": "evaluation",
+      "family": "units",
+      "expected_status": "answer",
+      "expected_value": "400 milliseconds",
+      "expected_sources": [
+        "maple-units"
+      ]
+    },
+    {
+      "id": "maple-multi_source",
+      "namespace": "maple",
+      "key": "total_cost",
+      "question": "What is total_cost, the integer sum of base_cost and extra_cost? Cite both sources.",
+      "split": "evaluation",
+      "family": "multi_source",
+      "expected_status": "answer",
+      "expected_value": "35",
+      "expected_sources": [
+        "maple-base",
+        "maple-extra"
+      ]
+    },
+    {
+      "id": "quartz-revision",
+      "namespace": "quartz",
+      "key": "review_budget",
+      "question": "What is the current review_budget setting?",
+      "split": "evaluation",
+      "family": "revision",
+      "expected_status": "answer",
+      "expected_value": "26 minutes",
+      "expected_sources": [
+        "quartz-budget-current"
+      ]
+    },
+    {
+      "id": "quartz-conflict",
+      "namespace": "quartz",
+      "key": "review_route",
+      "question": "What is review_route? Do not silently choose one of conflicting active revisions.",
+      "split": "evaluation",
+      "family": "conflict",
+      "expected_status": "review",
+      "expected_value": null,
+      "expected_sources": [
+        "quartz-route-a",
+        "quartz-route-b"
+      ]
+    },
+    {
+      "id": "quartz-revocation",
+      "namespace": "quartz",
+      "key": "legacy_mode",
+      "question": "What is legacy_mode now? Revoked evidence cannot authorize a setting.",
+      "split": "evaluation",
+      "family": "revocation",
+      "expected_status": "abstain",
+      "expected_value": null,
+      "expected_sources": []
+    },
+    {
+      "id": "quartz-namespace",
+      "namespace": "quartz",
+      "key": "region",
+      "question": "What is the region setting for this namespace only?",
+      "split": "evaluation",
+      "family": "namespace",
+      "expected_status": "answer",
+      "expected_value": "south",
+      "expected_sources": [
+        "quartz-scope"
+      ]
+    },
+    {
+      "id": "quartz-correction",
+      "namespace": "quartz",
+      "key": "queue_size",
+      "question": "What is the most recent corrected queue_size?",
+      "split": "evaluation",
+      "family": "correction",
+      "expected_status": "answer",
+      "expected_value": "21",
+      "expected_sources": [
+        "quartz-late-new"
+      ]
+    },
+    {
+      "id": "quartz-missing",
+      "namespace": "quartz",
+      "key": "approval_limit",
+      "question": "What is approval_limit? No supplied note states it.",
+      "split": "evaluation",
+      "family": "missing",
+      "expected_status": "abstain",
+      "expected_value": null,
+      "expected_sources": []
+    },
+    {
+      "id": "quartz-units",
+      "namespace": "quartz",
+      "key": "latency_budget",
+      "question": "What is latency_budget? Preserve the exact unit; do not substitute seconds.",
+      "split": "evaluation",
+      "family": "units",
+      "expected_status": "answer",
+      "expected_value": "475 milliseconds",
+      "expected_sources": [
+        "quartz-units"
+      ]
+    },
+    {
+      "id": "quartz-multi_source",
+      "namespace": "quartz",
+      "key": "total_cost",
+      "question": "What is total_cost, the integer sum of base_cost and extra_cost? Cite both sources.",
+      "split": "evaluation",
+      "family": "multi_source",
+      "expected_status": "answer",
+      "expected_value": "41",
+      "expected_sources": [
+        "quartz-base",
+        "quartz-extra"
+      ]
+    },
+    {
+      "id": "linden-revision",
+      "namespace": "linden",
+      "key": "review_budget",
+      "question": "What is the current review_budget setting?",
+      "split": "evaluation",
+      "family": "revision",
+      "expected_status": "answer",
+      "expected_value": "29 minutes",
+      "expected_sources": [
+        "linden-budget-current"
+      ]
+    },
+    {
+      "id": "linden-conflict",
+      "namespace": "linden",
+      "key": "review_route",
+      "question": "What is review_route? Do not silently choose one of conflicting active revisions.",
+      "split": "evaluation",
+      "family": "conflict",
+      "expected_status": "review",
+      "expected_value": null,
+      "expected_sources": [
+        "linden-route-a",
+        "linden-route-b"
+      ]
+    },
+    {
+      "id": "linden-revocation",
+      "namespace": "linden",
+      "key": "legacy_mode",
+      "question": "What is legacy_mode now? Revoked evidence cannot authorize a setting.",
+      "split": "evaluation",
+      "family": "revocation",
+      "expected_status": "abstain",
+      "expected_value": null,
+      "expected_sources": []
+    },
+    {
+      "id": "linden-namespace",
+      "namespace": "linden",
+      "key": "region",
+      "question": "What is the region setting for this namespace only?",
+      "split": "evaluation",
+      "family": "namespace",
+      "expected_status": "answer",
+      "expected_value": "central",
+      "expected_sources": [
+        "linden-scope"
+      ]
+    },
+    {
+      "id": "linden-correction",
+      "namespace": "linden",
+      "key": "queue_size",
+      "question": "What is the most recent corrected queue_size?",
+      "split": "evaluation",
+      "family": "correction",
+      "expected_status": "answer",
+      "expected_value": "24",
+      "expected_sources": [
+        "linden-late-new"
+      ]
+    },
+    {
+      "id": "linden-missing",
+      "namespace": "linden",
+      "key": "approval_limit",
+      "question": "What is approval_limit? No supplied note states it.",
+      "split": "evaluation",
+      "family": "missing",
+      "expected_status": "abstain",
+      "expected_value": null,
+      "expected_sources": []
+    },
+    {
+      "id": "linden-units",
+      "namespace": "linden",
+      "key": "latency_budget",
+      "question": "What is latency_budget? Preserve the exact unit; do not substitute seconds.",
+      "split": "evaluation",
+      "family": "units",
+      "expected_status": "answer",
+      "expected_value": "550 milliseconds",
+      "expected_sources": [
+        "linden-units"
+      ]
+    },
+    {
+      "id": "linden-multi_source",
+      "namespace": "linden",
+      "key": "total_cost",
+      "question": "What is total_cost, the integer sum of base_cost and extra_cost? Cite both sources.",
+      "split": "evaluation",
+      "family": "multi_source",
+      "expected_status": "answer",
+      "expected_value": "47",
+      "expected_sources": [
+        "linden-base",
+        "linden-extra"
+      ]
+    },
+    {
+      "id": "saffron-revision",
+      "namespace": "saffron",
+      "key": "review_budget",
+      "question": "What is the current review_budget setting?",
+      "split": "evaluation",
+      "family": "revision",
+      "expected_status": "answer",
+      "expected_value": "32 minutes",
+      "expected_sources": [
+        "saffron-budget-current"
+      ]
+    },
+    {
+      "id": "saffron-conflict",
+      "namespace": "saffron",
+      "key": "review_route",
+      "question": "What is review_route? Do not silently choose one of conflicting active revisions.",
+      "split": "evaluation",
+      "family": "conflict",
+      "expected_status": "review",
+      "expected_value": null,
+      "expected_sources": [
+        "saffron-route-a",
+        "saffron-route-b"
+      ]
+    },
+    {
+      "id": "saffron-revocation",
+      "namespace": "saffron",
+      "key": "legacy_mode",
+      "question": "What is legacy_mode now? Revoked evidence cannot authorize a setting.",
+      "split": "evaluation",
+      "family": "revocation",
+      "expected_status": "abstain",
+      "expected_value": null,
+      "expected_sources": []
+    },
+    {
+      "id": "saffron-namespace",
+      "namespace": "saffron",
+      "key": "region",
+      "question": "What is the region setting for this namespace only?",
+      "split": "evaluation",
+      "family": "namespace",
+      "expected_status": "answer",
+      "expected_value": "island",
+      "expected_sources": [
+        "saffron-scope"
+      ]
+    },
+    {
+      "id": "saffron-correction",
+      "namespace": "saffron",
+      "key": "queue_size",
+      "question": "What is the most recent corrected queue_size?",
+      "split": "evaluation",
+      "family": "correction",
+      "expected_status": "answer",
+      "expected_value": "27",
+      "expected_sources": [
+        "saffron-late-new"
+      ]
+    },
+    {
+      "id": "saffron-missing",
+      "namespace": "saffron",
+      "key": "approval_limit",
+      "question": "What is approval_limit? No supplied note states it.",
+      "split": "evaluation",
+      "family": "missing",
+      "expected_status": "abstain",
+      "expected_value": null,
+      "expected_sources": []
+    },
+    {
+      "id": "saffron-units",
+      "namespace": "saffron",
+      "key": "latency_budget",
+      "question": "What is latency_budget? Preserve the exact unit; do not substitute seconds.",
+      "split": "evaluation",
+      "family": "units",
+      "expected_status": "answer",
+      "expected_value": "625 milliseconds",
+      "expected_sources": [
+        "saffron-units"
+      ]
+    },
+    {
+      "id": "saffron-multi_source",
+      "namespace": "saffron",
+      "key": "total_cost",
+      "question": "What is total_cost, the integer sum of base_cost and extra_cost? Cite both sources.",
+      "split": "evaluation",
+      "family": "multi_source",
+      "expected_status": "answer",
+      "expected_value": "53",
+      "expected_sources": [
+        "saffron-base",
+        "saffron-extra"
+      ]
+    }
+  ]
+}

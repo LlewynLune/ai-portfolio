@@ -1,0 +1,25 @@
+{
+  "kind": "new_numpy_head_only_DPO_training",
+  "seeds": [
+    193001,
+    193002,
+    193003
+  ],
+  "train": 512,
+  "validation": 128,
+  "test": 192,
+  "steps": 160,
+  "learning_rate": 0.02,
+  "beta": [
+    0.1,
+    0.5
+  ],
+  "policies": [
+    "sft",
+    "dpo_0.1",
+    "dpo_0.5"
+  ],
+  "chosen_rule": "original+2",
+  "labels": "synthetic one-token preference; not human alignment",
+  "excluded_prior_ids": true
+}

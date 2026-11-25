@@ -39,3 +39,15 @@ LoRA与DPO依赖tiny-attention/artifacts/model.json，需先训练TinyAttention�
 [深化交互分析](https://llewynlune.github.io/ai-portfolio/projects/tiny-attention/depth-demo.html) · [新增实测报告](artifacts/depth/REPORT.md) · [新实验代码](depth.py) · [逐条新证据](artifacts/depth/results.json)
 
 原模型和原报告保持冻结；本批结果只写artifacts/depth。所有参数扫描均为探索，不在测试上选择配置后声称独立评测；AI辅助实现与本人独立贡献分开。
+
+
+<!-- investigation-link -->
+## 本轮专项深入研究
+
+改变被查询值和无关值，模型是否只对真正相关的信息做出响应？
+
+[Deep Investigation](https://llewynlune.github.io/ai-portfolio/projects/tiny-attention/deep-study.html) · [全部实测条件](artifacts/investigation/REPORT.md) · [结果讨论与未完成项](artifacts/investigation/DISCUSSION.md) · [原始证据](artifacts/investigation/results.json)
+
+无关值改动导致的输出翻转均值 61.5%；相关值改动后正确率 44.5%。模型并未稳定学到查询相关性。
+
+原模型、旧Depth和CiteRAG记忆证据保持冻结。新调查按各自协议区分训练、推断、合成仿真和历史再分析，不能以记录数证明泛化。

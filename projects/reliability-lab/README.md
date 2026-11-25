@@ -99,3 +99,15 @@ clean / transient / mixed / ack_loss / permanent / slow。故障定义见 [confi
 [深化交互分析](https://llewynlune.github.io/ai-portfolio/projects/reliability-lab/depth-demo.html) · [新增实测报告](artifacts/depth/REPORT.md) · [新实验代码](depth.py) · [逐条新证据](artifacts/depth/results.json)
 
 原模型和原报告保持冻结；本批结果只写artifacts/depth。所有参数扫描均为探索，不在测试上选择配置后声称独立评测；AI辅助实现与本人独立贡献分开。
+
+
+<!-- investigation-link -->
+## 本轮专项深入研究
+
+真正进程退出发生在提交与检查点之间时，重启会重复副作用吗？
+
+[Deep Investigation](https://llewynlune.github.io/ai-portfolio/projects/reliability-lab/deep-study.html) · [全部实测条件](artifacts/investigation/REPORT.md) · [结果讨论与未完成项](artifacts/investigation/DISCUSSION.md) · [原始证据](artifacts/investigation/results.json)
+
+18次真实进程退出恢复：retry重复副作用6次，resilient 0次；仅局部SQLite边界。
+
+原模型、旧Depth和CiteRAG记忆证据保持冻结。新调查按各自协议区分训练、推断、合成仿真和历史再分析，不能以记录数证明泛化。

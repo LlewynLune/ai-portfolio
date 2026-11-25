@@ -44,6 +44,14 @@
 
 > 以上职责、阶段和指标来自本人提供并确认可公开的履历。仓库不公开内部代码、图纸、客户材料或原始统计；打回率不等于整体准确率，草稿不等于正式投放。
 
+## 本轮主攻：CiteRAG · 来源可校验的大模型记忆
+
+不是增加第15项，而是深化同一项目：真实本地量化LLM、来源版本与撤销、模型笔记回放、冲突校验、token预算、SQLite持久化、污染挑战和v2修复回归。
+
+[Project Page](https://llewynlune.github.io/ai-portfolio/projects/cite-rag/project.html) · [真实生成证据浏览](https://llewynlune.github.io/ai-portfolio/projects/cite-rag/memory-demo.html) · [源码与方法](projects/cite-rag/MEMORY_METHOD.md) · [完整实测报告](projects/cite-rag/artifacts/memory/REPORT.md) · [本地模型运行](projects/cite-rag/LOCAL_LLM.md)
+
+521次真实本地模型调用包含512问答、6整理和3预热；48个自建问题、32留出，多策略记录不是独立样本。原主实验模型记忆与回放同分，传统规则基线32/32；v2在已见模板上回归，不声称通用模型满分。内部资料没有进入代码、数据或Prompt。
+
 ## 两项代表性工程实验
 
 ### VideoGuard-Lab · 音画事件同步与可靠性
@@ -59,6 +67,12 @@
 [Project Page](https://llewynlune.github.io/ai-portfolio/projects/reliability-lab/project.html) · [交互实验台](https://llewynlune.github.io/ai-portfolio/projects/reliability-lab/demo.html) · [深化分析](https://llewynlune.github.io/ai-portfolio/projects/reliability-lab/depth-demo.html) · [源码与架构](projects/reliability-lab/README.md) · [工程报告](projects/reliability-lab/results/advanced/REPORT.md)
 
 **这些实验为 AI 辅助实现的研究原型，不是上述业务平台的内部系统，也不包装成既往独立研发或生产成果。**
+
+## 每个项目的专项深入研究
+
+14研究工程项目都新增了针对自身问题的实验，不统一刷参数。包含真实DPO输出头训练、随机解码分布验证、LoRA层级消融、容量顺序公平性、物理可辨识性、导频几何、时序区间、流式因果和真实进程崩溃。CiteRAG再用新48题完成96生成，累计618次实际本地调用（旧521与新97分开）。
+
+[逐项目研究入口](project-investigations.html) · [方法与复现索引](docs/individual-investigations.md)。4业务案例同步补充产品取舍、建议指标和验收方案，不增加历史成绩。
 
 ## 实验索引
 
@@ -115,7 +129,7 @@
 <details>
 <summary>贡献与适用边界</summary>
 
-研究代码与实验由 AI 辅助实现，本人独立理解、修改与复核贡献应如实记录。LoRA / DPO 共享 TinyAttention 小型基座；电子、通信和电力为仿真或合成数据，未做设备实测。真实 LLM 接口未调用，静态发布不是 Python 后端或生产上线。
+研究代码与实验由 AI 辅助实现，本人独立理解、修改与复核贡献应如实记录。LoRA / DPO 共享 TinyAttention 小型基座；电子、通信和电力为仿真或合成数据，未做设备实测。远程付费LLM接口未调用，CiteRAG新增真实本地公开模型实验；静态发布不是Python后端或生产上线。
 
 同一输入的扰动、门限分析与重复计时并非独立样本；高分和记录数不证明泛化。本人教育未提供的专业和入学月份不补写。
 
@@ -123,4 +137,4 @@
 
 </details>
 
-展示版本 v1.7 · 四项真实产品成果归入本人确认的字节跳动工作经历，采用公司标识、经历信息与项目贡献的展示方式。研究项目与实验数据不变。
+研发版本 v1.9 · 14研究工程项目逐项深化，4业务案例深化产品判断与验收建议。原模型、旧证据与履历事实源保持不变；发布核验以远端提交和Actions实际状态为准。

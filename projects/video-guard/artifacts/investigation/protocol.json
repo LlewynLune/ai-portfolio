@@ -1,0 +1,24 @@
+{
+  "kind": "prefix_causality_and_observation_dropout",
+  "groups": [
+    "step",
+    "multiple",
+    "quiet_gap",
+    "stable"
+  ],
+  "clips_per_group": 30,
+  "methods": [
+    "raw",
+    "onset",
+    "mlp"
+  ],
+  "drop_every": [
+    0,
+    3,
+    5
+  ],
+  "event_delay_frames": 20,
+  "tolerance_frames": 16,
+  "original_configs_frozen": true,
+  "kind_of_evidence": "historical trajectories, no new media"
+}

@@ -22,6 +22,9 @@ jobs:
           python scripts/check_portfolio.py
       - name: Unit and integration tests
         run: python -m unittest discover -s tests -v
+      - name: Verify frozen real LLM evidence without downloading models
+        working-directory: projects/cite-rag
+        run: python -m memory_agent.verify
       - name: Smoke run
         working-directory: projects/reliability-lab
         run: python -m reliability_lab run --count 4 --profile clean
@@ -70,5 +73,9 @@ jobs:
         run: python scripts/build_depth_demos.py
       - name: Build academic project pages
         run: python scripts/build_project_pages.py
+      - name: Project-specific investigation verification
+        run: python -m unittest discover -s tests -p test_investigations.py -v
+      - name: Build deep investigation pages
+        run: python scripts/build_investigation_pages.py
       - name: Verify presentation and frozen evidence
         run: python -m unittest discover -s tests -p test_presentation.py -v
