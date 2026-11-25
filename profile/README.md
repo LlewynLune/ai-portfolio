@@ -10,7 +10,13 @@ Agent / AI 产品 · 机电与电气工程背景
 
 [个人作品集](https://llewynlune.github.io/ai-portfolio/) · [完整代码与文档](https://github.com/LlewynLune/ai-portfolio)
 
-## 产品实践
+## Work Experience · 字节跳动
+
+**ByteDance · 字节跳动｜工作经历**
+
+以下四项均由本人确认属于字节跳动工作经历；任职性质不标实习，未提供的岗位、团队和日期不补写。
+
+[工作经历与案例](https://llewynlune.github.io/ai-portfolio/index.html#projects)
 
 - **AI 审图平台｜立项发起与核心产品模块设计、上线**：审核工作台、规则＋模型分级路由、账号权限、数据看板；11条结构化规则、9条模型Prompt规则，6轮/300+ Badcase复盘，人工复核打回率低于1%。
 - **标准化线上平台｜独立负责人、0—1自主搭建**：条目规则、评审工作台、判定＋校验、五级状态评分与风险看板，推动试点与配置化复用。

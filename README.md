@@ -14,7 +14,13 @@
 |Agent 执行框架与工程判断|查看 FlowBench 的故障策略、证据轨迹和恢复边界|
 |前沿算法与工程交叉|阅读下方实验索引，按领域进入源码和冻结报告|
 
-## 产品实践
+## Work Experience · 字节跳动
+
+**ByteDance · 字节跳动｜工作经历**
+
+领域 AI 产品实践：审核工作台、混合审核策略、标准评审、知识与 Skill。以下四项均由本人确认属于字节跳动工作经历；不标注实习或未经确认的正式职位、团队与任职日期。
+
+[查看工作经历与项目成果](https://llewynlune.github.io/ai-portfolio/index.html#projects)
 
 ### [AI 审图平台](business-cases/drawing-review/README.md)
 **立项发起 · 核心产品模块设计与上线**
@@ -117,4 +123,4 @@
 
 </details>
 
-展示版本 v1.6 · 14 项项目页采用统一的学术成果展示结构：Introduction、Overview、Method、Experimental Results。模型 Demo 与证据分析保留原功能，移除卡片看板式呈现；实验数据与业务履历保持不变。
+展示版本 v1.7 · 四项真实产品成果归入本人确认的字节跳动工作经历，采用公司标识、经历信息与项目贡献的展示方式。研究项目与实验数据不变。

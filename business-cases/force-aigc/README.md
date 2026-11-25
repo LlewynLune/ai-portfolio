@@ -1,5 +1,11 @@
 # 火山引擎 FORCE 大会宣传片
 
+**ByteDance · 字节跳动｜工作经历**
+
+公司归属和工作经历性质经本人确认；不标实习、不补写未提供的岗位或任职日期。
+
+[案例展示](https://llewynlune.github.io/ai-portfolio/business-cases/force-aigc/case.html)
+
 独立完成 · AIGC 内容实践｜文生视频草稿交付
 
 独立完成从创意构思、分镜脚本、提示词设计到文生视频草稿交付的完整流程，验证 AIGC 在内容生产场景中的创意表达和质量控制方法。

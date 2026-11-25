@@ -22,6 +22,13 @@ class PortfolioTest(unittest.TestCase):
             text=(ROOT/'business-cases'/case['id']/'README.md').read_text()
             self.assertIn('本人提供并确认可公开的履历',text)
             self.assertIn(case['title'],text)
+    def test_bytedance_employment_owner_confirmed(self):
+        import json
+        data=json.loads((ROOT/'profile/resume.json').read_text());emp=data['employment']
+        self.assertEqual(emp['company_en'],'ByteDance');self.assertEqual(emp['type'],'工作经历');self.assertEqual(set(emp['case_ids']),{c['id'] for c in data['cases']})
+        text=(ROOT/'index.html').read_text();self.assertIn('ByteDance · 字节跳动',text);self.assertNotIn('TopSeed',text);self.assertNotIn('Research Intern',text)
+        for c in data['cases']:
+            case=(ROOT/'business-cases'/c['id']/'case.html').read_text();self.assertIn(c['title'],case);self.assertIn('工作经历',case);self.assertIn('本人提供并确认可公开的履历',case)
     def test_form_references_and_placeholders_removed(self):
         text=(ROOT/'index.html').read_text()
         for marker in ['形式参考','TopSeed','Wanjun','liziniu','TEMPLATE /','待填 ·']:
@@ -37,7 +44,7 @@ class PortfolioTest(unittest.TestCase):
         from html.parser import HTMLParser
         text=(ROOT/'index.html').read_text()
         self.assertIn('profile-info', text)
-        self.assertIn('Selected Products', text)
+        self.assertIn('Work Experience', text)
         self.assertIn('Selected Research & Engineering', text)
         self.assertIn('background:#3d3d3d',text)
         self.assertIn('assets/portfolio/stars.jpg',text)
@@ -54,7 +61,9 @@ class PortfolioTest(unittest.TestCase):
         self.assertIn('um-logo.png',text)
         self.assertNotIn('class="edu-symbol"',text)
         self.assertIn('image-dialog',text)
-        self.assertEqual(text.count('产品流程示意 · 非系统截图'),4)
+        self.assertIn('bytedance-logo.svg',text)
+        self.assertEqual(text.count('class="experience-project work-row"'),4)
+        self.assertNotIn('Product Case</span>',text)
         for item in ['stars.jpg','identity.svg','drawing-review.svg','standards-platform.svg','skills-knowledge.svg','force-aigc.svg']:
             self.assertTrue((ROOT/'assets/portfolio'/item).is_file())
         self.assertEqual(len(list((ROOT/'assets/portfolio').glob('*.webp'))),15)

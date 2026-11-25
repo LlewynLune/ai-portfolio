@@ -1,5 +1,6 @@
 # 展示素材来源
 
+- bytedance-logo.svg：字节跳动官网可见页面的完整彩色内联SVG，来自 https://www.bytedance.com/?locale=en 。保留原比例与图形，不挪用Seed标识。仅识别本人确认的公司工作经历，不代表公司官方作品或背书。
 - stars.jpg：来自用户指定视觉参照页面的公开背景资源 https://renshuhuai-andy.github.io/src/background.jpg ，作为视觉复刻背景，不代表本人摄影作品。
 - avatar.webp：本人上传的照片，等比缩放与白色留白适配现有横幅头像框，保留完整头部、未改脸；去除EXIF等元信息。只公开优化后的资源，不提交原始照片。
 - identity.svg：历史姓名占位，当前主页已替换为本人照片。
