@@ -1,8 +1,11 @@
 # PowerScope｜AI数据中心电力负荷的离线预测与漂移
 
 <!-- project-navigation:start -->
-[运行 Demo](https://llewynlune.github.io/ai-portfolio/projects/power-scope/demo.html) · [深化分析](https://llewynlune.github.io/ai-portfolio/projects/power-scope/depth-demo.html) · [作品集](https://llewynlune.github.io/ai-portfolio/index.html#experiments)
+[Project Page](https://llewynlune.github.io/ai-portfolio/projects/power-scope/project.html) · [运行 Demo](https://llewynlune.github.io/ai-portfolio/projects/power-scope/demo.html) · [深化分析](https://llewynlune.github.io/ai-portfolio/projects/power-scope/depth-demo.html) · [作品集](https://llewynlune.github.io/ai-portfolio/index.html#experiments)
 <!-- project-navigation:end -->
+
+
+
 
 
 状态：核心真实训练/数值评测与本地模型推断已完成；AI辅助研究原型，不是生产项目或过往本人独立履历。

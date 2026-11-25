@@ -1,8 +1,11 @@
 # CiteRAG｜可追溯检索问答与真实大模型接口
 
 <!-- project-navigation:start -->
-[运行 Demo](https://llewynlune.github.io/ai-portfolio/projects/cite-rag/demo.html) · [深化分析](https://llewynlune.github.io/ai-portfolio/projects/cite-rag/depth-demo.html) · [作品集](https://llewynlune.github.io/ai-portfolio/index.html#experiments)
+[Project Page](https://llewynlune.github.io/ai-portfolio/projects/cite-rag/project.html) · [运行 Demo](https://llewynlune.github.io/ai-portfolio/projects/cite-rag/demo.html) · [深化分析](https://llewynlune.github.io/ai-portfolio/projects/cite-rag/depth-demo.html) · [作品集](https://llewynlune.github.io/ai-portfolio/index.html#experiments)
 <!-- project-navigation:end -->
+
+
+
 
 
 状态：本地检索/摘录已实测，真实 LLM HTTPS 调用模块已实现但未配置、未调用评测；不把测试桩或本地摘录当作大模型成果。

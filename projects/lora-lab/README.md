@@ -1,8 +1,11 @@
 # LoRA-Lab｜参数高效微调与遗忘
 
 <!-- project-navigation:start -->
-[运行 Demo](https://llewynlune.github.io/ai-portfolio/projects/lora-lab/demo.html) · [深化分析](https://llewynlune.github.io/ai-portfolio/projects/lora-lab/depth-demo.html) · [作品集](https://llewynlune.github.io/ai-portfolio/index.html#experiments)
+[Project Page](https://llewynlune.github.io/ai-portfolio/projects/lora-lab/project.html) · [运行 Demo](https://llewynlune.github.io/ai-portfolio/projects/lora-lab/demo.html) · [深化分析](https://llewynlune.github.io/ai-portfolio/projects/lora-lab/depth-demo.html) · [作品集](https://llewynlune.github.io/ai-portfolio/index.html#experiments)
 <!-- project-navigation:end -->
+
+
+
 
 
 状态：实际CPU训练/运行的机制复现，AI辅助实现；不是论文性能复现或原创算法。

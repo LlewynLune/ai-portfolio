@@ -1,8 +1,11 @@
 # FlowBench｜AI 工作流可靠性实验台
 
 <!-- project-navigation:start -->
-[运行 Demo](https://llewynlune.github.io/ai-portfolio/projects/reliability-lab/demo.html) · [深化分析](https://llewynlune.github.io/ai-portfolio/projects/reliability-lab/depth-demo.html) · [作品集](https://llewynlune.github.io/ai-portfolio/index.html#experiments)
+[Project Page](https://llewynlune.github.io/ai-portfolio/projects/reliability-lab/project.html) · [运行 Demo](https://llewynlune.github.io/ai-portfolio/projects/reliability-lab/demo.html) · [深化分析](https://llewynlune.github.io/ai-portfolio/projects/reliability-lab/depth-demo.html) · [作品集](https://llewynlune.github.io/ai-portfolio/index.html#experiments)
 <!-- project-navigation:end -->
+
+
+
 
 
 > 状态：本地可运行研究原型（0.2.0），AI 辅助搭建；支持合成 I/O 和实际本地 BM25 检索，不含真实 LLM。不是公司业务平台或生产上线成果。

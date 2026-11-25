@@ -65,3 +65,7 @@ jobs:
         run: python -m unittest discover -s tests -p test_depth_projects.py -v
       - name: Build self-contained depth inspectors
         run: python scripts/build_depth_demos.py
+      - name: Build academic project pages
+        run: python scripts/build_project_pages.py
+      - name: Verify presentation and frozen evidence
+        run: python -m unittest discover -s tests -p test_presentation.py -v

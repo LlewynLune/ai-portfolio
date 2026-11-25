@@ -1,8 +1,11 @@
 # VideoGuard-Lab — 音画事件同步与拒估研究
 
 <!-- project-navigation:start -->
-[运行 Demo](https://llewynlune.github.io/ai-portfolio/projects/video-guard/demo.html) · [深化分析](https://llewynlune.github.io/ai-portfolio/projects/video-guard/depth-demo.html) · [作品集](https://llewynlune.github.io/ai-portfolio/index.html#experiments)
+[Project Page](https://llewynlune.github.io/ai-portfolio/projects/video-guard/project.html) · [运行 Demo](https://llewynlune.github.io/ai-portfolio/projects/video-guard/demo.html) · [深化分析](https://llewynlune.github.io/ai-portfolio/projects/video-guard/depth-demo.html) · [作品集](https://llewynlune.github.io/ai-portfolio/index.html#experiments)
 <!-- project-navigation:end -->
+
+
+
 
 
 > AI 辅助搭建的可复现研究原型。主线只有一个：由观察到的视觉与音频估计事件延时，并验证何时不该给出唯一答案。不是 Seedance/Claude 复刻，不是唇形同步系统，不是生产视频审核服务。

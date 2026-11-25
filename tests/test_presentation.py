@@ -16,6 +16,16 @@ class PresentationTests(unittest.TestCase):
   paths=list(ROOT.glob('projects/*/demo.html'));self.assertEqual(len(paths),14)
   for p in paths:
    text=p.read_text();self.assertEqual(text.count('class="demo-navigation"'),1);self.assertEqual(polish(text,p.parent.name),polish(polish(text,p.parent.name),p.parent.name));self.assertIn('depth-demo.html',text)
+ def test_academic_project_pages_and_source_tables(self):
+  from academic_project_style import PROJECTS
+  pages=list(ROOT.glob('projects/*/project.html'));self.assertEqual(len(pages),14)
+  for p in pages:
+   text=p.read_text();parser=P();parser.feed(text);self.assertEqual(len(parser.ids),len(set(parser.ids)))
+   for section in ['Introduction','Overview','Method','Experimental Results','Interactive Demo','Limitations &amp; Reproducibility']:
+    self.assertIn(section,text)
+   data=json.loads((p.parent/'artifacts/depth/results.json').read_text());condition=sorted({r['condition'] for r in data['metrics']})[0];self.assertIn(condition,text);self.assertIn('非论文发表或生产项目',text);self.assertIn('publication-subtitle',text)
+   for link in parser.links:
+    if '://' not in link and not link.startswith('#'):self.assertTrue((p.parent/link.split('#',1)[0]).is_file(),link)
  def test_14_depth_records_unchanged(self):
   paths=list(ROOT.glob('projects/*/depth-demo.html'));self.assertEqual(len(paths),14)
   for p in paths:

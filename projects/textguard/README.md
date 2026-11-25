@@ -1,8 +1,11 @@
 # TextGuard｜可解释短文本分类
 
 <!-- project-navigation:start -->
-[运行 Demo](https://llewynlune.github.io/ai-portfolio/projects/textguard/demo.html) · [深化分析](https://llewynlune.github.io/ai-portfolio/projects/textguard/depth-demo.html) · [作品集](https://llewynlune.github.io/ai-portfolio/index.html#experiments)
+[Project Page](https://llewynlune.github.io/ai-portfolio/projects/textguard/project.html) · [运行 Demo](https://llewynlune.github.io/ai-portfolio/projects/textguard/demo.html) · [深化分析](https://llewynlune.github.io/ai-portfolio/projects/textguard/depth-demo.html) · [作品集](https://llewynlune.github.io/ai-portfolio/index.html#experiments)
 <!-- project-navigation:end -->
+
+
+
 
 
 状态：真实本地训练 + 留出评测 + 浏览器模型推断；AI 辅助实现，不是字节上线系统、现代诈骗检测或论文成果。

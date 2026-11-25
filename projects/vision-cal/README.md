@@ -1,8 +1,11 @@
 # VisionCal｜小型神经网络校准与鲁棒性
 
 <!-- project-navigation:start -->
-[运行 Demo](https://llewynlune.github.io/ai-portfolio/projects/vision-cal/demo.html) · [深化分析](https://llewynlune.github.io/ai-portfolio/projects/vision-cal/depth-demo.html) · [作品集](https://llewynlune.github.io/ai-portfolio/index.html#experiments)
+[Project Page](https://llewynlune.github.io/ai-portfolio/projects/vision-cal/project.html) · [运行 Demo](https://llewynlune.github.io/ai-portfolio/projects/vision-cal/demo.html) · [深化分析](https://llewynlune.github.io/ai-portfolio/projects/vision-cal/depth-demo.html) · [作品集](https://llewynlune.github.io/ai-portfolio/index.html#experiments)
 <!-- project-navigation:end -->
+
+
+
 
 
 状态：核心真实训练/数值评测与本地模型推断已完成；AI辅助研究原型，不是生产项目或过往本人独立履历。

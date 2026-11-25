@@ -44,13 +44,13 @@
 
 从 RGB / PCM 事件估计延时，比较相关性、MLP 与双塔表示；继续检查预测集合、局部矛盾、漂移定位与报警时限。
 
-[模型演示](https://llewynlune.github.io/ai-portfolio/projects/video-guard/demo.html) · [深化分析](https://llewynlune.github.io/ai-portfolio/projects/video-guard/depth-demo.html) · [代码与方法](projects/video-guard/README.md) · [定位报告](projects/video-guard/artifacts/drift-localization/REPORT.md)
+[Project Page](https://llewynlune.github.io/ai-portfolio/projects/video-guard/project.html) · [模型演示](https://llewynlune.github.io/ai-portfolio/projects/video-guard/demo.html) · [深化分析](https://llewynlune.github.io/ai-portfolio/projects/video-guard/depth-demo.html) · [代码与方法](projects/video-guard/README.md) · [定位报告](projects/video-guard/artifacts/drift-localization/REPORT.md)
 
 ### FlowBench · Agent 工作流可靠性
 
 在同一故障清单下比较单次执行、有限重试与幂等恢复，追踪排队、失败、提交副作用和 SQLite 恢复。
 
-[交互实验台](https://llewynlune.github.io/ai-portfolio/projects/reliability-lab/demo.html) · [深化分析](https://llewynlune.github.io/ai-portfolio/projects/reliability-lab/depth-demo.html) · [源码与架构](projects/reliability-lab/README.md) · [工程报告](projects/reliability-lab/results/advanced/REPORT.md)
+[Project Page](https://llewynlune.github.io/ai-portfolio/projects/reliability-lab/project.html) · [交互实验台](https://llewynlune.github.io/ai-portfolio/projects/reliability-lab/demo.html) · [深化分析](https://llewynlune.github.io/ai-portfolio/projects/reliability-lab/depth-demo.html) · [源码与架构](projects/reliability-lab/README.md) · [工程报告](projects/reliability-lab/results/advanced/REPORT.md)
 
 **这些实验为 AI 辅助实现的研究原型，不是上述业务平台的内部系统，也不包装成既往独立研发或生产成果。**
 
@@ -117,4 +117,4 @@
 
 </details>
 
-展示版本 v1.5 · 统一导航、图表、表格与阅读路径；实验数据与业务履历保持不变。
+展示版本 v1.6 · 14 项项目页采用统一的学术成果展示结构：Introduction、Overview、Method、Experimental Results。模型 Demo 与证据分析保留原功能，移除卡片看板式呈现；实验数据与业务履历保持不变。

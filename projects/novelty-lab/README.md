@@ -1,8 +1,11 @@
 # NoveltyLab｜多变量新颖性检测
 
 <!-- project-navigation:start -->
-[运行 Demo](https://llewynlune.github.io/ai-portfolio/projects/novelty-lab/demo.html) · [深化分析](https://llewynlune.github.io/ai-portfolio/projects/novelty-lab/depth-demo.html) · [作品集](https://llewynlune.github.io/ai-portfolio/index.html#experiments)
+[Project Page](https://llewynlune.github.io/ai-portfolio/projects/novelty-lab/project.html) · [运行 Demo](https://llewynlune.github.io/ai-portfolio/projects/novelty-lab/demo.html) · [深化分析](https://llewynlune.github.io/ai-portfolio/projects/novelty-lab/depth-demo.html) · [作品集](https://llewynlune.github.io/ai-portfolio/index.html#experiments)
 <!-- project-navigation:end -->
+
+
+
 
 
 状态：实际拟合三类本地模型 + 数值推断 Demo；AI 辅助实现。不是工业异常检测、欺诈识别、生产业务或原创算法。

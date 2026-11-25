@@ -16,7 +16,7 @@ def update(path):
  if path.parent.parent.name=='projects' and path.name=='README.md':
   name=path.parent.name
   if START in s:s=s.split(START,1)[0]+s.split(END,1)[1]
-  block=START+'\n[运行 Demo]('+PREFIX+'projects/'+name+'/demo.html) · [深化分析]('+PREFIX+'projects/'+name+'/depth-demo.html) · [作品集]('+PREFIX+'index.html#experiments)\n'+END
+  block=START+'\n[Project Page]('+PREFIX+'projects/'+name+'/project.html) · [运行 Demo]('+PREFIX+'projects/'+name+'/demo.html) · [深化分析]('+PREFIX+'projects/'+name+'/depth-demo.html) · [作品集]('+PREFIX+'index.html#experiments)\n'+END
   lines=s.splitlines();lines.insert(1,'\n'+block+'\n');s='\n'.join(lines).rstrip()+'\n'
  path.write_text(s)
 if __name__=='__main__':
