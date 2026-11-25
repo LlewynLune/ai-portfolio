@@ -1,8 +1,13 @@
 # DPO-Lab｜偏好、概率排序与模型漂移
 
+<!-- project-navigation:start -->
+[运行 Demo](https://llewynlune.github.io/ai-portfolio/projects/dpo-lab/demo.html) · [深化分析](https://llewynlune.github.io/ai-portfolio/projects/dpo-lab/depth-demo.html) · [作品集](https://llewynlune.github.io/ai-portfolio/index.html#experiments)
+<!-- project-navigation:end -->
+
+
 状态：实际CPU训练/运行的机制复现，AI辅助实现；不是论文性能复现或原创算法。
 
-[Demo](demo.html) · [原理与公式](METHOD.md) · [模型卡](MODEL_CARD.md) · [实测](artifacts/REPORT.md) · [逐样本证据](artifacts/results.json) · [参数](artifacts/model.json) · [哈希](artifacts/checksums.json)
+[Demo](https://llewynlune.github.io/ai-portfolio/projects/dpo-lab/demo.html) · [原理与公式](METHOD.md) · [模型卡](MODEL_CARD.md) · [实测](artifacts/REPORT.md) · [逐样本证据](artifacts/results.json) · [参数](artifacts/model.json) · [哈希](artifacts/checksums.json)
 
 ## 真实运行
 
@@ -28,6 +33,6 @@ LoRA与DPO依赖tiny-attention/artifacts/model.json，需先训练TinyAttention�
 
 新增冻结输出头的插值对照，分开报告pair win、chosen top1、KL与旧任务保留；新前缀排除原数据ID。
 
-[深化交互分析](depth-demo.html) · [新增实测报告](artifacts/depth/REPORT.md) · [新实验代码](depth.py) · [逐条新证据](artifacts/depth/results.json)
+[深化交互分析](https://llewynlune.github.io/ai-portfolio/projects/dpo-lab/depth-demo.html) · [新增实测报告](artifacts/depth/REPORT.md) · [新实验代码](depth.py) · [逐条新证据](artifacts/depth/results.json)
 
 原模型和原报告保持冻结；本批结果只写artifacts/depth。所有参数扫描均为探索，不在测试上选择配置后声称独立评测；AI辅助实现与本人独立贡献分开。

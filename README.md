@@ -1,99 +1,120 @@
-# 于跃 | AI Product Portfolio
+# 于跃 · AI Product Portfolio
 
-Agent / AI 产品 · 机电与电气工程背景
+**Agent 产品 / 领域知识产品化 / AI 工程验证**
+机电工程背景，关注强规则、重证据的业务流程如何落地为可协作的 AI 产品。
 
-[作品集主页](https://llewynlune.github.io/ai-portfolio/) · [GitHub 源码](https://github.com/LlewynLune/ai-portfolio) · [个人介绍](profile/README.md)
+[进入作品集](https://llewynlune.github.io/ai-portfolio/) · [产品实践](https://llewynlune.github.io/ai-portfolio/index.html#projects) · [研究与 Demo](https://llewynlune.github.io/ai-portfolio/index.html#experiments) · [个人介绍](profile/README.md)
 
-## 关于我
+## 从哪里开始
 
-我关注专业知识密集、强规则约束场景中的 Agent 产品。我的实践从机电审图和技术标准评审出发：将专家经验转成规则与知识，再组织为可协作、可追溯、可复算的产品流程。
-
-我负责过审核工作台、混合审核策略、权限、风险评分与数据看板的设计，推动产品上线或试点。工作中将判定与证据校验分层，以人工复核管理高风险结论，并通过真实使用数据和 Badcase 持续迭代。
-
-此外，我在 AI 辅助下搭建了14项研究与工程原型，覆盖多模态可靠性、Agent工作流、知识检索、大模型算法机制，以及电子、通信与AI数据中心场景。源码、Demo、实验报告和失败记录公开；AI辅助实现与本人独立复核分开记录，不以项目数量代替独立能力证明。
+|你想了解的内容|建议阅读路径|
+|---|---|
+|我的产品职责与上线实践|先看 AI 审图和标准化评审两个案例|
+|多模态实验与模型可靠性|运行 VideoGuard，再检查校准、定位和报警时限|
+|Agent 执行框架与工程判断|查看 FlowBench 的故障策略、证据轨迹和恢复边界|
+|前沿算法与工程交叉|阅读下方实验索引，按领域进入源码和冻结报告|
 
 ## 产品实践
 
 ### [AI 审图平台](business-cases/drawing-review/README.md)
-**于跃 · 立项发起 / 核心产品模块设计与上线**
+**立项发起 · 核心产品模块设计与上线**
 
-已上线，业务使用与持续迭代。
-
-审核工作台、规则＋模型分级路由、账号权限和数据看板。11 条结构化规则、9 条模型 Prompt 规则；6 轮、300+ Badcase 复盘，人工复核打回率低于 1%。
+将机电图纸审核组织为工作台、规则与模型分级路由、权限留痕和数据看板。完成 11 条规则、9 条审核 Prompt；经 6 轮、300+ Badcase 复盘，人工复核打回率低于 1%。
 
 ### [标准化线上平台](business-cases/standards-platform/README.md)
-**于跃 · 独立负责人 / 0—1 自主搭建**
+**独立负责人 · 0—1 搭建并投入试点**
 
-试点使用，配置化复用。
+将技术标准应答与偏离评审线上化：条目规则、证据校验、人工复核、五级状态评分和可复算风险看板，支持配置化复用。
 
-将技术标准应答与偏离评审线上化；条目级规则、判定＋校验、人工复核、五级状态评分和可复算风险看板。
+### [团队 Skill 与知识空间](business-cases/skills-knowledge/README.md)
+**AI 公共能力产品化**
 
-### [团队智能体技能空间与知识库](business-cases/skills-knowledge/README.md)
-**于跃 · AI 基建产品化 / 公共资产沉淀**
+沉淀 6 个可复用 Skill、10 章约 446 条术语，统一知识与调用口径；说明常驻、详细内容按需加载，服务两个产品。
 
-团队公共资产，服务两项 AI 产品。
+### [FORCE 大会 AIGC 宣传片](business-cases/force-aigc/README.md)
+**创意 · 分镜 · Prompt · 草稿交付**
 
-6 个可复用 Skill；10 章、约 446 条术语。技能说明常驻、详细知识按需调用，版本更新同步回归。
+独立完成创意到文生视频草稿的流程，围绕主体一致性、风格和镜头衔接进行筛选与修正。
 
-### [火山引擎 FORCE 大会宣传片](business-cases/force-aigc/README.md)
-**于跃 · 独立完整创作流程**
+> 以上职责、阶段和指标来自本人提供并确认可公开的履历。仓库不公开内部代码、图纸、客户材料或原始统计；打回率不等于整体准确率，草稿不等于正式投放。
 
-文生视频草稿交付。
+## 两项代表性工程实验
 
-从创意、分镜到 Prompt，按镜头筛选与修正主体、风格和衔接；交付状态不等于正式投放。
+### VideoGuard-Lab · 音画事件同步与可靠性
 
-项目职责、阶段与指标来自本人提供并确认可公开的简历。未公开公司系统、图纸、客户材料、代码或原始统计记录；指标未在本仓库独立审计。打回率不改写为整体准确率，草稿不写成正式投放成果。
+从 RGB / PCM 事件估计延时，比较相关性、MLP 与双塔表示；继续检查预测集合、局部矛盾、漂移定位与报警时限。
 
-## 教育经历
+[模型演示](https://llewynlune.github.io/ai-portfolio/projects/video-guard/demo.html) · [深化分析](https://llewynlune.github.io/ai-portfolio/projects/video-guard/depth-demo.html) · [代码与方法](projects/video-guard/README.md) · [定位报告](projects/video-guard/artifacts/drift-localization/REPORT.md)
 
-- **新加坡南洋理工大学｜硕士在读，预计2028年毕业**。专业及入学日期未提供，不补写。
-- **澳门大学｜科技学院·机电工程｜全日制本科，2021.08—2026.01**。
-  模拟与混合信号超大规模集成电路国家重点实验室；校级学生干部。
+### FlowBench · Agent 工作流可靠性
 
-## 产品方法
+在同一故障清单下比较单次执行、有限重试与幂等恢复，追踪排队、失败、提交副作用和 SQLite 恢复。
 
-1. 领域规则结构化：明确适用范围、证据要求、偏离等级、责任人与操作权限。
-2. 人机协作：规则/模型分级路由，判定与校验分层，低置信或证据不足转人工复核。
-3. 数据闭环：任务与状态埋点、复核反馈、Badcase复盘，持续迭代规则、Prompt、知识召回和评分量表。
-4. 可复用AI资产：将公共Skill、术语和规则分层管理，降低重复搭建与上下文占用。
+[交互实验台](https://llewynlune.github.io/ai-portfolio/projects/reliability-lab/demo.html) · [深化分析](https://llewynlune.github.io/ai-portfolio/projects/reliability-lab/depth-demo.html) · [源码与架构](projects/reliability-lab/README.md) · [工程报告](projects/reliability-lab/results/advanced/REPORT.md)
 
-## 研究与工程实验｜与业务实践分开展示
+**这些实验为 AI 辅助实现的研究原型，不是上述业务平台的内部系统，也不包装成既往独立研发或生产成果。**
 
-以下14项为AI辅助研究原型，代码、实验、日志与失败边界公开；不是上述业务平台的内部实现，也不包装成既往独立研发或生产成果。真实远程LLM接口未调用；Python实验仅本机运行，Pages是静态展示。
+## 实验索引
 
-|实验|验证内容|入口|
+<details>
+<summary>展开全部 14 项 · 按领域查看</summary>
+
+### 模型评测与知识检索
+
+|项目|要验证的问题|阅读入口|
 |---|---|---|
-|FlowBench|故障、有限重试、幂等恢复、BM25与崩溃回放|[Demo](projects/reliability-lab/demo.html) · [说明](projects/reliability-lab/README.md)|
-|VideoGuard-Lab|音画同步、双塔对比、校准拒估、因果漂移定位；77项项目测试|[Demo](projects/video-guard/demo.html) · [定位](projects/video-guard/DRIFT.md) · [校准](projects/video-guard/CALIBRATION.md)|
-|TextGuard|TF-IDF＋Logistic真实训练、留出与权重解释|[Demo](projects/textguard/demo.html) · [报告](projects/textguard/artifacts/REPORT.md)|
-|CiteRAG|BM25/字符/RRF，引用、摘录与拒答|[Demo](projects/cite-rag/demo.html) · [报告](projects/cite-rag/artifacts/REPORT.md)|
-|NoveltyLab|正常训练拟合、验证阈值、三模型与分布迁移|[Demo](projects/novelty-lab/demo.html) · [报告](projects/novelty-lab/artifacts/REPORT.md)|
-|VisionCal|小型神经网络、温度校准与图像扰动|[Demo](projects/vision-cal/demo.html) · [报告](projects/vision-cal/artifacts/REPORT.md)|
-|CircuitID|RC仿真辨识，物理/规则/学习对照|[Demo](projects/circuit-id/demo.html) · [报告](projects/circuit-id/artifacts/REPORT.md)|
-|ChannelEst|理想频域导频估计、NMSE/BER和先验迁移|[Demo](projects/channel-est/demo.html) · [报告](projects/channel-est/artifacts/REPORT.md)|
-|PowerScope|合成功率时序、计划特征消融、漂移失败|[Demo](projects/power-scope/demo.html) · [报告](projects/power-scope/artifacts/REPORT.md)|
-|TinyAttention|因果注意力、真实CPU训练、无注意力消融与长度OOD|[Demo](projects/tiny-attention/demo.html) · [报告](projects/tiny-attention/artifacts/REPORT.md)|
-|LoRA-Lab|冻结基座、rank1/4、合并校验与遗忘|[Demo](projects/lora-lab/demo.html) · [报告](projects/lora-lab/artifacts/REPORT.md)|
-|DPO-Lab|reference、beta与SFT对照，偏好/准确率/KL分开|[Demo](projects/dpo-lab/demo.html) · [报告](projects/dpo-lab/artifacts/REPORT.md)|
-|SparseMoE|真实top1专家分发、负载平衡与dense对照|[Demo](projects/moe-lab/demo.html) · [报告](projects/moe-lab/artifacts/REPORT.md)|
-|SpecDecode|双模型训练、greedy块验证、逐token一致与CPU计时|[Demo](projects/spec-decode/demo.html) · [报告](projects/spec-decode/artifacts/REPORT.md)|
+|TextGuard|词项变形、留出误判和可解释推断|[Demo](https://llewynlune.github.io/ai-portfolio/projects/textguard/demo.html) / [源码](projects/textguard/README.md)|
+|VisionCal|置信校准与噪声、平移、遮挡|[Demo](https://llewynlune.github.io/ai-portfolio/projects/vision-cal/demo.html) / [源码](projects/vision-cal/README.md)|
+|NoveltyLab|阈值、分布迁移与逐维扰动|[Demo](https://llewynlune.github.io/ai-portfolio/projects/novelty-lab/demo.html) / [源码](projects/novelty-lab/README.md)|
+|CiteRAG|混合检索、内容去重与证据不足拒答|[Demo](https://llewynlune.github.io/ai-portfolio/projects/cite-rag/demo.html) / [源码](projects/cite-rag/README.md)|
+|VideoGuard-Lab|音画同步、拒估、定位与报警时限|[Demo](https://llewynlune.github.io/ai-portfolio/projects/video-guard/demo.html) / [源码](projects/video-guard/README.md)|
+|FlowBench|故障恢复、幂等和副作用证据|[Demo](https://llewynlune.github.io/ai-portfolio/projects/reliability-lab/demo.html) / [源码](projects/reliability-lab/README.md)|
 
-前三项前沿机制共享TinyAttention小型基座，不能视为独立大模型研究；电子/通信/功率项目为仿真与合成数据，非真实设备测试。数据和论文方法引用保留，不包含他人作品集或人才对标。
+### 算法机制
 
-[前沿机制实验地图](docs/frontier-evidence.md) · [跨学科证据](docs/cross-disciplinary-evidence.md) · [数据与方法来源](docs/ai-project-reference.md) · [实验真实性](docs/ai-evidence.md)
+|项目|要验证的问题|阅读入口|
+|---|---|---|
+|TinyAttention|因果注意力、消融与长度外推|[Demo](https://llewynlune.github.io/ai-portfolio/projects/tiny-attention/demo.html) / [源码](projects/tiny-attention/README.md)|
+|LoRA-Lab|低秩适配、合并与新旧任务取舍|[Demo](https://llewynlune.github.io/ai-portfolio/projects/lora-lab/demo.html) / [源码](projects/lora-lab/README.md)|
+|DPO-Lab|偏好赢率、Top-1、KL 与遗忘|[Demo](https://llewynlune.github.io/ai-portfolio/projects/dpo-lab/demo.html) / [源码](projects/dpo-lab/README.md)|
+|SparseMoE|专家容量、负载与丢弃|[Demo](https://llewynlune.github.io/ai-portfolio/projects/moe-lab/demo.html) / [源码](projects/moe-lab/README.md)|
+|SpecDecode|逐 token 一致、真实 KV 缓存与开销|[Demo](https://llewynlune.github.io/ai-portfolio/projects/spec-decode/demo.html) / [源码](projects/spec-decode/README.md)|
 
-## 14项深化批次
+### 电子、通信与电气 AI
 
-本轮每项新增针对性的代码、压力实验或冻结证据再分析，以及可操作的Depth Study：条件/模型/指标筛选、失败下钻、专属诊断和证据导出。原模型与报告不覆盖；新前缀排除已有数据ID，相关扰动和重复计时不冒充独立样本。
+|项目|要验证的问题|阅读入口|
+|---|---|---|
+|CircuitID|RC 参数、未知增益与偏置拟合|[Demo](https://llewynlune.github.io/ai-portfolio/projects/circuit-id/demo.html) / [源码](projects/circuit-id/README.md)|
+|ChannelEst|缺失导频、NMSE 与欠定拒估|[Demo](https://llewynlune.github.io/ai-portfolio/projects/channel-est/demo.html) / [源码](projects/channel-est/README.md)|
+|PowerScope|时间留出、负荷漂移与区间覆盖|[Demo](https://llewynlune.github.io/ai-portfolio/projects/power-scope/demo.html) / [源码](projects/power-scope/README.md)|
 
-[逐项深化清单与完整入口](docs/project-depth.md) · [复现与本机API说明](docs/depth-engineering.md)。新增只读localhost分页API见scripts/depth_server.py；不运行外部模型、设备或公网服务。
+</details>
 
-## 复现与维护
+[14 项深化清单](docs/project-depth.md) · [复现与本机 API](docs/depth-engineering.md) · [数据与方法来源](docs/ai-project-reference.md)
 
-- 结构、Markdown链接与敏感入口检查：python3 scripts/check_portfolio.py。
-- 仓库回归：python3 -m unittest discover -s tests -v；各项目训练依赖与运行见对应README。
-- VideoGuard：进入projects/video-guard，运行python3 -m unittest discover -s tests -v。
-- 履历内容由 profile/resume.json 管理；python3 scripts/build_resume_portfolio.py 确定性重建主页，不修改既有案例文档或重训模型。
-- [公开披露与证据边界](PUBLISHING.md) · [GitHub维护](docs/github-setup-guide.md)。
+## 教育与方向
 
-当前展示版 v1.4：14项研究全部增加Depth Study入口；完成项目特定的研究与工程深化，保留原模型、原报告与矢量配图。星空首屏、校徽、头像及4项真实业务履历不变。发布状态以最新GitHub Actions为准。
+- **南洋理工大学** · 硕士在读，预计 2028 年毕业。
+- **澳门大学** · 科技学院机电工程本科，2021.08—2026.01；模拟与混合信号超大规模集成电路国家重点实验室，校级学生干部。
+- **产品方法** · 规则与证据结构化、人机协同、Badcase 数据闭环、公共知识与 Skill 复用。
+
+## 运行与证据
+
+项目源码、测试和运行指南在各项目 README；主页与 Demo 是静态展示。原始协议、冻结模型、失败记录和新旧证据保留。
+
+- 结构与链接检查：python3 scripts/check_portfolio.py。
+- 仓库测试：python3 -m unittest discover -s tests -v。
+- 履历事实源：profile/resume.json；主页生成器不重训模型或修改案例事实。
+
+<details>
+<summary>贡献与适用边界</summary>
+
+研究代码与实验由 AI 辅助实现，本人独立理解、修改与复核贡献应如实记录。LoRA / DPO 共享 TinyAttention 小型基座；电子、通信和电力为仿真或合成数据，未做设备实测。真实 LLM 接口未调用，静态发布不是 Python 后端或生产上线。
+
+同一输入的扰动、门限分析与重复计时并非独立样本；高分和记录数不证明泛化。本人教育未提供的专业和入学月份不补写。
+
+[完整披露](PUBLISHING.md) · [实验真实性](docs/ai-evidence.md) · [前沿机制证据](docs/frontier-evidence.md)
+
+</details>
+
+展示版本 v1.5 · 统一导航、图表、表格与阅读路径；实验数据与业务履历保持不变。

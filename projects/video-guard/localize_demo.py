@@ -41,6 +41,10 @@ def build():
     html=html.replace('<section id="research"',PANEL+'<section id="research"',1)
     html=html.replace("['lab','evidence','depth','research'].forEach","['lab','evidence','depth','localization','research'].forEach")
     script=DETECT_JS+SCRIPT.replace('__DRIFT__',json.dumps(data,ensure_ascii=False).replace('</','<\\/'))
-    html=html.replace('</script>',script+'</script>',1);(ROOT/'demo.html').write_text(html)
+    html=html.replace('</script>',script+'</script>',1)
+    import sys
+    sys.path.insert(0,str(ROOT.parents[1]/'scripts'))
+    from demo_presentation import polish
+    (ROOT/'demo.html').write_text(polish(html,'video-guard'))
     print('Causal localization demo built',len(html.encode()),'bytes')
 if __name__=='__main__':build()

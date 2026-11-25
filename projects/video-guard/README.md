@@ -1,10 +1,15 @@
 # VideoGuard-Lab — 音画事件同步与拒估研究
 
+<!-- project-navigation:start -->
+[运行 Demo](https://llewynlune.github.io/ai-portfolio/projects/video-guard/demo.html) · [深化分析](https://llewynlune.github.io/ai-portfolio/projects/video-guard/depth-demo.html) · [作品集](https://llewynlune.github.io/ai-portfolio/index.html#experiments)
+<!-- project-navigation:end -->
+
+
 > AI 辅助搭建的可复现研究原型。主线只有一个：由观察到的视觉与音频估计事件延时，并验证何时不该给出唯一答案。不是 Seedance/Claude 复刻，不是唇形同步系统，不是生产视频审核服务。
 
 ## 从这里进入
 
-- [交互实验台](demo.html)：真实导出参数在浏览器运行；改变延时、干扰和增益；查看概率、预测集合及分窗矛盾。页面单文件离线可用。
+- [交互实验台](https://llewynlune.github.io/ai-portfolio/projects/video-guard/demo.html)：真实导出参数在浏览器运行；改变延时、干扰和增益；查看概率、预测集合及分窗矛盾。页面单文件离线可用。
 - [实际实验报告](artifacts/REPORT.md)：同场基线、消融、三随机种子、八类条件、负对照和不利发现。
 - [方法与公式](METHOD.md)：数据生成、相关性、共享排名 MLP、双塔 InfoNCE、校准、拒估协议。
 - [研究来源与选题](RESEARCH.md)：字节公开创新项目、视频多模态研究、Anthropic 可核实公开工程材料；公开来源与自建贡献分开。
@@ -91,6 +96,6 @@ python3 -m videoguard.media my-owned-clip.mp4 --out local-report.json
 
 新增同时约束定位容差与实际报警延迟的事件匹配，比较500–2000ms时限；明确回溯边界准确不等于及时报警。
 
-[深化交互分析](depth-demo.html) · [新增实测报告](artifacts/depth/REPORT.md) · [新实验代码](depth.py) · [逐条新证据](artifacts/depth/results.json)
+[深化交互分析](https://llewynlune.github.io/ai-portfolio/projects/video-guard/depth-demo.html) · [新增实测报告](artifacts/depth/REPORT.md) · [新实验代码](depth.py) · [逐条新证据](artifacts/depth/results.json)
 
 原模型和原报告保持冻结；本批结果只写artifacts/depth。所有参数扫描均为探索，不在测试上选择配置后声称独立评测；AI辅助实现与本人独立贡献分开。

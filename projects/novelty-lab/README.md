@@ -1,8 +1,13 @@
 # NoveltyLab｜多变量新颖性检测
 
+<!-- project-navigation:start -->
+[运行 Demo](https://llewynlune.github.io/ai-portfolio/projects/novelty-lab/demo.html) · [深化分析](https://llewynlune.github.io/ai-portfolio/projects/novelty-lab/depth-demo.html) · [作品集](https://llewynlune.github.io/ai-portfolio/index.html#experiments)
+<!-- project-navigation:end -->
+
+
 状态：实际拟合三类本地模型 + 数值推断 Demo；AI 辅助实现。不是工业异常检测、欺诈识别、生产业务或原创算法。
 
-[Demo](demo.html) · [实测报告](artifacts/REPORT.md) · [部署模型](artifacts/model.json) · [全部结果](artifacts/results.json) · [完整性](artifacts/checksums.json)
+[Demo](https://llewynlune.github.io/ai-portfolio/projects/novelty-lab/demo.html) · [实测报告](artifacts/REPORT.md) · [部署模型](artifacts/model.json) · [全部结果](artifacts/results.json) · [完整性](artifacts/checksums.json)
 
 ## 定义的任务
 
@@ -42,6 +47,6 @@ python3 scripts/build_ai_demos.py
 
 新增13维单特征标准化扰动与决策翻转；距离归因改为相对拟合中心的平方贡献，明确相关变体不能当独立样本。
 
-[深化交互分析](depth-demo.html) · [新增实测报告](artifacts/depth/REPORT.md) · [新实验代码](depth.py) · [逐条新证据](artifacts/depth/results.json)
+[深化交互分析](https://llewynlune.github.io/ai-portfolio/projects/novelty-lab/depth-demo.html) · [新增实测报告](artifacts/depth/REPORT.md) · [新实验代码](depth.py) · [逐条新证据](artifacts/depth/results.json)
 
 原模型和原报告保持冻结；本批结果只写artifacts/depth。所有参数扫描均为探索，不在测试上选择配置后声称独立评测；AI辅助实现与本人独立贡献分开。

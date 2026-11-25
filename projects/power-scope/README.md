@@ -1,5 +1,10 @@
 # PowerScope｜AI数据中心电力负荷的离线预测与漂移
 
+<!-- project-navigation:start -->
+[运行 Demo](https://llewynlune.github.io/ai-portfolio/projects/power-scope/demo.html) · [深化分析](https://llewynlune.github.io/ai-portfolio/projects/power-scope/depth-demo.html) · [作品集](https://llewynlune.github.io/ai-portfolio/index.html#experiments)
+<!-- project-navigation:end -->
+
+
 状态：核心真实训练/数值评测与本地模型推断已完成；AI辅助研究原型，不是生产项目或过往本人独立履历。
 
 **方向：AI数据中心 / 电气工程 / 时序机器学习**
@@ -10,7 +15,7 @@
 
 ## 完整入口
 
-[交互Demo](demo.html) · [方法与评测](METHOD.md) · [模型卡](MODEL_CARD.md) · [全部实测](artifacts/REPORT.md) · [逐条结果](artifacts/results.json) · [参数](artifacts/model.json) · [哈希](artifacts/checksums.json)
+[交互Demo](https://llewynlune.github.io/ai-portfolio/projects/power-scope/demo.html) · [方法与评测](METHOD.md) · [模型卡](MODEL_CARD.md) · [全部实测](artifacts/REPORT.md) · [逐条结果](artifacts/results.json) · [参数](artifacts/model.json) · [哈希](artifacts/checksums.json)
 
 ## 实现结构
 
@@ -40,6 +45,6 @@ python3 scripts/build_cross_demos.py
 
 新增每日时间块偏差/尾差、区间宽度与覆盖率诊断、线性贡献复算；仅分析冻结预测，不控制电气设备。
 
-[深化交互分析](depth-demo.html) · [新增实测报告](artifacts/depth/REPORT.md) · [新实验代码](depth.py) · [逐条新证据](artifacts/depth/results.json)
+[深化交互分析](https://llewynlune.github.io/ai-portfolio/projects/power-scope/depth-demo.html) · [新增实测报告](artifacts/depth/REPORT.md) · [新实验代码](depth.py) · [逐条新证据](artifacts/depth/results.json)
 
 原模型和原报告保持冻结；本批结果只写artifacts/depth。所有参数扫描均为探索，不在测试上选择配置后声称独立评测；AI辅助实现与本人独立贡献分开。

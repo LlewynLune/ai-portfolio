@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Build self-contained demos from trained parameters and measured results."""
 import json
+from demo_presentation import polish
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 CSS='''*{box-sizing:border-box}body{margin:0;background:#f7f8f3;color:#192a27;font:15px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;overflow-wrap:anywhere}main{max-width:1100px;margin:auto;padding:35px 26px}a{color:#225d48}h1{font-size:38px;line-height:1.3;margin:16px 0}h2{font-size:20px}p,.muted{color:#66756f}.label{font-size:12px;letter-spacing:2px;color:#225d48}.badge{display:inline-block;background:#e9f0e8;color:#225d48;border-radius:25px;padding:5px 12px;font-size:12px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.card{padding:24px;background:white;border:1px solid #d8e0d9;border-radius:10px;min-width:0}input,textarea,select,button{font:inherit}textarea,input{width:100%;border:1px solid #d8e0d9;border-radius:6px;padding:12px}textarea{min-height:110px}button{background:#225d48;color:white;border:0;border-radius:5px;padding:10px 20px;cursor:pointer;margin:10px 6px 10px 0}select{border:1px solid #d8e0d9;border-radius:5px;padding:8px;max-width:100%}button:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #bb8c3c;outline-offset:3px}.metric{font-size:38px;color:#225d48}.warning{border-left:3px solid #a7752d;padding-left:14px;font-size:13px}.scroll{overflow:auto}table{width:100%;border-collapse:collapse;font-size:12px}th,td{padding:9px;text-align:left;border-bottom:1px solid #d8e0d9;white-space:nowrap}.trace{padding:12px 0;border-bottom:1px solid #d8e0d9;font-size:13px}.footer{padding-top:24px;font-size:12px}.full{grid-column:1/-1}@media(max-width:700px){.grid{grid-template-columns:1fr}h1{font-size:29px}}'''
@@ -8,7 +9,7 @@ CSS='''*{box-sizing:border-box}body{margin:0;background:#f7f8f3;color:#192a27;fo
 def build(project,title,subtitle,body,js,data):
  encoded=json.dumps(data,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
  html=f'''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{title}</title><style>{CSS}</style></head><body><main><a href="../../index.html">← 于跃作品集</a><div class="label">LOCAL AI · EXPERIMENTS · EVIDENCE</div><h1>{title}</h1><p>{subtitle}</p><span class="badge">AI 辅助实现 · 可运行研究原型</span><div class="grid" style="margin-top:25px">{body}</div><p class="footer">代码与评测由 AI 辅助搭建；本人独立修改/验证贡献待记录。不是 ByteDance 官方作品或生产成果。</p></main><script id="data" type="application/json">{encoded}</script><script>'use strict';const data=JSON.parse(document.getElementById('data').textContent);const $=id=>document.getElementById(id);const text=(tag,v)=>{{const e=document.createElement(tag);e.textContent=String(v??'—');return e;}};function table(id,rows){{const el=$(id);el.replaceChildren();rows.forEach(v=>{{const tr=text('tr','');v.forEach(x=>tr.append(text('td',x)));el.append(tr);}});}}{js}</script></body></html>'''
- (ROOT/'projects'/project/'demo.html').write_text(html,encoding='utf-8')
+ (ROOT/'projects'/project/'demo.html').write_text(polish(html,project),encoding='utf-8')
 
 def main():
  def read(p,n):return json.loads((ROOT/'projects'/p/'artifacts'/n).read_text())

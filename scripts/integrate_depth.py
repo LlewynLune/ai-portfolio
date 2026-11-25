@@ -23,10 +23,10 @@ def build():
     lines=['# 14项研究工程项目｜深化批次','', '本批为AI辅助代码增量、新压力实验与冻结证据再分析；不新增项目计数、不重训大模型、不修改四项真实业务履历。', '', '## 每项实际增量','', '|项目|新增内容|记录|入口|','|---|---|---:|---|'];total=0
     for folder,desc in DESCRIPTIONS.items():
         path=ROOT/'projects'/folder;r=json.loads((path/'artifacts/depth/results.json').read_text());total+=len(r['records'])
-        block='\n## 深化批次：研究与工程验证\n\n'+desc+'\n\n[深化交互分析](depth-demo.html) · [新增实测报告](artifacts/depth/REPORT.md) · [新实验代码](depth.py) · [逐条新证据](artifacts/depth/results.json)\n\n原模型和原报告保持冻结；本批结果只写artifacts/depth。所有参数扫描均为探索，不在测试上选择配置后声称独立评测；AI辅助实现与本人独立贡献分开。\n'
+        block='\n## 深化批次：研究与工程验证\n\n'+desc+'\n\n[深化交互分析](https://llewynlune.github.io/ai-portfolio/projects/'+folder+'/depth-demo.html) · [新增实测报告](artifacts/depth/REPORT.md) · [新实验代码](depth.py) · [逐条新证据](artifacts/depth/results.json)\n\n原模型和原报告保持冻结；本批结果只写artifacts/depth。所有参数扫描均为探索，不在测试上选择配置后声称独立评测；AI辅助实现与本人独立贡献分开。\n'
         old=(path/'README.md').read_text()
         if '## 深化批次：研究与工程验证' not in old:(path/'README.md').write_text(old.rstrip()+'\n'+block)
-        lines.append('|'+folder+'|'+desc+'|'+str(len(r['records']))+'|[Demo](../projects/'+folder+'/depth-demo.html) / [报告](../projects/'+folder+'/artifacts/depth/REPORT.md)|')
+        lines.append('|'+folder+'|'+desc+'|'+str(len(r['records']))+'|[Demo](https://llewynlune.github.io/ai-portfolio/projects/'+folder+'/depth-demo.html) / [报告](../projects/'+folder+'/artifacts/depth/REPORT.md)|')
     lines+=['','本批共'+str(total)+'条记录；其中含同一媒体的门限重分析、相关扰动和重复计时，不等于独立真实样本数量。','', '## 工程使用','', '- 原Demo继续运行模型推断；Depth Study用于条件/模型/指标选择、失败筛选、分页、逐条下钻、专属诊断与导出。','- 离线HTML内联全部证据，无账号、密钥或远程网络请求。','- scripts/depth_server.py是只读localhost分页API，提供health/projects/evidence；不公网部署、不执行模型训练或外部调用。','- 复现依赖见requirements-depth.txt，运行对应depth.py，再用scripts/build_depth_demos.py重建。','- NumPy独立Attention前缀/KV缓存、LoRA合并、MoE容量、导频拒估、RC拟合、API只读和来源哈希均有专项测试。','', '## 不能宣称','', '无真实LLM调用、生产服务、硬件实测、真实视频标注、原创论文或全部本人独立研发。固定公开数据、合成/仿真与旧结果再分析性质逐项保留。可运行和记录数不是满分证明。','']
     (ROOT/'docs/project-depth.md').write_text('\n'.join(lines));print('Integrated 14 project depth updates;',total,'records')
 if __name__=='__main__':build()

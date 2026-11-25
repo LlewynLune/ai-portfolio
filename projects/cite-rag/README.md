@@ -1,8 +1,13 @@
 # CiteRAG｜可追溯检索问答与真实大模型接口
 
+<!-- project-navigation:start -->
+[运行 Demo](https://llewynlune.github.io/ai-portfolio/projects/cite-rag/demo.html) · [深化分析](https://llewynlune.github.io/ai-portfolio/projects/cite-rag/depth-demo.html) · [作品集](https://llewynlune.github.io/ai-portfolio/index.html#experiments)
+<!-- project-navigation:end -->
+
+
 状态：本地检索/摘录已实测，真实 LLM HTTPS 调用模块已实现但未配置、未调用评测；不把测试桩或本地摘录当作大模型成果。
 
-[Demo](demo.html) · [本地评测](artifacts/REPORT.md) · [全部结果](artifacts/results.json) · [完整性](artifacts/checksums.json) · [真实接口](llm_adapter.py)
+[Demo](https://llewynlune.github.io/ai-portfolio/projects/cite-rag/demo.html) · [本地评测](artifacts/REPORT.md) · [全部结果](artifacts/results.json) · [完整性](artifacts/checksums.json) · [真实接口](llm_adapter.py)
 
 ## 已实现
 
@@ -45,6 +50,6 @@ python3 projects/cite-rag/llm_adapter.py --query "retry transient bounded attemp
 
 新增内容指纹去重的RRF检索模块，在重复文档与无关文档注入下对照排名、拒答和可追踪摘录。
 
-[深化交互分析](depth-demo.html) · [新增实测报告](artifacts/depth/REPORT.md) · [新实验代码](depth.py) · [逐条新证据](artifacts/depth/results.json)
+[深化交互分析](https://llewynlune.github.io/ai-portfolio/projects/cite-rag/depth-demo.html) · [新增实测报告](artifacts/depth/REPORT.md) · [新实验代码](depth.py) · [逐条新证据](artifacts/depth/results.json)
 
 原模型和原报告保持冻结；本批结果只写artifacts/depth。所有参数扫描均为探索，不在测试上选择配置后声称独立评测；AI辅助实现与本人独立贡献分开。

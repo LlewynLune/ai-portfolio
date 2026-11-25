@@ -1,12 +1,17 @@
 # FlowBench｜AI 工作流可靠性实验台
 
+<!-- project-navigation:start -->
+[运行 Demo](https://llewynlune.github.io/ai-portfolio/projects/reliability-lab/demo.html) · [深化分析](https://llewynlune.github.io/ai-portfolio/projects/reliability-lab/depth-demo.html) · [作品集](https://llewynlune.github.io/ai-portfolio/index.html#experiments)
+<!-- project-navigation:end -->
+
+
 > 状态：本地可运行研究原型（0.2.0），AI 辅助搭建；支持合成 I/O 和实际本地 BM25 检索，不含真实 LLM。不是公司业务平台或生产上线成果。
 
 面向正在搭建 Agent/AI 工作流的人，回答一个小而可验证的问题：**模型之外的执行框架，如何让暂时失败可恢复、永久错误可解释、提交副作用不重复？**
 
 ## 30 秒看成果
 
-- [交互展示](demo.html)：离线查看参考实测、按策略/任务追踪事件、导出/导入 JSON。本机服务启动后可重新运行。
+- [交互展示](https://llewynlune.github.io/ai-portfolio/projects/reliability-lab/demo.html)：离线查看参考实测、按策略/任务追踪事件、导出/导入 JSON。本机服务启动后可重新运行。
 - [研究故事](RESEARCH_STORY.md)：成功率、重复副作用、参数公平性与检索泛化的四个问题。
 - [v0.2 深化报告](results/advanced/REPORT.md)：本地检索、困难改写组、实际子进程崩溃恢复、并发与单次超时参数矩阵。
 - [评测报告](results/reference/REPORT.md)：6 类负载、4 种策略、每种 5 次重复；原始事件完整保留。
@@ -88,6 +93,6 @@ clean / transient / mixed / ack_loss / permanent / slow。故障定义见 [confi
 
 新增81次真实本地异步负载实验，分故障/并发/种子比较策略；增加SQLite重开后暂停恢复和重复副作用核验。
 
-[深化交互分析](depth-demo.html) · [新增实测报告](artifacts/depth/REPORT.md) · [新实验代码](depth.py) · [逐条新证据](artifacts/depth/results.json)
+[深化交互分析](https://llewynlune.github.io/ai-portfolio/projects/reliability-lab/depth-demo.html) · [新增实测报告](artifacts/depth/REPORT.md) · [新实验代码](depth.py) · [逐条新证据](artifacts/depth/results.json)
 
 原模型和原报告保持冻结；本批结果只写artifacts/depth。所有参数扫描均为探索，不在测试上选择配置后声称独立评测；AI辅助实现与本人独立贡献分开。
