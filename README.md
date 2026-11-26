@@ -46,9 +46,9 @@
 
 ## 新增项目：Laminar-Lab · 异步 RL 后训练机制
 
-[项目页](https://llewynlune.github.io/ai-portfolio/projects/laminar-lab/project.html) · [实际训练证据浏览](https://llewynlune.github.io/ai-portfolio/projects/laminar-lab/evidence.html) · [代码、方法与边界](projects/laminar-lab/README.md)
+[项目页](https://llewynlune.github.io/ai-portfolio/projects/laminar-lab/project.html) · [真实 Qwen LoRA 实验](https://llewynlune.github.io/ai-portfolio/projects/laminar-lab/qwen-study.html) · [实时异步训练与恢复](https://llewynlune.github.io/ai-portfolio/projects/laminar-lab/live-study.html) · [此前训练证据](https://llewynlune.github.io/ai-portfolio/projects/laminar-lab/evidence.html) · [代码、方法与边界](projects/laminar-lab/README.md)
 
-实际自回归小型 MLP RL、rollout/learner 解耦、不可变 Relay、同版本组、token ratio clipping、staleness、packing 与真实子进程恢复。30 次训练包含探索/控制/敏感性，不是 30 个独立任务；直接执行固定官方 pure repack planner 的 100 个合约场景，不冒充官方完整训练或集群性能。固定学习探针有 prompt overlap、结果随种子变化，保留失败而非宣称满分。
+v2.2继续把实时producer/learner与持久化恢复接入同一链路：逐token prefix/RNG、不可变policy、真实Adam状态与消费原子事务。24个运行链包含16次实际进程退出，480次提交更新按真实样本重放核验；保留未消费/丢弃和5类篡改检查，不宣称分布式exactly-once、大模型微调或泛化。原30次实验及官方pure planner合约保持。
 
 ## 本轮主攻：CiteRAG · 来源可校验的大模型记忆
 
@@ -152,4 +152,4 @@
 
 </details>
 
-研发版本 v2.1 · 原14项目与4业务案例保持，新增第15项 Laminar-Lab，并继续深化学习器事务恢复与同样本配对重放。公众号、原创文章全文与播客仅作More about me补充，不计主要项目。
+研发版本 v2.3 · 项目数量不变。Laminar-Lab 新增公开量化语言模型的实际 LoRA 训练，检查奖励饱和、训练集校准和策略滞后；单机实时异步恢复证据独立保留。原14项目、业务履历、主页样式和个人补充不改。

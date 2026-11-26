@@ -59,5 +59,10 @@ $('run-select').onchange=e=>{runIndex=+e.target.value;page=0;render()};$('view-s
 </script>'''
  js=js.replace('REPLACE_DATA',json.dumps(records,ensure_ascii=False,allow_nan=False).replace('</','<\\/'))
  (P/'evidence.html').write_text(shell('Laminar-Lab | Actual RL Evidence',ui+js));print('Built Laminar landing and',len(data),'frozen run explorer; bytes',(P/'evidence.html').stat().st_size)
- checks={str(f.relative_to(P)):hashlib.sha256(f.read_bytes()).hexdigest() for f in P.rglob('*') if f.is_file() and '__pycache__' not in f.parts and f.name!='checksums.json'};(P/'artifacts/checksums.json').write_text(json.dumps(checks,indent=2))
+ from build_laminar_live_pages import build as build_live
+ if (P/'artifacts/live-system/summary.json').exists():build_live()
+ if (P/'artifacts/qwen-audit.json').exists():
+  from build_laminar_qwen_page import build as build_qwen
+  build_qwen()
+ checks={str(f.relative_to(P)):hashlib.sha256(f.read_bytes()).hexdigest() for f in sorted(P.rglob('*')) if f.is_file() and not any(x.startswith('.') or x=='__pycache__' for x in f.relative_to(P).parts) and f.name!='checksums.json'};(P/'artifacts/checksums.json').write_text(json.dumps(checks,indent=2))
 if __name__=='__main__':build()

@@ -1,0 +1,771 @@
+{
+  "runs": [
+    {
+      "name": "7-none",
+      "seed": 7,
+      "fault": "none",
+      "capacity": 12,
+      "bound": null,
+      "mean_consume_staleness": 0.7,
+      "max_consume_staleness": 3,
+      "counts": {
+        "consumed": 120,
+        "discarded": 0,
+        "partial": 0,
+        "ready": 0,
+        "running": 4
+      },
+      "fixed_probe": {
+        "heldout_sequence_accuracy": 0.4375,
+        "heldout_target_probability": 0.6700652237262259,
+        "heldout_token_accuracy": 0.7098976109215017,
+        "sequences": 160,
+        "tokens": 586
+      },
+      "audit": {
+        "all_checks_passed": true,
+        "independent_trajectory_rewards": 487,
+        "replayed_adam_updates": 20,
+        "consumed_groups": 120,
+        "events_verified": 2017,
+        "sessions": 1,
+        "restored_nonempty_prefixes": 0,
+        "no_duplicate_consumption": true,
+        "version_consistent": true,
+        "inventory_conserved": true,
+        "hash_chain_not_signature": true
+      },
+      "elapsed_with_restart_s": 1.0214555421844125,
+      "generated_groups": 124
+    },
+    {
+      "name": "7-token_prefix",
+      "seed": 7,
+      "fault": "token_prefix",
+      "capacity": 12,
+      "bound": null,
+      "mean_consume_staleness": 0.7333333333333333,
+      "max_consume_staleness": 3,
+      "counts": {
+        "consumed": 120,
+        "discarded": 0,
+        "partial": 0,
+        "ready": 0,
+        "running": 4
+      },
+      "fixed_probe": {
+        "heldout_sequence_accuracy": 0.4375,
+        "heldout_target_probability": 0.6486235736099585,
+        "heldout_token_accuracy": 0.7593856655290102,
+        "sequences": 160,
+        "tokens": 586
+      },
+      "audit": {
+        "all_checks_passed": true,
+        "independent_trajectory_rewards": 488,
+        "replayed_adam_updates": 20,
+        "consumed_groups": 120,
+        "events_verified": 2025,
+        "sessions": 2,
+        "restored_nonempty_prefixes": 3,
+        "no_duplicate_consumption": true,
+        "version_consistent": true,
+        "inventory_conserved": true,
+        "hash_chain_not_signature": true
+      },
+      "elapsed_with_restart_s": 1.1052926257252693,
+      "generated_groups": 124
+    },
+    {
+      "name": "7-before_commit",
+      "seed": 7,
+      "fault": "before_commit",
+      "capacity": 12,
+      "bound": null,
+      "mean_consume_staleness": 0.7166666666666667,
+      "max_consume_staleness": 3,
+      "counts": {
+        "consumed": 120,
+        "discarded": 0,
+        "partial": 0,
+        "ready": 0,
+        "running": 4
+      },
+      "fixed_probe": {
+        "heldout_sequence_accuracy": 0.2125,
+        "heldout_target_probability": 0.5199030559140605,
+        "heldout_token_accuracy": 0.5273037542662116,
+        "sequences": 160,
+        "tokens": 586
+      },
+      "audit": {
+        "all_checks_passed": true,
+        "independent_trajectory_rewards": 487,
+        "replayed_adam_updates": 20,
+        "consumed_groups": 120,
+        "events_verified": 2024,
+        "sessions": 2,
+        "restored_nonempty_prefixes": 4,
+        "no_duplicate_consumption": true,
+        "version_consistent": true,
+        "inventory_conserved": true,
+        "hash_chain_not_signature": true
+      },
+      "elapsed_with_restart_s": 1.1648551253601909,
+      "generated_groups": 124
+    },
+    {
+      "name": "7-inside_commit",
+      "seed": 7,
+      "fault": "inside_commit",
+      "capacity": 12,
+      "bound": null,
+      "mean_consume_staleness": 0.7333333333333333,
+      "max_consume_staleness": 3,
+      "counts": {
+        "consumed": 120,
+        "discarded": 0,
+        "partial": 0,
+        "ready": 0,
+        "running": 4
+      },
+      "fixed_probe": {
+        "heldout_sequence_accuracy": 0.38125,
+        "heldout_target_probability": 0.5597932930968024,
+        "heldout_token_accuracy": 0.636518771331058,
+        "sequences": 160,
+        "tokens": 586
+      },
+      "audit": {
+        "all_checks_passed": true,
+        "independent_trajectory_rewards": 488,
+        "replayed_adam_updates": 20,
+        "consumed_groups": 120,
+        "events_verified": 2025,
+        "sessions": 2,
+        "restored_nonempty_prefixes": 4,
+        "no_duplicate_consumption": true,
+        "version_consistent": true,
+        "inventory_conserved": true,
+        "hash_chain_not_signature": true
+      },
+      "elapsed_with_restart_s": 1.1344127086922526,
+      "generated_groups": 124
+    },
+    {
+      "name": "7-after_commit",
+      "seed": 7,
+      "fault": "after_commit",
+      "capacity": 12,
+      "bound": null,
+      "mean_consume_staleness": 0.7,
+      "max_consume_staleness": 3,
+      "counts": {
+        "consumed": 120,
+        "discarded": 0,
+        "partial": 0,
+        "ready": 0,
+        "running": 4
+      },
+      "fixed_probe": {
+        "heldout_sequence_accuracy": 0.44375,
+        "heldout_target_probability": 0.6828509722125233,
+        "heldout_token_accuracy": 0.757679180887372,
+        "sequences": 160,
+        "tokens": 586
+      },
+      "audit": {
+        "all_checks_passed": true,
+        "independent_trajectory_rewards": 487,
+        "replayed_adam_updates": 20,
+        "consumed_groups": 120,
+        "events_verified": 2023,
+        "sessions": 2,
+        "restored_nonempty_prefixes": 4,
+        "no_duplicate_consumption": true,
+        "version_consistent": true,
+        "inventory_conserved": true,
+        "hash_chain_not_signature": true
+      },
+      "elapsed_with_restart_s": 1.1933602085337043,
+      "generated_groups": 124
+    },
+    {
+      "name": "19-none",
+      "seed": 19,
+      "fault": "none",
+      "capacity": 12,
+      "bound": null,
+      "mean_consume_staleness": 0.6916666666666667,
+      "max_consume_staleness": 4,
+      "counts": {
+        "consumed": 120,
+        "discarded": 0,
+        "partial": 0,
+        "ready": 0,
+        "running": 4
+      },
+      "fixed_probe": {
+        "heldout_sequence_accuracy": 0.1625,
+        "heldout_target_probability": 0.4756410706585316,
+        "heldout_token_accuracy": 0.4590443686006826,
+        "sequences": 160,
+        "tokens": 586
+      },
+      "audit": {
+        "all_checks_passed": true,
+        "independent_trajectory_rewards": 487,
+        "replayed_adam_updates": 20,
+        "consumed_groups": 120,
+        "events_verified": 2149,
+        "sessions": 1,
+        "restored_nonempty_prefixes": 0,
+        "no_duplicate_consumption": true,
+        "version_consistent": true,
+        "inventory_conserved": true,
+        "hash_chain_not_signature": true
+      },
+      "elapsed_with_restart_s": 1.1283542504534125,
+      "generated_groups": 124
+    },
+    {
+      "name": "19-token_prefix",
+      "seed": 19,
+      "fault": "token_prefix",
+      "capacity": 12,
+      "bound": null,
+      "mean_consume_staleness": 0.7,
+      "max_consume_staleness": 4,
+      "counts": {
+        "consumed": 120,
+        "discarded": 0,
+        "partial": 0,
+        "ready": 0,
+        "running": 4
+      },
+      "fixed_probe": {
+        "heldout_sequence_accuracy": 0.19375,
+        "heldout_target_probability": 0.39072490931658416,
+        "heldout_token_accuracy": 0.42150170648464164,
+        "sequences": 160,
+        "tokens": 586
+      },
+      "audit": {
+        "all_checks_passed": true,
+        "independent_trajectory_rewards": 487,
+        "replayed_adam_updates": 20,
+        "consumed_groups": 120,
+        "events_verified": 2152,
+        "sessions": 2,
+        "restored_nonempty_prefixes": 3,
+        "no_duplicate_consumption": true,
+        "version_consistent": true,
+        "inventory_conserved": true,
+        "hash_chain_not_signature": true
+      },
+      "elapsed_with_restart_s": 1.1949610831215978,
+      "generated_groups": 124
+    },
+    {
+      "name": "19-before_commit",
+      "seed": 19,
+      "fault": "before_commit",
+      "capacity": 12,
+      "bound": null,
+      "mean_consume_staleness": 0.6916666666666667,
+      "max_consume_staleness": 4,
+      "counts": {
+        "consumed": 120,
+        "discarded": 0,
+        "partial": 0,
+        "ready": 1,
+        "running": 4
+      },
+      "fixed_probe": {
+        "heldout_sequence_accuracy": 0.3625,
+        "heldout_target_probability": 0.6378248839822187,
+        "heldout_token_accuracy": 0.6962457337883959,
+        "sequences": 160,
+        "tokens": 586
+      },
+      "audit": {
+        "all_checks_passed": true,
+        "independent_trajectory_rewards": 488,
+        "replayed_adam_updates": 20,
+        "consumed_groups": 120,
+        "events_verified": 2156,
+        "sessions": 2,
+        "restored_nonempty_prefixes": 4,
+        "no_duplicate_consumption": true,
+        "version_consistent": true,
+        "inventory_conserved": true,
+        "hash_chain_not_signature": true
+      },
+      "elapsed_with_restart_s": 1.2193748755380511,
+      "generated_groups": 125
+    },
+    {
+      "name": "19-inside_commit",
+      "seed": 19,
+      "fault": "inside_commit",
+      "capacity": 12,
+      "bound": null,
+      "mean_consume_staleness": 0.7083333333333334,
+      "max_consume_staleness": 4,
+      "counts": {
+        "consumed": 120,
+        "discarded": 0,
+        "partial": 0,
+        "ready": 1,
+        "running": 4
+      },
+      "fixed_probe": {
+        "heldout_sequence_accuracy": 0.3375,
+        "heldout_target_probability": 0.5931275018385731,
+        "heldout_token_accuracy": 0.6723549488054608,
+        "sequences": 160,
+        "tokens": 586
+      },
+      "audit": {
+        "all_checks_passed": true,
+        "independent_trajectory_rewards": 488,
+        "replayed_adam_updates": 20,
+        "consumed_groups": 120,
+        "events_verified": 2158,
+        "sessions": 2,
+        "restored_nonempty_prefixes": 4,
+        "no_duplicate_consumption": true,
+        "version_consistent": true,
+        "inventory_conserved": true,
+        "hash_chain_not_signature": true
+      },
+      "elapsed_with_restart_s": 1.1874968325719237,
+      "generated_groups": 125
+    },
+    {
+      "name": "19-after_commit",
+      "seed": 19,
+      "fault": "after_commit",
+      "capacity": 12,
+      "bound": null,
+      "mean_consume_staleness": 0.6916666666666667,
+      "max_consume_staleness": 4,
+      "counts": {
+        "consumed": 120,
+        "discarded": 0,
+        "partial": 0,
+        "ready": 1,
+        "running": 4
+      },
+      "fixed_probe": {
+        "heldout_sequence_accuracy": 0.1625,
+        "heldout_target_probability": 0.45775213878623927,
+        "heldout_token_accuracy": 0.4590443686006826,
+        "sequences": 160,
+        "tokens": 586
+      },
+      "audit": {
+        "all_checks_passed": true,
+        "independent_trajectory_rewards": 488,
+        "replayed_adam_updates": 20,
+        "consumed_groups": 120,
+        "events_verified": 2160,
+        "sessions": 2,
+        "restored_nonempty_prefixes": 4,
+        "no_duplicate_consumption": true,
+        "version_consistent": true,
+        "inventory_conserved": true,
+        "hash_chain_not_signature": true
+      },
+      "elapsed_with_restart_s": 1.1660593748092651,
+      "generated_groups": 125
+    },
+    {
+      "name": "41-none",
+      "seed": 41,
+      "fault": "none",
+      "capacity": 12,
+      "bound": null,
+      "mean_consume_staleness": 0.7,
+      "max_consume_staleness": 2,
+      "counts": {
+        "consumed": 120,
+        "discarded": 0,
+        "partial": 0,
+        "ready": 2,
+        "running": 4
+      },
+      "fixed_probe": {
+        "heldout_sequence_accuracy": 0.45,
+        "heldout_target_probability": 0.7336308398969805,
+        "heldout_token_accuracy": 0.7679180887372014,
+        "sequences": 160,
+        "tokens": 586
+      },
+      "audit": {
+        "all_checks_passed": true,
+        "independent_trajectory_rewards": 488,
+        "replayed_adam_updates": 20,
+        "consumed_groups": 120,
+        "events_verified": 2139,
+        "sessions": 1,
+        "restored_nonempty_prefixes": 0,
+        "no_duplicate_consumption": true,
+        "version_consistent": true,
+        "inventory_conserved": true,
+        "hash_chain_not_signature": true
+      },
+      "elapsed_with_restart_s": 1.0432713339105248,
+      "generated_groups": 126
+    },
+    {
+      "name": "41-token_prefix",
+      "seed": 41,
+      "fault": "token_prefix",
+      "capacity": 12,
+      "bound": null,
+      "mean_consume_staleness": 0.7166666666666667,
+      "max_consume_staleness": 3,
+      "counts": {
+        "consumed": 120,
+        "discarded": 0,
+        "partial": 0,
+        "ready": 2,
+        "running": 4
+      },
+      "fixed_probe": {
+        "heldout_sequence_accuracy": 0.45,
+        "heldout_target_probability": 0.7309405450913982,
+        "heldout_token_accuracy": 0.7679180887372014,
+        "sequences": 160,
+        "tokens": 586
+      },
+      "audit": {
+        "all_checks_passed": true,
+        "independent_trajectory_rewards": 490,
+        "replayed_adam_updates": 20,
+        "consumed_groups": 120,
+        "events_verified": 2148,
+        "sessions": 2,
+        "restored_nonempty_prefixes": 3,
+        "no_duplicate_consumption": true,
+        "version_consistent": true,
+        "inventory_conserved": true,
+        "hash_chain_not_signature": true
+      },
+      "elapsed_with_restart_s": 1.1330375419929624,
+      "generated_groups": 126
+    },
+    {
+      "name": "41-before_commit",
+      "seed": 41,
+      "fault": "before_commit",
+      "capacity": 12,
+      "bound": null,
+      "mean_consume_staleness": 0.7166666666666667,
+      "max_consume_staleness": 2,
+      "counts": {
+        "consumed": 120,
+        "discarded": 0,
+        "partial": 0,
+        "ready": 2,
+        "running": 4
+      },
+      "fixed_probe": {
+        "heldout_sequence_accuracy": 0.45,
+        "heldout_target_probability": 0.7408546885533237,
+        "heldout_token_accuracy": 0.7679180887372014,
+        "sequences": 160,
+        "tokens": 586
+      },
+      "audit": {
+        "all_checks_passed": true,
+        "independent_trajectory_rewards": 489,
+        "replayed_adam_updates": 20,
+        "consumed_groups": 120,
+        "events_verified": 2147,
+        "sessions": 2,
+        "restored_nonempty_prefixes": 4,
+        "no_duplicate_consumption": true,
+        "version_consistent": true,
+        "inventory_conserved": true,
+        "hash_chain_not_signature": true
+      },
+      "elapsed_with_restart_s": 1.1870215414091945,
+      "generated_groups": 126
+    },
+    {
+      "name": "41-inside_commit",
+      "seed": 41,
+      "fault": "inside_commit",
+      "capacity": 12,
+      "bound": null,
+      "mean_consume_staleness": 0.7333333333333333,
+      "max_consume_staleness": 2,
+      "counts": {
+        "consumed": 120,
+        "discarded": 0,
+        "partial": 0,
+        "ready": 2,
+        "running": 4
+      },
+      "fixed_probe": {
+        "heldout_sequence_accuracy": 0.45,
+        "heldout_target_probability": 0.771812619421891,
+        "heldout_token_accuracy": 0.7679180887372014,
+        "sequences": 160,
+        "tokens": 586
+      },
+      "audit": {
+        "all_checks_passed": true,
+        "independent_trajectory_rewards": 490,
+        "replayed_adam_updates": 20,
+        "consumed_groups": 120,
+        "events_verified": 2147,
+        "sessions": 2,
+        "restored_nonempty_prefixes": 4,
+        "no_duplicate_consumption": true,
+        "version_consistent": true,
+        "inventory_conserved": true,
+        "hash_chain_not_signature": true
+      },
+      "elapsed_with_restart_s": 1.1367373336106539,
+      "generated_groups": 126
+    },
+    {
+      "name": "41-after_commit",
+      "seed": 41,
+      "fault": "after_commit",
+      "capacity": 12,
+      "bound": null,
+      "mean_consume_staleness": 0.7083333333333334,
+      "max_consume_staleness": 2,
+      "counts": {
+        "consumed": 120,
+        "discarded": 0,
+        "partial": 0,
+        "ready": 1,
+        "running": 4
+      },
+      "fixed_probe": {
+        "heldout_sequence_accuracy": 0.45,
+        "heldout_target_probability": 0.7461341648162181,
+        "heldout_token_accuracy": 0.7679180887372014,
+        "sequences": 160,
+        "tokens": 586
+      },
+      "audit": {
+        "all_checks_passed": true,
+        "independent_trajectory_rewards": 487,
+        "replayed_adam_updates": 20,
+        "consumed_groups": 120,
+        "events_verified": 2140,
+        "sessions": 2,
+        "restored_nonempty_prefixes": 4,
+        "no_duplicate_consumption": true,
+        "version_consistent": true,
+        "inventory_conserved": true,
+        "hash_chain_not_signature": true
+      },
+      "elapsed_with_restart_s": 1.1307057086378336,
+      "generated_groups": 125
+    },
+    {
+      "name": "capacity6-boundNone",
+      "seed": 7,
+      "fault": "none",
+      "capacity": 6,
+      "bound": null,
+      "mean_consume_staleness": 0.0,
+      "max_consume_staleness": 0,
+      "counts": {
+        "consumed": 120,
+        "discarded": 0,
+        "partial": 0,
+        "ready": 0,
+        "running": 0
+      },
+      "fixed_probe": {
+        "heldout_sequence_accuracy": 0.4375,
+        "heldout_target_probability": 0.7366100357334865,
+        "heldout_token_accuracy": 0.7593856655290102,
+        "sequences": 160,
+        "tokens": 586
+      },
+      "audit": {
+        "all_checks_passed": true,
+        "independent_trajectory_rewards": 480,
+        "replayed_adam_updates": 20,
+        "consumed_groups": 120,
+        "events_verified": 1997,
+        "sessions": 1,
+        "restored_nonempty_prefixes": 0,
+        "no_duplicate_consumption": true,
+        "version_consistent": true,
+        "inventory_conserved": true,
+        "hash_chain_not_signature": true
+      },
+      "elapsed_with_restart_s": 1.3492091670632362,
+      "generated_groups": 120
+    },
+    {
+      "name": "capacity6-bound2",
+      "seed": 7,
+      "fault": "none",
+      "capacity": 6,
+      "bound": 2,
+      "mean_consume_staleness": 0.0,
+      "max_consume_staleness": 0,
+      "counts": {
+        "consumed": 120,
+        "discarded": 0,
+        "partial": 0,
+        "ready": 0,
+        "running": 0
+      },
+      "fixed_probe": {
+        "heldout_sequence_accuracy": 0.4375,
+        "heldout_target_probability": 0.7366100357334865,
+        "heldout_token_accuracy": 0.7593856655290102,
+        "sequences": 160,
+        "tokens": 586
+      },
+      "audit": {
+        "all_checks_passed": true,
+        "independent_trajectory_rewards": 480,
+        "replayed_adam_updates": 20,
+        "consumed_groups": 120,
+        "events_verified": 1997,
+        "sessions": 1,
+        "restored_nonempty_prefixes": 0,
+        "no_duplicate_consumption": true,
+        "version_consistent": true,
+        "inventory_conserved": true,
+        "hash_chain_not_signature": true
+      },
+      "elapsed_with_restart_s": 1.3375686658546329,
+      "generated_groups": 120
+    },
+    {
+      "name": "capacity12-bound2",
+      "seed": 7,
+      "fault": "none",
+      "capacity": 12,
+      "bound": 2,
+      "mean_consume_staleness": 0.65,
+      "max_consume_staleness": 2,
+      "counts": {
+        "consumed": 120,
+        "discarded": 1,
+        "partial": 0,
+        "ready": 0,
+        "running": 4
+      },
+      "fixed_probe": {
+        "heldout_sequence_accuracy": 0.44375,
+        "heldout_target_probability": 0.6677623887227696,
+        "heldout_token_accuracy": 0.735494880546075,
+        "sequences": 160,
+        "tokens": 586
+      },
+      "audit": {
+        "all_checks_passed": true,
+        "independent_trajectory_rewards": 494,
+        "replayed_adam_updates": 20,
+        "consumed_groups": 120,
+        "events_verified": 2045,
+        "sessions": 1,
+        "restored_nonempty_prefixes": 0,
+        "no_duplicate_consumption": true,
+        "version_consistent": true,
+        "inventory_conserved": true,
+        "hash_chain_not_signature": true
+      },
+      "elapsed_with_restart_s": 1.0113364588469267,
+      "generated_groups": 125
+    },
+    {
+      "name": "capacity32-boundNone",
+      "seed": 7,
+      "fault": "none",
+      "capacity": 32,
+      "bound": null,
+      "mean_consume_staleness": 0.7,
+      "max_consume_staleness": 3,
+      "counts": {
+        "consumed": 120,
+        "discarded": 0,
+        "partial": 0,
+        "ready": 0,
+        "running": 4
+      },
+      "fixed_probe": {
+        "heldout_sequence_accuracy": 0.425,
+        "heldout_target_probability": 0.6940573733975492,
+        "heldout_token_accuracy": 0.7184300341296929,
+        "sequences": 160,
+        "tokens": 586
+      },
+      "audit": {
+        "all_checks_passed": true,
+        "independent_trajectory_rewards": 488,
+        "replayed_adam_updates": 20,
+        "consumed_groups": 120,
+        "events_verified": 2019,
+        "sessions": 1,
+        "restored_nonempty_prefixes": 0,
+        "no_duplicate_consumption": true,
+        "version_consistent": true,
+        "inventory_conserved": true,
+        "hash_chain_not_signature": true
+      },
+      "elapsed_with_restart_s": 0.9932625005021691,
+      "generated_groups": 124
+    },
+    {
+      "name": "capacity32-bound2",
+      "seed": 7,
+      "fault": "none",
+      "capacity": 32,
+      "bound": 2,
+      "mean_consume_staleness": 0.6583333333333333,
+      "max_consume_staleness": 2,
+      "counts": {
+        "consumed": 120,
+        "discarded": 1,
+        "partial": 0,
+        "ready": 0,
+        "running": 4
+      },
+      "fixed_probe": {
+        "heldout_sequence_accuracy": 0.40625,
+        "heldout_target_probability": 0.6132149529842068,
+        "heldout_token_accuracy": 0.5836177474402731,
+        "sequences": 160,
+        "tokens": 586
+      },
+      "audit": {
+        "all_checks_passed": true,
+        "independent_trajectory_rewards": 494,
+        "replayed_adam_updates": 20,
+        "consumed_groups": 120,
+        "events_verified": 2041,
+        "sessions": 1,
+        "restored_nonempty_prefixes": 0,
+        "no_duplicate_consumption": true,
+        "version_consistent": true,
+        "inventory_conserved": true,
+        "hash_chain_not_signature": true
+      },
+      "elapsed_with_restart_s": 1.0286598755046725,
+      "generated_groups": 125
+    }
+  ],
+  "total_real_process_crashes": 12,
+  "environment": {
+    "python": "3.14.7 (main, Aug 25 2026, 13:50:14) [Clang 22.1.3 ]",
+    "numpy": "2.5.4",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O"
+  },
+  "note": "Not independent tasks, not comparable final datasets after nondeterministic scheduler restart. Live optimizer states and accepted samples persist; all committed model updates exactly replayed."
+}

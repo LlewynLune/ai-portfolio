@@ -1,0 +1,12 @@
+{
+  "seed": 19,
+  "faults": [
+    "token_prefix",
+    "before_commit",
+    "inside_commit",
+    "after_commit"
+  ],
+  "updates": 20,
+  "crash_version": 5,
+  "note": "Focused additional regression after first live matrix; snapshot actual DB immediately after process termination, before any recovery. Deterministic counters, not deterministic async completion order."
+}

@@ -24,6 +24,29 @@
 
 运行：python -m laminar_lab.durable --output artifacts/my-recovery；python -m laminar_lab.paired（默认immutable输出，已有结果不会覆盖）。原30次训练证据保持，不把恢复/重放记录并成独立任务样本。
 
+## v2.3：本地 Qwen LoRA 与奖励饱和
+
+[Qwen 实验与逐批证据](qwen-study.html) · [方法、反例与复现](QWEN_STUDY.md)。在固定公开 4B 量化基座上做真实 LoRA 强化学习：原始二选一策略几乎只选 A；用训练输入做中心化后，奖励有区分度的组从 5/576 增至 545/576，但留出表现仍随种子变化，且出现全选 B。采样、奖励、版本和评分已独立复算；校准版六个适配器已在本机重载检查。Qwen 部分是单 GPU、单 token 奖励和显式版本滞后，**没有接入下方实时异步故障恢复链路**。
+
+## v2.2：实时异步训练与持久化恢复
+
+本轮将“实时异步”与“恢复”接入同一真实运行coordinator，而不是确定顺序的独立恢复玩具。新增代码live.py、live_audit.py、run_live.py、crash_boundaries.py、verify_rng.py、portable_replay.py；原experiment.py、model.py、planes.py及旧证据不修改。
+
+- 4个producer逐token自回归采样，每token保存prefix、行为logprob、RNG状态和固定policy版本；失败恢复从已存RNG继续生成，不重算prefix token。
+- Learner从完成FIFO组取batch；保留pending batch及其base版本；真实Adam更新，参数、first/second moments、step和消费账本一次事务提交。
+- 主矩阵20组运行，12次真实整个coordinator进程退出；边界回归4组、4次额外退出，保存退出后且重启前的SQLite快照。总共24运行链、16次退出，不是独立任务样本。
+- 每链20个learner版本、每更新四Adam步；480次提交更新全部在本机逐步精确重放，行为logprob与reward独立复算，2983个已存RNG状态检查。跨平台CI用1e-9级数值容差，不声称跨BLAS浮点hash相同。
+- 每链120组消费、未完成/丢弃/已消费全量守恒，未发现重复消费。奖励manifest与5种篡改探针（reward、logprob、version、event hash、Adam step）保留；hash链只是篡改痕迹，不是签名或第三方证明。
+- 容量6/12/32与不限/最大2陈旧度对照：容量6等于一batch使异步接近同步，不能把低陈旧度当免费吞吐收益。单条件单次调度，不能做稳定速度或质量排名。
+
+[Live Study与24个独立证据浏览页](live-study.html)。每个证据页内联原JSON，离线可读；索引不一次加载全部32MB证据。这里的“独立”指各文件可单独打开，不指统计独立样本。
+
+运行：python -m laminar_lab.run_live --output artifacts/my-live-run。既有路径拒绝覆盖。命令创建临时SQLite、实际执行训练/强制退出/重启，再导出JSON；不执行设备控制，不使用付费API或公司数据。
+
+### 恢复的边界
+
+实测是单机整coordinator进程中断恢复，不是多机worker fault、Ray恢复或分布式exactly-once。调度顺序在重启后可能改变，**不宣称与未中断基线相同最终模型**；只能声称恢复后的每次已提交更新可以从真实消费样本和保存优化器状态复算。Toy MLP不是语言大模型，未接入LoRA-RL；KV迁移、RDMA、UCX与集群吞吐未完成。初始固定probe存在已披露prompt overlap，不能包装成能力泛化。
+
 ## 最重要的负结果与边界
 
 三个种子的学习结果并不一致；更快的异步时间线没有稳定地达到更高任务分数。staleness 上限是额外消融，不是 Laminar 论文原始设计的必须配置。token ratio clipping 不是无偏的 full-trajectory importance sampling，更不是 V-trace。

@@ -1,0 +1,356 @@
+{
+  "runs": [
+    {
+      "fault": "token_prefix",
+      "before_restart": {
+        "latest_committed_version": 0,
+        "model_sha256": "5afd9eef5c25da41700273872de1d89e59402b975e216a3c5fc1c2e49d8297c2",
+        "committed_adam_step": 0,
+        "consumption_rows": 0,
+        "pending_batches": [],
+        "status_counts": {
+          "running": 4
+        },
+        "partial_prefixes": [
+          {
+            "gid": 0,
+            "version": 0,
+            "sample_index": 0,
+            "saved_tokens": 1,
+            "rng_sha256": "e6c98e04b981d7b4c4d55583b3851a8dde663028fd0c2bc43eb79dfe7deb92bf"
+          },
+          {
+            "gid": 1,
+            "version": 0,
+            "sample_index": 0,
+            "saved_tokens": 1,
+            "rng_sha256": "5b4d42b7f2fedde05435d292f40e766097a3cd2084562726bcaccf98b5869012"
+          },
+          {
+            "gid": 2,
+            "version": 0,
+            "sample_index": 0,
+            "saved_tokens": 1,
+            "rng_sha256": "396dd21c6fcf82d6b8b9337f2e2e073b69dc67d15d2012e51e57f25430678864"
+          },
+          {
+            "gid": 3,
+            "version": 0,
+            "sample_index": 0,
+            "saved_tokens": 0,
+            "rng_sha256": "5ef7a7c7abfa79a9be318e29b797efdca44d7e56d443bd4f33ee614d3ae85652"
+          }
+        ],
+        "after_os_exit_before_restart": true
+      },
+      "audit": {
+        "all_checks_passed": true,
+        "independent_trajectory_rewards": 487,
+        "replayed_adam_updates": 20,
+        "consumed_groups": 120,
+        "events_verified": 2153,
+        "sessions": 2,
+        "restored_nonempty_prefixes": 3,
+        "no_duplicate_consumption": true,
+        "version_consistent": true,
+        "inventory_conserved": true,
+        "hash_chain_not_signature": true
+      },
+      "summary": {
+        "adam_step": 80,
+        "all_reserved_groups": 124,
+        "distributed_exactly_once": false,
+        "fixed_probe": {
+          "heldout_sequence_accuracy": 0.1625,
+          "heldout_target_probability": 0.4574766621137698,
+          "heldout_token_accuracy": 0.4590443686006826,
+          "sequences": 160,
+          "tokens": 586
+        },
+        "group_counts": {
+          "consumed": 120,
+          "discarded": 0,
+          "partial": 0,
+          "ready": 0,
+          "running": 4
+        },
+        "language_model": false,
+        "latest_version": 20,
+        "model_sha256": "01dbb83359ddbb8490a48b9e9ad77db900b518f5d499b3e5bf5c108551770725",
+        "session_count": 2
+      }
+    },
+    {
+      "fault": "before_commit",
+      "before_restart": {
+        "latest_committed_version": 4,
+        "model_sha256": "f2920c2fb1e6fed6bea911f85c76ef070b6b8c221d80f989e1afa77d3bf1c44f",
+        "committed_adam_step": 16,
+        "consumption_rows": 24,
+        "pending_batches": [
+          {
+            "base_version": 4,
+            "gids": [
+              26,
+              22,
+              17,
+              29,
+              28,
+              32
+            ]
+          }
+        ],
+        "status_counts": {
+          "consumed": 24,
+          "ready": 7,
+          "running": 4
+        },
+        "partial_prefixes": [
+          {
+            "gid": 27,
+            "version": 3,
+            "sample_index": 2,
+            "saved_tokens": 24,
+            "rng_sha256": "b4c3a8f29b460baa2f4a25096d7fef987168a0226b254c0ffe444de71eeca74f"
+          },
+          {
+            "gid": 30,
+            "version": 4,
+            "sample_index": 2,
+            "saved_tokens": 12,
+            "rng_sha256": "a991b2513f3807d77e5e68b7a00da6fd440954f14c9047c9a57aa8eb89ed20af"
+          },
+          {
+            "gid": 33,
+            "version": 4,
+            "sample_index": 2,
+            "saved_tokens": 3,
+            "rng_sha256": "e3d8d1e5dab9552b22270925621e8dc2cd38073906556a090ea916cf23feb3a3"
+          },
+          {
+            "gid": 34,
+            "version": 4,
+            "sample_index": 0,
+            "saved_tokens": 1,
+            "rng_sha256": "6a9fe11bc252cb99034a765408c56c09294176cf2edfcb7c285577497964d37c"
+          }
+        ],
+        "after_os_exit_before_restart": true
+      },
+      "audit": {
+        "all_checks_passed": true,
+        "independent_trajectory_rewards": 487,
+        "replayed_adam_updates": 20,
+        "consumed_groups": 120,
+        "events_verified": 2156,
+        "sessions": 2,
+        "restored_nonempty_prefixes": 4,
+        "no_duplicate_consumption": true,
+        "version_consistent": true,
+        "inventory_conserved": true,
+        "hash_chain_not_signature": true
+      },
+      "summary": {
+        "adam_step": 80,
+        "all_reserved_groups": 124,
+        "distributed_exactly_once": false,
+        "fixed_probe": {
+          "heldout_sequence_accuracy": 0.3625,
+          "heldout_target_probability": 0.6325063607779949,
+          "heldout_token_accuracy": 0.6928327645051194,
+          "sequences": 160,
+          "tokens": 586
+        },
+        "group_counts": {
+          "consumed": 120,
+          "discarded": 0,
+          "partial": 0,
+          "ready": 0,
+          "running": 4
+        },
+        "language_model": false,
+        "latest_version": 20,
+        "model_sha256": "733ce445ab137c3c1732fdd71a498247d00f0324dbb5fa71275d8131e7e2823c",
+        "session_count": 2
+      }
+    },
+    {
+      "fault": "inside_commit",
+      "before_restart": {
+        "latest_committed_version": 4,
+        "model_sha256": "99fd83475f778bedc2f4aecf95962b05ce1734611adb4b4b4a927b0f188dcc16",
+        "committed_adam_step": 16,
+        "consumption_rows": 24,
+        "pending_batches": [
+          {
+            "base_version": 4,
+            "gids": [
+              26,
+              17,
+              22,
+              29,
+              28,
+              31
+            ]
+          }
+        ],
+        "status_counts": {
+          "consumed": 24,
+          "ready": 7,
+          "running": 4
+        },
+        "partial_prefixes": [
+          {
+            "gid": 27,
+            "version": 3,
+            "sample_index": 2,
+            "saved_tokens": 23,
+            "rng_sha256": "d7153f1afa24245984917a453dd569febcc33fd9a1030b0e0b324d90dc1b0a2a"
+          },
+          {
+            "gid": 30,
+            "version": 4,
+            "sample_index": 3,
+            "saved_tokens": 14,
+            "rng_sha256": "a85cbd102419ed44347276c0a5fd0c0b04f16dce2c2e07d6a1833250ee23e0bd"
+          },
+          {
+            "gid": 33,
+            "version": 4,
+            "sample_index": 2,
+            "saved_tokens": 3,
+            "rng_sha256": "e3d8d1e5dab9552b22270925621e8dc2cd38073906556a090ea916cf23feb3a3"
+          },
+          {
+            "gid": 34,
+            "version": 4,
+            "sample_index": 0,
+            "saved_tokens": 2,
+            "rng_sha256": "7b73417b639163a47daca82e87a6668f487bf63bb75f30bc2fc006ae9055e023"
+          }
+        ],
+        "after_os_exit_before_restart": true
+      },
+      "audit": {
+        "all_checks_passed": true,
+        "independent_trajectory_rewards": 488,
+        "replayed_adam_updates": 20,
+        "consumed_groups": 120,
+        "events_verified": 2160,
+        "sessions": 2,
+        "restored_nonempty_prefixes": 4,
+        "no_duplicate_consumption": true,
+        "version_consistent": true,
+        "inventory_conserved": true,
+        "hash_chain_not_signature": true
+      },
+      "summary": {
+        "adam_step": 80,
+        "all_reserved_groups": 125,
+        "distributed_exactly_once": false,
+        "fixed_probe": {
+          "heldout_sequence_accuracy": 0.35,
+          "heldout_target_probability": 0.5969637165045004,
+          "heldout_token_accuracy": 0.6689419795221843,
+          "sequences": 160,
+          "tokens": 586
+        },
+        "group_counts": {
+          "consumed": 120,
+          "discarded": 0,
+          "partial": 0,
+          "ready": 1,
+          "running": 4
+        },
+        "language_model": false,
+        "latest_version": 20,
+        "model_sha256": "1bbffacff4a125e6b6ee6927912571cb3389e80e0f294f962ba6dd1589b0e1b5",
+        "session_count": 2
+      }
+    },
+    {
+      "fault": "after_commit",
+      "before_restart": {
+        "latest_committed_version": 5,
+        "model_sha256": "d0c9c478da6fb8bf2fb5eb3fb955af4513c9d6f8f615c17de735449793baa943",
+        "committed_adam_step": 20,
+        "consumption_rows": 30,
+        "pending_batches": [],
+        "status_counts": {
+          "consumed": 30,
+          "ready": 1,
+          "running": 4
+        },
+        "partial_prefixes": [
+          {
+            "gid": 27,
+            "version": 3,
+            "sample_index": 3,
+            "saved_tokens": 26,
+            "rng_sha256": "f5f64fa82a1fd99dd8b3a75ea7efe5da77e241934c22f6c26a1618cb49556ed9"
+          },
+          {
+            "gid": 30,
+            "version": 4,
+            "sample_index": 2,
+            "saved_tokens": 11,
+            "rng_sha256": "78b466c64218e6223f2a84a0d9d23eff2228bfa1ebacfbb5be34809560785793"
+          },
+          {
+            "gid": 33,
+            "version": 4,
+            "sample_index": 1,
+            "saved_tokens": 2,
+            "rng_sha256": "21ea320e7f0df1d4d02394711fdf27c4a6531eaafced592674413227ef683b1c"
+          },
+          {
+            "gid": 34,
+            "version": 4,
+            "sample_index": 0,
+            "saved_tokens": 1,
+            "rng_sha256": "6a9fe11bc252cb99034a765408c56c09294176cf2edfcb7c285577497964d37c"
+          }
+        ],
+        "after_os_exit_before_restart": true
+      },
+      "audit": {
+        "all_checks_passed": true,
+        "independent_trajectory_rewards": 487,
+        "replayed_adam_updates": 20,
+        "consumed_groups": 120,
+        "events_verified": 2154,
+        "sessions": 2,
+        "restored_nonempty_prefixes": 4,
+        "no_duplicate_consumption": true,
+        "version_consistent": true,
+        "inventory_conserved": true,
+        "hash_chain_not_signature": true
+      },
+      "summary": {
+        "adam_step": 80,
+        "all_reserved_groups": 124,
+        "distributed_exactly_once": false,
+        "fixed_probe": {
+          "heldout_sequence_accuracy": 0.35625,
+          "heldout_target_probability": 0.6009043775858836,
+          "heldout_token_accuracy": 0.674061433447099,
+          "sequences": 160,
+          "tokens": 586
+        },
+        "group_counts": {
+          "consumed": 120,
+          "discarded": 0,
+          "partial": 0,
+          "ready": 0,
+          "running": 4
+        },
+        "language_model": false,
+        "latest_version": 20,
+        "model_sha256": "d9ab5bb073fbcca966f6cffb81472b7ded1b2a1db783398fc18218bc63c9210e",
+        "session_count": 2
+      }
+    }
+  ],
+  "actual_forced_exits": 4,
+  "note": "Not a new independent task; boundary-focused regression in same synthetic setting."
+}
